@@ -1,0 +1,2163 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstpad">
+    <refnamediv>
+        <refname>gst.Pad</refname>
+        <refpurpose>Object contained by elements that allows links to other elements.</refpurpose>
+    </refnamediv>
+
+<!-- ************************ -->
+<!-- BEGIN OF GSTPAD SYNOPSIS -->
+<!-- ************************ -->
+
+<refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.Pad</classname></ooclass>
+        <ooclass><classname><link linkend="class-gstobject">gst.Object</link></classname></ooclass>
+
+    <constructorsynopsis language="python">
+        <methodname><link linkend="constructor-gstpad">gst.Pad</link></methodname>
+        <methodparam><parameter role="keyword">template</parameter></methodparam>
+        <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
+    </constructorsynopsis>
+    <constructorsynopsis language="python">
+        <methodname><link linkend="constructor-gstpad">gst.Pad</link></methodname>
+        <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
+        <methodparam><parameter role="keyword">direction</parameter></methodparam>
+    </constructorsynopsis>
+
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--accept-caps">accept_caps</link></methodname>
+        <methodparam><parameter role="keyword">caps</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--activate-pull">activate_pull</link></methodname>
+        <methodparam><parameter role="keyword">active</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--activate-push">activate_push</link></methodname>
+        <methodparam><parameter role="keyword">active</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--add-buffer-probe">add_buffer_probe</link></methodname>
+        <methodparam><parameter role="keyword">handler</parameter></methodparam>
+        <methodparam><parameter role="keyword">data</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--add-data-probe">add_data_probe</link></methodname>
+        <methodparam><parameter role="keyword">handler</parameter></methodparam>
+        <methodparam><parameter role="keyword">data</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--add-event-probe">add_event_probe</link></methodname>
+        <methodparam><parameter role="keyword">handler</parameter></methodparam>
+        <methodparam><parameter role="keyword">data</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--alloc-buffer">alloc_buffer</link></methodname>
+        <methodparam><parameter role="keyword">offset</parameter></methodparam>
+        <methodparam><parameter role="keyword">size</parameter></methodparam>
+        <methodparam><parameter role="keyword">caps</parameter></methodparam>
+        <methodparam><parameter role="keyword">buf</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--can-link">can_link</link></methodname>
+        <methodparam><parameter role="keyword">sinkpad</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--chain">chain</link></methodname>
+        <methodparam><parameter role="keyword">buffer</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--check-pull-range">check_pull_range</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--event-default">event_default</link></methodname>
+        <methodparam><parameter role="keyword">event</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+         <methodname><link linkend="method-gstpad--fixate-caps">fixate_caps</link></methodname>
+         <methodparam><parameter role="keyword">caps</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--get-allowed-caps">get_allowed_caps</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--get-caps">get_caps</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--get-direction">get_direction</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--get-fixed-caps-func">get_fixed_caps_func</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--get-internal-links">get_internal_links</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--get-internal-links-default">get_internal_links_default</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--get-negotiated-caps">get_negotiated_caps</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--get-pad-template">get_pad_template</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--get-pad-template-caps">get_pad_template_caps</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--get-parent-element">get_parent_element</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--get-peer">get_peer</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--get-query-types">get_query_types</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--get-query-types-default">get_query_types_default</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--get-range">get_range</link></methodname>
+        <methodparam><parameter role="keyword">offset</parameter></methodparam>
+        <methodparam><parameter role="keyword">size</parameter></methodparam>
+        <methodparam><parameter role="keyword">buffer</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--is-active">is_active</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--is-blocked">is_blocked</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--is-linked">is_linked</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--link">link</link></methodname>
+        <methodparam><parameter role="keyword">sinkpad</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--pause-task">pause_task</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--peer-accept-caps">peer_accept_caps</link></methodname>
+        <methodparam><parameter role="keyword">caps</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--peer-get-caps">peer_get_caps</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--proxy-getcaps">proxy_getcaps</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--proxy-setcaps">proxy_setcaps</link></methodname>
+        <methodparam><parameter role="keyword">caps</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--pull-range">pull_range</link></methodname>
+        <methodparam><parameter role="keyword">offset</parameter></methodparam>
+        <methodparam><parameter role="keyword">size</parameter></methodparam>
+        <methodparam><parameter role="keyword">buffer</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--push">push</link></methodname>
+        <methodparam><parameter role="keyword">buffer</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--push-event">push_event</link></methodname>
+        <methodparam><parameter role="keyword">event</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--query">query</link></methodname>
+        <methodparam><parameter role="keyword">query</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--query-convert">query_convert</link></methodname>
+        <methodparam><parameter role="keyword">src_format</parameter></methodparam>
+        <methodparam><parameter role="keyword">src_val</parameter></methodparam>
+        <methodparam><parameter role="keyword">dest_format</parameter></methodparam>
+        <methodparam><parameter role="keyword">dest_val</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--query-default">query_default</link></methodname>
+        <methodparam><parameter role="keyword">query</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--query-duration">query_duration</link></methodname>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">duration</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--query-position">query_position</link></methodname>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">cur</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--remove-buffer-probe">remove_buffer_probe</link></methodname>
+        <methodparam><parameter role="keyword">handler_id</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--remove-data-probe">remove_data_probe</link></methodname>
+        <methodparam><parameter role="keyword">handler_id</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--remove-event-probe">remove_event_probe</link></methodname>
+        <methodparam><parameter role="keyword">handler_id</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--send-event">send_event</link></methodname>
+        <methodparam><parameter role="keyword">event</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--set-active">set_active</link></methodname>
+        <methodparam><parameter role="keyword">active</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--set-blocked">set_blocked</link></methodname>
+        <methodparam><parameter role="keyword">blocked</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--set-blocked-async">set_blocked_async</link></methodname>
+        <methodparam><parameter role="keyword">blocked</parameter></methodparam>
+        <methodparam><parameter role="keyword">callback</parameter></methodparam>
+        <methodparam><parameter role="keyword">user_data</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--set-caps">set_caps</link></methodname>
+        <methodparam><parameter role="keyword">caps</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--set-chain-function">set_chain_function</link></methodname>
+        <methodparam><parameter role="keyword">chain</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--set-event-function">set_event_function</link></methodname>
+        <methodparam><parameter role="keyword">event</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--set-getcaps-function">set_getcaps_function</link></methodname>
+        <methodparam><parameter role="keyword">getcaps</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--set-link-function">set_link_function</link></methodname>
+        <methodparam><parameter role="keyword">link</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--stop-task">stop_task</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--unlink">unlink</link></methodname>
+        <methodparam><parameter role="keyword">sinkpad</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpad--use-fixed-caps">use_fixed_caps</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    </classsynopsis>
+</refsect1>
+
+<!-- ************************ -->
+<!-- BEGIN OF GSTPAD ANCESTRY -->
+<!-- ************************ -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+    +-- <link linkend="class-gstobject">gst.Object</link>
+        +-- <link linkend="class-gstpad">gst.Pad</link>
+</synopsis>
+</refsect1>
+
+<!-- ************************** -->
+<!-- BEGIN OF GSTPAD PROPERTIES -->
+<!-- ************************** -->
+
+<refsect1>
+    <title>Properties</title>
+    
+    <blockquote role="properties">
+        <informaltable pgwide="1" frame="none">
+            <tgroup cols="3">
+                <colspec column="1" colwidth="1in"/>
+                <colspec column="2" colwidth="1in"/>
+                <colspec column="3" colwidth="3in"/>
+                <tbody>
+                    <row valign="top">
+                        <entry>"caps"</entry>
+                        <entry>Read</entry>
+                        <entry>A <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>"direction"</entry>
+                        <entry>Read / Write/Construct only</entry>
+                        <entry>A <link linkend="class-gstpaddirection"><classname>gst.PadDirection</classname></link>.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>"template"</entry>
+                        <entry>Read / Write</entry>
+                        <entry>A <link linkend="class-gstpadtemplate"><classname>gst.PadTemplate</classname></link>.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </blockquote>
+</refsect1>
+
+<!-- ********************************* -->
+<!-- BEGIN OF GSTPAD SIGNAL PROTOTYPES -->
+<!-- ********************************* -->
+
+<refsect1>
+    <title>Signal Prototypes</title>
+    <variablelist>
+        <varlistentry>
+            <term>"<link linkend="signal-gstpad--have-data">have-data</link>"</term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>gstpad</parameter></methodparam>
+                    <methodparam><parameter>mini_obj</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                    <methodparam><parameter>...</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+
+        <varlistentry>
+            <term>"<link linkend="signal-gstpad--linked">linked</link>"</term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>gstpad</parameter></methodparam>
+                    <methodparam><parameter>peer</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                    <methodparam><parameter>...</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+
+        <varlistentry>
+            <term>"<link linkend="signal-gstpad--request-link">request-link</link>"</term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>gstpad</parameter></methodparam>
+                    <methodparam><parameter>peer</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                    <methodparam><parameter>...</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+
+        <varlistentry>
+            <term>"<link linkend="signal-gstpad--unlinked">unlinked</link>"</term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>gstpad</parameter></methodparam>
+                    <methodparam><parameter>peer</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                    <methodparam><parameter>...</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+    </variablelist>
+</refsect1>
+
+<!-- *************************** -->
+<!-- BEGIN OF GSTPAD DESCRIPTION -->
+<!-- *************************** -->
+
+<refsect1 id="description-gstpad">
+    <title>Description</title>
+
+    <para>
+        A <link linkend="class-gstelement"><classname>gst.Element</classname></link> is linked to other elements via "pads", 
+        which are extremely light-weight generic link points. After two pads are retrieved from an element with 
+        <methodname><link linkend="method-gstelement--get-pad">get_pad</link></methodname>, the pads can be link with 
+        <methodname><link linkend="method-gstpad--link">link</link></methodname>. (For quick links, you can also use 
+        <methodname><link linkend="method-gstelement--link">link</link></methodname>, which will make the obvious link for you if it's straightforward.)
+    </para>
+
+    <para>
+        Pads are typically created from a <link linkend="class-gstpadtemplate"><classname>gst.PadTemplate</classname></link> with the 
+        <methodname><link linkend="constructor-gstpad">gst.Pad constructor</link></methodname>.
+    </para>
+  
+    <para>
+        Pads have <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> attached to it to describe the media type they are capable of dealing with. 
+        <methodname><link linkend="method-gstpad--get-caps">get_caps</link></methodname> and 
+        <methodname><link linkend="method-gstpad--set-caps">set_caps</link></methodname> are used to manipulate the caps of the pads.
+        Pads created from a pad template cannot set capabilities that are incompatible with the pad template capabilities.
+    </para>
+  
+    <para>
+        Pads without pad templates can be created with the <methodname><link linkend="constructor-gstpad">gst.Pad constructor</link></methodname> 
+        without passing a template, the constructor takes a direction and a name as an argument. 
+        If the name is None, then a guaranteed unique name will be assigned to it.
+    </para>
+    
+    <para>
+        <methodname><link linkend="method-gstpad--get-parent-element">get_parent_element</link></methodname> will retrieve the 
+        <link linkend="class-gstelement"><classname>gst.Element</classname></link> that owns the pad.
+    </para>
+    
+    <para>
+        A <link linkend="class-gstelement"><classname>gst.Element</classname></link> creating a pad will typically use 
+        the various <methodname>gst_pad_set_*_function()</methodname> calls to register callbacks for various events on the pads.
+    </para>
+    
+    <para>
+        <link linkend="class-gstelement"><classname>gst.Element</classname></link> will use <methodname><link linkend="method-gstpad--push">push</link></methodname>
+        and <methodname><link linkend="method-gstpad--pull-range">pull_range</link></methodname> to push out or pull in a buffer.
+    </para>
+    
+    <para>
+        To send a <link linkend="class-gstevent"><classname>gst.Event</classname></link> on a pad, use 
+        <methodname><link linkend="method-gstpad--send-event">send_event</link></methodname>
+    </para>
+</refsect1>
+
+<!-- *************************** -->
+<!-- BEGIN OF GSTPAD CONSTRUCTOR -->
+<!-- *************************** -->
+
+<refsect1 id="constructor-gstpad">
+    <title>Constructor</title>
+    
+    <programlisting><constructorsynopsis language="python">
+        <methodname>gst.Pad</methodname>
+        <methodparam><parameter role="keyword">template</parameter></methodparam>
+        <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
+    </constructorsynopsis></programlisting>
+    
+    <programlisting><constructorsynopsis language="python">
+        <methodname>gst.Pad</methodname>
+        <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
+        <methodparam><parameter role="keyword">direction</parameter></methodparam>
+    </constructorsynopsis></programlisting>
+    
+    <variablelist>
+        <varlistentry>
+            <term><parameter role="keyword">template</parameter>&nbsp;:</term>
+            <listitem><simpara>a <link linkend="class-gstpadtemplate"><classname>gst.PadTemplate</classname></link>.</simpara></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+            <listitem><simpara> the name of the new pad or <literal>None</literal>.</simpara></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term><parameter role="keyword">direction</parameter>&nbsp;:</term>
+            <listitem><simpara> the <link linkend="class-gstpaddirection"><classname>gst.PadDirection</classname></link>.</simpara></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term><emphasis>Returns</emphasis>&nbsp;:</term>
+            <listitem><simpara>a new <link linkend="class-gstpad"><classname>gst.Pad</classname></link>.</simpara></listitem>
+        </varlistentry>
+    </variablelist>
+    
+    <para>
+        Creates a new <link linkend="class-gstpad"><classname>gst.Pad</classname></link>, you can use one of the two constructor, if you give 
+        <parameter>name</parameter> and <parameter>direction</parameter> the C contructor <methodname>gst_pad_new()</methodname> will be used, 
+        this creates a new pad with the given name in the given direction. 
+        If <parameter>name</parameter> is <literal>None</literal>, a guaranteed unique name (across all pads) will be assigned.
+    </para>
+    <para>
+        If you pass to the constructor <parameter>template</parameter> and <parameter>name</parameter>, the C <methodname>gst_pad_new_from_template()</methodname> 
+        will be used, this creates a new pad with the given name 
+        from the given template. Again if <parameter>name</parameter> is <literal>None</literal>, a guaranteed unique name (across all pads) will be assigned. 
+    </para>
+</refsect1>
+
+
+<!-- *********************** -->
+<!-- BEGIN OF GSTPAD METHODS -->
+<!-- *********************** -->
+
+<refsect1>
+    <title>Methods</title>
+
+    <refsect2 id="method-gstpad--accept-caps">
+        <title>gst.Pad.accept_caps</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>accept_caps</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+    
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">caps</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> to check on the pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the pad can accept the caps.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+      
+        <para>
+            The <methodname>accept_caps</methodname>() method checks if the given pad accepts the caps.
+        </para>
+    </refsect2>
+
+    <refsect2 id="method-gstpad--activate-pull">
+        <title>gst.Pad.activate_pull</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>activate_pull</methodname>
+            <methodparam><parameter role="keyword">active</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">active</parameter>&nbsp;:</term>
+                <listitem><simpara> whether or not the pad should be active.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the operation was successful.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>activate_pull</methodname>() method activates or deactivates the given pad in pull mode via dispatching 
+            to the pad's activatepullfunc. For use from within pad activation functions only. When called on sink pads, 
+            will first proxy the call to the peer pad, which is expected to activate its internally linked pads from within its activate_pull function.
+        </para>
+        <para>
+            If you don't know what this is, you probably don't want to call it.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--activate-push">
+        <title>gst.Pad.activate_push</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>activate_push</methodname>
+            <methodparam><parameter role="keyword">active</parameter></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">active</parameter>&nbsp;:</term>
+                <listitem><simpara> whether or not the pad should be active.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the operation was successful.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>activate_push</methodname>() method activates or deactivates the given pad in push mode via dispatching to 
+            the pad's activatepushfunc. For use from within pad activation functions only.
+        </para>
+        <para>
+            If you don't know what this is, you probably don't want to call it.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--add-buffer-probe">
+        <title>gst.Pad.add_buffer_probe</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>add_buffer_probe</methodname>
+            <methodparam><parameter role="keyword">handler</parameter></methodparam>
+            <methodparam><parameter role="keyword">data</parameter></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">handler</parameter>&nbsp;:</term>
+                <listitem><simpara> Function to call when data is passed over pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">data</parameter>&nbsp;:</term>
+                <listitem><simpara> Data to pass along with the handler.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The handler id.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>add_buffer_probe</methodname>() method adds a probe that will be called for all buffers passing through a pad. 
+            See <methodname><link linkend="method-gstpad--add-data-probe">add_data_probe</link></methodname> for more information.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--add-data-probe">
+        <title>gst.Pad.add_data_probe</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>add_data_probe</methodname>
+            <methodparam><parameter role="keyword">handler</parameter></methodparam>
+            <methodparam><parameter role="keyword">data</parameter></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">handler</parameter>&nbsp;:</term>
+                <listitem><simpara> Function to call when data is passed over pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">data</parameter>&nbsp;:</term>
+                <listitem><simpara> Data to pass along with the handler.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The handler id.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>add_data_probe</methodname>() method adds a "data probe" to a pad. This function will 
+            be called whenever data passes through a pad. In this case data means both events and buffers. 
+            The probe will be called with the data as an argument.
+        </para>
+        <para>
+            For source pads, the probe will be called after the blocking function, if any (see 
+            <methodname><link linkend="method-gstpad--set-blocked-async">set_blocked_async()</link></methodname>), 
+            but before looking up the peer to chain to. For sink pads, the probe function will 
+            be called before configuring the sink with new caps, if any, and before calling the pad's chain function.
+        </para>
+        <para>
+            Your data probe should return <literal>True</literal> to let the data continue to flow, or <literal>False</literal> to drop it. 
+            Dropping data is rarely useful, but occasionally comes in handy with events.
+        </para>
+        <para>
+            Although probes are implemented internally by connecting handler to the have-data signal on the pad, 
+            if you want to remove a probe it is insufficient to only call 
+            g_signal_handler_disconnect on the returned handler id. To remove a probe, use the appropriate function, such as 
+            <methodname><link linkend="method-gstpad--remove-data-probe">remove_data_probe</link></methodname>.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--add-event-probe">
+        <title>gst.Pad.add_event_probe</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>add_event_probe</methodname>
+            <methodparam><parameter role="keyword">handler</parameter></methodparam>
+            <methodparam><parameter role="keyword">data</parameter></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">handler</parameter>&nbsp;:</term>
+                <listitem><simpara> Function to call when data is passed over pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">data</parameter>&nbsp;:</term>
+                <listitem><simpara> Data to pass along with the handler.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The handler id.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>add_event_probe</methodname>() method adds a probe that will be called for all events passing through a pad. 
+            See <methodname><link linkend="method-gstpad--add-data-probe">add_data_probe</link></methodname> for more information.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--alloc-buffer">
+        <title>gst.Pad.alloc_buffer</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>alloc_buffer</methodname>
+            <methodparam><parameter role="keyword">offset</parameter></methodparam>
+            <methodparam><parameter role="keyword">size</parameter></methodparam>
+            <methodparam><parameter role="keyword">caps</parameter></methodparam>
+            <methodparam><parameter role="keyword">buf</parameter></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">offset</parameter>&nbsp;:</term>
+                <listitem><simpara> The offset of the new buffer in the stream.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">size</parameter>&nbsp;:</term>
+                <listitem><simpara> The size of the new buffer.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">caps</parameter>&nbsp;:</term>
+                <listitem><simpara> The caps of the new buffer.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">buf</parameter>&nbsp;:</term>
+                <listitem><simpara> A newly allocated buffer.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A result code indicating success of the operation. Any result code other than GST_FLOW_OK 
+                        is an error and buf should not be used. An error can occur if the pad is not connected or when the 
+                        downstream peer elements cannot provide an acceptable buffer.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>alloc_buffer</methodname>() method allocates a new, empty buffer optimized to push to pad pad. 
+            This function only works if pad is a source pad and has a peer.
+        </para>
+        <para>
+            You need to check the caps of the buffer after performing this function and renegotiate to the format if needed.
+        </para>
+        <para>
+            A new, empty <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> will be put in the <parameter>buf</parameter> argument.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--can-link">
+        <title>gst.Pad.can_link</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>can_link</methodname>
+            <methodparam><parameter role="keyword">sinkpad</parameter></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">sinkpad</parameter>&nbsp;:</term>
+                <listitem><simpara> The sink <link linkend="class-gstpad"><classname>gst.Pad</classname></link> to link.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the pads can be linked, <literal>False</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>can_link</methodname>() method checks if the source pad and the sink pad can be linked. Both srcpad and sinkpad must be unlinked.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--chain">
+        <title>gst.Pad.chain</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>chain</methodname>
+            <methodparam><parameter role="keyword">buffer</parameter></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">buffer</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> to set.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstflowreturn"><classname>gst.FlowReturn</classname></link> from the pad.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>chain</methodname>() method Chain a buffer to <parameter>pad</parameter>.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--check-pull-range">
+        <title>gst.Pad.check_pull_range</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>check_pull_range</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A gboolean with the result.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>check_pull_range</methodname>() method Checks if a 
+            <methodname><link linkend="method-gstpad--pull-range">pull_range()</link></methodname> can be performed on the peer source pad. 
+            This function is used by plugins that want to check if they can use random access on the peer source pad.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--event-default">
+        <title>gst.Pad.event_default</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>event_default</methodname>
+            <methodparam><parameter role="keyword">event</parameter></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">event</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstevent"><classname>gst.Event</classname></link> to handle.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the event was sent succesfully.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>event_default</methodname>() method invokes the default event handler for the given pad. 
+            End-of-stream and discontinuity events are handled specially, and then the event is sent to all pads internally linked to pad. 
+            Note that if there are many possible sink pads that are internally linked to pad, only one will be sent an event. 
+            Multi-sinkpad elements should implement custom event handlers.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--fixate-caps">
+        <title>gst.Pad.fixate_caps</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>fixate_caps</methodname>
+            <methodparam><parameter role="keyword">caps</parameter></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">caps</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> to fixate.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>fixate_caps</methodname>() method Fixate a caps on the given pad. Modifies the caps in place, 
+            so you should make sure that the caps are actually writable 
+            see (<methodname><link linkend="method-gstcaps--make-writable">gst.Caps.make_writable()</link></methodname>).
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--get-allowed-caps">
+        <title>gst.Pad.get_allowed_caps</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_allowed_caps</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The allowed <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>
+                    of the pad link. This function returns <literal>None</literal> when the pad has no peer.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_allowed_caps</methodname>() method gets the capabilities of the allowed media types that can 
+            flow through srcpad and its peer. The pad must be a source pad.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--get-caps">
+        <title>gst.Pad.get_caps</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_caps</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A newly allocated copy of the <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>
+                        of this pad.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_caps</methodname>() method gets the capabilities this pad can produce or consume. 
+            Note that this method doesn't necessarily returns the caps set by <methodname><link linkend="method-gstpad--set-caps">set_caps</link></methodname> 
+            gst_pad_get_caps returns all possible caps a pad can operate with, using the pad's get_caps function; 
+            this returns the pad template caps if not explicitly set.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--get-direction">
+        <title>gst.Pad.get_direction</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_direction</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the <link linkend="class-gstpaddirection"><classname>gst.PadDirection</classname></link> of the pad.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_direction</methodname>() method gets the direction of the pad. The direction of the pad 
+            is decided at construction time so this function does not take the LOCK.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--get-fixed-caps-func">
+        <title>gst.Pad.get_fixed_caps_func</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_fixed_caps_func</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The currently negotiated caps or the padtemplate.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_fixed_caps_func</methodname>() method is a helper function you can use as a 
+            <methodname><link linkend="method-gstpad--get-caps">get_caps</link></methodname> 
+            function that will return the currently negotiated caps or the padtemplate when <literal>None</literal>.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--get-internal-links">
+        <title>gst.Pad.get_internal_links</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_internal_links</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A newly allocated list of pads.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_internal_links</methodname>() method gets a list of pads to which the given pad is linked to inside of the parent element.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--get-internal-links-default">
+        <title>gst.Pad.get_internal_links_default</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_internal_links_default</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A newly allocated list of pads, or <literal>None</literal> if the pad has no parent.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_internal_links</methodname>() method gets a list of pads to which the given pad is linked to inside of the parent element.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--get-negotiated-caps">
+        <title>gst.Pad.get_negotiated_caps</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_negotiated_caps</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The negotiated <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> of the pad link. 
+                        This function returns <literal>None</literal> when the pad has no peer or 
+                        is not negotiated yet.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_negotiated_caps</methodname>() method gets the capabilities of the media type that currently flows through pad and its peer.
+        </para>
+        <para>
+            This method can be used on both src and sinkpads. Note that srcpads are always negotiated before sinkpads so it is possible 
+            that the negotiated caps on the srcpad do not match the negotiated caps of the peer.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--get-pad-template">
+        <title>gst.Pad.get_pad_template</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_pad_template</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstpadtemplate"><classname>gst.PadTemplate</classname></link> from which this pad was instantiated,
+                        or <literal>None</literal> if this pad has no template.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_pad_template</methodname>() method gets the template for <parameter>pad</parameter>.
+        </para>
+    </refsect2>
+        
+    <refsect2 id="method-gstpad--get-pad-template-caps">
+        <title>gst.Pad.get_pad_template_caps</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_pad_template_caps</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+            
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> of this pad template. 
+                        If you intend to keep a reference on the caps, make a copy (see 
+                        <methodname><link linkend="method-gstcaps--copy">gst.Caps.copy()</link></methodname></simpara></listitem>
+            </varlistentry>
+        </variablelist>
+            
+        <para>
+            The <methodname>get_pad_template</methodname>() method gets the template for <parameter>pad</parameter>.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--get-parent-element">
+        <title>gst.Pad.get_parent_element</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_parent_element</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The parent of the pad.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_parent_element</methodname>() method gets the parent of pad, if a pad has no parent or 
+            its parent is not an element, return <literal>None</literal>. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--get-peer">
+        <title>gst.Pad.get_peer</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_peer</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The peer of <link linkend="class-gstpad"><classname>gst.Pad</classname></link>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_parent_element</methodname>() method gets the parent of pad, if a pad has no parent or 
+            its parent is not an element, return <literal>None</literal>. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--get-query-types">
+        <title>gst.Pad.get_query_types</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_query_types</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A zero-terminated array of 
+                        <link linkend="class-gstquerytype"><classname>gst.QueryType</classname></link>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_query_types</methodname>() method gets an array of supported queries that can be performed on this pad.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--get-query-types-default">
+        <title>gst.Pad.get_query_types_default</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_query_types_default</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A zero-terminated array of 
+                        <link linkend="class-gstquerytype"><classname>gst.QueryType</classname></link>, or <literal>None</literal> if none of the
+                        internally-linked pads has a query types function..</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_query_types_default</methodname>() method invokes the default dispatcher for the query types on the pad.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--get-range">
+        <title>gst.Pad.get_range</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_range</methodname>
+                <methodparam><parameter role="keyword">offset</parameter></methodparam>
+                <methodparam><parameter role="keyword">size</parameter></methodparam>
+                <methodparam><parameter role="keyword">buffer</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">offset</parameter>&nbsp;:</term>
+                <listitem><simpara> The start offset of the buffer.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">size</parameter>&nbsp;:</term>
+                <listitem><simpara> The length of the buffer.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">buffer</parameter>&nbsp;:</term>
+                <listitem><simpara> a <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstflowreturn"><classname>gst.FlowReturn</classname></link> for the buffer.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_range</methodname>() method calls the <methodname>getrange</methodname> function of pad.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--is-active">
+        <title>gst.Pad.is_active</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>is_active</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the pad is active.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>is_active</methodname>() method queries if a pad is active.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--is-blocked">
+        <title>gst.Pad.is_blocked</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>is_blocked</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the pad is blocked.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>is_blocked</methodname>() method checks if the pad is blocked or not. 
+            This function returns the last requested state of the pad. It is not certain that the pad is actually blocked at this point.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--is-linked">
+        <title>gst.Pad.is_linked</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>is_linked</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the pad is linked, <literal>False</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>is_linked</methodname>() method checks if a pad is linked to another pad or not.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--link">
+        <title>gst.Pad.link</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>link</methodname>
+                <methodparam><parameter role="keyword">sinkpad</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">sinkpad</parameter>&nbsp;:</term>
+                <listitem><simpara> The sink <link linkend="class-gstpad"><classname>gst.Pad</classname></link> to link.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>  A result code indicating if the connection worked or what went wrong.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>link</methodname>() method links the source pad and the sink pad.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--pause-task">
+        <title>gst.Pad.pause_task</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>pause_task</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the task could be paused or <literal>False</literal> 
+                        when the pad has no task.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>pause_task</methodname>() method pause the task of pad. 
+            This function will also make sure that the function executed by the task will effectively stop.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--peer-accept-caps">
+        <title>gst.Pad.peer_accept_caps</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>peer_accept_caps</methodname>
+                <methodparam><parameter role="keyword">caps</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">caps</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> to check on the pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the pad can accept the caps.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>peer_accept_caps</methodname>() method checks if the given pad accepts the caps.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--peer-get-caps">
+        <title>gst.Pad.peer_get_caps</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>peer_get_caps</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>
+                        of the peer pad, this method returns <literal>None</literal> if there is no peer pad.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>peer_get_caps</methodname>() method gets the capabilities of the peer connected to this pad.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--proxy-getcaps">
+        <title>gst.Pad.proxy_getcaps</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>proxy_getcaps</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The intersection of the other pad's allowed caps.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>proxy_getcaps</methodname>() method calls 
+            <methodname><link linkend="method-gstpad--get-allowed-caps">get_allowed_caps()</link></methodname> for every other pad 
+            belonging to the same element as pad, and returns the intersection of the results.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--proxy-setcaps">
+        <title>gst.Pad.proxy_setcaps</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>proxy_setcaps</methodname>
+                <methodparam><parameter role="keyword">caps</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">caps</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> to link with.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if successful.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>proxy_setcaps</methodname>() method calls 
+            <methodname><link linkend="method-gstpad--set-caps">set_caps()</link></methodname> for every other pad belonging to the same element as pad. 
+            If <methodname><link linkend="method-gstpad--set-caps">set_caps()</link></methodname> fails on any pad, 
+            the proxy setcaps fails. May be used only during negotiation.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--pull-range">
+        <title>gst.Pad.pull_range</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>pull_range</methodname>
+                <methodparam><parameter role="keyword">offset</parameter></methodparam>
+                <methodparam><parameter role="keyword">size</parameter></methodparam>
+                <methodparam><parameter role="keyword">buffer</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">offset</parameter>&nbsp;:</term>
+                <listitem><simpara> The start offset of the buffer.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">size</parameter>&nbsp;:</term>
+                <listitem><simpara> The length of the buffer.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">buffer</parameter>&nbsp;:</term>
+                <listitem><simpara> a <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstflowreturn"><classname>gst.FlowReturn</classname></link> for the peer pad.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>pull_range</methodname>() method pulls a buffer from the peer pad. pad must be a linked sinkpad.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--push">
+        <title>gst.Pad.push</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>push</methodname>
+                <methodparam><parameter role="keyword">buffer</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">buffer</parameter>&nbsp;:</term>
+                <listitem><simpara> a <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> to push.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstflowreturn"><classname>gst.FlowReturn</classname></link> from the peer pad.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>push</methodname>() method pushes a buffer to the peer of pad. 
+            buffer probes will be triggered before the buffer gets pushed.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--push-event">
+        <title>gst.Pad.push_event</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>push_event</methodname>
+                <methodparam><parameter role="keyword">event</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">event</parameter>&nbsp;:</term>
+                <listitem><simpara> the <link linkend="class-gstevent"><classname>gst.Event</classname></link> to send to the pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the event was handled.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>push_event</methodname>() method sends the event to the peer of the given pad. 
+            This method is mainly used by elements to send events to their peer elements.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--query">
+        <title>gst.Pad.query</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>query</methodname>
+                <methodparam><parameter role="keyword">query</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">query</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstquery"><classname>gst.Query</classname></link> to perform.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the query could be performed.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>query</methodname>() method dispatches a query to a pad. 
+            The query should have been allocated by the caller via one of the type-specific allocation functions. 
+            The element is responsible for filling the query with an appropriate response, 
+            which should then be parsed with a type-specific query parsing function.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--query-convert">
+        <title>gst.Pad.query_convert</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>query_convert</methodname>
+                <methodparam><parameter role="keyword">src_format</parameter></methodparam>
+                <methodparam><parameter role="keyword">src_val</parameter></methodparam>
+                <methodparam><parameter role="keyword">dest_format</parameter></methodparam>
+                <methodparam><parameter role="keyword">dest_val</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">src_format</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstformat"><classname>gst.Format</classname></link> to convert from.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">src_val</parameter>&nbsp;:</term>
+                <listitem><simpara> A value to convert.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">dest_format</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstformat"><classname>gst.Format</classname></link> to convert to.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">dest_val</parameter>&nbsp;:</term>
+                <listitem><simpara> the result.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the query could be performed.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>query_convert</methodname>() method queries a pad to convert <parameter>src_val</parameter> 
+            in <parameter>src_format</parameter> to <parameter>dest_format</parameter>.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--query-default">
+        <title>gst.Pad.query_default</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>query_default</methodname>
+                <methodparam><parameter role="keyword">query</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">query</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstquery"><classname>gst.Query</classname></link> to handle.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the query was performed succesfully.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>query_default</methodname>() method invokes the default query handler for the given pad. 
+            The query is sent to all pads internally linked to pad. 
+            Note that if there are many possible sink pads that are internally linked to pad, only one will be sent the query. 
+            Multi-sinkpad elements should implement custom query handlers.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--query-duration">
+        <title>gst.Pad.query_duration</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>query_duration</methodname>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">duration</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstformat"><classname>gst.Format</classname></link> asked for. 
+                        On return contains the <link linkend="class-gstformat"><classname>gst.Format</classname></link> used.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">duration</parameter>&nbsp;:</term>
+                <listitem><simpara> A location in which to store the total duration, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the query could be performed.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>query_duration</methodname>() method queries a pad for the total stream duration.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--query-position">
+        <title>gst.Pad.query_position</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>query_position</methodname>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">cur</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstformat"><classname>gst.Format</classname></link> asked for. 
+                        On return contains the <link linkend="class-gstformat"><classname>gst.Format</classname></link> used.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">cur</parameter>&nbsp;:</term>
+                <listitem><simpara> A location in which to store the current position, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the query could be performed.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>query_position</methodname>() method queries a pad for the stream position.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--remove-buffer-probe">
+        <title>gst.Pad.remove_buffer_probe</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>remove_buffer_probe</methodname>
+                <methodparam><parameter role="keyword">handler_id</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">handler_id</parameter>&nbsp;:</term>
+                <listitem><simpara> handler id returned from 
+                        <methodname><link linkend="method-gstpad--add-buffer-probe">add_buffer_probe()</link></methodname></simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>remove_buffer_probe</methodname>() method removes a buffer probe from pad.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--remove-data-probe">
+        <title>gst.Pad.remove_data_probe</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>remove_data_probe</methodname>
+                <methodparam><parameter role="keyword">handler_id</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">handler_id</parameter>&nbsp;:</term>
+                <listitem><simpara> handler id returned from 
+                        <methodname><link linkend="method-gstpad--add-data-probe">add_data_probe()</link></methodname></simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>remove_data_probe</methodname>() method removes a data probe from pad.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--remove-event-probe">
+        <title>gst.Pad.remove_event_probe</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>remove_event_probe</methodname>
+                <methodparam><parameter role="keyword">handler_id</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">handler_id</parameter>&nbsp;:</term>
+                <listitem><simpara> handler id returned from 
+                        <methodname><link linkend="method-gstpad--add-event-probe">add_event_probe()</link></methodname></simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>remove_event_probe</methodname>() method removes an event probe from pad.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--send-event">
+        <title>gst.Pad.send_event</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>send_event</methodname>
+                <methodparam><parameter role="keyword">event</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">event</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstevent"><classname>gst.Event</classname></link> to send to the pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the event was handled.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>send_event</methodname>() method Sends the event to the pad. 
+            This function can be used by applications to send events in the pipeline.
+        </para>
+        <para>
+            FIXME: How C description apply here?
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--set-active">
+        <title>gst.Pad.set_active</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_active</methodname>
+                <methodparam><parameter role="keyword">active</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">active</parameter>&nbsp;:</term>
+                <listitem><simpara> Whether or not the pad should be active.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the operation was successful.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_active</methodname>() method activates or deactivates the given pad. 
+            Normally called from within core state change functions.
+        </para>
+        <para>
+            If active, makes sure the pad is active. If it is already active, either in push or pull mode, just return. 
+            Otherwise dispatches to the pad's activate function to perform the actual activation.
+        </para>
+        <para>
+            If not active, checks the pad's current mode and calls 
+            <methodname><link linkend="method-gstpad--activate-push">activate_push()</link></methodname> or 
+            <methodname><link linkend="method-gstpad--activate-pull">activate_pull()</link></methodname>, as appropriate, 
+            with a <literal>False</literal> argument.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpad--set-blocked">
+        <title>gst.Pad.set_blocked</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_blocked</methodname>
+                <methodparam><parameter role="keyword">blocked</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">blocked</parameter>&nbsp;:</term>
+                <listitem><simpara> boolean indicating we should block or unblock.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the pad could be blocked. 
+                        This function can fail wrong parameters were passed or the pad was already in the requested state.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_blocked</methodname>() method blocks or unblocks the dataflow on a pad. 
+            This function is a shortcut for <methodname><link linkend="method-gstpad--set-blocked-async">set_blocked_async()</link></methodname> 
+            with a <literal>None</literal> as callback.
+        </para>
+        </refsect2>
+        
+        <refsect2 id="method-gstpad--set-blocked-async">
+            <title>gst.Pad.set_blocked_async</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>set_blocked_async</methodname>
+                    <methodparam><parameter role="keyword">blocked</parameter></methodparam>
+                    <methodparam><parameter role="keyword">callback</parameter></methodparam>
+                    <methodparam><parameter role="keyword">user_data</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">blocked</parameter>&nbsp;:</term>
+                    <listitem><simpara> boolean indicating we should block or unblock.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">callback</parameter>&nbsp;:</term>
+                    <listitem><simpara> The callback that will be called when the operation succeeds.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">user_data</parameter>&nbsp;:</term>
+                    <listitem><simpara> user data passed to the callback.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> <literal>True</literal> if the pad could be blocked. 
+                            This function can fail if wrong parameters were passed or the pad was already in the requested state.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>set_blocked_async</methodname>() method Blocks or unblocks the dataflow on a pad. 
+                The provided callback is called when the operation succeeds; 
+                this happens right before the next attempt at pushing a buffer on the pad.
+            </para>
+            <para>
+                This can take a while as the pad can only become blocked when real dataflow is happening. 
+                When the pipeline is stalled, for example in PAUSED, this can take an indeterminate amount of time. 
+                You can pass <literal>None</literal> as the callback to make this call block. 
+                Be careful with this blocking call as it might not return for reasons stated above.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="method-gstpad--set-caps">
+            <title>gst.Pad.set_caps</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>set_caps</methodname>
+                    <methodparam><parameter role="keyword">caps</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">caps</parameter>&nbsp;:</term>
+                    <listitem><simpara> A <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> to set.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> <literal>True</literal> if the could be set. 
+                            <literal>False</literal> if the caps were not fixed or bad parameters were provided to this function.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>set_caps</methodname>() method sets the capabilities of this pad. The caps must be fixed. 
+                Any previous caps on the pad will be unreffed. This function refs the caps so you should unref if as soon 
+                as you don't need it anymore. It is possible to set <literal>None</literal> caps, which will make the pad unnegotiated again.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="method-gstpad--set-chain-function">
+            <title>gst.Pad.set_chain_function</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>set_chain_function</methodname>
+                    <methodparam><parameter role="keyword">chain</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">chain</parameter>&nbsp;:</term>
+                    <listitem><simpara> FIXME</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>set_chain_function</methodname>() method sets the given chain function for the pad. 
+                The chain function is called to process a <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> input buffer.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="method-gstpad--set-event-function">
+            <title>gst.Pad.set_event_function</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>set_event_function</methodname>
+                    <methodparam><parameter role="keyword">event</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">event</parameter>&nbsp;:</term>
+                    <listitem><simpara> FIXME</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>set_event_function</methodname>() method sets the given event handler for the pad.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="method-gstpad--set-getcaps-function">
+            <title>gst.Pad.set_getcaps_function</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>set_getcaps_function</methodname>
+                    <methodparam><parameter role="keyword">getcaps</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">getcaps</parameter>&nbsp;:</term>
+                    <listitem><simpara> FIXME</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>set_getcaps_function</methodname>() method sets the given getcaps function for the pad. 
+                getcaps should return the allowable caps for a pad in the context of the element's state, its link to other elements, 
+                and the devices or files it has opened. These caps must be a subset of the pad template caps. 
+                In the <literal>None</literal> state with no links, getcaps should ideally return the same caps as the pad template. 
+                In rare circumstances, an object property can affect the caps returned by getcaps, but this is discouraged.
+            </para>
+            <para>
+                You do not need to call this function if pad's allowed caps are always the same as the pad template caps. 
+                This can only be true if the padtemplate has fixed simple caps.
+            </para>
+            <para>
+                For most filters, the caps returned by getcaps is directly affected by the allowed caps on other pads. 
+                For demuxers and decoders, the caps returned by the srcpad's getcaps function is directly related to the stream data. 
+                Again, getcaps should return the most specific caps it reasonably can, since this helps with autoplugging.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="method-gstpad--set-link-function">
+            <title>gst.Pad.set_link_function</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>set_link_function</methodname>
+                    <methodparam><parameter role="keyword">link</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">link</parameter>&nbsp;:</term>
+                    <listitem><simpara> FIXME</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>set_link_function</methodname>() method sets the given link function for the pad. 
+                It will be called when the pad is linked with another pad.
+            </para>
+            <para>
+                The return value GST_PAD_LINK_OK should be used when the connection can be made.
+            </para>
+            <para>
+                The return value GST_PAD_LINK_REFUSED should be used when the connection cannot be made for some reason.
+            </para>
+            <para>
+                If link is installed on a source pad, it should call the FIXME of the peer sink pad, if present.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="method-gstpad--stop-task">
+            <title>gst.Pad.stop_task</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>stop_task</methodname>
+                    <methodparam></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> <literal>True</literal> if the task could be stopped or <literal>False</literal> on error.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>stop_task</methodname>() method stops the task of pad. This function will also make sure 
+                that the function executed by the task will effectively stop if not called from the GstTaskFunction.
+            </para>
+            <para>
+                This function will deadlock if called from the GstTaskFunction of the task. 
+                Use <methodname><link linkend="method-gsttask--pause">gst.Task.pause()</link></methodname> instead.
+            </para>
+            <para>
+                Regardless of whether the pad has a task, the stream lock is acquired and released so as to 
+                ensure that streaming through this pad has finished.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="method-gstpad--unlink">
+            <title>gst.Pad.unlink</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>unlink</methodname>
+                    <methodparam><parameter role="keyword">sinkpad</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">sinkpad</parameter>&nbsp;:</term>
+                    <listitem><simpara> The sink <link linkend="class-gstpad"><classname>gst.Pad</classname></link> to unlink. </simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> <literal>True</literal> if the pads were unlinked. This function returns <literal>False</literal> 
+                            if the pads were not linked together.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>query_position</methodname>() method unlinks the source pad from the sink pad. 
+                Will emit the "unlinked" signal on both pads.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="method-gstpad--use-fixed-caps">
+            <title>gst.Pad.use_fixed_caps</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>use_fixed_caps</methodname>
+                    <methodparam></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <para>
+                The <methodname>use_fixed_caps</methodname>() method is an helper function you can use that sets the 
+                gst_pad_get_fixed_caps_func as the getcaps function for the pad. 
+                This way the function will always return the negotiated caps or in case the pad is not negotiated, the padtemplate caps.
+            </para>
+            <para>
+                Use this function on a pad that, once _set_caps() has been called on it, cannot be renegotiated to something else.
+            </para>
+        </refsect2>
+</refsect1>
+
+<!-- *********************** -->
+<!-- BEGIN OF GSTPAD SIGNALS -->
+<!-- *********************** --> 
+ 
+<refsect1>
+    <title>Signals</title>
+
+    <refsect2 id="signal-gstpad--have-data">
+        <title>The "have-data" gst.Pad Signal</title>
+        <programlisting><methodsynopsis language="python">
+        <methodname>callback</methodname>
+            <methodparam><parameter>gstpad</parameter></methodparam>
+            <methodparam><parameter>mini_obj</parameter></methodparam>
+            <methodparam><parameter>user_data</parameter></methodparam>
+            <methodparam><parameter>...</parameter></methodparam>
+        </methodsynopsis></programlisting>
+
+        <variablelist>
+            <varlistentry>
+                <term><parameter>gstpad</parameter>&nbsp;:</term>
+                <listitem><simpara>The gstpad that received the signal</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>mini_obj</parameter>&nbsp;:</term>
+                <listitem><simpara> New data.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>user_data</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional data (if any) specified with the 
+                <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>...</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional user parameters (if any)</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The "have-data" signal is emitted when new data is available on the pad. 
+            This signal is used internally for implementing pad probes. See gst.Pad_add_*_probe methods.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="signal-gstpad--linked">
+        <title>The "linked" gst.Pad Signal</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>callback</methodname>
+                <methodparam><parameter>gstpad</parameter></methodparam>
+                <methodparam><parameter>peer</parameter></methodparam>
+                <methodparam><parameter>user_data</parameter></methodparam>
+                <methodparam><parameter>...</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter>gstpad</parameter>&nbsp;:</term>
+                <listitem><simpara>The gstpad that received the signal</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>peer</parameter>&nbsp;:</term>
+                <listitem><simpara> The peer pad that has been connected.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>user_data</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional data (if any) specified with the 
+                        <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>...</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional user parameters (if any)</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The "linked" signal is emitted when a pad has been linked to the peer pad.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="signal-gstpad--request-link">
+        <title>The "request-link" gst.Pad Signal</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>callback</methodname>
+                <methodparam><parameter>gstpad</parameter></methodparam>
+                <methodparam><parameter>peer</parameter></methodparam>
+                <methodparam><parameter>user_data</parameter></methodparam>
+                <methodparam><parameter>...</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter>gstpad</parameter>&nbsp;:</term>
+                <listitem><simpara>The gstpad that received the signal</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>peer</parameter>&nbsp;:</term>
+                <listitem><simpara> The peer pad for which a connection is requested.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>user_data</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional data (if any) specified with the 
+                        <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>...</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional user parameters (if any)</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The "request-link" signal is emitted when a pad connection has been requested.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="signal-gstpad--unlinked">
+        <title>The "unlinked" gst.Pad Signal</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>callback</methodname>
+                <methodparam><parameter>gstpad</parameter></methodparam>
+                <methodparam><parameter>peer</parameter></methodparam>
+                <methodparam><parameter>user_data</parameter></methodparam>
+                <methodparam><parameter>...</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter>gstpad</parameter>&nbsp;:</term>
+                <listitem><simpara>The gstpad that received the signal</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>peer</parameter>&nbsp;:</term>
+                <listitem><simpara> The peer pad that has been disconnected.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>user_data</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional data (if any) specified with the 
+                        <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>...</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional user parameters (if any)</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The "unlinked" signal is emitted when a pad has been unlinked from the peer pad.
+        </para>
+    </refsect2>
+    
+    
+</refsect1>
+</refentry>

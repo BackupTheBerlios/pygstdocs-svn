@@ -1,0 +1,195 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstghostpad">
+    <refnamediv>
+        <refname>gst.GhostPad</refname>
+        <refpurpose>Pseudo link pads</refpurpose>
+    </refnamediv>
+
+<!-- ***************************** -->
+<!-- BEGIN OF GSTGHOSTPAD SYNOPSIS -->
+<!-- ***************************** -->
+
+<refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.GhostPad</classname></ooclass>
+        <ooclass><classname><link linkend="class-gstpad">gst.Pad</link></classname></ooclass>
+
+    <constructorsynopsis language="python">
+        <methodname><link linkend="constructor-gstghostpad">gst.GhostPad</link></methodname>
+        <methodparam><parameter role="keyword">name</parameter></methodparam>
+        <methodparam><parameter role="keyword">target</parameter></methodparam>
+    </constructorsynopsis>
+
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstghostpad--get-target">get_target</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstghostpad--set-target">set_target</link></methodname>
+        <methodparam><parameter role="keyword">newtarget</parameter></methodparam>
+    </methodsynopsis>
+    </classsynopsis>
+
+<programlisting>
+<emphasis role="bold">Functions</emphasis>
+    
+<methodsynopsis language="python"><methodname><link linkend="function-gstghostpad--ghost-pad-new-notarget">gst.ghost_pad_new_notarget</link></methodname>
+<methodparam><parameter role="keyword">direction</parameter></methodparam></methodsynopsis>
+</programlisting>
+</refsect1>
+
+<!-- ***************************** -->
+<!-- BEGIN OF GSTGHOSTPAD ANCESTRY -->
+<!-- ***************************** -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+    +-- <link linkend="class-gstobject">gst.Object</link>
+        +-- <link linkend="class-gstpad">gst.Pad</link>
+            +-- <link linkend="class-gstghostpad">gst.GhostPad</link>
+</synopsis>
+</refsect1>
+
+<!-- ******************************** -->
+<!-- BEGIN OF GSTGHOSTPAD DESCRIPTION -->
+<!-- ******************************** -->
+
+<refsect1 id="description-gstghostpad">
+    <title>Description</title>
+
+    <para>
+        GhostPads are useful when organizing pipelines with <link linkend="class-gstbin"><classname>gst.Bin</classname></link> like elements. 
+        The idea here is to create hierarchical element graphs. The bin element contains a sub-graph. Now one would like to treat the bin-element 
+        like other GstElements. This is where GhostPads come into play. A GhostPad acts as a proxy for another pad. 
+        Thus the bin can have sink and source ghost-pads that are accociated with sink and source pads of the child elements.
+    </para>
+</refsect1>
+
+<!-- ******************************** -->
+<!-- BEGIN OF GSTGHOSTPAD CONSTRUCTOR -->
+<!-- ******************************** -->
+
+<refsect1 id="constructor-gstghostpad">
+    <title>Constructor</title>
+    
+    <programlisting><constructorsynopsis language="python">
+        <methodname>gst.GhostPad</methodname>
+        <methodparam><parameter role="keyword">name</parameter></methodparam>
+        <methodparam><parameter role="keyword">target</parameter></methodparam>
+    </constructorsynopsis></programlisting>
+    
+    <variablelist>
+        <varlistentry>
+            <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+            <listitem><simpara> the name of the new ghostpad.</simpara></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term><parameter role="keyword">target</parameter>&nbsp;:</term>
+            <listitem><simpara> The <link linkend="class-gstpad"><classname>gst.Pad</classname></link> to ghost.</simpara></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term><emphasis>Returns</emphasis>&nbsp;:</term>
+            <listitem><simpara>a new <link linkend="class-gstghostpad"><classname>gst.GhostPad</classname></link>.</simpara></listitem>
+        </varlistentry>
+    </variablelist>
+    
+    <para>
+        Creates a new <link linkend="class-gstghostpad"><classname>gst.GhostPad</classname></link> with target as the target. 
+        The direction and padtemplate will be taken from the target pad.
+    </para>
+</refsect1>
+
+
+<!-- **************************** -->
+<!-- BEGIN OF GSTGHOSTPAD METHODS -->
+<!-- **************************** -->
+
+<refsect1>
+    <title>Methods</title>
+
+    <refsect2 id="method-gstghostpad--get-target">
+        <title>gst.GhostPad.get_target</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_target</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+    
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The target <link linkend="class-gstghostpad"><classname>gst.GhostPad</classname></link>, 
+                        can be <literal>None</literal> if the ghostpad has no target set.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+      
+        <para>
+            The <methodname>get_target</methodname>() method gets the target of the ghostpad.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstghostpad--set-target">
+        <title>gst.GhostPad.set_target</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_target</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">target</parameter>&nbsp;:</term>
+                <listitem><simpara> The new <link linkend="class-gstpad"><classname>gst.Pad</classname></link> target.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the new target could be set, <literal>False</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_target</methodname>() method sets the new target of the ghostpad gpad. 
+            Any existing target is unlinked and links to the new target are established.
+        </para>
+    </refsect2>
+</refsect1>
+
+<!-- ****************************** -->
+<!-- BEGIN OF GSTGHOSTPAD FUNCTIONS -->
+<!-- ****************************** --> 
+
+<refsect1>
+    <title>Functions</title>
+    
+    <refsect2 id="function-gstghostpad--ghost-pad-new-notarget">
+        <title>gst.ghost_pad_new_notarget</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>ghost_pad_new_notarget</methodname>
+                <methodparam><parameter role="keyword">direction</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">direction</parameter>&nbsp;:</term>
+                <listitem><simpara> The direction of the ghostpad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A new <link linkend="class-gstghostpad"><classname>gst.GhostPad</classname></link> or 
+                        <literal>None</literal> in case of an error.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>ghost_pad_new_notarget</methodname>() function creates a new ghostpad without a target with the given direction. 
+            A target can be set on the ghostpad later with the 
+            <methodname><link linkend="method-gstghostpad--set-target">set_target()</link></methodname> method.
+        </para>
+    </refsect2>
+</refsect1>
+</refentry>

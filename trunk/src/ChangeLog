@@ -1,0 +1,25 @@
+2006-02-13  Gian Mario Tagliaretti <g.tagliaretti # parafernalia.org>
+    
+    * Added new class MiniObject
+    * Added new class gst.PadTemplate
+    * Added new class gst.GhostPad
+
+2006-02-10  Gian Mario Tagliaretti <g.tagliaretti # parafernalia.org>
+    
+    * A bunch of fixes
+    * Added new class gst.Pad
+    * Modified css
+
+2006-01-23  Gian Mario Tagliaretti <g.tagliaretti # parafernalia.org>
+    
+    * Completed class gst.Element
+    * Added new class gst.Bus
+
+2006-01-14  Gian Mario Tagliaretti <g.tagliaretti # parafernalia.org>
+    
+    * Added css to handle colors in some deprecated xsl tags
+    * Modified gst.Element class according to new API
+    
+2006-01-10  Gian Mario Tagliaretti <g.tagliaretti # parafernalia.org>
+        
+     * Created first few chapters

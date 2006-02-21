@@ -1,0 +1,78 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstminiobject">
+  <refnamediv>
+    <refname>gst.MiniObject</refname>
+    <refpurpose>Lightweight base class for the GStreamer object hierarchy.</refpurpose>
+  </refnamediv>
+
+<!-- ******************************* -->
+<!-- BEGIN OF GSTMINIOBJECT SYNOPSIS -->
+<!-- ******************************* -->
+
+<refsect1>
+  <title>Synopsis</title>
+
+  <classsynopsis language="python">
+  <ooclass><classname>gst.MiniObject</classname></ooclass>
+
+  <methodsynopsis language="python">
+      <methodname><link linkend="method-gstminiobject--copy">copy</link></methodname>
+      <methodparam></methodparam>
+  </methodsynopsis> 
+ 
+</classsynopsis>
+</refsect1>
+
+
+<!-- ******************************* -->
+<!-- BEGIN OF GSTMINIOBJECT ANCESTRY -->
+<!-- ******************************* -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gstminiobject">gst.MiniObject</link></synopsis>
+</refsect1>
+
+<!-- ********************************** -->
+<!-- BEGIN OF GSTMINIOBJECT DESCRIPTION -->
+<!-- ********************************** -->
+
+<refsect1 id="description-gstminiobject">
+  <title>Description</title>
+
+  <para>
+    GstMiniObject is a baseclass like GObject, but has been stripped down of features to be fast and small. 
+    It offers sub-classing and ref-counting in the same way as GObject does. It has no properties and no signal-support though.
+  </para>
+</refsect1>
+
+<!-- ****************************** -->
+<!-- BEGIN OF GSTMINIOBJECT METHODS -->
+<!-- ****************************** -->
+
+<refsect1>
+  <title>Methods</title>
+
+  <refsect2 id="method-gstminiobject--copy">
+    <title>gst.MiniObject.copy</title>
+    <programlisting><methodsynopsis language="python">
+      <methodname>copy</methodname>
+      <methodparam></methodparam>
+    </methodsynopsis></programlisting>
+
+    <variablelist>
+        <varlistentry>
+            <term><emphasis>Returns</emphasis>&nbsp;:</term>
+            <listitem><simpara> The new mini-object.</simpara></listitem>
+        </varlistentry>
+    </variablelist>
+    
+    <para>
+        The <methodname>copy</methodname>() method creates a copy of the mini-object.
+    </para>
+  </refsect2>
+ </refsect1>
+</refentry>

@@ -1,0 +1,227 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstpadtemplate">
+    <refnamediv>
+        <refname>gst.PadTemplate</refname>
+        <refpurpose>Describe the media type of a pad.</refpurpose>
+    </refnamediv>
+
+<!-- ******************************** -->
+<!-- BEGIN OF GSTPADTEMPLATE SYNOPSIS -->
+<!-- ******************************** -->
+
+<refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.PadTemplate</classname></ooclass>
+        <ooclass><classname><link linkend="class-gstobject">gst.Object</link></classname></ooclass>
+
+    <constructorsynopsis language="python">
+        <methodname><link linkend="constructor-gstpad">gst.PadTemplate</link></methodname>
+        <methodparam><parameter role="keyword">name</parameter></methodparam>
+        <methodparam><parameter role="keyword">direction</parameter></methodparam>
+        <methodparam><parameter role="keyword">presence</parameter></methodparam>
+        <methodparam><parameter role="keyword">caps</parameter></methodparam>
+    </constructorsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpadtemplate--get-caps">get_caps</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpadtemplate--pad-created">pad_created</link></methodname>
+        <methodparam><parameter role="keyword">pad</parameter></methodparam>
+    </methodsynopsis>
+  </classsynopsis>
+</refsect1>
+
+<!-- ******************************** -->
+<!-- BEGIN OF GSTPADTEMPLATE ANCESTRY -->
+<!-- ******************************** -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+    +-- <link linkend="class-gstobject">gst.Object</link>
+        +-- <link linkend="class-gstpadtemplate">gst.PadTemplate</link>
+</synopsis>
+</refsect1>
+
+<!-- ***************************************** -->
+<!-- BEGIN OF GSTPADTEMPLATE SIGNAL PROTOTYPES -->
+<!-- ***************************************** -->
+
+<refsect1>
+    <title>Signal Prototypes</title>
+    <variablelist>
+        <varlistentry>
+            <term>"<link linkend="signal-gstpadtemplate--pad-created">pad-created</link>"</term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>gstpadtemplate</parameter></methodparam>
+                    <methodparam><parameter>gstpad</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                    <methodparam><parameter>...</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+    </variablelist>
+</refsect1>
+
+<!-- *********************************** -->
+<!-- BEGIN OF GSTPADTEMPLATE DESCRIPTION -->
+<!-- *********************************** -->
+
+<refsect1 id="description-gstpadtemplate">
+    <title>Description</title>
+
+    <para>
+        Padtemplates describe the possible media types a pad or an elementfactory can handle.
+    </para>
+    <para>
+        Pad and PadTemplates have <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> attached to it to 
+        describe the media type they are capable of dealing with. <methodname><link linkend="method-gstpadtemplate--get-caps">get_caps</link></methodname> 
+        is used to get the caps of a padtemplate. It's not possible to modify the caps of a padtemplate after creation.
+    </para>
+
+</refsect1>
+
+<!-- *********************************** -->
+<!-- BEGIN OF GSTPADTEMPLATE CONSTRUCTOR -->
+<!-- *********************************** -->
+
+<refsect1 id="constructor-gstpadtemplate">
+    <title>Constructor</title>
+    
+    <programlisting><constructorsynopsis language="python">
+        <methodname>gst.PadTemplate</methodname>
+        <methodparam><parameter role="keyword">name</parameter></methodparam>
+        <methodparam><parameter role="keyword">direction</parameter><initializer>None</initializer></methodparam>
+        <methodparam><parameter role="keyword">presence</parameter><initializer>None</initializer></methodparam>
+        <methodparam><parameter role="keyword">caps</parameter><initializer>None</initializer></methodparam>
+    </constructorsynopsis></programlisting>
+    
+    <variablelist>
+        <varlistentry>
+            <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+            <listitem><simpara> the name of the new padtemplate.</simpara></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term><parameter role="keyword">direction</parameter>&nbsp;:</term>
+            <listitem><simpara> the <link linkend="class-gstpaddirection"><classname>gst.PadDirection</classname></link> of the template.</simpara></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term><parameter role="keyword">direction</parameter>&nbsp;:</term>
+            <listitem><simpara> the <link linkend="class-gstpadpresence"><classname>gst.PadPresence</classname></link> of the pad.</simpara></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term><parameter role="keyword">caps</parameter>&nbsp;:</term>
+            <listitem><simpara> the <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> set for the template. 
+                    The caps are taken ownership of.</simpara></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term><emphasis>Returns</emphasis>&nbsp;:</term>
+            <listitem><simpara>a new <link linkend="class-gstpadtemplate"><classname>gst.PadTemplate</classname></link>.</simpara></listitem>
+        </varlistentry>
+    </variablelist>
+    
+    <para>
+        Creates a new pad template with a name according to the given template and with the given arguments. 
+        This constructor takes ownership of the provided caps, so be sure to not use them afterwards.
+    </para>
+</refsect1>
+
+
+<!-- ******************************* -->
+<!-- BEGIN OF GSTPADTEMPLATE METHODS -->
+<!-- ******************************* -->
+
+<refsect1>
+    <title>Methods</title>
+
+    <refsect2 id="method-gstpadtemplate--get-caps">
+        <title>gst.PadTemplate.get_caps</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_caps</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+    
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> of the static pad template.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+      
+        <para>
+            The <methodname>get_caps</methodname>() method gets the capabilities of the pad template.
+        </para>
+    </refsect2>
+
+    <refsect2 id="method-gstpadtemplate--pad-created">
+        <title>gst.PadTemplate.pad_created</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>pad_created</methodname>
+            <methodparam><parameter role="keyword">pad</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">pad</parameter>&nbsp;:</term>
+                <listitem><simpara> FIXME.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>pad_created</methodname>() method FIXME
+        </para>
+    </refsect2>
+</refsect1>
+
+<!-- ******************************* -->
+<!-- BEGIN OF GSTPADTEMPLATE SIGNALS -->
+<!-- ******************************* --> 
+ 
+<refsect1>
+    <title>Signals</title>
+
+    <refsect2 id="signal-gstpadtemplate--pad-created">
+        <title>The "pad-created" gst.PadTemplate Signal</title>
+        <programlisting><methodsynopsis language="python">
+        <methodname>callback</methodname>
+            <methodparam><parameter>gstpadtemplate</parameter></methodparam>
+            <methodparam><parameter>pad</parameter></methodparam>
+            <methodparam><parameter>user_data</parameter></methodparam>
+            <methodparam><parameter>...</parameter></methodparam>
+        </methodsynopsis></programlisting>
+
+        <variablelist>
+            <varlistentry>
+                <term><parameter>gstpadtemplate</parameter>&nbsp;:</term>
+                <listitem><simpara>The gstpadtemplate that received the signal.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>pad</parameter>&nbsp;:</term>
+                <listitem><simpara> The pad that was created.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>user_data</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional data (if any) specified with the 
+                <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>...</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional user parameters (if any)</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The "pad-created" signal is emitted when an element creates a pad from this template.
+        </para>
+    </refsect2>
+  </refsect1>
+</refentry>

@@ -1,0 +1,443 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstclock">
+  <refnamediv>
+    <refname>gst.Clock</refname>
+    <refpurpose>Abstract class for global clocks</refpurpose>
+  </refnamediv>
+
+<!-- ************************** -->
+<!-- BEGIN OF GSTCLOCK SYNOPSIS -->
+<!-- ************************** -->
+
+<refsect1>
+  <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.Clock</classname></ooclass>
+        <ooclass><classname><link linkend="class-gstobject">gst.Object</link></classname></ooclass>
+
+    <methodsynopsis language="python">
+	    <methodname><link linkend="method-gstclock--get-event-time">get_event_time</link></methodname>
+	    <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+	    <methodname><link linkend="method-gstclock--get-next-id">get_next_id</link></methodname>
+	    <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+	    <methodname><link linkend="method-gstclock--get-resolution">get_resolution</link></methodname>
+	    <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+	    <methodname><link linkend="method-gstclock--get-speed">get_speed</link></methodname>
+	    <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+	    <methodname><link linkend="method-gstclock--get-time">get_time</link></methodname>
+	    <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+	    <methodname><link linkend="method-gstclock--handle-discont">handle_discont</link></methodname>
+	    <methodparam><parameter role="keyword">time</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstclock--is-active">is_active</link></methodname>
+    	<methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstclock--new-periodic-id">new_periodic_id</link></methodname>
+    	<methodparam><parameter role="keyword">start_time</parameter></methodparam>
+        <methodparam><parameter role="keyword">interval</parameter></methodparam>
+    </methodsynopsis>
+
+    <methodsynopsis language="python">
+	    <methodname><link linkend="method-gstclock--new-single-shot-id">new_single_shot_id</link></methodname>
+        <methodparam><parameter role="keyword">time</parameter></methodparam>
+    </methodsynopsis>
+      
+    <methodsynopsis language="python">
+      	<methodname><link linkend="method-gstclock--reset">reset</link></methodname>
+      	<methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+      	<methodname><link linkend="method-gstclock--set-active">set_active</link></methodname>
+    	<methodparam><parameter role="keyword">active</parameter></methodparam>
+    </methodsynopsis>
+
+    <methodsynopsis language="python">
+      	<methodname><link linkend="method-gstclock--set-resolution">set_resolution</link></methodname>
+    	<methodparam><parameter role="keyword">resolution</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+      	<methodname><link linkend="method-gstclock--set-speed">set_speed</link></methodname>
+    	<methodparam><parameter role="keyword">speed</parameter></methodparam>
+    </methodsynopsis>
+    
+    </classsynopsis>
+</refsect1>
+
+<!-- ************************** -->
+<!-- BEGIN OF GSTCLOCK ANCESTRY -->
+<!-- ************************** -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gstobject">gst.Object</link>
+  +-- <link linkend="class-gstclock">gst.Clock</link>
+</synopsis>
+</refsect1>
+
+<!-- ***************************** -->
+<!-- BEGIN OF GSTCLOCK PROPERTIES -->
+<!-- ***************************** -->
+
+<refsect1>
+    <title>Properties</title>
+    
+    <blockquote role="properties">
+        <informaltable pgwide="1" frame="none">
+            <tgroup cols="3">
+                <colspec column="1" colwidth="1in"/>
+                <colspec column="2" colwidth="1in"/>
+                <colspec column="3" colwidth="4in"/>
+                <tbody>
+                    
+                    <row valign="top">
+                        <entry>"stats"</entry>
+                        <entry>Read-Write</entry>
+                        <entry>Boolean property to activate stat generation on the clock. Default value: <literal>FALSE</literal>.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>"max-diff"</entry>
+                        <entry>Read-Write</entry>
+                        <entry>Maximum allowed diff for clock sync requests against the real time. Allowed values: &gt;= 0. Default value: 2000000000.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>"event-diff"</entry>
+                        <entry>Read-Write</entry>
+                        <entry>The amount of time that may elapse until 2 events are treated as happening at different times. Default value: 1000000000.</entry>
+                    </row>
+
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </blockquote>
+</refsect1>
+
+
+<!-- ***************************** -->
+<!-- BEGIN OF GSTCLOCK DESCRIPTION -->
+<!-- ***************************** -->
+
+<refsect1 id="description-gstclock">
+  <title>Description</title>
+
+  <para>
+    GStreamer uses a global clock to synchronise the plugins in a pipeline. 
+    Different clock implementations are possible by implementing this abstract base class.
+  </para>
+
+  <para>
+    The clock time is always measured in nanoseconds, with the clock being set to 0 when the pipeline goes to READY. 
+    Usually all renderers sync to the global clock so that the clock is always a good measure of the time in the pipeline.
+  </para>
+
+</refsect1>
+
+<!-- ************************* -->
+<!-- BEGIN OF GSTCLOCK METHODS -->
+<!-- ************************* -->
+
+<refsect1>
+  <title>Methods</title>
+
+  <refsect2 id="method-gstclock--get-event-time">
+    <title>gst.Clock.get_event_time</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>get_event_time</methodname>
+  	    <methodparam></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	    <varlistentry>
+	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
+	      <listitem><simpara> the time of the event.</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>get_event_time</methodname>() method gets the "event time" of a given clock. 
+      An event on the clock happens whenever this function is called. 
+      This ensures that multiple events that happen shortly after each other are treated as if they happened at the same time. 
+      GStreamer uses to keep state changes of multiple elements in sync.
+	  </para>
+  </refsect2>
+
+  <refsect2 id="method-gstclock--get-next-id">
+    <title>gst.Clock.get_next_id</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>get_next_id</methodname>
+  	    <methodparam></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	    <varlistentry>
+	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
+	      <listitem><simpara> a clockid or <literal>None</literal> is no event is pending.</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>get_next_id</methodname>() method get the clockid of the next event.
+	  </para>
+  </refsect2>
+
+  <refsect2 id="method-gstclock--get-resolution">
+    <title>gst.Clock.get_resolution</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>get_resolution</methodname>
+  	    <methodparam></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	    <varlistentry>
+	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
+	      <listitem><simpara> the resolution of the clock in microseconds.</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>get_resolution</methodname>() method get the accuracy of the clock.
+	  </para>
+  </refsect2>
+
+  <refsect2 id="method-gstclock--get-speed">
+    <title>gst.Clock.get_speed</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>get_speed</methodname>
+  	    <methodparam></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	    <varlistentry>
+	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
+	      <listitem><simpara> the speed of the clock.</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>get_speed</methodname>() method gets the speed of the given clock.
+	  </para>
+  </refsect2>
+  
+  <refsect2 id="method-gstclock--get-time">
+    <title>gst.Clock.get_time</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>get_time</methodname>
+  	    <methodparam></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	    <varlistentry>
+	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
+	      <listitem><simpara> the time of the clock.</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>get_speed</methodname>() method gets the current time of the given clock. The time is always monotonically increasing.
+	  </para>
+  </refsect2>
+
+  <refsect2 id="method-gstclock--handle-discont">
+    <title>gst.Clock.handle_discont</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>handle_discont</methodname>
+  	    <methodparam><parameter role="keyword">time</parameter></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	  <varlistentry>
+  	    <term><parameter role="keyword">time</parameter>&nbsp;:</term>
+    	  <listitem><simpara> the new time.</simpara></listitem>
+	  </varlistentry>
+      <varlistentry>
+	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
+	      <listitem><simpara> <literal>TRUE</literal> if the clock was updated. 
+          It is possible that the clock was not updated by this call because only the first discontinuitity 
+          in the pipeline is honoured.</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>handle_discont</methodname>() method notifies the clock of a discontinuity in time.
+	  </para>
+  </refsect2>
+  
+  <refsect2 id="method-gstclock--is-active">
+    <title>gst.Clock.is_active</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>is_active</methodname>
+  	    <methodparam></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	    <varlistentry>
+	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
+	      <listitem><simpara> <literal>TRUE</literal> if the clock is active.</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>is_active</methodname>() method checks if the given clock is active.
+	  </para>
+  </refsect2>
+   
+  <refsect2 id="method-gstclock--new-periodic-id">
+    <title>gst.Clock.new_periodic_id</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>new_periodic_id</methodname>
+  	    <methodparam><parameter role="keyword">start_time</parameter></methodparam>
+        <methodparam><parameter role="keyword">interval</parameter></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	  <varlistentry>
+  	    <term><parameter role="keyword">start_time</parameter>&nbsp;:</term>
+    	  <listitem><simpara> the requested start time.</simpara></listitem>
+	  </varlistentry>
+      <varlistentry>
+  	    <term><parameter role="keyword">interval</parameter>&nbsp;:</term>
+    	  <listitem><simpara> the requested interval.</simpara></listitem>
+	  </varlistentry>
+      <varlistentry>
+	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
+	      <listitem><simpara> an id that can be used to request the time notification.</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>new_periodic_id</methodname>() method gets an ID from the given clock to trigger a periodic notification. 
+      The periodic notifications will be start at time <parameter>start_time</parameter> and will then be fired with the given <parameter>interval</parameter>.
+	  </para>
+  </refsect2> 
+  
+  <refsect2 id="method-gstclock--new-single-shot-id">
+    <title>gst.Clock.new_single_shot_id</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>new_single_shot_id</methodname>
+  	    <methodparam><parameter role="keyword">time</parameter></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	  <varlistentry>
+  	    <term><parameter role="keyword">time</parameter>&nbsp;:</term>
+    	  <listitem><simpara> the requested time.</simpara></listitem>
+	  </varlistentry>
+      <varlistentry>
+	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
+	      <listitem><simpara> An id that can be used to request the time notification.</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>new_single_shot_id</methodname>() method gets an ID from the given clock to trigger a single shot 
+      notification at the requested time.
+	  </para>
+  </refsect2> 
+  
+  <refsect2 id="method-gstclock--reset">
+    <title>gst.Clock.reset</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>reset</methodname>
+  	    <methodparam></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	  
+    </variablelist>
+
+    <para>
+      The <methodname>reset</methodname>() method reset the clock to time 0.
+	  </para>
+  </refsect2>
+  
+  <refsect2 id="method-gstclock--set-active">
+    <title>gst.Clock.set_active</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>set_active</methodname>
+  	    <methodparam><parameter role="keyword">active</parameter></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	  <varlistentry>
+  	    <term><parameter role="keyword">active</parameter>&nbsp;:</term>
+    	  <listitem><simpara> flag indicating if the clock should be activated <literal>(TRUE)</literal> or deactivated</simpara></listitem>
+	  </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>set_active</methodname>() method activates or deactivates the clock based on the active parameter. 
+      As soon as the clock is activated, the time will start ticking.
+	  </para>
+   </refsect2>   
+   
+   <refsect2 id="method-gstclock--set-resolution">
+    <title>gst.Clock.set_resolution</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>set_resolution</methodname>
+  	    <methodparam><parameter role="keyword">time</parameter></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	  <varlistentry>
+  	    <term><parameter role="keyword">resolution</parameter>&nbsp;:</term>
+    	  <listitem><simpara> the resolution to set.</simpara></listitem>
+	  </varlistentry>
+      <varlistentry>
+	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
+	      <listitem><simpara> the new resolution of the clock.</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>set_resolution</methodname>() method set the accuracy of the clock.
+	  </para>
+  </refsect2>  
+
+   <refsect2 id="method-gstclock--set-speed">
+    <title>gst.Clock.set_speed</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>set_speed</methodname>
+  	    <methodparam><parameter role="keyword">speed</parameter></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	  <varlistentry>
+  	    <term><parameter role="keyword">speed</parameter>&nbsp;:</term>
+    	  <listitem><simpara> the speed to set on the clock.</simpara></listitem>
+	  </varlistentry>
+      <varlistentry>
+	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
+	      <listitem><simpara> the new speed of the clock.</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>set_speed</methodname>() method sets the speed on the given clock. 1.0 is the default speed.
+	  </para>
+  </refsect2>  
+ </refsect1>
+</refentry>

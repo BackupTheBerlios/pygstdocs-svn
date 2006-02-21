@@ -1,0 +1,73 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstsystemclock">
+  <refnamediv>
+    <refname>gst.SystemClock</refname>
+    <refpurpose>Default clock that uses the current system time</refpurpose>
+  </refnamediv>
+
+<!-- ******************************** -->
+<!-- BEGIN OF GSTSYSTEMCLOCK SYNOPSIS -->
+<!-- ******************************** -->
+
+<refsect1>
+  <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.SystemClock</classname></ooclass>
+        <ooclass><classname><link linkend="class-gstclock">gst.Clock</link></classname></ooclass>
+    </classsynopsis>
+
+<programlisting>
+<emphasis role="bold">Functions</emphasis>
+
+<methodsynopsis language="python">
+<methodname><link linkend="function-gstsystemclock--system-clock-obtain">gst.system_clock_obtain</link></methodname>
+<methodparam></methodparam>
+</methodsynopsis></programlisting>
+
+</refsect1>
+
+<!-- ******************************** -->
+<!-- BEGIN OF GSTSYSTEMCLOCK ANCESTRY -->
+<!-- ******************************** -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+  +-- <link linkend="class-gstobject">gst.Object</link>
+    +-- <link linkend="class-gstclock">gst.Clock</link>
+      +-- <link linkend="class-gstsystemclock">gst.SystemClock</link>
+</synopsis>
+</refsect1>
+
+<!-- ********************************* -->
+<!-- BEGIN OF GSTSYSTEMCLOCK FUNCTIONS -->
+<!-- ********************************* -->
+
+<refsect1>
+    <title>Functions</title>
+
+  <refsect2 id="function-gstsystemclock--system-clock-obtain">
+    <title>gst.system_clock_obtain</title>
+    <programlisting><methodsynopsis language="python">
+  	  <methodname>gst.system_clock_obtain</methodname>
+      <methodparam></methodparam>
+      </methodsynopsis></programlisting>
+        
+    <variablelist>
+	    <varlistentry>
+            <term><emphasis>Returns</emphasis>&nbsp;:</term>
+	        <listitem><simpara> the default clock.</simpara></listitem>
+        </varlistentry>
+    </variablelist>
+
+      <para>
+        The function <methodname>gst.system_clock_obtain</methodname>() get a handle to the default system clock.
+      </para>
+
+  </refsect2>
+ </refsect1> 
+</refentry>

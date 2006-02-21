@@ -1,0 +1,2048 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstelement">
+    <refnamediv>
+        <refname>gst.Element</refname>
+        <refpurpose>Abstract base class for all pipeline elements</refpurpose>
+    </refnamediv>
+
+<!-- **************************** -->
+<!-- BEGIN OF GSTELEMENT SYNOPSIS -->
+<!-- **************************** -->
+
+<refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.Element</classname></ooclass>
+        <ooclass><classname><link linkend="class-gstobject">gst.Object</link></classname></ooclass>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--abort-state">abort_state</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--add-pad">add_pad</link></methodname>
+        <methodparam><parameter role="keyword">pad</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--continue-state">continue_state</link></methodname>
+        <methodparam><parameter role="keyword">ret</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--create-all-pads">create_all_pads</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--flags">flags</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+         <methodname><link linkend="method-gstelement--get-base-time">get_base_time</link></methodname>
+         <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--get-bus">get_bus</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--get-bus">get_clock</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--get-compatible-pad">get_compatible_pad</link></methodname>
+        <methodparam><parameter role="keyword">pad</parameter></methodparam>
+        <methodparam><parameter role="keyword">caps</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--get-compatible-pad-template">get_compatible_pad_template</link></methodname>
+        <methodparam><parameter role="keyword">compattempl</parameter></methodparam>
+    </methodsynopsis>
+   
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--get-factory">get_factory</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--get-index">get_index</link></methodname>
+    	  <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--get-pad">get_pad</link></methodname>
+    	  <methodparam><parameter role="keyword">name</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--get-pad-template">get_pad_template</link></methodname>
+    	  <methodparam><parameter role="keyword">name</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--get-query-types">get_query_types</link></methodname>
+    	  <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--get-request-pad">get_request_pad</link></methodname>
+    	  <methodparam><parameter role="keyword">name</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--get-state">get_state</link></methodname>
+        <methodparam><parameter role="keyword">state</parameter></methodparam>
+        <methodparam><parameter role="keyword">pending</parameter></methodparam>
+        <methodparam><parameter role="keyword">timeout</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--get-static-pad">get_static_pad</link></methodname>
+    	  <methodparam><parameter role="keyword">name</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--implement-interfaces">implement_interfaces</link></methodname>
+        <methodparam><parameter role="keyword">iface_type</parameter></methodparam>
+    </methodsynopsis>
+
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--is-indexable">is_indexable</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--is-locked-state">is_locked_state</link></methodname>
+    	  <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--link">link</link></methodname>
+    	  <methodparam><parameter role="keyword">dest</parameter></methodparam>
+    </methodsynopsis>
+
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--link-filtered">link_filtered</link></methodname>
+    	  <methodparam><parameter role="keyword">dest</parameter></methodparam>
+        <methodparam><parameter role="keyword">filtercaps</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--link-pads">link_pads</link></methodname>
+    	  <methodparam><parameter role="keyword">srcpadname</parameter></methodparam>
+        <methodparam><parameter role="keyword">dest</parameter></methodparam>
+        <methodparam><parameter role="keyword">destpadname</parameter></methodparam>
+    </methodsynopsis>  
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--link-pads-filtered">link_pads_filtered</link></methodname>
+    	  <methodparam><parameter role="keyword">srcpadname</parameter></methodparam>
+        <methodparam><parameter role="keyword">dest</parameter></methodparam>
+        <methodparam><parameter role="keyword">destpadname</parameter></methodparam>
+        <methodparam><parameter role="keyword">filtercaps</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--lost-state">lost_state</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--no-more-pads">no_more_pads</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--pads">pads</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--post-message">post_message</link></methodname>
+        <methodparam><parameter role="keyword">message</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--provide-clock">provide_clock</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--provides-clock">provides_clock</link></methodname>
+    	  <methodparam></methodparam>
+    </methodsynopsis>
+ 
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--query">query</link></methodname>
+    	  <methodparam><parameter role="keyword">query</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--query-convert">query_convert</link></methodname>
+        <methodparam><parameter role="keyword">src_format</parameter></methodparam>
+        <methodparam><parameter role="keyword">src_val</parameter></methodparam>
+        <methodparam><parameter role="keyword">dest_format</parameter></methodparam>
+        <methodparam><parameter role="keyword">dest_val</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--query-duration">query_duration</link></methodname>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">duration</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--query-position">query_position</link></methodname>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">cur</parameter></methodparam>
+    </methodsynopsis>
+ 
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--release-request-pad">release_request_pad</link></methodname>
+    	  <methodparam><parameter role="keyword">pad</parameter></methodparam>
+    </methodsynopsis>
+
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--remove-pad">remove_pad</link></methodname>
+    	  <methodparam><parameter role="keyword">pad</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--requires-clock">requires_clock</link></methodname>
+    	  <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--seek">seek</link></methodname>
+        <methodparam><parameter role="keyword">rate</parameter></methodparam>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">flags</parameter></methodparam>
+        <methodparam><parameter role="keyword">cur_type</parameter></methodparam>
+        <methodparam><parameter role="keyword">cur</parameter></methodparam>
+        <methodparam><parameter role="keyword">stop_type</parameter></methodparam>
+        <methodparam><parameter role="keyword">stop</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--send-event">send_event</link></methodname>
+    	  <methodparam><parameter role="keyword">event</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--set-base-time">set_base_time</link></methodname>
+        <methodparam><parameter role="keyword">time</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelement--set-bus">set_bus</link></methodname>
+        <methodparam><parameter role="keyword">bus</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--set-clock">set_clock</link></methodname>
+    	  <methodparam><parameter role="keyword">clock</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--set-index">set_index</link></methodname>
+    	  <methodparam><parameter role="keyword">index</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--set-locked-state">set_locked_state</link></methodname>
+    	  <methodparam><parameter role="keyword">locked_state</parameter></methodparam>
+    </methodsynopsis>
+ 
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--set-state">set_state</link></methodname>
+        <methodparam><parameter role="keyword">state</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--sink-pads">sink_pads</link></methodname>
+    	  <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--src-pads">src_pads</link></methodname>
+    	  <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--sync-state-with-parent">sync_state_with_parent</link></methodname>
+    	  <methodparam></methodparam>
+    </methodsynopsis>
+ 
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--unlink">unlink</link></methodname>
+    	  <methodparam><parameter role="keyword">dest</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--unlink-pads">unlink_pads</link></methodname>
+    	  <methodparam><parameter role="keyword">srcpadname</parameter></methodparam>
+        <methodparam><parameter role="keyword">dest</parameter></methodparam>
+        <methodparam><parameter role="keyword">destpadname</parameter></methodparam>
+    </methodsynopsis>
+</classsynopsis>
+
+<programlisting>
+<emphasis role="bold">Functions</emphasis>
+
+<methodsynopsis language="python"><methodname><link linkend="function-gstelement--element-factory-find">gst.element_factory_find</link></methodname>
+<methodparam><parameter role="keyword">name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+<methodname><link linkend="function-gstelement--element-factory-make">gst.element_factory_make</link></methodname>
+<methodparam><parameter role="keyword">name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+<methodname><link linkend="function-gstelement--element-link-many">gst.element_link_many</link></methodname>
+<methodparam><parameter role="keyword">element_1</parameter></methodparam>
+<methodparam><parameter role="keyword">element_2</parameter></methodparam>
+<methodparam><parameter role="keyword">...</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+<methodname><link linkend="function-gstelement--element-make-from-uri">gst.element_make_from_uri</link></methodname>
+<methodparam><parameter role="keyword">type</parameter></methodparam>
+<methodparam><parameter role="keyword">uri</parameter></methodparam>
+<methodparam><parameter role="keyword">element_name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+<methodname><link linkend="function-gstelement--element-register">gst.element_register</link></methodname>
+<methodparam><parameter role="keyword">plugin</parameter></methodparam>
+<methodparam><parameter role="keyword">name</parameter></methodparam>
+<methodparam><parameter role="keyword">rank</parameter></methodparam>
+<methodparam><parameter role="keyword">type</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+<methodname><link linkend="function-gstelement--element-state-get-name">gst.element_state_get_name</link></methodname>
+<methodparam><parameter role="keyword">state</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+<methodname><link linkend="function-gstelement--element-unlink-many">gst.element_unlink_many</link></methodname>
+<methodparam><parameter role="keyword">element_1</parameter></methodparam>
+<methodparam><parameter role="keyword">element_2</parameter></methodparam>
+<methodparam><parameter role="keyword">...</parameter></methodparam></methodsynopsis>
+</programlisting>
+</refsect1>
+
+<!-- **************************** -->
+<!-- BEGIN OF GSTELEMENT ANCESTRY -->
+<!-- **************************** -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+    +-- <link linkend="class-gstobject">gst.Object</link>
+        +-- <link linkend="class-gstelement">gst.Element</link>
+</synopsis>
+</refsect1>
+
+<!-- ************************************* -->
+<!-- BEGIN OF GSTELEMENT SIGNAL PROTOTYPES -->
+<!-- ************************************* -->
+
+<refsect1>
+    <title>Signal Prototypes</title>
+    <variablelist>
+        <varlistentry>
+            <term>"<link linkend="signal-gstelement--no-more-pads">no-more-pads</link>"</term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>gstelement</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                    <methodparam><parameter>...</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+        
+        <varlistentry>
+            <term>"<link linkend="signal-gstelement--pad-added">pad-added</link>"</term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>gstelement</parameter></methodparam>
+                    <methodparam><parameter>new_pad</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                    <methodparam><parameter>...</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+      
+        <varlistentry>
+            <term>"<link linkend="signal-gstelement--pad-removed">pad-removed</link>"</term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                <methodparam><parameter>gstelement</parameter></methodparam>
+                <methodparam><parameter>old_pad</parameter></methodparam>
+                <methodparam><parameter>user_data</parameter></methodparam>
+                <methodparam><parameter>...</parameter></methodparam>
+            </methodsynopsis>
+            </listitem>
+        </varlistentry>
+    </variablelist>
+</refsect1>
+
+<!-- ******************************* -->
+<!-- BEGIN OF GSTELEMENT DESCRIPTION -->
+<!-- ******************************* -->
+
+<refsect1 id="description-gstelement">
+    <title>Description</title>
+
+    <para>
+        GstElement is the base class needed to construct an element that can be used in a GStreamer pipeline. 
+        As such, it is not a functional entity, and cannot do anything when placed in a pipeline.
+    </para>
+
+    <para>
+        The name of a GstElement can be get with <link linkend="method-gstobject--get-name"><methodname>get_name</methodname></link> 
+        and set with <link linkend="method-gstobject--set-name"><methodname>set_name</methodname></link>. 
+    </para>
+  
+    <para>
+        All elements have pads (of the type <link linkend="class-gstpad"><classname>gst.Pad</classname></link>). 
+        These pads link to pads on other elements. <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link>flow between these linked pads. 
+        A <link linkend="class-gstelement"><classname>gst.Element</classname></link> has a list of 
+        <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
+        structures for all their input (or sink) and output (or source) pads. Core and plug-in writers can add and remove pads with 
+        <link linkend="method-gstelement--add-pad"><methodname>add_pad</methodname></link> and 
+        <link linkend="method-gstelement--remove-pad"><methodname>remove_pad</methodname></link>.
+    </para>
+  
+    <para>
+        A pad of an element can be retrieved by name with <link linkend="method-gstelement--get-pad"><methodname>get_pad</methodname></link>.
+    </para>
+    
+    <para>
+        Elements can be linked through their pads. If the link is straightforward, use the 
+        <methodname><link linkend="method-gstelement--link">link</link></methodname> convenience function to link two elements, or 
+        <methodname><link linkend="function-gstelement--element-link-many">gst.element_link_many</link></methodname> for more elements in a row. Use 
+        <methodname><link linkend="method-gstelement--link-filtered">link_filtered</link></methodname> to link two elements constrained by a specified set of 
+        <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>. For finer control, use 
+        <methodname><link linkend="method-gstelement--link-pads">link_pads</link></methodname> and 
+        <methodname><link linkend="method-gstelement--link-pads-filtered">link_pads_filtered</link></methodname> to specify 
+        the pads to link on each element by name.
+    </para>
+    
+    <para>
+        Each element has a state (see <link linkend="class-gststate"><classname>gst.State</classname></link>). 
+        You can get and set the state of an element with <methodname><link linkend="method-gstelement--get-state">get_state</link></methodname> 
+        and <methodname><link linkend="method-gstelement--set-state">set_state</link></methodname>. To get a string representation of a 
+        <link linkend="class-gststate"><classname>gst.State</classname></link> , use 
+        <methodname><link linkend="function-gstelement--element-state-get-name">gst.element_state_get_name</link></methodname>.
+    </para>
+    
+    <para>
+        You can get and set a <link linkend="class-gstclock"><classname>gst.Clock</classname></link> on an element using 
+        <methodname><link linkend="method-gstelement--get-clock">get_clock</link></methodname> and 
+        <methodname><link linkend="method-gstelement--set-clock">set_clock</link></methodname>. Some elements can provide a clock for the pipeline if 
+        <methodname><link linkend="method-gstelement--provides-clock">provides_clock</link></methodname> returns <literal>True</literal>.
+        With the <methodname><link linkend="method-gstelement--provide-clock">provide_clock</link></methodname> method one can retrieve 
+        the clock provided by such an element. Not all elements require a clock to operate correctly.
+        If <methodname><link linkend="method-gstelement--requires-clock">requires_clock</link></methodname> returns <literal>True</literal>, 
+        a clock should be set on the element with <methodname><link linkend="method-gstelement--set-clock">set_clock</link></methodname>.
+        Note that clock slection and distribution is normally handled by the toplevel 
+        <link linkend="class-gstpipeline"><classname>gst.Pipeline</classname></link> so the clock functions are only to be used in very specific situations.
+    </para>
+</refsect1>
+
+<!-- *************************** -->
+<!-- BEGIN OF GSTELEMENT METHODS -->
+<!-- *************************** -->
+
+<refsect1>
+    <title>Methods</title>
+
+    <refsect2 id="method-gstelement--abort-state">
+        <title>gst.Element.abort_state</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>abort_state</methodname>
+  	        <methodparam></methodparam>
+    	  </methodsynopsis></programlisting>
+      
+        <para>
+            The <methodname>abort_state</methodname>() method abort the state change of the element. 
+            This function is used by elements that do asynchronous state changes and find out something is wrong.
+        </para>
+    </refsect2>
+
+    <refsect2 id="method-gstelement--add-pad">
+        <title>gst.Element.add_pad</title>
+        <programlisting><methodsynopsis language="python">
+    	      <methodname>add_pad</methodname>
+            <methodparam><parameter role="keyword">pad</parameter></methodparam>
+	      </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">pad</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstpad"><classname>gst.Pad</classname></link> to add to the element.</simpara></listitem>
+            </varlistentry>
+	          <varlistentry>
+    	          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the pad could be added. 
+                This function can fail when a pad with the same name already existed or the pad already had another parent.</simpara></listitem>
+	          </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>add_pad</methodname>() method adds a pad (link point) to element. Pad's parent will be set to element.
+            Pads are not automatically activated so elements should perform the needed steps to activate the pad in case this pad is 
+            added in the PAUSED or PLAYING state.
+            The pad and the element should be unlocked when calling this function.
+	      </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--continue-state">
+        <title>gst.Element.continue_state</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>continue_state</methodname>
+                <methodparam><parameter role="keyword">ret</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">ret</parameter>&nbsp;:</term>
+                <listitem><simpara> The previous state return value.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The result of the commit state change.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>continue_state</methodname>() method commit the state change of the element and proceed to the next pending state if any. 
+            This function is used by elements that do asynchronous state changes. 
+            The core will normally call this method automatically when an element returned SUCCESS from the state change function. 
+            Elements that return ASYNC from the change_state function should eventually call this method from the streaming thread to signal 
+            successfull state change completion. If after calling this method the element still has not reached the pending state, 
+            the next state change is performed.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--create-all-pads">
+        <title>gst.Element.create_all_pads</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>create_all_pads</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <para>
+            The <methodname>create_all_pads</methodname>() method creates a pad for each pad template that is always available. 
+            This function is only useful during object intialization of subclasses of GstElement.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--flags">
+        <title>gst.Element.flags</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>flags</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the entire set of flags for the object.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>flags</methodname>() method returns the entire set of flags for the object.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--get-base-time">
+        <title>gst.Element.get_base_time</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_base_time</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the base time of the element.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_base_time</methodname>() method returns the base time of the element. 
+            The base time is the absolute time of the clock when this element was last put to PLAYING. 
+            Substracting the base time from the clock time gives the stream time of the element.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--get-bus">
+        <title>gst.Element.get_bus</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_bus</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the element's <link linkend="class-gstbus"><classname>gst.Bus</classname></link>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_base_time</methodname>() method returns the base time of the element. 
+            The base time is the absolute time of the clock when this element was last put to PLAYING. 
+            Substracting the base time from the clock time gives the stream time of the element.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--get-clock">
+        <title>gst.Element.get_clock</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_clock</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the <link linkend="class-gstclock"><classname>gst.Clock</classname></link>
+                    of the element.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_base_time</methodname>() method returns the base time of the element. 
+            The base time is the absolute time of the clock when this element was last put to PLAYING. 
+            Substracting the base time from the clock time gives the stream time of the element.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--get-compatible-pad">
+        <title>gst.Element.get_compatible_pad</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_compatible_pad</methodname>
+                <methodparam><parameter role="keyword">pad</parameter></methodparam>
+                <methodparam><parameter role="keyword">caps</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">pad</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstpad"><classname>gst.Pad</classname></link> to find a compatible one for.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">caps</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> to use as a filter.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
+                to which a link can be made, or <literal>None</literal> if one cannot be found.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_compatible_pad</methodname>() method looks for an unlinked pad to which the given pad can link. 
+            It is not guaranteed that linking the pads will work, though it should work in most cases.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--get-compatible-pad-template">
+        <title>gst.Element.get_compatible_pad_template</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_compatible_pad_template</methodname>
+                <methodparam><parameter role="keyword">compattempl</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">compattempl</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstpadtemplate"><classname>gst.PadTemplate</classname></link> 
+                to find a compatible template for.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> a compatible <link linkend="class-gstpadtemplate"><classname>gst.PadTemplate</classname></link> 
+                or <literal>None</literal> if none was found.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_compatible_pad_template</methodname>() method retrieves a pad template from element that is compatible with compattempl. 
+            Pads from compatible templates can be linked together.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--get-factory">
+        <title>gst.Element.get_factory</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_factory</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstelementfactory"><classname>gst.ElementFactory</classname></link>
+                used for creating this element. no refcounting is needed.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_factory</methodname>() method retrieves the factory that was used to create this element.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--get-index">
+        <title>gst.Element.get_index</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_index</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstindex"><classname>gst.Index</classname></link>
+                or <literal>None</literal> when no index was set on the element.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_index</methodname>() method gets the index from the element.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--get-pad">
+        <title>gst.Element.get_pad</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_pad</methodname>
+                <methodparam><parameter role="keyword">name</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+                <listitem><simpara> The name of the <link linkend="class-gstpad"><classname>gst.Pad</classname></link>
+                to retrieve</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
+                if found, <literal>None</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_pad</methodname>() method retrieves a pad from element by name.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--get-pad-template">
+        <title>gst.Element.get_pad_template</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_pad_template</methodname>
+                <methodparam><parameter role="keyword">name</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+                <listitem><simpara> The name of the <link linkend="class-gstpadtemplate"><classname>gst.PadTemplate</classname></link>
+                        to retrieve</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstpadtemplate"><classname>gst.PadTemplate</classname></link> 
+                        if found, <literal>None</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_pad_template</methodname>() method retrieves a pad template from element by name.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--get-query-types">
+        <title>gst.Element.get_query_types</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_query_types</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A list of <link linkend="class-gstquerytype"><classname>gst.QueryType</classname></link> 
+                elements.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_query_types</methodname>() method gets a list of query types from the element. 
+            If the element doesn't implement a query types function, the query will be forwarded to a random sink pad.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--get-request-pad">
+        <title>gst.Element.get_request_pad</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_request_pad</methodname>
+                <methodparam><parameter role="keyword">name</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+                <listitem><simpara> The name of the request <link linkend="class-gstpad"><classname>gst.Pad</classname></link>
+                        to retrieve.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> Requested <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
+                        if found, <literal>None</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_request_pad</methodname>() method retrieves a pad from the element by name. This version only retrieves request pads.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--get-state">
+        <title>gst.Element.get_state</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_state</methodname>
+                <methodparam><parameter role="keyword">state</parameter></methodparam>
+                <methodparam><parameter role="keyword">pending</parameter></methodparam>
+                <methodparam><parameter role="keyword">timeout</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">state</parameter>&nbsp;:</term>
+                <listitem><simpara> The name of the request <link linkend="class-gstpad"><classname>gst.Pad</classname></link>
+                to retrieve.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">pending</parameter>&nbsp;:</term>
+                <listitem><simpara> The name of the request <link linkend="class-gstpad"><classname>gst.Pad</classname></link>
+                to retrieve.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">timeout</parameter>&nbsp;:</term>
+                <listitem><simpara> The name of the request <link linkend="class-gstpad"><classname>gst.Pad</classname></link>
+                to retrieve.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> Requested <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
+                        if found, <literal>None</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_request_pad</methodname>() method retrieves a pad from the element by name. This version only retrieves request pads.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--get-static-pad">
+        <title>gst.Element.get_static_pad</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_static_pad</methodname>
+                <methodparam><parameter role="keyword">name</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+                <listitem><simpara> The name of the static <link linkend="class-gstpad"><classname>gst.Pad</classname></link>
+                        to retrieve.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> Requested <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
+                if found, <literal>None</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_static_pad</methodname>() method retrieves a pad from the element by name. This version only 
+            retrieves already-existing (i.e. 'static') pads.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--implement-interfaces">
+        <title>gst.Element.implement_interfaces</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>implement_interfaces</methodname>
+                <methodparam><parameter role="keyword">iface_type</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">iface_type</parameter>&nbsp;:</term>
+                <listitem><simpara> (final) type of the interface which we want to be implemented.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> Whether or not the element implements the interface.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>implement_interfaces</methodname>() method test whether the given element implements 
+            a certain interface of type iface_type, and test whether it is supported for this specific instance.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--is-indexable">
+        <title>gst.Element.is_indexable</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>is_indexable</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the element can be indexed.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>is_indexable</methodname>() method queries if the element can be indexed.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--is-locked-state">
+        <title>gst.Element.is_locked_state</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>is_locked_state</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the element state is locked.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>is_locked_state</methodname>() method checks if the state of an element is locked. 
+            If the state of an element is locked, state changes of the parent don't affect the element. 
+            This way you can leave currently unused elements inside bins. 
+            Just lock their state before changing the state from GST_STATE_NULL.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--link">
+        <title>gst.Element.link</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>link</methodname>
+                <methodparam><parameter role="keyword">dest</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">dest</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstelement"><classname>gst.Element</classname></link> 
+                containing the destination pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the elements could be linked, <literal>False</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>link</methodname>() method links the current element to dest. The link must be from source to destination; 
+            the other direction will not be tried. The function looks for existing pads that aren't linked yet. 
+            It will request new pads if necessary. If multiple links are possible, only one is established.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--link-filtered">
+        <title>gst.Element.link_filtered</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>link_filtered</methodname>
+                <methodparam><parameter role="keyword">dest</parameter></methodparam>
+                <methodparam><parameter role="keyword">filter</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">dest</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstelement"><classname>gst.Element</classname></link> 
+                        containing the destination pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">filter</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
+                        to filter the link, or <literal>None</literal> for no filter.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the elements could be linked, <literal>False</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>link_filtered</methodname>() method links the current element to dest using the given caps as filtercaps. 
+            The link must be from source to destination; the other direction will not be tried. 
+            The function looks for existing pads that aren't linked yet. 
+            It will request new pads if necessary. If multiple links are possible, only one is established.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--link-pads">
+        <title>gst.Element.link_pads</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>link_pads</methodname>
+                <methodparam><parameter role="keyword">srcpadname</parameter></methodparam>
+                <methodparam><parameter role="keyword">dest</parameter></methodparam>
+                <methodparam><parameter role="keyword">destpadname</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">srcpadname</parameter>&nbsp;:</term>
+                <listitem><simpara> The name of the <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
+                        in source element or <literal>None</literal> for any pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">dest</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstelement"><classname>gst.Element</classname></link> 
+                        containing the destination pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">destpadname</parameter>&nbsp;:</term>
+                <listitem><simpara> The name of the <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
+                        in destination element, or <literal>None</literal> for any pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the pad could be linked, <literal>False</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>link_pads</methodname>() method links the current element to dest using the given caps as filtercaps. 
+            The link must be from source to destination; the other direction will not be tried. 
+            The function looks for existing pads that aren't linked yet. 
+            It will request new pads if necessary. If multiple links are possible, only one is established.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--link-pads-filtered">
+        <title>gst.Element.link_pads_filtered</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>link_pads_filtered</methodname>
+                <methodparam><parameter role="keyword">srcpadname</parameter></methodparam>
+                <methodparam><parameter role="keyword">dest</parameter></methodparam>
+                <methodparam><parameter role="keyword">destpadname</parameter></methodparam>
+                <methodparam><parameter role="keyword">filter</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">srcpadname</parameter>&nbsp;:</term>
+                <listitem><simpara> The name of the <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
+                        in source element or <literal>None</literal> for any pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">dest</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstelement"><classname>gst.Element</classname></link> 
+                        containing the destination pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">destpadname</parameter>&nbsp;:</term>
+                <listitem><simpara> The name of the <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
+                        in destination element, or <literal>None</literal> for any pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">filter</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> 
+                        to filter the caps, or <literal>None</literal> for no filter.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the pad could be linked, <literal>False</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>link_pads_filtered</methodname>() method links the two named pads of the source and destination elements. 
+            Side effect is that if one of the pads has no parent, it becomes a child of the parent of the other element. 
+            If they have different parents, the link fails. If caps is not <literal>None</literal>, makes sure that the caps of the link is a subset of caps.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--lost-state">
+        <title>gst.Element.lost_state</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>lost_state</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <para>
+            The <methodname>lost_state</methodname>() method brings the element to the lost state. 
+            The current state of the element is copied to the pending state so that any call to #gst_element_get_state() will return ASYNC.            
+            This is mostly used for elements that lost their preroll buffer in the PAUSED state after a flush, 
+            they become PAUSED again if a new preroll buffer is queued. 
+            This function can only be called when the element is currently not in error or an async state change.
+            This function can only be called with the STATE_LOCK held. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--no-more-pads">
+        <title>gst.Element.no_more_pads</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>no_more_pads</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <para>
+            Use The <methodname>no_more_pads</methodname>() method to signal that the element does not expect any more pads to show up in the current pipeline.
+            This function should be called whenever pads have been added by the element itself. 
+            Elements with GST_PAD_SOMETIMES pad templates use this in combination with autopluggers to figure out that the element is done initializing its pads.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--pads">
+        <title>gst.Element.pads</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>pads</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The pads of this element.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>pads</methodname>() method returns the pads of this element.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--post-message">
+        <title>gst.Element.post_message</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>post_message</methodname>
+                <methodparam><parameter role="keyword">message</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">message</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstmessage"><classname>gst.Message</classname></link> to post.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the message was successfully posted.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>post_message</methodname>() method post a message on the element's 
+            <link linkend="class-gstbus"><classname>gst.Bus</classname></link>. 
+            This function takes ownership of the message; if you want to access the message after this call, 
+            you should add an additional reference before calling.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--provide-clock">
+        <title>gst.Element.provide_clock</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>provide_clock</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstclock"><classname>gst.Clock</classname></link> 
+                        provided by the element or <literal>None</literal> if no clock could be provided.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>provide_clock</methodname>() method gets the clock provided by the given element.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--provides-clock">
+        <title>gst.Element.provides_clock</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>provides_clock</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the element provides a clock.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>provides_clock</methodname>() method query if the element provides a clock. A 
+            <link linkend="class-gstclock"><classname>gst.Clock</classname></link> provided by an element can be used as the global 
+            <link linkend="class-gstclock"><classname>gst.Clock</classname></link> for the pipeline.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--query">
+        <title>gst.Element.query</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>query</methodname>
+                <methodparam><parameter role="keyword">query</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">query</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstquery"><classname>gst.Query</classname></link>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the query could be performed.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>query</methodname>() method performs a query on the given element. 
+            If the format is set to GST_FORMAT_DEFAULT and this function returns <literal>True</literal>, the format pointer will hold the default format. 
+            For element that don't implement a query handler, this function forwards the query to a random usable sinkpad of this element.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--query-convert">
+        <title>gst.Element.query_convert</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>query_convert</methodname>
+                <methodparam><parameter role="keyword">src_format</parameter></methodparam>
+                <methodparam><parameter role="keyword">src_val</parameter></methodparam>
+                <methodparam><parameter role="keyword">dest_format</parameter></methodparam>
+                <methodparam><parameter role="keyword">dest_val</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">src_format</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstformat"><classname>gst.Format</classname></link> to convert from.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">src_val</parameter>&nbsp;:</term>
+                <listitem><simpara> A value to convert.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">dest_format</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstformat"><classname>gst.Format</classname></link> to convert to.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">dest_val</parameter>&nbsp;:</term>
+                <listitem><simpara> The result.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the query could be performed.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>query_convert</methodname>() method queries an element to convert <literal>src_val</literal> 
+            in <literal>src_format</literal> to <literal>dest_format</literal>.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--query-duration">
+        <title>gst.Element.query_duration</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>query_duration</methodname>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">duration</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstformat"><classname>gst.Format</classname></link> asked for. 
+                        On return contains the <link linkend="class-gstformat"><classname>gst.Format</classname></link> used.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">duration</parameter>&nbsp;:</term>
+                <listitem><simpara> A location in which to store the total duration, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the query could be performed.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>query_duration</methodname>() method queries an element for the total stream duration.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--query-position">
+        <title>gst.Element.query_duration</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>query_duration</methodname>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">cur</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstformat"><classname>gst.Format</classname></link> asked for. 
+                        On return contains the <link linkend="class-gstformat"><classname>gst.Format</classname></link> used.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">cur</parameter>&nbsp;:</term>
+                <listitem><simpara> A location in which to store the current position, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the query could be performed.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>query_position</methodname>() method queries an element for the stream position.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--release-request-pad">
+        <title>gst.Element.release_request_pad</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>release_request_pad</methodname>
+                <methodparam><parameter role="keyword">pad</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">pad</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstpad"><classname>gst.Pad</classname></link> to release.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>release_request_pad</methodname>() method makes the element free the previously requested 
+            pad as obtained with <link linkend="method-gstelement--get-request-pad"><methodname>get_request_pad</methodname></link>
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--remove-pad">
+        <title>gst.Element.remove_pad</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>remove_pad</methodname>
+                <methodparam><parameter role="keyword">pad</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">pad</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstpad"><classname>gst.Pad</classname></link> to remove from the element.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the pad could be removed. 
+                        Can return <literal>False</literal> if the pad is not belonging to the provided element.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>remove_pad</methodname>() method removes pad from element.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--requires-clock">
+        <title>gst.Element.requires_clock</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>requires_clock</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the element requires a clock.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>remove_pad</methodname>() method query if the element requires a clock.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--seek">
+        <title>gst.Element.seek</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>seek</methodname>
+                <methodparam><parameter role="keyword">rate</parameter></methodparam>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">flags</parameter></methodparam>
+                <methodparam><parameter role="keyword">cur_type</parameter></methodparam>
+                <methodparam><parameter role="keyword">cur</parameter></methodparam>
+                <methodparam><parameter role="keyword">stop_type</parameter></methodparam>
+                <methodparam><parameter role="keyword">stop</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">rate</parameter>&nbsp;:</term>
+                <listitem><simpara> The new playback rate.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> The format of the seek values.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">flags</parameter>&nbsp;:</term>
+                <listitem><simpara> The optional seek flags.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">cur_type</parameter>&nbsp;:</term>
+                <listitem><simpara> The type and flags for the new current position.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">cur</parameter>&nbsp;:</term>
+                <listitem><simpara> The value of the new current position.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">stop_type</parameter>&nbsp;:</term>
+                <listitem><simpara> The type and flags for the new stop position.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">stop</parameter>&nbsp;:</term>
+                <listitem><simpara> The value of the new stop position.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the event was handled.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>seek</methodname>() method sends a seek event to an element.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--send-event">
+        <title>gst.Element.send_event</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>send_event</methodname>
+                <methodparam><parameter role="keyword">event</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">event</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstevent"><classname>gst.Event</classname></link> to send to the element.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the event was handled.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>send_event</methodname>() method sends an event to an element. 
+            If the element doesn't implement an event handler, the event will be forwarded to a random sink pad.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--set-base-time">
+        <title>gst.Element.set_base_time</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_base_time</methodname>
+                <methodparam><parameter role="keyword">time</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">time</parameter>&nbsp;:</term>
+                <listitem><simpara> The base time to set.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_base_time</methodname>() method set the base time of an element. See 
+            <methodname><link linkend="method-gstelement--get-base-time">get_base_time</link></methodname>
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--set-bus">
+        <title>gst.Element.set_bus</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_bus</methodname>
+                <methodparam><parameter role="keyword">bus</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">bus</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstbus"><classname>gst.Bus</classname></link> to set.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_bus</methodname>() method sets the bus of the element. For internal use only, unless you're testing elements.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--set-clock">
+        <title>gst.Element.set_clock</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_clock</methodname>
+                <methodparam><parameter role="keyword">clock</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">clock</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstclock"><classname>gst.Clock</classname></link> to set to the element.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the element accepted the clock.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_clock</methodname>() method sets the clock for the element.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--set-index">
+        <title>gst.Element.set_index</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_index</methodname>
+                <methodparam><parameter role="keyword">index</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">index</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstindex"><classname>gst.Index</classname></link>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_index</methodname>() method sets <literal>index</literal> on the element. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--set-locked-state">
+        <title>gst.Element.set_locked_state</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_locked_state</methodname>
+                <methodparam><parameter role="keyword">locked_state</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">locked_state</parameter>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> to lock the element's state.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the state was changed, 
+                        <literal>False</literal> if bad parameterss were given or the elements state-locking needed no change 
+                        if the element accepted the clock.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_locked_state</methodname>() method locks the state of an element, 
+            so state changes of the parent don't affect this element anymore.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--set-state">
+        <title>gst.Element.set_state</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_state</methodname>
+                <methodparam><parameter role="keyword">state</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">state</parameter>&nbsp;:</term>
+                <listitem><simpara> The element's new <link linkend="class-gststate"><classname>gst.State</classname></link>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> Result of the state change between GST_STATE_CHANGE_FAILURE, GST_STATE_CHANGE_SUCCESS, 
+                        GST_STATE_CHANGE_ASYNC, GST_STATE_CHANGE_NO_PREROLL.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_state</methodname>() method sets the state of the element. 
+            This function will try to set the requested state by going through all the intermediary 
+            states and calling the class's state change function for each.
+        </para>
+        <para>
+            This function can return GST_STATE_CHANGE_ASYNC, in which case the element will perform the 
+            remainder of the state change asynchronously in another thread. 
+            An application can use gst_element_get_state() to wait for the completion of the state change 
+            or it can wait for a state change message on the bus.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--sink-pads">
+        <title>gst.Element.sink_pads</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>sink_pads</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstiterator"><classname>gst.Iterator</classname></link> of 
+                        <link linkend="class-gstpad"><classname>gst.Pad</classname></link> </simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>sink_pads</methodname>() method retrieves an iterator of element's sink pads.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--src-pads">
+        <title>gst.Element.src_pads</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>src_pads</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstiterator"><classname>gst.Iterator</classname></link> of 
+                        <link linkend="class-gstpad"><classname>gst.Pad</classname></link> </simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>sink_pads</methodname>() method retrieves an iterator of element's source pads.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--sync-state-with-parent">
+        <title>gst.Element.sync_state_with_parent</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>sync_state_with_parent</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the element's state could be synced to the parent's state.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>sync_state_with_parent</methodname>() method tries to change the state of the element to the same as its parent. 
+            If this function returns <literal>False</literal>, the state of element is undefined.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--unlink">
+        <title>gst.Element.unlink</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>unlink</methodname>
+                <methodparam><parameter role="keyword">dest</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">dest</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstelement"><classname>gst.Element</classname></link> to unlink.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>unlink</methodname>() unlinks all source pads of the source element with all sink 
+            pads of the sink element to which they are linked.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--unlink-pads">
+        <title>gst.Element.unlink_pads</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>unlink_pads</methodname>
+                <methodparam><parameter role="keyword">srcpadname</parameter></methodparam>
+                <methodparam><parameter role="keyword">dest</parameter></methodparam>
+                <methodparam><parameter role="keyword">destpadname</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">srcpadname</parameter>&nbsp;:</term>
+                <listitem><simpara> The name of the <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
+                        in source element.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">dest</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstelement"><classname>gst.Element</classname></link> containing the 
+                        destination pad.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">destpadname</parameter>&nbsp;:</term>
+                <listitem><simpara> The name of the <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
+                        in destination element.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>unlink_pads</methodname>() unlinks the two named pads of the source and destination elements.
+        </para>
+    </refsect2>
+</refsect1>
+
+<!-- ***************************** -->
+<!-- BEGIN OF GSTELEMENT FUNCTIONS -->
+<!-- ***************************** --> 
+
+<refsect1>
+    <title>Functions</title>
+    
+    <refsect2 id="function-gstelement--element-factory-find">
+        <title>gst.element_factory_find</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>element_factory_find</methodname>
+                <methodparam><parameter role="keyword">name</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+                <listitem><simpara> Name of factory to find.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <link linkend="class-gstelementfactory"><classname>gst.ElementFactory</classname></link> 
+                <literal>None</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>element_factory_find</methodname>() function search for an element factory of the given name.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="function-gstelement--element-factory-make">
+        <title>gst.element_factory_make</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>element_factory_make</methodname>
+                <methodparam><parameter role="keyword">factory</parameter></methodparam>
+                <methodparam><parameter role="keyword">name</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">factory</parameter>&nbsp;:</term>
+                <listitem><simpara> Factory to instantiate.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+                <listitem><simpara> Name of new element.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A new <link linkend="class-gstelement"><classname>gst.Element</classname></link> or
+                        <literal>None</literal> if the element couldn't be created.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>element_factory_make</methodname>() function creates a new element of the type defined by the given elementfactory. 
+            It will be given the name supplied, since all elements require a name as their first argument.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="function-gstelement--element-link-many">
+        <title>gst.element_link_many</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>element_link_many</methodname>
+                <methodparam><parameter role="keyword">element_1</parameter></methodparam>
+                <methodparam><parameter role="keyword">element_2</parameter></methodparam>
+                <methodparam><parameter role="keyword">...</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">element_1</parameter>&nbsp;:</term>
+                <listitem><simpara> the first <link linkend="class-gstelement"><classname>gst.Element</classname></link> 
+                    in the link chain.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">element_2</parameter>&nbsp;:</term>
+                <listitem><simpara> the second <link linkend="class-gstelement"><classname>gst.Element</classname></link> 
+                    in the link chain.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">...</parameter>&nbsp;:</term>
+                <listitem><simpara> the last <link linkend="class-gstelement"><classname>gst.Element</classname></link> 
+                    in the link chain.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> on success, <literal>False</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>element_link_many</methodname>() function chain together a series of elements. 
+            Use <methodname><link linkend="method-gstelement--link">link</link></methodname>.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="function-gstelement--element-make-from-uri">
+        <title>gst.element_make_from_uri</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>element_make_from_uri</methodname>
+                <methodparam><parameter role="keyword">type</parameter></methodparam>
+                <methodparam><parameter role="keyword">uri</parameter></methodparam>
+                <methodparam><parameter role="keyword">element_name</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">type</parameter>&nbsp;:</term>
+                <listitem><simpara> Wether to create a source or a sink.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">uri</parameter>&nbsp;:</term>
+                <listitem><simpara> URI to create an element for.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">element_name</parameter>&nbsp;:</term>
+                <listitem><simpara> Name of created element, can be <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> a new element or <literal>None</literal> if none could be created.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>element_make_from_uri</methodname>() function creates an element for handling the given URI.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="function-gstelement--element-register">
+        <title>gst.element_register</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>element_register</methodname>
+                <methodparam><parameter role="keyword">plugin</parameter></methodparam>
+                <methodparam><parameter role="keyword">name</parameter></methodparam>
+                <methodparam><parameter role="keyword">rank</parameter></methodparam>
+                <methodparam><parameter role="keyword">type</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">plugin</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstplugin"><classname>gst.Plugin</classname></link> to register the element with.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+                <listitem><simpara> name of elements of this type.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">rank</parameter>&nbsp;:</term>
+                <listitem><simpara> rank of element (higher rank means more importance when autoplugging).</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">type</parameter>&nbsp;:</term>
+                <listitem><simpara> GType of element to register.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal>, if the registering succeeded, <literal>False</literal> on error.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>element_register</methodname>() function creates a new elementfactory capable of instantiating objects of the given type.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="function-gstelement--element-state-get-name">
+        <title>gst.element_state_get_name</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>element_state_get_name</methodname>
+                <methodparam><parameter role="keyword">state</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">state</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gststate"><classname>gst.State</classname></link> to get the name of.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> a string with the name of the state.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>element_register</methodname>() function creates a new elementfactory capable of instantiating objects of the given type.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="function-gstelement--element-unlink-many">
+        <title>gst.element_unlink_many</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>element_unlink_many</methodname>
+                <methodparam><parameter role="keyword">element_1</parameter></methodparam>
+                <methodparam><parameter role="keyword">element_2</parameter></methodparam>
+                <methodparam><parameter role="keyword">...</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">element_1</parameter>&nbsp;:</term>
+                <listitem><simpara> The first <link linkend="class-gstelement"><classname>gst.Element</classname></link> to unlink.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">element_2</parameter>&nbsp;:</term>
+                <listitem><simpara> The second <link linkend="class-gstelement"><classname>gst.Element</classname></link> to unlink.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">...</parameter>&nbsp;:</term>
+                <listitem><simpara> The last <link linkend="class-gstelement"><classname>gst.Element</classname></link> to unlink.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>element_unlink_many</methodname>() function unlinks all source pads of the source element 
+            with all sink pads of the sink element to which they are linked.
+        </para>
+    </refsect2>
+</refsect1>
+
+
+<!-- *************************** -->
+<!-- BEGIN OF GSTELEMENT SIGNALS -->
+<!-- *************************** --> 
+ 
+<refsect1>
+    <title>Signals</title>
+
+    <refsect2 id="signal-gstelement--no-more-pads">
+        <title>The "no-more-pads" gst.Element Signal</title>
+        <programlisting><methodsynopsis language="python">
+        <methodname>callback</methodname>
+         	  <methodparam><parameter>gstelement</parameter></methodparam>
+	          <methodparam><parameter>user_data</parameter></methodparam>
+            <methodparam><parameter>...</parameter></methodparam>
+	      </methodsynopsis></programlisting>
+
+        <variablelist>
+    	      <varlistentry>
+        	      <term><parameter>gstelement</parameter>&nbsp;:</term>
+        	      <listitem><simpara>The gstelement that received the signal</simpara></listitem>
+    	      </varlistentry>
+    	      <varlistentry>
+        	      <term><parameter>user_data</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional data (if any) specified with the 
+                <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+	          </varlistentry>
+    	      <varlistentry>
+        	      <term><parameter>...</parameter>&nbsp;:</term>
+        	      <listitem><simpara>Additional user parameters (if any)</simpara></listitem>
+    	      </varlistentry>
+        </variablelist>
+
+        <para>
+            The "no-more-pads" signal is emitted when the element will not generate more dynamic pads.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="signal-gstelement--pad-added">
+        <title>The "pad-added" gst.Element Signal</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>callback</methodname>
+                <methodparam><parameter>gstelement</parameter></methodparam>
+                <methodparam><parameter>new_pad</parameter></methodparam>
+                <methodparam><parameter>user_data</parameter></methodparam>
+                <methodparam><parameter>...</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter>gstelement</parameter>&nbsp;:</term>
+                <listitem><simpara>The gstelement that received the signal</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>new_pad</parameter>&nbsp;:</term>
+                <listitem><simpara>The pad that has been added.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>user_data</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional data (if any) specified with the 
+                        <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>...</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional user parameters (if any)</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The "pad-added" signal is emitted when a new <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
+            has been added to the element.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="signal-gstelement--pad-removed">
+        <title>The "pad-removed" gst.Element Signal</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>callback</methodname>
+                <methodparam><parameter>gstelement</parameter></methodparam>
+                <methodparam><parameter>old_pad</parameter></methodparam>
+                <methodparam><parameter>user_data</parameter></methodparam>
+                <methodparam><parameter>...</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter>gstelement</parameter>&nbsp;:</term>
+                <listitem><simpara>The gstelement that received the signal</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>old_pad</parameter>&nbsp;:</term>
+                <listitem><simpara>The pad that has been removed.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>user_data</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional data (if any) specified with the 
+                        <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>...</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional user parameters (if any)</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The "pad-removed" signal is emitted when a <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
+            has been removed from the element.
+        </para>
+    </refsect2>
+
+</refsect1>
+</refentry>
+

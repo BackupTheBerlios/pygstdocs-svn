@@ -1,0 +1,525 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstbuffer">
+    <refnamediv>
+        <refname>gst.Buffer</refname>
+        <refpurpose>Data-passing buffer type, supporting sub-buffers.</refpurpose>
+    </refnamediv>
+
+<!-- *************************** -->
+<!-- BEGIN OF GSTBUFFER SYNOPSIS -->
+<!-- *************************** -->
+
+<refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.Buffer</classname></ooclass>
+        <ooclass><classname><link linkend="class-gstminiobject">gst.MiniObject</link></classname></ooclass>
+
+    <constructorsynopsis language="python">
+        <methodname><link linkend="constructor-gstbuffer">gst.Buffer</link></methodname>
+        <methodparam></methodparam>
+    </constructorsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbuffer--copy-on-write">copy_on_write</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbuffer--create-sub">create_sub</link></methodname>
+        <methodparam><parameter role="keyword">offset</parameter></methodparam>
+        <methodparam><parameter role="keyword">size</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbuffer--flag-is-set">flag_is_set</link></methodname>
+        <methodparam><parameter role="keyword">flag</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbuffer--flag-set">flag_set</link></methodname>
+        <methodparam><parameter role="keyword">flag</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbuffer--flag-unset">flag_unset</link></methodname>
+        <methodparam><parameter role="keyword">flag</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbuffer--get-caps">get_caps</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbuffer--is-span-fast">is_span_fast</link></methodname>
+        <methodparam><parameter role="keyword">buf2</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbuffer--join">join</link></methodname>
+        <methodparam><parameter role="keyword">buf2</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbuffer--merge">merge</link></methodname>
+        <methodparam><parameter role="keyword">buf2</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbuffer--set-caps">set_caps</link></methodname>
+        <methodparam><parameter role="keyword">caps</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbuffer--span">span</link></methodname>
+        <methodparam><parameter role="keyword">offset</parameter></methodparam>
+        <methodparam><parameter role="keyword">buf2</parameter></methodparam>
+        <methodparam><parameter role="keyword">len</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbuffer--stamp">stamp</link></methodname>
+        <methodparam><parameter role="keyword">src</parameter></methodparam>
+    </methodsynopsis>
+</classsynopsis>
+
+<programlisting>
+    <emphasis role="bold">Functions</emphasis>
+    
+<methodsynopsis language="python"><methodname><link linkend="function-gstbuffer--buffer-new-and-alloc">gst.buffer_new_and_alloc</link></methodname>
+<methodparam><parameter role="keyword">size</parameter></methodparam></methodsynopsis>
+</programlisting>
+</refsect1>
+
+<!-- *************************** -->
+<!-- BEGIN OF GSTBUFFER ANCESTRY -->
+<!-- *************************** -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gstminiobject">gst.MiniObject</link>
+    +-- <link linkend="class-gstbuffer">gst.Buffer</link>
+</synopsis>
+</refsect1>
+
+<!-- ****************************** -->
+<!-- BEGIN OF GSTBUFFER DESCRIPTION -->
+<!-- ****************************** -->
+
+<refsect1 id="description-gstbuffer">
+    <title>Description</title>
+
+    <para>
+        Buffers are the basic unit of data transfer in GStreamer. The <link linkend="class-gstbuffer"><classname>gst.Buffer()</classname></link> 
+        type provides all the state necessary to define a region of memory as part of a stream. 
+        Sub-buffers are also supported, allowing a smaller region of a buffer to become its own buffer, 
+        with mechanisms in place to ensure that neither memory space goes away prematurely.
+    </para>
+    <para>
+        Buffers are usually created with the constructor <methodname><link linkend="constructor-gstbuffer">gst.Buffer()</link></methodname>. 
+        After a buffer has been created one will typically allocate memory for it and set the size of the buffer data. 
+        The following example creates a buffer that can hold a given video frame with a given width, height and bits per plane.
+    </para>
+    <para>
+        Alternatively, use <methodname><link linkend="function-gstbuffer--buffer-new-and-alloc">gst.buffer_new_and_alloc()</link></methodname> 
+        to create a buffer with preallocated data of a given size.
+    </para>
+    <para>
+        If an element knows what pad you will push the buffer out on, it should use 
+        <methodname><link linkend="method-gstpad--alloc-buffer">gst.Pad.alloc_buffer()</link></methodname> instead to create a buffer. 
+        This allows downstream elements to provide special buffers to write in, like hardware buffers.
+    </para>
+    <para>
+        A buffer has a pointer to a <link linkend="class-gstcaps"><classname>gst.Caps()</classname></link> describing the media type of the 
+        data in the buffer. Attach caps to the buffer with <methodname><link linkend="method-gstbuffer--set-caps">gst.Buffer.set_caps()</link></methodname>; 
+        this is typically done before pushing out a buffer using <methodname><link linkend="method-gstpad--push">gst.Pad.push()</link></methodname> 
+        so that the downstream element knows the type of the buffer.
+    </para>
+    <para>
+        A buffer will usually have a timestamp, and a duration, but neither of these are guaranteed (they may be set to GST_CLOCK_TIME_NONE). 
+        Whenever a meaningful value can be given for these, they should be set. The timestamp and duration are measured in nanoseconds (they are 
+        GstClockTime values).
+    </para>
+    <para>
+        A buffer can also have one or both of a start and an end offset. These are media-type specific. For video buffers, 
+        the start offset will generally be the frame number. For audio buffers, it will be the number of samples produced so far. 
+        For compressed data, it could be the byte offset in a source or destination file. Likewise, the end offset will be 
+        the offset of the end of the buffer. These can only be meaningfully interpreted if you know the media type of the buffer (the 
+        <link linkend="class-gstcaps"><classname>gst.Caps()</classname></link> set on it). Either or both can be set to GST_BUFFER_OFFSET_NONE.
+    </para>
+    <para>
+        To efficiently create a smaller buffer out of an existing one, you can use 
+        <methodname><link linkend="method-gstbuffer--create-sub">gst.Buffer.create_sub()</link></methodname>.
+    </para>
+    <para>
+        Several flags of the buffer can be set and unset with the <methodname><link linkend="method-gstbuffer--flag-set">gst.Buffer.flag_set()</link></methodname> 
+        and <methodname><link linkend="method-gstbuffer--flag-unset">gst.Buffer.flag_unset()</link></methodname>. Use 
+        <methodname><link linkend="method-gstbuffer--flag-is-set">gst.Buffer.flag_is_set()</link></methodname> to test if a certain 
+        <link linkend="class-gstbufferflag"><classname>gst.BufferFlag()</classname></link> is set.
+    </para>
+    <para>
+        Buffers can be efficiently merged into a larger buffer with <methodname><link linkend="method-gstbuffer--merge">gst.Buffer.merge()</link></methodname> and
+        <methodname><link linkend="method-gstbuffer--span">gst.Buffer.span()</link></methodname> if the 
+        <methodname><link linkend="method-gstbuffer--is-span-fast">gst.Buffer.is_span_fast()</link></methodname> method returns <literal>True</literal>.
+    </para>
+    <para>
+        An element should either unref the buffer or push it out on a src pad using 
+        <methodname><link linkend="method-gstpad--push">gst.Pad.push()</link></methodname> see 
+        (<link linkend="class-gstpad"><classname>gst.Pad</classname></link>).
+    </para>
+
+</refsect1>
+
+<!-- ****************************** -->
+<!-- BEGIN OF GSTBUFFER CONSTRUCTOR -->
+<!-- ****************************** -->
+
+<refsect1 id="constructor-gstbuffer">
+    <title>Constructor</title>
+    
+    <programlisting><constructorsynopsis language="python">
+        <methodname>gst.Buffer</methodname>
+        <methodparam></methodparam>
+    </constructorsynopsis></programlisting>
+    
+    <para>
+        Creates a newly allocated buffer without any data.
+    </para>
+</refsect1>
+
+
+<!-- ************************** -->
+<!-- BEGIN OF GSTBUFFER METHODS -->
+<!-- ************************** -->
+
+<refsect1>
+    <title>Methods</title>
+
+    <refsect2 id="method-gstbuffer--copy-on-write">
+        <title>gst.Pad.copy_on_write</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>copy_on_write</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+    
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> that can safely be written to.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+      
+        <para>
+            The <methodname>copy_on_write</methodname>() method returns a buffer that is safe to write to.
+        </para>
+    </refsect2>
+
+    <refsect2 id="method-gstbuffer--create-sub">
+        <title>gst.Pad.create_sub</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>create_sub</methodname>
+            <methodparam><parameter role="keyword">offset</parameter></methodparam>
+            <methodparam><parameter role="keyword">size</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">offset</parameter>&nbsp;:</term>
+                <listitem><simpara> The offset into parent <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> 
+                        at which the new sub-buffer begins.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">size</parameter>&nbsp;:</term>
+                <listitem><simpara> The size of the new <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> 
+                        sub-buffer, in bytes (with size > 0).</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>None</literal> if the arguments were invalid.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>create_sub</methodname>() method creates a sub-buffer from parent at offset and size. 
+            This sub-buffer uses the actual memory space of the parent buffer. 
+            This function will copy the offset and timestamp fields when the offset is 0, else they are set to GST_CLOCK_TIME_NONE/GST_BUFFER_OFFSET_NONE. 
+            The duration field of the new buffer is set to GST_CLOCK_TIME_NONE.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbuffer--flag-is-set">
+        <title>gst.Pad.flag_is_set</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>flag_is_set</methodname>
+                <methodparam><parameter role="keyword">flag</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">flag</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstbufferflag"><classname>gst.BufferFlag</classname></link> to check.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>flag_is_set</methodname>() method gives the status of a specific flag on a buffer.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbuffer--flag-set">
+        <title>gst.Pad.flag_set</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>flag_set</methodname>
+                <methodparam><parameter role="keyword">flag</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">flag</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstbufferflag"><classname>gst.BufferFlag</classname></link> to set.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>flag_set</methodname>() method sets a buffer flag on a buffer.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbuffer--flag-unset">
+        <title>gst.Pad.flag_unset</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>flag_unset</methodname>
+                <methodparam><parameter role="keyword">flag</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">flag</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstbufferflag"><classname>gst.BufferFlag</classname></link> to clear.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>flag_set</methodname>() method clears a buffer flag.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbuffer--get-caps">
+        <title>gst.Pad.get_caps</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_caps</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>None</literal> if there were no caps on this buffer.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_caps</methodname>() method gets the media type of the buffer. 
+            This can be <literal>None</literal> if there is no media type attached to this buffer.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbuffer--is-span-fast">
+        <title>gst.Pad.is_span_fast</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>is_span_fast</methodname>
+                <methodparam><parameter role="keyword">buf2</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">buf2</parameter>&nbsp;:</term>
+                <listitem><simpara> The second <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the buffers are contiguous, 
+                        <literal>False</literal> if a copy would be required.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>is_span_fast</methodname>() method determines whether a 
+            <methodname><link linkend="method-gstbuffer--span">gst.Buffer.span()</link></methodname> can be done without copying 
+            the contents, that is, whether the data areas are contiguous sub-buffers of the same buffer.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbuffer--join">
+        <title>gst.Pad.join</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>join</methodname>
+                <methodparam><parameter role="keyword">buf2</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">buf2</parameter>&nbsp;:</term>
+                <listitem><simpara> The second source <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The new <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> which is the 
+                        concatenation of the source buffers.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>join</methodname>() method creates a new buffer that is the concatenation of the two source buffers.
+        </para>
+        <para>
+            If the buffers point to contiguous areas of memory, the buffer is created without copying the data.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbuffer--merge">
+        <title>gst.Pad.merge</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>merge</methodname>
+                <methodparam><parameter role="keyword">buf2</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">buf2</parameter>&nbsp;:</term>
+                <listitem><simpara> The second source <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> to merge.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The new <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> which is the 
+                        concatenation of the source buffers.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>merge</methodname>() method create a new buffer that is the concatenation of the two source buffers. 
+            The original source buffers will not be modified.
+        </para>
+        <para>
+            If the buffers point to contiguous areas of memory, the buffer is created without copying the data.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbuffer--set-caps">
+        <title>gst.Pad.set_caps</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_caps</methodname>
+                <methodparam><parameter role="keyword">caps</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">caps</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_caps</methodname>() method sets the media type on the buffer.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbuffer--span">
+        <title>gst.Pad.span</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>span</methodname>
+                <methodparam><parameter role="keyword">offset</parameter></methodparam>
+                <methodparam><parameter role="keyword">buf2</parameter></methodparam>
+                <methodparam><parameter role="keyword">len</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">offset</parameter>&nbsp;:</term>
+                <listitem><simpara> The offset in the first buffer from where the new buffer should start.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">buf2</parameter>&nbsp;:</term>
+                <listitem><simpara> The second source <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> to merge.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">buf2</parameter>&nbsp;:</term>
+                <listitem><simpara> The total length of the new buffer.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The new <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> that spans the two source
+                        buffers or <literal>None</literal> if the arguments are invalid.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>span</methodname>() method creates a new buffer that consists of part of buf1 and buf2. 
+            Logically, buf1 and buf2 are concatenated into a single larger buffer, and a new buffer is created at the 
+            given offset inside this space, with a given length.
+        </para>
+        <para>
+            If the two source buffers are children of the same larger buffer, and are contiguous, the new buffer will be 
+            a child of the shared parent, and thus no copying is necessary. you can use 
+            <methodname><link linkend="method-gstbuffer--is-span-fast">is_span_fast</link></methodname> 
+            to determine if a memcpy will be needed.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbuffer--stamp">
+        <title>gst.Pad.stamp</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>stamp</methodname>
+                <methodparam><parameter role="keyword">src</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> to stamp from.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>stamp</methodname>() method copies additional information (the timestamp, duration, and offset start and end) 
+            from one buffer to the other. This method does not copy any buffer flags or caps.
+        </para>
+    </refsect2>
+  </refsect1>
+
+  <!-- *************************** -->
+  <!-- BEGIN OF GSTBUFFERFUNCTIONS -->
+  <!-- *************************** --> 
+  
+  <refsect1>
+      <title>Functions</title>
+      
+      <refsect2 id="function-gstbuffer--buffer-new-and-alloc">
+          <title>gst.buffer_new_and_alloc</title>
+          <programlisting><methodsynopsis language="python">
+                  <methodname>buffer_new_and_alloc</methodname>
+                  <methodparam><parameter role="keyword">size</parameter></methodparam>
+              </methodsynopsis></programlisting>
+          
+          <variablelist>
+              <varlistentry>
+                  <term><parameter role="keyword">size</parameter>&nbsp;:</term>
+                  <listitem><simpara> The size of the new buffer's data.</simpara></listitem>
+              </varlistentry>
+              <varlistentry>
+                  <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                  <listitem><simpara> The new <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link>.</simpara></listitem>
+              </varlistentry>
+          </variablelist>
+          
+          <para>
+              The <methodname>buffer_new_and_alloc</methodname>() function creates a newly allocated buffer with data of the given size.
+          </para>
+      </refsect2>
+  </refsect1>
+</refentry>

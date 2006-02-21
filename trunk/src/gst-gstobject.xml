@@ -1,0 +1,737 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstobject">
+  <refnamediv>
+    <refname>gst.Object</refname>
+    <refpurpose>Base class for the GStreamer object hierarchy</refpurpose>
+  </refnamediv>
+
+<!-- *************************** -->
+<!-- BEGIN OF GSTOBJECT SYNOPSIS -->
+<!-- *************************** -->
+
+<refsect1>
+  <title>Synopsis</title>
+
+  <classsynopsis language="python">
+  <ooclass><classname>gst.Object</classname></ooclass>
+  <ooclass><classname><link linkend="class-gobject">gobject-GObject</link></classname></ooclass>
+
+  <!--
+  <methodsynopsis language="python">
+      <methodname><link linkend="method-gstobject-debug">debug</link></methodname>
+      <methodparam></methodparam>
+  </methodsynopsis> 
+  -->
+
+  <methodsynopsis language="python">
+      <methodname><link linkend="method-gstobject--default-error">default_error</link></methodname>
+      <methodparam><parameter role="keyword">error</parameter></methodparam>
+      <methodparam><parameter role="keyword">debug</parameter></methodparam>
+  </methodsynopsis> 
+
+  <!--
+  <methodsynopsis language="python">
+      <methodname><link linkend="method-gstobject-error">error</link></methodname>
+      <methodparam></methodparam>
+  </methodsynopsis> 
+  -->
+
+  <methodsynopsis language="python">
+	  <methodname><link linkend="method-gstobject--get-name">get_name</link></methodname>
+	  <methodparam></methodparam>
+  </methodsynopsis>
+  
+  <methodsynopsis language="python">
+    <methodname><link linkend="method-gstobject--get-name-prefix">get_name_prefix</link></methodname>
+    <methodparam></methodparam>
+  </methodsynopsis>
+
+  <methodsynopsis language="python">
+	  <methodname><link linkend="method-gstobject--get-parent">get_parent</link></methodname>
+	  <methodparam></methodparam>
+  </methodsynopsis>
+    
+  <methodsynopsis language="python">
+	  <methodname><link linkend="method-gstobject--get-path-string">get_path_string</link></methodname>
+	  <methodparam></methodparam>
+  </methodsynopsis>
+  
+  <methodsynopsis language="python">
+    <methodname><link linkend="method-gstobject--has-ancestor">has_ancestor</link></methodname>
+    <methodparam><parameter role="keyword">ancestor</parameter></methodparam>
+  </methodsynopsis>
+  <!--
+  <methodsynopsis language="python">
+    <methodname><link linkend="method-gstobject-info">info</link></methodname>
+    <methodparam></methodparam>
+  </methodsynopsis> 
+  -->
+
+  <!--
+  <methodsynopsis language="python">
+    <methodname><link linkend="method-gstobject-log">log</link></methodname>
+    <methodparam></methodparam>
+  </methodsynopsis> 
+  -->
+
+  <methodsynopsis language="python">
+	  <methodname><link linkend="method-gstobject--set-flag">set_flag</link></methodname>
+    <methodparam><parameter role="keyword">flag</parameter></methodparam>
+  </methodsynopsis>
+    
+  <methodsynopsis language="python">
+    <methodname><link linkend="method-gstobject--set-name">set_name</link></methodname>
+	<methodparam><parameter role="keyword">name</parameter></methodparam>
+  </methodsynopsis>
+    
+  <methodsynopsis language="python">
+    <methodname><link linkend="method-gstobject--set-name-prefix">set_name_prefix</link></methodname>
+	<methodparam><parameter role="keyword">name_prefix</parameter></methodparam>
+  </methodsynopsis>
+
+  <methodsynopsis language="python">
+	  <methodname><link linkend="method-gstobject--set-parent">set_parent</link></methodname>
+    <methodparam><parameter role="keyword">parent</parameter></methodparam>
+  </methodsynopsis>
+      
+  <methodsynopsis language="python">
+  	<methodname><link linkend="method-gstobject--unparent">unparent</link></methodname>
+  	<methodparam></methodparam>
+  </methodsynopsis>
+    
+  <methodsynopsis language="python">
+  	<methodname><link linkend="method-gstobject--unref">unset_flag</link></methodname>
+    <methodparam><parameter role="keyword">flag</parameter></methodparam>
+  </methodsynopsis>
+ 
+  <!--
+  <methodsynopsis language="python">
+    <methodname><link linkend="method-gstobject-warning">warning</link></methodname>
+    <methodparam></methodparam>
+  </methodsynopsis> 
+  -->
+ 
+</classsynopsis>
+</refsect1>
+
+
+<!-- *************************** -->
+<!-- BEGIN OF GSTOBJECT ANCESTRY -->
+<!-- *************************** -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+  +-- <link linkend="class-gstobject">gst.Object</link>
+</synopsis>
+</refsect1>
+
+<!-- ***************************** -->
+<!-- BEGIN OF GSTOBJECT PROPERTIES -->
+<!-- ***************************** -->
+
+<refsect1>
+    <title>Properties</title>
+    
+    <blockquote role="properties">
+        <informaltable pgwide="1" frame="none">
+            <tgroup cols="3">
+                <colspec column="1" colwidth="1in"/>
+                <colspec column="2" colwidth="1in"/>
+                <colspec column="3" colwidth="4in"/>
+                <tbody>
+                    
+                    <row valign="top">
+                        <entry>"name"</entry>
+                        <entry>Read-Write</entry>
+                        <entry>The name of the object.</entry>
+                    </row>
+
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </blockquote>
+</refsect1>
+
+<!-- ************************************ -->
+<!-- BEGIN OF GSTOBJECT SIGNAL PROTOTYPES -->
+<!-- ************************************ -->
+
+<refsect1>
+    <title>Signal Prototypes</title>
+    <variablelist>
+      <varlistentry>
+        <term>"<link linkend="signal-gstobject--parent-set">parent_set</link>"</term>
+        <listitem>
+          <methodsynopsis language="python"><methodname>callback</methodname>
+            <methodparam><parameter>gstobject</parameter></methodparam>
+            <methodparam><parameter>parent</parameter></methodparam>
+            <methodparam><parameter>user_data</parameter></methodparam>
+            <methodparam><parameter>...</parameter></methodparam>
+          </methodsynopsis>
+        </listitem>
+      </varlistentry>
+      
+      <varlistentry>
+        <term>"<link linkend="signal-gstobject--parent-unset">parent_unset</link>"</term>
+        <listitem>
+          <methodsynopsis language="python"><methodname>callback</methodname>
+            <methodparam><parameter>gstobject</parameter></methodparam>
+            <methodparam><parameter>parent</parameter></methodparam>
+            <methodparam><parameter>user_data</parameter></methodparam>
+            <methodparam><parameter>...</parameter></methodparam>
+          </methodsynopsis>
+        </listitem>
+      </varlistentry>
+      
+      <varlistentry>
+        <term>"<link linkend="signal-gstobject--object-saved">object_saved</link>"</term>
+        <listitem>
+          <methodsynopsis language="python"><methodname>callback</methodname>
+            <methodparam><parameter>gstobject</parameter></methodparam>
+            <methodparam><parameter>arg1</parameter></methodparam>
+            <methodparam><parameter>user_data</parameter></methodparam>
+            <methodparam><parameter>...</parameter></methodparam>
+          </methodsynopsis>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>"<link linkend="signal-gstobject--deep-notify">deep_notify</link>"</term>
+        <listitem>
+          <methodsynopsis language="python"><methodname>callback</methodname>
+            <methodparam><parameter>gstobject</parameter></methodparam>
+            <methodparam><parameter>object</parameter></methodparam>
+            <methodparam><parameter>property</parameter></methodparam>
+            <methodparam><parameter>user_data</parameter></methodparam>
+            <methodparam><parameter>...</parameter></methodparam>
+          </methodsynopsis>
+        </listitem>
+      </varlistentry>
+   </variablelist>
+</refsect1>
+
+<!-- ****************************** -->
+<!-- BEGIN OF GSTOBJECT DESCRIPTION -->
+<!-- ****************************** -->
+
+<refsect1 id="description-gstobject">
+  <title>Description</title>
+
+  <para>
+    <link linkend="class-gstobject"><classname>gst.Object</classname></link> provides a root for the object hierarchy tree 
+    filed in by the GST library. It is currently a thin wrapper on top of GObject. 
+    It is an abstract class that is not very usable on its own.
+  </para>
+  
+  <!--  The following part does not apply to the python wrapper -->
+</refsect1>
+
+<!-- ************************** -->
+<!-- BEGIN OF GSTOBJECT METHODS -->
+<!-- ************************** -->
+
+<refsect1>
+  <title>Methods</title>
+  
+  <!--
+  <refsect2 id="method-gstobject-debug">
+    <title>gst.Object.debug</title>
+    <programlisting><methodsynopsis language="python">
+      <methodname>debug</methodname>
+      <methodparam><parameter role="keyword">msg</parameter></methodparam>
+    </methodsynopsis></programlisting>
+    
+    <variablelist>
+      <varlistentry>
+        <term><parameter role="keyword"></parameter>&nbsp;:</term>
+        <listitem><simpara> </simpara></listitem>
+      </varlistentry>
+    </variablelist>
+    
+    <para>
+      The <methodname>debug</methodname>() method 
+    </para>
+  </refsect2>
+  -->
+
+  <refsect2 id="method-gstobject--default-error">
+    <title>gst.Object.default_error</title>
+    <programlisting><methodsynopsis language="python">
+      <methodname>default_error</methodname>
+      <methodparam><parameter role="keyword">error</parameter></methodparam>
+      <methodparam><parameter role="keyword">debug</parameter></methodparam>
+    </methodsynopsis></programlisting>
+
+    <variablelist>
+      <varlistentry>
+        <term><parameter role="keyword">error</parameter>&nbsp;:</term>
+        <listitem><simpara> the GError.</simpara></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><parameter role="keyword">debug</parameter>&nbsp;:</term>
+        <listitem><simpara> an additional debug information string, or <literal>None</literal>.</simpara></listitem>
+      </varlistentry>
+    </variablelist>
+    
+    <para>
+      The <methodname>default_error</methodname>() method will simply print the error string using g_print.
+    </para>
+  </refsect2>
+
+  <!--
+      <refsect2 id="method-gstobject-error">
+        <title>gst.Object.error</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>error</methodname>
+            <methodparam></methodparam>
+          </methodsynopsis></programlisting>
+        
+        <variablelist>
+          <varlistentry>
+            <term><parameter role="keyword"></parameter>&nbsp;:</term>
+            <listitem><simpara> </simpara></listitem>
+          </varlistentry>
+        </variablelist>
+        
+        <para>
+          The <methodname>error</methodname>() method 
+        </para>
+      </refsect2>
+      -->
+
+  <refsect2 id="method-gstobject--get-name">
+    <title>gst.Object.get_name</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>get_name</methodname>
+  	    <methodparam></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	    <varlistentry>
+	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
+	      <listitem><simpara> The name of the object.</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>get_name</methodname>() method gets the name of the object.
+	  </para>
+  </refsect2>
+  
+  <refsect2 id="method-gstobject--get-name-prefix">
+    <title>gst.Object.get_name_prefix</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>get_name_prefix</methodname>
+        <methodparam></methodparam>
+      </methodsynopsis></programlisting>
+    
+    <variablelist>
+      <varlistentry>
+        <term><emphasis>Returns</emphasis>&nbsp;:</term>
+        <listitem><simpara> The name prefix of object.</simpara></listitem>
+      </varlistentry>
+    </variablelist>
+    
+    <para>
+      The <methodname>get_name_prefix</methodname>() method returns a copy of the name prefix of object, for a prefixless object, 
+      this returns <literal>None</literal>
+    </para>
+  </refsect2>
+
+  <refsect2 id="method-gstobject--get-parent">
+    <title>gst.Object.get_parent</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>get_parent</methodname>
+  	    <methodparam></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	    <varlistentry>
+	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
+	      <listitem><simpara> The parent of the object.</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>get_parent</methodname>() method gets the parent of the object.
+	  </para>
+  </refsect2>
+
+  <refsect2 id="method-gstobject--get-path-string">
+    <title>gst.Object.get_path_string</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>get_path_string</methodname>
+  	    <methodparam></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	    <varlistentry>
+	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
+	      <listitem><simpara> A string describing the path of the object.</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>get_path_string</methodname>() method generates a string describing the path of the object in the object hierarchy. 
+      Only useful (or used) for debugging.
+	  </para>
+  </refsect2>
+
+  <refsect2 id="method-gstobject--has-ancestor">
+    <title>gst.Object.has_ancestor</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>has_ancestor</methodname>
+      <methodparam><parameter role="keyword">ancestor</parameter></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	    <varlistentry>
+        <term><parameter role="keyword">ancestor</parameter>&nbsp;:</term>
+        <listitem><simpara> a <link linkend="class-gstobject"><classname>gst.Object</classname></link> to check as ancestor.</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>has_ancestor</methodname>() method returns <literal>True</literal> if <literal>ancestor</literal> 
+      is an <literal>ancestor</literal> of <literal>object</literal>.
+	  </para>
+  </refsect2>
+  
+  <!--
+  <refsect2 id="method-gstobject-info">
+    <title>gst.Object.info</title>
+    <programlisting><methodsynopsis language="python">
+      <methodname>info</methodname>
+      <methodparam><parameter role="keyword">msg</parameter></methodparam>
+    </methodsynopsis></programlisting>
+    
+    <variablelist>
+      <varlistentry>
+        <term><parameter role="keyword"></parameter>&nbsp;:</term>
+        <listitem><simpara> </simpara></listitem>
+      </varlistentry>
+    </variablelist>
+    
+    <para>
+      The <methodname>info</methodname>() method 
+    </para>
+  </refsect2>
+  -->
+  
+  <!--
+  <refsect2 id="method-gstobject-log">
+    <title>gst.Object.log</title>
+    <programlisting><methodsynopsis language="python">
+      <methodname>log</methodname>
+      <methodparam><parameter role="keyword">msg</parameter></methodparam>
+    </methodsynopsis></programlisting>
+    
+    <variablelist>
+      <varlistentry>
+        <term><parameter role="keyword"></parameter>&nbsp;:</term>
+        <listitem><simpara> </simpara></listitem>
+      </varlistentry>
+    </variablelist>
+    
+    <para>
+      The <methodname>log</methodname>() method 
+    </para>
+  </refsect2>
+  -->
+  
+  <refsect2 id="method-gstobject--set-flag">
+    <title>gst.Object.set_flag</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>set_flag</methodname>
+        <methodparam><parameter role="keyword">flag</parameter></methodparam>
+      </methodsynopsis></programlisting>
+    
+    <variablelist>
+      <varlistentry>
+        <term><parameter role="keyword">flag</parameter>&nbsp;:</term>
+        <listitem><simpara> a flag to set.</simpara></listitem>
+      </varlistentry>
+    </variablelist>
+    
+    <para>
+      The <methodname>set_flag</methodname>() method will set the given flag to the <literal>object</literal>.
+    </para>
+  </refsect2>
+  
+  
+  <refsect2 id="method-gstobject--set-name">
+    <title>gst.Object.set_name</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>set_name</methodname>
+  	  <methodparam><parameter role="keyword">name</parameter></methodparam>
+    </methodsynopsis></programlisting>
+      
+    <variablelist>
+      <varlistentry>
+  	    <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+    	  <listitem><simpara> New name of object.</simpara></listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>set_name</methodname>() method sets the name of the object, or gives the element a guaranteed unique name 
+      (if name is <literal>None</literal>).
+	  </para>
+  </refsect2>
+  
+  <refsect2 id="method-gstobject--set-name-prefix">
+    <title>gst.Object.set_name_prefix</title>
+    <programlisting><methodsynopsis language="python">
+        <methodname>set_name_prefix</methodname>
+        <methodparam><parameter role="keyword">name_prefix</parameter></methodparam>
+      </methodsynopsis></programlisting>
+    
+    <variablelist>
+      <varlistentry>
+        <term><parameter role="keyword">name_prefix</parameter>&nbsp;:</term>
+        <listitem><simpara> the name prefix of <literal>object</literal>.</simpara></listitem>
+      </varlistentry>
+    </variablelist>
+    
+    <para>
+      The <methodname>set_name_prefix</methodname>() method sets the name prefix of <literal>object</literal> to <literal>name_prefix</literal>. 
+      This function makes a copy of the provided name prefix, so the caller retains ownership of the name prefix it sent.
+    </para>
+  </refsect2>
+
+  <refsect2 id="method-gstobject--set-parent">
+    <title>gst.Object.set_parent</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>set_parent</methodname>
+  	    <methodparam><parameter role="keyword">parent</parameter></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+	  <varlistentry>
+  	    <term><parameter role="keyword">parent</parameter>&nbsp;:</term>
+    	  <listitem><simpara> New parent of object.</simpara></listitem>
+	  </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>set_parent</methodname>() method sets the parent of object. 
+      Causes the <link linkend="signal-gstobject--parent-set">"parent_set"</link> signal to be emitted.
+	  </para>
+  </refsect2>
+
+  <refsect2 id="method-gstobject--unparent">
+    <title>gst.Object.unparent</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>unparent</methodname>
+  	    <methodparam></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+    </variablelist>
+
+    <para>
+      The <methodname>unparent</methodname>() method clear the parent of object, removing the associated reference.
+	  </para>
+  </refsect2>
+
+  <refsect2 id="method-gstobject--unset-flag">
+    <title>gst.Object.unset_flag</title>
+    <programlisting><methodsynopsis language="python">
+	    <methodname>unset_flag</methodname>
+      <methodparam><parameter role="keyword">flag</parameter></methodparam>
+	    </methodsynopsis></programlisting>
+      
+    <variablelist>
+      <varlistentry>
+        <term><parameter role="keyword">flag</parameter>&nbsp;:</term>
+        <listitem><simpara> a flag to unset.</simpara></listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>
+      The <methodname>unset_flag</methodname>() method unset the given <literal>flag</literal> from <literal>object</literal>.
+	  </para>
+  </refsect2>
+  
+  <!--
+  <refsect2 id="method-gstobject-warning">
+    <title>gst.Object.warning</title>
+    <programlisting><methodsynopsis language="python">
+      <methodname>log</methodname>
+      <methodparam><parameter role="keyword">warning</parameter></methodparam>
+    </methodsynopsis></programlisting>
+    
+    <variablelist>
+      <varlistentry>
+        <term><parameter role="keyword"></parameter>&nbsp;:</term>
+        <listitem><simpara> </simpara></listitem>
+      </varlistentry>
+    </variablelist>
+    
+    <para>
+      The <methodname>warning</methodname>() method 
+    </para>
+  </refsect2>
+  -->
+</refsect1>
+
+<!-- ************************** -->
+<!-- BEGIN OF GSTOBJECT SIGNALS -->
+<!-- ************************** --> 
+ 
+<refsect1>
+    <title>Signals</title>
+
+  <refsect2 id="signal-gstobject--parent-set">
+    <title>The "parent-set" gst.Object Signal</title>
+    <programlisting><methodsynopsis language="python">
+	  <methodname>callback</methodname>
+	  <methodparam><parameter>gstobject</parameter></methodparam>
+	  <methodparam><parameter>parent</parameter></methodparam>
+	  <methodparam><parameter>user_data</parameter></methodparam>
+      <methodparam><parameter>...</parameter></methodparam>
+	  </methodsynopsis></programlisting>
+
+    <variablelist>
+	    <varlistentry>
+	      <term><parameter>gstobject</parameter>&nbsp;:</term>
+	      <listitem><simpara>the gstobject that received the signal</simpara></listitem>
+	    </varlistentry>
+        <varlistentry>
+	      <term><parameter>parent</parameter>&nbsp;:</term>
+          <listitem><simpara>the new parent</simpara></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term><parameter>user_data</parameter>&nbsp;:</term>
+          <listitem><simpara>additional data (if any) specified with the 
+          <link linkend="method-gobject--connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term><parameter>...</parameter>&nbsp;:</term>
+	      <listitem><simpara>additional user parameters (if any)</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The "parent-set" signal is emitted when the parent of an object is set.
+    </para>
+  </refsect2>
+
+  <refsect2 id="signal-gstobject--parent-unset">
+    <title>The "unparent-set" gst.Object Signal</title>
+    <programlisting><methodsynopsis language="python">
+	  <methodname>callback</methodname>
+	  <methodparam><parameter>gstobject</parameter></methodparam>
+	  <methodparam><parameter>parent</parameter></methodparam>
+	  <methodparam><parameter>user_data</parameter></methodparam>
+      <methodparam><parameter>...</parameter></methodparam>
+	  </methodsynopsis></programlisting>
+
+    <variablelist>
+	    <varlistentry>
+	      <term><parameter>gstobject</parameter>&nbsp;:</term>
+	      <listitem><simpara>the gstobject that received the signal</simpara></listitem>
+	    </varlistentry>
+        <varlistentry>
+	      <term><parameter>parent</parameter>&nbsp;:</term>
+          <listitem><simpara>the old parent</simpara></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term><parameter>user_data</parameter>&nbsp;:</term>
+          <listitem><simpara>additional data (if any) specified with the 
+          <link linkend="method-gobject--connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term><parameter>...</parameter>&nbsp;:</term>
+	      <listitem><simpara>additional user parameters (if any)</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The "parent-unset" signal is emitted when the parent of an object is unset.
+    </para>
+  </refsect2>
+ 
+   <refsect2 id="signal-gstobject--object-saved">
+    <title>The "object-saved" gst.Object Signal</title>
+    <programlisting><methodsynopsis language="python">
+	  <methodname>callback</methodname>
+	  <methodparam><parameter>gstobject</parameter></methodparam>
+	  <methodparam><parameter>object</parameter></methodparam>
+	  <methodparam><parameter>user_data</parameter></methodparam>
+      <methodparam><parameter>...</parameter></methodparam>
+	  </methodsynopsis></programlisting>
+
+    <variablelist>
+	    <varlistentry>
+	      <term><parameter>gstobject</parameter>&nbsp;:</term>
+	      <listitem><simpara>the gstobject that received the signal</simpara></listitem>
+	    </varlistentry>
+        <varlistentry>
+	      <term><parameter>object</parameter>&nbsp;:</term>
+          <listitem><simpara>the xmlNodePtr of the parent node</simpara></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term><parameter>user_data</parameter>&nbsp;:</term>
+          <listitem><simpara>additional data (if any) specified with the 
+          <link linkend="method-gobject--connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term><parameter>...</parameter>&nbsp;:</term>
+	      <listitem><simpara>additional user parameters (if any)</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The "object-saved" signal is emitted when a new object is saved to XML. 
+      You can connect to this signal to insert custom XML tags into the core XML.
+    </para>
+  </refsect2>
+ 
+    <refsect2 id="signal-gstobject--deep-notify">
+    <title>The "deep-notify" gst.Object Signal</title>
+    <programlisting><methodsynopsis language="python">
+	  <methodname>callback</methodname>
+	  <methodparam><parameter>gstobject</parameter></methodparam>
+	  <methodparam><parameter>object</parameter></methodparam>
+      <methodparam><parameter>property</parameter></methodparam>
+	  <methodparam><parameter>user_data</parameter></methodparam>
+      <methodparam><parameter>...</parameter></methodparam>
+	  </methodsynopsis></programlisting>
+
+    <variablelist>
+	    <varlistentry>
+	      <term><parameter>gstobject</parameter>&nbsp;:</term>
+	      <listitem><simpara>the gstobject that received the signal</simpara></listitem>
+	    </varlistentry>
+        <varlistentry>
+	      <term><parameter>object</parameter>&nbsp;:</term>
+          <listitem><simpara>the object that originated the signal</simpara></listitem>
+	    </varlistentry>
+        <varlistentry>
+	      <term><parameter>property</parameter>&nbsp;:</term>
+          <listitem><simpara>the property that changed</simpara></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term><parameter>user_data</parameter>&nbsp;:</term>
+          <listitem><simpara>additional data (if any) specified with the 
+          <link linkend="method-gobject--connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term><parameter>...</parameter>&nbsp;:</term>
+	      <listitem><simpara>additional user parameters (if any)</simpara></listitem>
+	    </varlistentry>
+    </variablelist>
+
+    <para>
+      The "deep-notify" signal is is used to be notified of property changes. it is typically attached to the toplevel 
+      bin to receive notifications from all the elements contained in that bin.
+    </para>
+  </refsect2> 
+ 
+ </refsect1>
+</refentry>

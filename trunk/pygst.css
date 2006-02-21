@@ -1,0 +1,36 @@
+.programlisting {
+font: monospace;
+background-color: #eeeeff;
+border: solid 1px #aaaaff;
+padding: 3;
+}
+
+.classsynopsis {
+font: monospace;
+background-color: #eeeeff;
+border: solid 1px #aaaaff;
+padding: 3;
+}
+
+.variablelist {
+font: monospace;
+background-color: #ffeeee;
+border: solid 1px #ffaaaa;
+padding: 3;
+}
+
+.blockquote {
+background-color: #eeeeff;
+padding: 3;
+border: solid 1px #aaaaff;
+}
+
+pre.synopsis {
+background-color: #eeeeff;
+padding: 3;
+border: solid 1px #aaaaff;
+}
+
+a:link {background:none; color:#104E8B;}
+a:visited {background:none; color:#8f3333;}
+a:hover {background:#104E8B; color: white; text-decoration:none;}

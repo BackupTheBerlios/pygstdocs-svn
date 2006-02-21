@@ -1,0 +1,22 @@
+<?xml version='1.0'?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [  ]>
+  
+<chapter id="gst-class-reference" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>The Python GStreamer Class Reference</title>
+
+    <!-- GSTREAMER OBJECTS -->
+
+    <xi:include href="gst-gstbuffer.xml"/>
+    <xi:include href="gst-gstbus.xml"/>
+    <xi:include href="gst-gstclock.xml"/>
+    <xi:include href="gst-gstelement.xml"/>
+    <xi:include href="gst-gstghostpad.xml"/>
+    <xi:include href="gst-gstminiobject.xml"/>
+    <xi:include href="gst-gstobject.xml"/>
+    <xi:include href="gst-gstpad.xml"/>
+    <xi:include href="gst-gstpadtemplate.xml"/>
+    <xi:include href="gst-gstsystemclock.xml"/>
+
+
+</chapter>
+

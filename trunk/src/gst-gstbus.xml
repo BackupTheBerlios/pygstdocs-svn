@@ -1,0 +1,505 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstbus">
+    <refnamediv>
+        <refname>gst.Bus</refname>
+        <refpurpose>Asynchronous message bus subsystem</refpurpose>
+    </refnamediv>
+
+<!-- ************************ -->
+<!-- BEGIN OF GSTBUS SYNOPSIS -->
+<!-- ************************ -->
+
+<refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.Bus</classname></ooclass>
+        <ooclass><classname><link linkend="class-gstobject">gst.Object</link></classname></ooclass>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbus--add-signal-watch">add_signal_watch</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbus--add-watch">add_watch</link></methodname>
+        <methodparam><parameter role="keyword">func</parameter></methodparam>
+        <methodparam><parameter role="keyword">user_data</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbus--have-pending">have_pending</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbus--peek">peek</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbus--poll">poll</link></methodname>
+        <methodparam><parameter role="keyword">events</parameter></methodparam>
+        <methodparam><parameter role="keyword">timeout</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbus--peek">pop</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbus--post">post</link></methodname>
+        <methodparam><parameter role="keyword">message</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+         <methodname><link linkend="method-gstbus--remove-signal-watch">remove_signal_watch</link></methodname>
+         <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbus--set-flushing">set_flushing</link></methodname>
+        <methodparam><parameter role="keyword">flushing</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbus--set-sync-handler">set_sync_handler</link></methodname>
+        <methodparam><parameter role="keyword">func</parameter></methodparam>
+        <methodparam><parameter role="keyword">data</parameter></methodparam>
+    </methodsynopsis>
+    </classsynopsis>
+</refsect1>
+
+<!-- ************************ -->
+<!-- BEGIN OF GSTBUS ANCESTRY -->
+<!-- ************************ -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+    +-- <link linkend="class-gstobject">gst.Object</link>
+        +-- <link linkend="class-gstbus">gst.Bus</link>
+</synopsis>
+</refsect1>
+
+<!-- ********************************* -->
+<!-- BEGIN OF GSTBUS SIGNAL PROTOTYPES -->
+<!-- ********************************* -->
+
+<refsect1>
+    <title>Signal Prototypes</title>
+    <variablelist>
+        <varlistentry>
+            <term>"<link linkend="signal-gstbus--message">message</link>"</term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>gstbus</parameter></methodparam>
+                    <methodparam><parameter>message</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                    <methodparam><parameter>...</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+        
+        <varlistentry>
+            <term>"<link linkend="signal-gstbus--sync-message">sync-message</link>"</term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>gstbus</parameter></methodparam>
+                    <methodparam><parameter>message</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                    <methodparam><parameter>...</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+    </variablelist>
+</refsect1>
+
+<!-- *************************** -->
+<!-- BEGIN OF GSTBUS DESCRIPTION -->
+<!-- *************************** -->
+
+<refsect1 id="description-gstbus">
+    <title>Description</title>
+
+    <para>
+        The <link linkend="class-gstbus"><classname>gst.Bus</classname></link> is an object responsible for delivering 
+        <link linkend="class-gstmessage"><classname>gst.Message</classname></link> in a first-in first-out way from the streaming threads to the application.
+    </para>
+
+    <para>
+        Since the application typically only wants to deal with delivery of these messages from one thread, the 
+        <link linkend="class-gstbus"><classname>gst.Bus</classname></link> will marshall the messages between different threads. 
+        This is important since the actual streaming of media is done in another thread than the application.
+    </para>
+  
+    <para>
+        The <link linkend="class-gstbus"><classname>gst.Bus</classname></link> provides support for GSource based notifications. 
+        This makes it possible to handle the delivery in the glib mainloop.
+    </para>
+  
+    <para>
+        A message is posted on the bus with the <methodname><link linkend="method-gstbus--post">post</link></methodname> 
+        method. With the <methodname><link linkend="method-gstbus--peek">peek</link></methodname> and 
+        <methodname><link linkend="method-gstbus--pop">pop</link></methodname> methods one can look at or retrieve a previously posted message.
+    </para>
+    
+    <para>
+        The bus can be polled with the <methodname><link linkend="method-gstbus--poll">poll</link></methodname> method. 
+        This methods blocks up to the specified timeout value until one of the specified messages types is posted on the bus. 
+        The application can then <methodname><link linkend="method-gstbus--pop">pop</link></methodname> the messages from the bus to handle them. 
+        Alternatively the application can register an asynchronous bus function using 
+        <methodname><link linkend="method-gstbus--add-watch">add_watch</link></methodname>. 
+        This method will receive messages a short while after they have been posted.
+    </para>
+    
+    <para>
+        It is also possible to get messages from the bus without any thread marshalling with the 
+        <methodname><link linkend="method-gstbus--set-sync-handler">set_sync_handler</link></methodname> method. 
+        This makes it possible to react to a message in the same thread that posted the message on the bus. 
+        This should only be used if the application is able to deal with messages from different threads.
+    </para>
+    
+    <para>
+        Every <link linkend="class-gstpipeline"><classname>gst.Pipeline</classname></link> has one bus.
+    </para>
+    
+    <para>
+        Note that a <link linkend="class-gstpipeline"><classname>gst.Pipeline</classname></link> will set its bus into 
+        flushing state when changing from READY to NULL state.
+    </para>
+</refsect1>
+
+<!-- *********************** -->
+<!-- BEGIN OF GSTBUS METHODS -->
+<!-- *********************** -->
+
+<refsect1>
+    <title>Methods</title>
+
+    <refsect2 id="method-gstbus--add-signal-watch">
+        <title>gst.Bus.add_signal_watch</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>add_signal_watch</methodname>
+  	        <methodparam></methodparam>
+    	  </methodsynopsis></programlisting>
+      
+        <para>
+            The <methodname>add_signal_watch</methodname>() method adds a bus signal watch to the default main context with the default priority. 
+            After calling this statement, the bus will emit the message signal for each message posted on the bus.
+            This function may be called multiple times. To clean up, the caller is responsible for calling 
+            <methodname><link linkend="method-gstbus--remove-signal-watch">remove_signal_watch</link></methodname> as many times as this function is called.
+        </para>
+    </refsect2>
+
+    <refsect2 id="method-gstbus--add-watch">
+        <title>gst.Bus.add_watch</title>
+        <programlisting><methodsynopsis language="python">
+    	      <methodname>add_watch</methodname>
+            <methodparam><parameter role="keyword">func</parameter></methodparam>
+            <methodparam><parameter role="keyword">user_data</parameter></methodparam>
+	      </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">func</parameter>&nbsp;:</term>
+                <listitem><simpara> A function to call when a message is received.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">user_data</parameter>&nbsp;:</term>
+                <listitem><simpara> User data passed to func.</simpara></listitem>
+            </varlistentry>
+	          <varlistentry>
+    	          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The event source id.</simpara></listitem>
+	          </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>add_watch</methodname>() method adds a bus watch to the default main context with the default priority.
+            The watch can be removed using <methodname><link linkend="function-gobject--source-remove">gobject.source_remove</link></methodname>
+	      </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbus--have-pending">
+        <title>gst.Bus.have_pending</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>have_pending</methodname>
+                <methodparam><parameter role="keyword">ret</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if there are messages on the bus to be handled, 
+                        <literal>False</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>have_pending</methodname>() method check if there are pending messages on the bus that should be handled.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbus--peek">
+        <title>gst.Bus.peek</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>peek</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstmessage"><classname>gst.Message</classname></link> 
+                        that is on the bus, or <literal>None</literal> if the bus is empty.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>peek</methodname>() method peeks the message on the top of the bus' queue. 
+            The message will remain on the bus' message queue.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbus--poll">
+        <title>gst.Bus.poll</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>poll</methodname>
+                <methodparam><parameter role="keyword">events</parameter></methodparam>
+                <methodparam><parameter role="keyword">timeout</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">events</parameter>&nbsp;:</term>
+                <listitem><simpara> a mask of <link linkend="class-gstmessagetype"><classname>gst.MessageType</classname></link>, 
+                        representing the set of message types to poll for.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">timeout</parameter>&nbsp;:</term>
+                <listitem><simpara> the poll timeout, as a GstClockTimeDiff, or -1 to poll indefinitely.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The message that was received, or <literal>None</literal> if the poll timed out. 
+                        The message is taken from the bus and needs to be unreffed after usage. </simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>poll</methodname>() method polls the bus for messages. Will block while waiting for messages to come. 
+            You can specify a maximum time to poll with the timeout parameter. If timeout is negative, this function will block indefinitely.
+        </para>
+        <para>
+            All messages not in <parameter>events</parameter> will be popped off the bus and will be ignored.
+        </para>
+        <para>
+            Because poll is implemented using the "message" signal enabled by 
+            <methodname><link linkend="method-gstbus--add-signal-watch">add_signal_watch</link></methodname> 
+            calling <methodname><link linkend="method-gstbus--poll">poll</link></methodname> will cause the "message" signal to be 
+            emitted for every message that poll sees. Thus a "message" signal handler will see the same messages that this 
+            function sees -- neither will steal messages from the other.
+        </para>
+        <para>
+            This function will run a main loop from the default main context when polling.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbus--pop">
+        <title>gst.Bus.pop</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>pop</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstmessage"><classname>gst.Message</classname></link></simpara></listitem> that is on the bus, 
+                or <literal>None</literal> if the bus is empty. 
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>pop</methodname>() method gets a message from the bus.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbus--post">
+        <title>gst.Bus.post</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>post</methodname>
+                <methodparam><parameter role="keyword">message</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">message</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstmessage"><classname>gst.Message</classname></link>
+                    to post.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the message could be posted, 
+                    <literal>False</literal> if the bus is flushing.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>post</methodname>() method post a message on the given bus. Ownership of the message is taken by the bus.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbus--remove-signal-watch">
+        <title>gst.Bus.remove_signal_watch</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>remove_signal_watch</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+
+        <para>
+            The <methodname>remove_signal_watch</methodname>() method removes a signal watch previously added with 
+            <methodname><link linkend="method-gstbus--add-signal-watch">add_signal_watch</link></methodname>
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbus--set-flushing">
+        <title>gst.Bus.set_flushing</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_flushing</methodname>
+                <methodparam><parameter role="keyword">flushing</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">flushing</parameter>&nbsp;:</term>
+                <listitem><simpara> Whether or not to flush the bus.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_flushing</methodname>() method flush out and unref any messages queued in the bus. 
+            Releases references to the message origin objects. 
+            Will flush future messages until <methodname><link linkend="method-gstbus--set-flushing">set_flushing</link></methodname>() 
+            sets flushing to <literal>False</literal>.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbus--set-sync-handler">
+        <title>gst.Bus.set_sync_handler</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_sync_handler</methodname>
+                <methodparam><parameter role="keyword">func</parameter></methodparam>
+                <methodparam><parameter role="keyword">data</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">func</parameter>&nbsp;:</term>
+                <listitem><simpara> The handler function to install.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">data</parameter>&nbsp;:</term>
+                <listitem><simpara> User data that will be sent to the handler function.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_sync_handler</methodname>() method sets the synchronous handler on the bus. 
+            The function will be called every time a new message is posted on the bus. 
+            Note that the function will be called in the same thread context as the posting object. 
+            This function is usually only called by the creator of the bus. Applications should handle messages 
+            asynchronously using the gst_bus watch and poll functions.
+        </para>
+        <para>
+            You cannot replace an existing sync_handler. You can pass NULL to this function, which will clear the existing handler.
+        </para>
+    </refsect2>
+</refsect1>
+
+<!-- *********************** -->
+<!-- BEGIN OF GSTBUS SIGNALS -->
+<!-- *********************** --> 
+ 
+<refsect1>
+    <title>Signals</title>
+
+    <refsect2 id="signal-gstbus--message">
+        <title>The "message" gst.Bus Signal</title>
+        <programlisting><methodsynopsis language="python">
+        <methodname>callback</methodname>
+         	  <methodparam><parameter>gstbus</parameter></methodparam>
+            <methodparam><parameter>message</parameter></methodparam>
+	          <methodparam><parameter>user_data</parameter></methodparam>
+            <methodparam><parameter>...</parameter></methodparam>
+	      </methodsynopsis></programlisting>
+
+        <variablelist>
+    	      <varlistentry>
+        	      <term><parameter>gstbus</parameter>&nbsp;:</term>
+        	      <listitem><simpara>The gstbus that received the signal</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>message</parameter>&nbsp;:</term>
+                <listitem><simpara> The message that has been posted asynchronously.</simpara></listitem>
+            </varlistentry>
+    	      <varlistentry>
+        	      <term><parameter>user_data</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional data (if any) specified with the 
+                <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+	          </varlistentry>
+    	      <varlistentry>
+        	      <term><parameter>...</parameter>&nbsp;:</term>
+        	      <listitem><simpara>Additional user parameters (if any)</simpara></listitem>
+    	      </varlistentry>
+        </variablelist>
+
+        <para>
+            The "message" signal is emitted when a message has been posted on the bus. This signal is emitted from a GSource added to the mainloop.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="signal-gstbus--sync-message">
+        <title>The "sync-message" gst.Bus Signal</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>callback</methodname>
+                <methodparam><parameter>gstbus</parameter></methodparam>
+                <methodparam><parameter>message</parameter></methodparam>
+                <methodparam><parameter>user_data</parameter></methodparam>
+                <methodparam><parameter>...</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter>gstbus</parameter>&nbsp;:</term>
+                <listitem><simpara>The gstbus that received the signal</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>message</parameter>&nbsp;:</term>
+                <listitem><simpara> The message that has been posted synchronously.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>user_data</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional data (if any) specified with the 
+                        <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>...</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional user parameters (if any)</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The "sync-message" signal is emitted when a message has been posted on the bus. 
+            This signal is emitted from the thread that posted the message so one has to be carefull with locking.
+        </para>
+    </refsect2>
+    
+    
+</refsect1>
+</refentry>
