@@ -188,7 +188,7 @@
     </constructorsynopsis></programlisting>
     
     <para>
-        
+        If no arguments are passed to the constructor, an empty caps will be created, otherwise you can pass a string or a structure.
     </para>
 </refsect1>
 
@@ -200,325 +200,140 @@
 <refsect1>
     <title>Methods</title>
 
-    <refsect2 id="method-gstcaps--copy-on-write">
-        <title>gst.Pad.copy_on_write</title>
+    <refsect2 id="method-gstcaps--append">
+        <title>gst.Caps.append</title>
         <programlisting><methodsynopsis language="python">
-            <methodname>copy_on_write</methodname>
-            <methodparam></methodparam>
+            <methodname>append</methodname>
+            <methodparam><parameter role="keyword">caps2</parameter></methodparam>
         </methodsynopsis></programlisting>
     
         <variablelist>
             <varlistentry>
-                <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> The <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> that can safely be written to.</simpara></listitem>
+                <term><parameter role="keyword">caps2</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> to append.</simpara></listitem>
             </varlistentry>
         </variablelist>
       
         <para>
-            The <methodname>copy_on_write</methodname>() method returns a buffer that is safe to write to.
+            The <methodname>append</methodname>() method appends the structures contained in caps2 to caps1. 
+            The structures in caps2 are not copied, they are transferred to caps1, and then caps2 is freed. 
+            If either caps is ANY, the resulting caps will be ANY.
         </para>
     </refsect2>
 
-    <refsect2 id="method-gstcaps--create-sub">
-        <title>gst.Pad.create_sub</title>
+    <refsect2 id="method-gstcaps--append-structure">
+        <title>gst.Caps.append_structure</title>
         <programlisting><methodsynopsis language="python">
-            <methodname>create_sub</methodname>
-            <methodparam><parameter role="keyword">offset</parameter></methodparam>
-            <methodparam><parameter role="keyword">size</parameter></methodparam>
+            <methodname>append_structure</methodname>
+            <methodparam><parameter role="keyword">structure</parameter></methodparam>
         </methodsynopsis></programlisting>
       
         <variablelist>
             <varlistentry>
-                <term><parameter role="keyword">offset</parameter>&nbsp;:</term>
-                <listitem><simpara> The offset into parent <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> 
-                        at which the new sub-buffer begins.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">size</parameter>&nbsp;:</term>
-                <listitem><simpara> The size of the new <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> 
-                        sub-buffer, in bytes (with size > 0).</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> <literal>None</literal> if the arguments were invalid.</simpara></listitem>
+                <term><parameter role="keyword">structure</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gststructure"><classname>gst.Structure</classname></link> to append.</simpara></listitem>
             </varlistentry>
         </variablelist>
 
         <para>
-            The <methodname>create_sub</methodname>() method creates a sub-buffer from parent at offset and size. 
-            This sub-buffer uses the actual memory space of the parent buffer. 
-            This function will copy the offset and timestamp fields when the offset is 0, else they are set to GST_CLOCK_TIME_NONE/GST_BUFFER_OFFSET_NONE. 
-            The duration field of the new buffer is set to GST_CLOCK_TIME_NONE.
+            The <methodname>append_structure</methodname>() method appends structure to caps. 
+            The structure is not copied; caps becomes the owner of structure.
         </para>
     </refsect2>
     
-    <refsect2 id="method-gstcaps--flag-is-set">
-        <title>gst.Pad.flag_is_set</title>
+    <refsect2 id="method-gstcaps--copy-nth">
+        <title>gst.Caps.copy_nth</title>
         <programlisting><methodsynopsis language="python">
-                <methodname>flag_is_set</methodname>
-                <methodparam><parameter role="keyword">flag</parameter></methodparam>
+                <methodname>copy_nth</methodname>
+                <methodparam><parameter role="keyword">nth</parameter></methodparam>
             </methodsynopsis></programlisting>
         
         <variablelist>
             <varlistentry>
-                <term><parameter role="keyword">flag</parameter>&nbsp;:</term>
-                <listitem><simpara> The <link linkend="class-gstbufferflag"><classname>gst.BufferFlag</classname></link> to check.</simpara></listitem>
+                <term><parameter role="keyword">nth</parameter>&nbsp;:</term>
+                <listitem><simpara> The nth structure to copy.</simpara></listitem>
             </varlistentry>
-        </variablelist>
-        
-        <para>
-            The <methodname>flag_is_set</methodname>() method gives the status of a specific flag on a buffer.
-        </para>
-    </refsect2>
-    
-    <refsect2 id="method-gstcaps--flag-set">
-        <title>gst.Pad.flag_set</title>
-        <programlisting><methodsynopsis language="python">
-                <methodname>flag_set</methodname>
-                <methodparam><parameter role="keyword">flag</parameter></methodparam>
-            </methodsynopsis></programlisting>
-        
-        <variablelist>
             <varlistentry>
-                <term><parameter role="keyword">flag</parameter>&nbsp;:</term>
-                <listitem><simpara> The <link linkend="class-gstbufferflag"><classname>gst.BufferFlag</classname></link> to set.</simpara></listitem>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The new <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.</simpara></listitem>
             </varlistentry>
         </variablelist>
         
         <para>
-            The <methodname>flag_set</methodname>() method sets a buffer flag on a buffer.
+            The <methodname>copy_nth</methodname>() method creates a new <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> 
+            and appends a copy of the nth structure contained in caps.
         </para>
     </refsect2>
-    
-    <refsect2 id="method-gstcaps--flag-unset">
-        <title>gst.Pad.flag_unset</title>
+
+    <refsect2 id="method-gstcaps--do-simplify">
+        <title>gst.Caps.do_simplify</title>
         <programlisting><methodsynopsis language="python">
-                <methodname>flag_unset</methodname>
-                <methodparam><parameter role="keyword">flag</parameter></methodparam>
-            </methodsynopsis></programlisting>
-        
-        <variablelist>
-            <varlistentry>
-                <term><parameter role="keyword">flag</parameter>&nbsp;:</term>
-                <listitem><simpara> The <link linkend="class-gstbufferflag"><classname>gst.BufferFlag</classname></link> to clear.</simpara></listitem>
-            </varlistentry>
-        </variablelist>
-        
-        <para>
-            The <methodname>flag_set</methodname>() method clears a buffer flag.
-        </para>
-    </refsect2>
-    
-    <refsect2 id="method-gstcaps--get-caps">
-        <title>gst.Pad.get_caps</title>
-        <programlisting><methodsynopsis language="python">
-                <methodname>get_caps</methodname>
+                <methodname>do_simplify</methodname>
                 <methodparam></methodparam>
             </methodsynopsis></programlisting>
         
         <variablelist>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> <literal>None</literal> if there were no caps on this buffer.</simpara></listitem>
+                <listitem><simpara> <literal>True</literal>, if the caps could be simplified.</simpara></listitem>
             </varlistentry>
         </variablelist>
         
         <para>
-            The <methodname>get_caps</methodname>() method gets the media type of the buffer. 
-            This can be <literal>None</literal> if there is no media type attached to this buffer.
+            The <methodname>do_simplify</methodname>() method modifies the given caps inplace into a representation that represents 
+            the same set of formats, but in a simpler form. Component structures that are identical are merged. 
+            Component structures that have values that can be merged are also merged.
         </para>
     </refsect2>
     
-    <refsect2 id="method-gstcaps--is-span-fast">
-        <title>gst.Pad.is_span_fast</title>
+    <refsect2 id="method-gstcaps--get-size">
+        <title>gst.Caps.get_size</title>
         <programlisting><methodsynopsis language="python">
-                <methodname>is_span_fast</methodname>
-                <methodparam><parameter role="keyword">buf2</parameter></methodparam>
+                <methodname>get_size</methodname>
+                <methodparam></methodparam>
             </methodsynopsis></programlisting>
         
         <variablelist>
-            <varlistentry>
-                <term><parameter role="keyword">buf2</parameter>&nbsp;:</term>
-                <listitem><simpara> The second <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link>.</simpara></listitem>
-            </varlistentry>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> <literal>True</literal> if the buffers are contiguous, 
-                        <literal>False</literal> if a copy would be required.</simpara></listitem>
+                <listitem><simpara> The number of structures that caps contains.</simpara></listitem>
             </varlistentry>
         </variablelist>
         
         <para>
-            The <methodname>is_span_fast</methodname>() method determines whether a 
-            <methodname><link linkend="method-gstcaps--span">gst.Buffer.span()</link></methodname> can be done without copying 
-            the contents, that is, whether the data areas are contiguous sub-buffers of the same buffer.
+            The <methodname>get_size</methodname>() method gets the number of structures contained in caps.
         </para>
     </refsect2>
     
-    <refsect2 id="method-gstcaps--join">
-        <title>gst.Pad.join</title>
-        <programlisting><methodsynopsis language="python">
-                <methodname>join</methodname>
-                <methodparam><parameter role="keyword">buf2</parameter></methodparam>
-            </methodsynopsis></programlisting>
-        
-        <variablelist>
-            <varlistentry>
-                <term><parameter role="keyword">buf2</parameter>&nbsp;:</term>
-                <listitem><simpara> The second source <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link>.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> The new <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> which is the 
-                        concatenation of the source buffers.</simpara></listitem>
-            </varlistentry>
-        </variablelist>
-        
-        <para>
-            The <methodname>join</methodname>() method creates a new buffer that is the concatenation of the two source buffers.
-        </para>
-        <para>
-            If the buffers point to contiguous areas of memory, the buffer is created without copying the data.
-        </para>
-    </refsect2>
-    
-    <refsect2 id="method-gstcaps--merge">
-        <title>gst.Pad.merge</title>
-        <programlisting><methodsynopsis language="python">
-                <methodname>merge</methodname>
-                <methodparam><parameter role="keyword">buf2</parameter></methodparam>
-            </methodsynopsis></programlisting>
-        
-        <variablelist>
-            <varlistentry>
-                <term><parameter role="keyword">buf2</parameter>&nbsp;:</term>
-                <listitem><simpara> The second source <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> to merge.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> The new <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> which is the 
-                        concatenation of the source buffers.</simpara></listitem>
-            </varlistentry>
-        </variablelist>
-        
-        <para>
-            The <methodname>merge</methodname>() method create a new buffer that is the concatenation of the two source buffers. 
-            The original source buffers will not be modified.
-        </para>
-        <para>
-            If the buffers point to contiguous areas of memory, the buffer is created without copying the data.
-        </para>
-    </refsect2>
-    
-    <refsect2 id="method-gstcaps--set-caps">
-        <title>gst.Pad.set_caps</title>
-        <programlisting><methodsynopsis language="python">
-                <methodname>set_caps</methodname>
-                <methodparam><parameter role="keyword">caps</parameter></methodparam>
-            </methodsynopsis></programlisting>
-        
-        <variablelist>
-            <varlistentry>
-                <term><parameter role="keyword">caps</parameter>&nbsp;:</term>
-                <listitem><simpara> A <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.</simpara></listitem>
-            </varlistentry>
-        </variablelist>
-        
-        <para>
-            The <methodname>set_caps</methodname>() method sets the media type on the buffer.
-        </para>
-    </refsect2>
-    
-    <refsect2 id="method-gstcaps--span">
-        <title>gst.Pad.span</title>
-        <programlisting><methodsynopsis language="python">
-                <methodname>span</methodname>
-                <methodparam><parameter role="keyword">offset</parameter></methodparam>
-                <methodparam><parameter role="keyword">buf2</parameter></methodparam>
-                <methodparam><parameter role="keyword">len</parameter></methodparam>
-            </methodsynopsis></programlisting>
-        
-        <variablelist>
-            <varlistentry>
-                <term><parameter role="keyword">offset</parameter>&nbsp;:</term>
-                <listitem><simpara> The offset in the first buffer from where the new buffer should start.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">buf2</parameter>&nbsp;:</term>
-                <listitem><simpara> The second source <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> to merge.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">buf2</parameter>&nbsp;:</term>
-                <listitem><simpara> The total length of the new buffer.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> The new <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> that spans the two source
-                        buffers or <literal>None</literal> if the arguments are invalid.</simpara></listitem>
-            </varlistentry>
-        </variablelist>
-        
-        <para>
-            The <methodname>span</methodname>() method creates a new buffer that consists of part of buf1 and buf2. 
-            Logically, buf1 and buf2 are concatenated into a single larger buffer, and a new buffer is created at the 
-            given offset inside this space, with a given length.
-        </para>
-        <para>
-            If the two source buffers are children of the same larger buffer, and are contiguous, the new buffer will be 
-            a child of the shared parent, and thus no copying is necessary. you can use 
-            <methodname><link linkend="method-gstcaps--is-span-fast">is_span_fast</link></methodname> 
-            to determine if a memcpy will be needed.
-        </para>
-    </refsect2>
-    
-    <refsect2 id="method-gstcaps--stamp">
-        <title>gst.Pad.stamp</title>
-        <programlisting><methodsynopsis language="python">
-                <methodname>stamp</methodname>
-                <methodparam><parameter role="keyword">src</parameter></methodparam>
-            </methodsynopsis></programlisting>
-        
-        <variablelist>
-            <varlistentry>
-                <term><parameter role="keyword">src</parameter>&nbsp;:</term>
-                <listitem><simpara> The <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link> to stamp from.</simpara></listitem>
-            </varlistentry>
-        </variablelist>
-        
-        <para>
-            The <methodname>stamp</methodname>() method copies additional information (the timestamp, duration, and offset start and end) 
-            from one buffer to the other. This method does not copy any buffer flags or caps.
-        </para>
-    </refsect2>
   </refsect1>
 
-  <!-- *************************** -->
+  <!-- ************************* -->
   <!-- BEGIN OF GSTCAPSFUNCTIONS -->
-  <!-- *************************** --> 
+  <!-- ************************* --> 
   
   <refsect1>
       <title>Functions</title>
       
-      <refsect2 id="function-gstbuffer--buffer-new-and-alloc">
-          <title>gst.buffer_new_and_alloc</title>
+      <refsect2 id="function-gstcaps--caps-from-string">
+          <title>gst.caps_from_string</title>
           <programlisting><methodsynopsis language="python">
-                  <methodname>buffer_new_and_alloc</methodname>
-                  <methodparam><parameter role="keyword">size</parameter></methodparam>
+                  <methodname>caps_from_string</methodname>
+                  <methodparam><parameter role="keyword">string</parameter></methodparam>
               </methodsynopsis></programlisting>
           
           <variablelist>
               <varlistentry>
-                  <term><parameter role="keyword">size</parameter>&nbsp;:</term>
-                  <listitem><simpara> The size of the new buffer's data.</simpara></listitem>
+                  <term><parameter role="keyword">string</parameter>&nbsp;:</term>
+                  <listitem><simpara> a string to convert to <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.</simpara></listitem>
               </varlistentry>
               <varlistentry>
                   <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                  <listitem><simpara> The new <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link>.</simpara></listitem>
+                  <listitem><simpara> A newly allocated <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.</simpara></listitem>
               </varlistentry>
           </variablelist>
           
           <para>
-              The <methodname>buffer_new_and_alloc</methodname>() function creates a newly allocated buffer with data of the given size.
+              The <methodname>caps_from_string</methodname>() function converts caps from a string representation.
           </para>
       </refsect2>
   </refsect1>
