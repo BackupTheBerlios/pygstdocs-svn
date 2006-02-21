@@ -1,6 +1,12 @@
+2006-02-21  Gian Mario Tagliaretti <g.tagliaretti # parafernalia.org>
+    
+    * Added new class gst.Buffer
+    * Added new class gst.Caps
+    * Import into SVN on berlios.de
+
 2006-02-13  Gian Mario Tagliaretti <g.tagliaretti # parafernalia.org>
     
-    * Added new class MiniObject
+    * Added new class gst.MiniObject
     * Added new class gst.PadTemplate
     * Added new class gst.GhostPad
 

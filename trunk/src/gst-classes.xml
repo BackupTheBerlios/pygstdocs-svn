@@ -8,6 +8,7 @@
 
     <xi:include href="gst-gstbuffer.xml"/>
     <xi:include href="gst-gstbus.xml"/>
+    <xi:include href="gst-gstcaps.xml"/>
     <xi:include href="gst-gstclock.xml"/>
     <xi:include href="gst-gstelement.xml"/>
     <xi:include href="gst-gstghostpad.xml"/>

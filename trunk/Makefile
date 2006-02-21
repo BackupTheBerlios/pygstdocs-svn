@@ -21,7 +21,8 @@ src/gst-gstpad.xml \
 src/gst-gstghostpad.xml \
 src/gst-gstminiobject.xml \
 src/gst-gstpadtemplate.xml \
-src/gst-gstbuffer.xml
+src/gst-gstbuffer.xml \
+src/gst-gstcaps.xml
 
 ref-html: gst-reference ${REFERENCELINKS} ${XSLFILES} ${REFERENCEXMLFILES}
 	xsltproc --nonet --xinclude -o gst-reference/ \

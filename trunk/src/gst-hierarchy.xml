@@ -10,4 +10,6 @@
             <link linkend="class-gstghostpad">gst.GhostPad</link>
         <link linkend="class-gstpadtemplate">gst.PadTemplate</link>
 <link linkend="class-gstminiobject">gst.MiniObject</link>
-    <link linkend="class-gstbuffer">gst.Buffer</link></synopsis>
+    <link linkend="class-gstbuffer">gst.Buffer</link>
+<link linkend="class-gobject">gobject.GBoxed</link>
+    <link linkend="class-gstbuffer">gst.Caps</link></synopsis>

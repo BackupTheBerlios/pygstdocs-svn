@@ -165,64 +165,37 @@
         <link linkend="class-gstbuffer"><classname>gst.Buffer()</classname></link> allow for format negotiation upstream and downstream.
     </para>
     <para>
-        
+        A <link linkend="class-gstcaps"><classname>gst.Caps()</classname></link> is fixed when it has no properties with ranges or lists. Use 
+        <methodname><link linkend="method-gstcaps--is-fixed">gst.Caps.is_fixed()</link></methodname> to test for fixed caps. Only fixed caps can be set on a 
+        <link linkend="class-gstpad"><classname>gst.Pad()</classname></link> or <link linkend="class-gstbuffer"><classname>gst.Buffer()</classname></link>.
     </para>
     <para>
-        A buffer will usually have a timestamp, and a duration, but neither of these are guaranteed (they may be set to GST_CLOCK_TIME_NONE). 
-        Whenever a meaningful value can be given for these, they should be set. The timestamp and duration are measured in nanoseconds (they are 
-        GstClockTime values).
+        Various methods exist to work with the media types such as subtracting or intersecting.
     </para>
-    <para>
-        A buffer can also have one or both of a start and an end offset. These are media-type specific. For video buffers, 
-        the start offset will generally be the frame number. For audio buffers, it will be the number of samples produced so far. 
-        For compressed data, it could be the byte offset in a source or destination file. Likewise, the end offset will be 
-        the offset of the end of the buffer. These can only be meaningfully interpreted if you know the media type of the buffer (the 
-        <link linkend="class-gstcaps"><classname>gst.Caps()</classname></link> set on it). Either or both can be set to GST_BUFFER_OFFSET_NONE.
-    </para>
-    <para>
-        To efficiently create a smaller buffer out of an existing one, you can use 
-        <methodname><link linkend="method-gstcaps--create-sub">gst.Buffer.create_sub()</link></methodname>.
-    </para>
-    <para>
-        Several flags of the buffer can be set and unset with the <methodname><link linkend="method-gstcaps--flag-set">gst.Buffer.flag_set()</link></methodname> 
-        and <methodname><link linkend="method-gstcaps--flag-unset">gst.Buffer.flag_unset()</link></methodname>. Use 
-        <methodname><link linkend="method-gstcaps--flag-is-set">gst.Buffer.flag_is_set()</link></methodname> to test if a certain 
-        <link linkend="class-gstbufferflag"><classname>gst.BufferFlag()</classname></link> is set.
-    </para>
-    <para>
-        Buffers can be efficiently merged into a larger buffer with <methodname><link linkend="method-gstcaps--merge">gst.Buffer.merge()</link></methodname> and
-        <methodname><link linkend="method-gstcaps--span">gst.Buffer.span()</link></methodname> if the 
-        <methodname><link linkend="method-gstcaps--is-span-fast">gst.Buffer.is_span_fast()</link></methodname> method returns <literal>True</literal>.
-    </para>
-    <para>
-        An element should either unref the buffer or push it out on a src pad using 
-        <methodname><link linkend="method-gstpad--push">gst.Pad.push()</link></methodname> see 
-        (<link linkend="class-gstpad"><classname>gst.Pad</classname></link>).
-    </para>
-
 </refsect1>
 
-<!-- ****************************** -->
+<!-- **************************** -->
 <!-- BEGIN OF GSTCAPS CONSTRUCTOR -->
-<!-- ****************************** -->
+<!-- **************************** -->
 
 <refsect1 id="constructor-gstcaps">
     <title>Constructor</title>
     
     <programlisting><constructorsynopsis language="python">
-        <methodname>gst.Buffer</methodname>
-        <methodparam></methodparam>
+        <methodname>gst.Caps</methodname>
+        <methodparam><parameter role="keyword">*args</parameter></methodparam>
+        <methodparam><parameter role="keyword">*kwargs</parameter></methodparam>
     </constructorsynopsis></programlisting>
     
     <para>
-        Creates a newly allocated buffer without any data.
+        
     </para>
 </refsect1>
 
 
-<!-- ************************** -->
+<!-- ************************ -->
 <!-- BEGIN OF GSTCAPS METHODS -->
-<!-- ************************** -->
+<!-- ************************ -->
 
 <refsect1>
     <title>Methods</title>
