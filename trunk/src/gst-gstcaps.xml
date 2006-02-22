@@ -305,6 +305,230 @@
         </para>
     </refsect2>
     
+    <refsect2 id="method-gstcaps--get-structure">
+        <title>gst.Caps.get_structure</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_structure</methodname>
+                <methodparam><parameter role="keyword">index</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">index</parameter>&nbsp;:</term>
+                <listitem><simpara> The index of the structure.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gststructure"><classname>gst.Structure</classname></link> corresponding to index.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_structure</methodname>() method finds the structure in caps that has the index index, and returns it.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstcaps--intersect">
+        <title>gst.Caps.intersect</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>intersect</methodname>
+                <methodparam><parameter role="keyword">caps2</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">caps2</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> to intersect.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The new <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>intersect</methodname>() method creates a new <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> 
+            that contains all the formats that are common to both caps1 and caps2.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstcaps--is-always-compatible">
+        <title>gst.Caps.is_always_compatible</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>is_always_compatible</methodname>
+                <methodparam><parameter role="keyword">caps2</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">caps2</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> to test.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if caps1 is a subset of caps2.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>is_always_compatible</methodname>() method checks if a <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> 
+            structure is always compatible with another if every media format that is in the first is also contained in the second. 
+            That is, caps1 is a subset of caps2.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstcaps--is-any">
+        <title>gst.Caps.is_any</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>is_any</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if caps represents any format.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>is_any</methodname>() method determines if caps represents any media format.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstcaps--is-empty">
+        <title>gst.Caps.is_empty</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>is_empty</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if caps represents no formats.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>is_empty</methodname>() method determines if caps represents no media formats.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstcaps--is-equal">
+        <title>gst.Caps.is_equal</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>is_equal</methodname>
+                <methodparam><parameter role="keyword">caps2</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">caps2</parameter>&nbsp;:</term>
+                <listitem><simpara> Another <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if both caps are equal.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>is_equal</methodname>() method checks if the given caps represent the same set of caps.
+        </para>
+        
+        <note>
+            This method does not work reliably if optional properties for caps are included on one caps and omitted on the other.
+        </note>
+    </refsect2>
+    
+    <refsect2 id="method-gstcaps--is-fixed">
+        <title>gst.Caps.is_fixed</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>is_fixed</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if caps is fixed.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>is_fixed</methodname>() method checks is a caps is a fixed caps,
+            Fixed caps describe exactly one format, that is, they have exactly one structure, and each field in the structure describes a fixed type. 
+            Examples of non-fixed types are GST_TYPE_INT_RANGE and GST_TYPE_LIST.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstcaps--is-subset">
+        <title>gst.Caps.is_subset</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>is_subset</methodname>
+                <methodparam><parameter role="keyword">superset</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">superset</parameter>&nbsp;:</term>
+                <listitem><simpara> A potentially greater <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal>if subset is a subset of superset.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>is_subset</methodname>() method checks if all caps represented by subset are also represented by superset.
+        </para>
+        
+        <note>
+            This method does not work reliably if optional properties for caps are included on one caps and omitted on the other.
+        </note>
+    </refsect2>
+    
+    <refsect2 id="method-gstcaps--make-writable">
+        <title>gst.Caps.make_writable</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>make_writable</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The same <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> object.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>make_writable</methodname>() method returns a writable copy of caps.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstcaps--normalize">
+        <title>gst.Caps.normalize</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>normalize</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The new <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>normalize</methodname>() method creates a new <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> 
+            that represents the same set of formats as caps, but contains no lists. Each list is expanded into separate GstStructures.
+        </para>
+    </refsect2>
+    
   </refsect1>
 
   <!-- ************************* -->
