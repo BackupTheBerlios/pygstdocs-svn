@@ -529,6 +529,86 @@
         </para>
     </refsect2>
     
+    <refsect2 id="method-gstcaps--subtract">
+        <title>gst.Caps.subtract</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>subtract</methodname>
+                <methodparam><parameter role="keyword">subtrahend</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">subtrahend</parameter>&nbsp;:</term>
+                <listitem><simpara> <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> to subtract.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The resulting caps.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>subtract</methodname>() method Subtracts the subtrahend from the minuend.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstcaps--to-string">
+        <title>gst.Caps.to_string</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>to_string</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A newly allocated <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>to_string</methodname>() method converts caps to a string representation. This string representation can be converted back to a 
+            <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> by 
+            <methodname><link linkend="function-gstcaps--caps-from-string">gst.caps_from_string()</link></methodname>.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstcaps--truncate">
+        <title>gst.Caps.truncate</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>truncate</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <para>
+            The <methodname>truncate</methodname>() method destructively discard all but the first structure from caps. 
+            Useful when fixating. caps must be writable.
+    </refsect2>
+        
+    <refsect2 id="method-gstcaps--union">
+        <title>gst.Caps.union</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>union</methodname>
+                <methodparam><parameter role="keyword">caps2</parameter></methodparam>
+            </methodsynopsis></programlisting>
+            
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">caps2</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> to union.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The new <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+            
+        <para>
+            The <methodname>union</methodname>() method creates a new <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> 
+            that contains all the formats that are in either caps1 and caps2.
+        </para>
+    </refsect2>
+    
   </refsect1>
 
   <!-- ************************* -->
@@ -558,6 +638,26 @@
           
           <para>
               The <methodname>caps_from_string</methodname>() function converts caps from a string representation.
+          </para>
+      </refsect2>
+      
+      <refsect2 id="function-gstcaps--caps-new-any">
+          <title>gst.caps_new_any</title>
+          <programlisting><methodsynopsis language="python">
+                  <methodname>caps_new_any</methodname>
+                  <methodparam></methodparam>
+              </methodsynopsis></programlisting>
+          
+          <variablelist>
+              <varlistentry>
+                  <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                  <listitem><simpara> The new <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.</simpara></listitem>
+              </varlistentry>
+          </variablelist>
+          
+          <para>
+              The <methodname>caps_new_any</methodname>() function Creates a new <link linkend="class-gstcaps"><classname>gst.Caps</classname></link> 
+              that indicates that it is compatible with any media format.
           </para>
       </refsect2>
   </refsect1>
