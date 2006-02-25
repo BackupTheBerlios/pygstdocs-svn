@@ -1,3 +1,8 @@
+2006-02-23  Gian Mario Tagliaretti <g.tagliaretti # parafernalia.org>
+    
+    * Added new class gst.Event
+    * Completed class gst.Caps
+
 2006-02-21  Gian Mario Tagliaretti <g.tagliaretti # parafernalia.org>
     
     * Added new class gst.Buffer

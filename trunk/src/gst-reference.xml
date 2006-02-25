@@ -3,7 +3,7 @@
 
 <book id="gst-reference" xmlns:xi="http://www.w3.org/2001/XInclude">
     <bookinfo>
-        <pubdate>February 13, 2006</pubdate>
+        <pubdate>February 24, 2006</pubdate>
         <title>Python GStreamer Reference Manual</title>
         <edition>Python GStreamer Reference Manual version 0.10.2 for PyGST 0.10.2</edition>
         <releaseinfo>Version 0.10.2</releaseinfo>

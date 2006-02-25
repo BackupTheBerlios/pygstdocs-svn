@@ -583,6 +583,7 @@
         <para>
             The <methodname>truncate</methodname>() method destructively discard all but the first structure from caps. 
             Useful when fixating. caps must be writable.
+        </para>
     </refsect2>
         
     <refsect2 id="method-gstcaps--union">

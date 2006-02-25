@@ -15,6 +15,7 @@ src/gst-reference.xml \
 src/gst-gstbus.xml \
 src/gst-gstclock.xml \
 src/gst-gstelement.xml \
+src/gst-gstevent.xml \
 src/gst-gstobject.xml \
 src/gst-gstsystemclock.xml \
 src/gst-gstpad.xml \

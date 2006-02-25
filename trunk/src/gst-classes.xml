@@ -11,6 +11,7 @@
     <xi:include href="gst-gstcaps.xml"/>
     <xi:include href="gst-gstclock.xml"/>
     <xi:include href="gst-gstelement.xml"/>
+    <xi:include href="gst-gstevent.xml"/>
     <xi:include href="gst-gstghostpad.xml"/>
     <xi:include href="gst-gstminiobject.xml"/>
     <xi:include href="gst-gstobject.xml"/>
