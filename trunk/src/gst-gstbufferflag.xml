@@ -1,0 +1,126 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstbufferflag">
+    <refnamediv>
+        <refname>gst.BufferFlag</refname>
+        <refpurpose>A set of buffer flags used to describe properties of a gst.Buffer.</refpurpose>
+    </refnamediv>
+
+<!-- *********************************** -->
+<!-- BEGIN OF GSTBUFFERFLAGFLAG SYNOPSIS -->
+<!-- *********************************** -->
+
+<refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.BufferFlag</classname></ooclass>
+        <ooclass><classname>gobject.GFlags</classname></ooclass>
+
+        <constructorsynopsis language="python">
+            <methodname><link linkend="constructor-gstbufferflag">gst.BufferFlag</link></methodname>
+            <methodparam></methodparam>
+        </constructorsynopsis>
+    </classsynopsis>
+</refsect1>
+
+<!-- ******************************* -->
+<!-- BEGIN OF GSTBUFFERFLAG ANCESTRY -->
+<!-- ******************************* -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- gobject.GFlags
+    +-- <link linkend="class-gstbufferflag">gst.BufferFlag</link>
+</synopsis>
+</refsect1>
+
+<!-- ********************************** -->
+<!-- BEGIN OF GSTBUFFERFLAG DESCRIPTION -->
+<!-- ********************************** -->
+
+<refsect1 id="description-gstbufferflag">
+    <title>Description</title>
+
+    <para>
+        A set of buffer flags used to describe properties of a <link linkend="class-gstbuffer"><classname>gst.Buffer</classname></link>.
+    </para>
+</refsect1>
+
+<!-- ********************************** -->
+<!-- BEGIN OF GSTBUFFERFLAG CONSTRUCTOR -->
+<!-- ********************************** -->
+
+<refsect1 id="constructor-gstbufferflag">
+    <title>Constructor</title>
+    
+    <programlisting><constructorsynopsis language="python">
+        <methodname>gst.Buffer</methodname>
+        <methodparam><parameter role="keyword">flag</parameter></methodparam>
+    </constructorsynopsis></programlisting>
+
+    <variablelist>
+        <varlistentry>
+            <term><parameter role="keyword">flag</parameter>&nbsp;:</term>
+            <listitem><simpara> A buffer flag, see <link linkend="constants-gstbufferflag">gst.BufferFlag() constants</link>.</simpara></listitem>
+        </varlistentry>
+        <varlistentry>
+            <term><emphasis>Returns</emphasis>&nbsp;:</term>
+            <listitem><simpara>A new <link linkend="class-gstbufferflag"><classname>gst.BufferFlag</classname></link> object.</simpara></listitem>
+        </varlistentry>
+    </variablelist>
+
+    <para>
+        Creates a new <link linkend="class-gstbufferflag"><classname>gst.BufferFlag</classname></link> object.
+    </para>
+</refsect1>
+
+<!-- ******************************** -->
+<!-- BEGIN OF GSTBUFFERFLAG CONSTANTS -->
+<!-- ******************************** -->
+
+<refsect1 id="constants-gstbufferflag">
+    <title>Constants</title>
+    
+    <blockquote role="properties">
+        <informaltable pgwide="1" frame="none">
+            <tgroup cols="2">
+                <colspec column="1" colwidth="1in"/>
+                <colspec column="1" colwidth="1in"/>
+                <tbody>
+                    <row valign="top">
+                        <entry>gst.BUFFER_FLAG_READONLY</entry>
+                        <entry>The buffer is read-only.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.BUFFER_FLAG_PREROLL</entry>
+                        <entry>The buffer is part of a preroll and should not be displayed.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.BUFFER_FLAG_DISCONT</entry>
+                        <entry>The buffer marks a discontinuity in the stream.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.BUFFER_FLAG_IN_CAPS</entry>
+                        <entry>The buffer has been added as a field in a <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.BUFFER_FLAG_GAP</entry>
+                        <entry>The buffer has been created to fill a gap in the stream.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.BUFFER_FLAG_DELTA_UNIT</entry>
+                        <entry>This unit cannot be decoded independently.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.BUFFER_FLAG_LAST</entry>
+                        <entry>Additional flags can be added starting from this flag.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </blockquote>
+</refsect1>
+</refentry>

@@ -23,6 +23,7 @@ src/gst-gstghostpad.xml \
 src/gst-gstminiobject.xml \
 src/gst-gstpadtemplate.xml \
 src/gst-gstbuffer.xml \
+src/gst-gstbufferflag.xml \
 src/gst-gstcaps.xml
 
 ref-html: gst-reference ${REFERENCELINKS} ${XSLFILES} ${REFERENCEXMLFILES}
