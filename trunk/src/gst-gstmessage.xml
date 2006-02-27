@@ -1,0 +1,241 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstmessage">
+    <refnamediv>
+        <refname>gst.Message</refname>
+        <refpurpose>Lightweight objects to signal the application of pipeline events.</refpurpose>
+    </refnamediv>
+
+<!-- **************************** -->
+<!-- BEGIN OF GSTMESSAGE SYNOPSIS -->
+<!-- **************************** -->
+
+<refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.Message</classname></ooclass>
+        <ooclass><classname><link linkend="class-gstminiobject">gst.MiniObject</link></classname></ooclass>
+
+    <constructorsynopsis language="python">
+        <methodname><link linkend="constructor-gstmessage">gst.Message</link></methodname>
+        <methodparam></methodparam>
+    </constructorsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstmessage--copy-on-write">copy_on_write</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstmessage--parse-clock-lost">parse_clock_lost</link></methodname>
+        <methodparam><parameter role="keyword">clock</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstmessage--parse-clock-provide">parse_clock_provide</link></methodname>
+        <methodparam><parameter role="keyword">clock</parameter></methodparam>
+        <methodparam><parameter role="keyword">ready</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstmessage--parse-duration">parse_duration</link></methodname>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">duration</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstmessage--parse-error">parse_error</link></methodname>
+        <methodparam><parameter role="keyword">gerror</parameter></methodparam>
+        <methodparam><parameter role="keyword">debug</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstmessage--parse-new-clock">parse_new_clock</link></methodname>
+        <methodparam><parameter role="keyword">clock</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstmessage--parse-segment-done">parse_segment_done</link></methodname>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">position</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstmessage--parse-segment-start">parse_segment_start</link></methodname>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">position</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstmessage--parse-state-change">parse_state_change</link></methodname>
+        <methodparam><parameter role="keyword">oldstate</parameter></methodparam>
+        <methodparam><parameter role="keyword">newstare</parameter></methodparam>
+        <methodparam><parameter role="keyword">pending</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstmessage--parse-tag">parse_tag</link></methodname>
+        <methodparam><parameter role="keyword">taglist</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstmessage--parse-warning">parse_warning</link></methodname>
+        <methodparam><parameter role="keyword">gerror</parameter></methodparam>
+        <methodparam><parameter role="keyword">debug</parameter></methodparam>
+    </methodsynopsis>
+</classsynopsis>
+
+<programlisting>
+    <emphasis role="bold">Functions</emphasis>
+    
+<methodsynopsis language="python"><methodname><link linkend="function-gstmessage--message-new-application">gst.message_new_application</link></methodname>
+    <methodparam><parameter role="keyword">src</parameter></methodparam>
+    <methodparam><parameter role="keyword">structure</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstmessage--message-new-clock-lost">gst.message_new_clock_lost</link></methodname>
+    <methodparam><parameter role="keyword">src</parameter></methodparam>
+    <methodparam><parameter role="keyword">clock</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstmessage--message-new-clock-provide">gst.message_new_clock_provide</link></methodname>
+    <methodparam><parameter role="keyword">src</parameter></methodparam>
+    <methodparam><parameter role="keyword">clock</parameter></methodparam>
+    <methodparam><parameter role="keyword">ready</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstmessage--message-new-custom">gst.message_new_custom</link></methodname>
+    <methodparam><parameter role="keyword">type</parameter></methodparam>
+    <methodparam><parameter role="keyword">src</parameter></methodparam>
+    <methodparam><parameter role="keyword">structure</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstmessage--message-new-duration">gst.message_new_duration</link></methodname>
+    <methodparam><parameter role="keyword">src</parameter></methodparam>
+    <methodparam><parameter role="keyword">format</parameter></methodparam>
+    <methodparam><parameter role="keyword">duration</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstmessage--message-new-element">gst.message_new_element</link></methodname>
+    <methodparam><parameter role="keyword">src</parameter></methodparam>
+    <methodparam><parameter role="keyword">structure</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstmessage--message-new-eos">gst.message_new_eos</link></methodname>
+    <methodparam><parameter role="keyword">src</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstmessage--message-new-error">gst.message_new_error</link></methodname>
+    <methodparam><parameter role="keyword">src</parameter></methodparam>
+    <methodparam><parameter role="keyword">error</parameter></methodparam>
+    <methodparam><parameter role="keyword">debug</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstmessage--message-new-new-clock">gst.message_new_new_clock</link></methodname>
+    <methodparam><parameter role="keyword">src</parameter></methodparam>
+    <methodparam><parameter role="keyword">clock</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstmessage--message-new-segment-done">gst.message_new_segment_done</link></methodname>
+    <methodparam><parameter role="keyword">src</parameter></methodparam>
+    <methodparam><parameter role="keyword">format</parameter></methodparam>
+    <methodparam><parameter role="keyword">position</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstmessage--message-new-segment-start">gst.message_new_segment_start</link></methodname>
+    <methodparam><parameter role="keyword">src</parameter></methodparam>
+    <methodparam><parameter role="keyword">format</parameter></methodparam>
+    <methodparam><parameter role="keyword">position</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstmessage--message-new-state-changed">gst.message_new_state_changed</link></methodname>
+    <methodparam><parameter role="keyword">src</parameter></methodparam>
+    <methodparam><parameter role="keyword">oldstate</parameter></methodparam>
+    <methodparam><parameter role="keyword">newstare</parameter></methodparam>
+    <methodparam><parameter role="keyword">pending</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstmessage--message-new-state-dirty">gst.message_new_state_dirty</link></methodname>
+    <methodparam><parameter role="keyword">src</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstmessage--message-new-tag">gst.message_new_tag</link></methodname>
+    <methodparam><parameter role="keyword">src</parameter></methodparam>
+    <methodparam><parameter role="keyword">taglist</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstmessage--message-new-warning">gst.message_new_warning</link></methodname>
+    <methodparam><parameter role="keyword">src</parameter></methodparam>
+    <methodparam><parameter role="keyword">error</parameter></methodparam>
+    <methodparam><parameter role="keyword">debug</parameter></methodparam></methodsynopsis>
+</programlisting>
+</refsect1>
+
+<!-- **************************** -->
+<!-- BEGIN OF GSTMESSAGE ANCESTRY -->
+<!-- **************************** -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gstminiobject">gst.MiniObject</link>
+    +-- <link linkend="class-gstmessage">gst.Message</link>
+</synopsis>
+</refsect1>
+
+<!-- ******************************* -->
+<!-- BEGIN OF GSTMESSAGE DESCRIPTION -->
+<!-- ******************************* -->
+
+<refsect1 id="description-gstmessage">
+    <title>Description</title>
+
+    <para>
+        Messages are implemented as a subclass of <link linkend="class-gstminiobject"><classname>gst.MiniObject</classname></link> with a generic 
+        <link linkend="class-gststructure"><classname>gst.Structure</classname></link> as the content. 
+        This allows for writing custom messages without requiring an API change while allowing a wide range of different types of messages.
+    </para>
+    <para>
+        Messages are posted by objects in the pipeline and are passed to the application using the 
+        <link linkend="class-gstbus"><classname>gst.Bus</classname></link>.
+    </para>
+    <para>
+        A <link linkend="class-gstelement"><classname>gst.Element</classname></link> usually posts messages on the bus provided 
+        by the parent container using <methodname><link linkend="method-gstelement--post-message">gst.Element.post_message()</link></methodname>
+    </para>
+</refsect1>
+
+<!-- *************************** -->
+<!-- BEGIN OF GSTMESSAGE METHODS -->
+<!-- *************************** -->
+
+<refsect1>
+    <title>Methods</title>
+
+    <refsect2 id="method-gstmessage--parse.clock.lost">
+        <title>gst.Message.parse_clock_lost</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>parse_clock_lost</methodname>
+            <methodparam><parameter role="keyword">clock</parameter></methodparam>
+        </methodsynopsis></programlisting>
+    
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">clock</parameter>&nbsp;:</term>
+                <listitem><simpara> The lost clock.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+      
+        <para>
+            The <methodname>parse_clock_lost</methodname>() method extracts the lost clock from the GstMessage. 
+            The clock object returned remains valid until the message is freed.
+        </para>
+    </refsect2>
+
+  </refsect1>
+
+  <!-- **************************** -->
+  <!-- BEGIN OF GSTMESSAGEFUNCTIONS -->
+  <!-- **************************** --> 
+  
+  <refsect1>
+      <title>Functions</title>
+      
+      <refsect2 id="function-gstmessage--message-new-application">
+          <title>gst.buffer_new_and_alloc</title>
+          <programlisting><methodsynopsis language="python">
+                  <methodname>buffer_new_and_alloc</methodname>
+                  <methodparam><parameter role="keyword">size</parameter></methodparam>
+              </methodsynopsis></programlisting>
+          
+          <variablelist>
+              <varlistentry>
+                  <term><parameter role="keyword">size</parameter>&nbsp;:</term>
+                  <listitem><simpara> The size of the new buffer's data.</simpara></listitem>
+              </varlistentry>
+              <varlistentry>
+                  <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                  <listitem><simpara> The new <link linkend="class-gstbuffer"><classname>gst.Message</classname></link>.</simpara></listitem>
+              </varlistentry>
+          </variablelist>
+          
+          <para>
+              The <methodname>buffer_new_and_alloc</methodname>() function creates a newly allocated buffer with data of the given size.
+          </para>
+      </refsect2>
+  </refsect1>
+</refentry>

@@ -11,7 +11,8 @@
         <link linkend="class-gstpadtemplate">gst.PadTemplate</link>
 <link linkend="class-gstminiobject">gst.MiniObject</link>
     <link linkend="class-gstbuffer">gst.Buffer</link>
-    <ulink url="http://www.pygtk.org/pygtk2reference/class-gobjectgboxed.html">gobject.GBoxed</ulink>
+    <link linkend="class-gstmessage">gst.Message</link>
+<ulink url="http://www.pygtk.org/pygtk2reference/class-gobjectgboxed.html">gobject.GBoxed</ulink>
     <link linkend="class-gstbuffer">gst.Caps</link>
 gobject.GFlags
     <link linkend="class-gstbufferflag">gst.BufferFlag</link></synopsis>

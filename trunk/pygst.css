@@ -1,3 +1,11 @@
+h1, h2 {
+color: #527bbd;
+}
+
+.parameter {
+color: brown;
+}
+
 .programlisting {
 font: monospace;
 background-color: #eeeeff;
@@ -32,5 +40,5 @@ border: solid 1px #aaaaff;
 }
 
 a:link {background:none; color:#104E8B;}
-a:visited {background:none; color:#8f3333;}
+a:visited {background:none; color:#104E8B;}
 a:hover {background:#104E8B; color: white; text-decoration:none;}
