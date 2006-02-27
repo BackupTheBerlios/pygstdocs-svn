@@ -24,11 +24,6 @@
     </constructorsynopsis>
     
     <methodsynopsis language="python">
-        <methodname><link linkend="method-gstmessage--copy-on-write">copy_on_write</link></methodname>
-        <methodparam></methodparam>
-    </methodsynopsis>
-  
-    <methodsynopsis language="python">
         <methodname><link linkend="method-gstmessage--parse-clock-lost">parse_clock_lost</link></methodname>
         <methodparam><parameter role="keyword">clock</parameter></methodparam>
     </methodsynopsis>
@@ -69,7 +64,7 @@
     </methodsynopsis>
     
     <methodsynopsis language="python">
-        <methodname><link linkend="method-gstmessage--parse-state-change">parse_state_change</link></methodname>
+        <methodname><link linkend="method-gstmessage--parse-state-changed">parse_state_changed</link></methodname>
         <methodparam><parameter role="keyword">oldstate</parameter></methodparam>
         <methodparam><parameter role="keyword">newstare</parameter></methodparam>
         <methodparam><parameter role="keyword">pending</parameter></methodparam>
@@ -186,7 +181,7 @@
 <refsect1>
     <title>Methods</title>
 
-    <refsect2 id="method-gstmessage--parse.clock.lost">
+    <refsect2 id="method-gstmessage--parse-clock-lost">
         <title>gst.Message.parse_clock_lost</title>
         <programlisting><methodsynopsis language="python">
             <methodname>parse_clock_lost</methodname>
@@ -205,6 +200,228 @@
             The clock object returned remains valid until the message is freed.
         </para>
     </refsect2>
+    
+    <refsect2 id="method-gstmessage--parse-clock-provide">
+        <title>gst.Message.parse_clock_provide</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>parse_clock_provide</methodname>
+                <methodparam><parameter role="keyword">clock</parameter></methodparam>
+                <methodparam><parameter role="keyword">ready</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">clock</parameter>&nbsp;:</term>
+                <listitem><simpara> The lost clock.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">clock</parameter>&nbsp;:</term>
+                <listitem><simpara> The ready flag.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>parse_clock_provide</methodname>() method extracts the clock and ready flag from the GstMessage. 
+            The clock object returned remains valid until the message is freed.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstmessage--parse-duration">
+        <title>gst.Message.parse_duration</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>parse_duration</methodname>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">duration</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> Result location for the format.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">clock</parameter>&nbsp;:</term>
+                <listitem><simpara> Result location for the duration.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>parse_duration</methodname>() method extracts the duration and format from the duration message. 
+            The duration might be gst.CLOCK_TIME_NONE, which indicates that the duration has changed. 
+            Applications should always use a query to retrieve the duration of a pipeline.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstmessage--parse-error">
+        <title>gst.Message.parse_error</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>parse_error</methodname>
+                <methodparam><parameter role="keyword">gerror</parameter></methodparam>
+                <methodparam><parameter role="keyword">debug</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">gerror</parameter>&nbsp;:</term>
+                <listitem><simpara> Location for the GError.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">debug</parameter>arameter>&nbsp;:</term>
+                <listitem><simpara> Location for the debug message.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>parse_error</methodname>() method extracts the <parameter>gerror</parameter> and <parameter>debug</parameter> 
+            string from the <link linkend="class-gstmessage"><classname>gst.Message</classname></link>. 
+            The values returned in the output arguments are copies.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstmessage--parse-new-clock">
+        <title>gst.Message.parse_new_clock</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>parse_new_clock</methodname>
+                <methodparam><parameter role="keyword">clock</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">clock</parameter>&nbsp;:</term>
+                <listitem><simpara> The selected new clock.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>parse_new_clock</methodname>() method extracts the new clock from the GstMessage. 
+            The clock object returned remains valid until the message is freed.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstmessage--parse-segment-done">
+        <title>gst.Message.parse_segment_done</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>parse_segment_done</methodname>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">position</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> Result location for the format.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">position</parameter>&nbsp;:</term>
+                <listitem><simpara> Result location for the position.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>parse_segment_done</methodname>() method extracts the position and format from the segment start message. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstmessage--parse-segment-start">
+        <title>gst.Message.parse_segment_start</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>parse_segment_start</methodname>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">position</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> Result location for the format.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">position</parameter>&nbsp;:</term>
+                <listitem><simpara> Result location for the position.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>parse_segment_start</methodname>() method extracts the position and format from the segment start message. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstmessage--parse-state-changed">
+        <title>gst.Message.parse_state_changed</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>parse_state_changed</methodname>
+                <methodparam><parameter role="keyword">oldstate</parameter></methodparam>
+                <methodparam><parameter role="keyword">newstare</parameter></methodparam>
+                <methodparam><parameter role="keyword">pending</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">oldstate</parameter>&nbsp;:</term>
+                <listitem><simpara> The previous state.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">newstare</parameter>&nbsp;:</term>
+                <listitem><simpara> The new (current) state.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">pending</parameter>&nbsp;:</term>
+                <listitem><simpara> The pending (target) state.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>parse_state_changed</methodname>() method extracts the old and new states from the 
+            <link linkend="class-gstmessage"><classname>gst.Message</classname></link>.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstmessage--parse-tag">
+        <title>gst.Message.parse_tag</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>parse_tag</methodname>
+                <methodparam><parameter role="keyword">taglist</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">taglist</parameter>&nbsp;:</term>
+                <listitem><simpara> Return location for the tag-list.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>parse_tag</methodname>() method extracts the tag list from the 
+            <link linkend="class-gstmessage"><classname>gst.Message</classname></link>. 
+            The tag list returned in the output argument is a copy.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstmessage--parse-warning">
+        <title>gst.Message.parse_warning</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>parse_warning</methodname>
+                <methodparam><parameter role="keyword">gerror</parameter></methodparam>
+                <methodparam><parameter role="keyword">debug</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">gerror</parameter>&nbsp;:</term>
+                <listitem><simpara> Location for the GError.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">debug</parameter>&nbsp;:</term>
+                <listitem><simpara> Location for the debug message.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>parse_warning</methodname>() method extracts the <parameter>gerror</parameter> and <parameter>debug</parameter> 
+            string from the <link linkend="class-gstmessage"><classname>gst.Message</classname></link>. 
+            The values returned in the output arguments are copies.
+        </para>
+    </refsect2>
 
   </refsect1>
 
@@ -213,29 +430,491 @@
   <!-- **************************** --> 
   
   <refsect1>
-      <title>Functions</title>
+        <title>Functions</title>
       
-      <refsect2 id="function-gstmessage--message-new-application">
-          <title>gst.buffer_new_and_alloc</title>
-          <programlisting><methodsynopsis language="python">
-                  <methodname>buffer_new_and_alloc</methodname>
-                  <methodparam><parameter role="keyword">size</parameter></methodparam>
-              </methodsynopsis></programlisting>
+        <refsect2 id="function-gstmessage--message-new-application">
+            <title>gst.message_new_application</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>message_new_application</methodname>
+                    <methodparam><parameter role="keyword">src</parameter></methodparam>
+                    <methodparam><parameter role="keyword">structure</parameter></methodparam>
+                </methodsynopsis></programlisting>
           
-          <variablelist>
-              <varlistentry>
-                  <term><parameter role="keyword">size</parameter>&nbsp;:</term>
-                  <listitem><simpara> The size of the new buffer's data.</simpara></listitem>
-              </varlistentry>
-              <varlistentry>
-                  <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                  <listitem><simpara> The new <link linkend="class-gstbuffer"><classname>gst.Message</classname></link>.</simpara></listitem>
-              </varlistentry>
-          </variablelist>
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                    <listitem><simpara> The object originating the message.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">structure</parameter>&nbsp;:</term>
+                    <listitem><simpara> The structure for the message. The message will take ownership of the structure..</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara>  The new application message.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
           
-          <para>
-              The <methodname>buffer_new_and_alloc</methodname>() function creates a newly allocated buffer with data of the given size.
-          </para>
-      </refsect2>
-  </refsect1>
+            <para>
+                The <methodname>message_new_application</methodname>() function creates a new application-typed message. 
+                GStreamer will never create these messages; they are a gift from us to you. Enjoy.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstmessage--message-new-clock-lost">
+            <title>gst.message_new_clock_lost</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>message_new_clock_lost</methodname>
+                    <methodparam><parameter role="keyword">src</parameter></methodparam>
+                    <methodparam><parameter role="keyword">clock</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                    <listitem><simpara> The object originating the message..</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">clock</parameter>&nbsp;:</term>
+                    <listitem><simpara> The clock that was lost.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara>  The new clock lost message.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>message_new_clock_lost</methodname>() function creates a clock lost message. 
+                This message is posted whenever the clock is not valid anymore.
+            </para>
+            <para>
+                If this message is posted by the pipeline, the pipeline will select a new clock again when it goes to PLAYING. 
+                It might therefore be needed to set the pipeline to PAUSED and PLAYING again.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstmessage--message-new-clock-provide">
+            <title>gst.message_new_clock_provide</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>message_new_clock_provide</methodname>
+                    <methodparam><parameter role="keyword">src</parameter></methodparam>
+                    <methodparam><parameter role="keyword">clock</parameter></methodparam>
+                    <methodparam><parameter role="keyword">ready</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                    <listitem><simpara> The object originating the message..</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">clock</parameter>&nbsp;:</term>
+                    <listitem><simpara> The clock it provides.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">ready</parameter>&nbsp;:</term>
+                    <listitem><simpara> <literal>True</literal> if the sender can provide a clock.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara>  The new provide clock message.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>message_new_clock_provide</methodname>() function creates a clock provide message. 
+                This message is posted whenever an element is ready to provide a clock or lost its ability to provide 
+                a clock (maybe because it paused or became EOS).
+            </para>
+            <para>
+                This message is mainly used internally to manage the clock selection.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstmessage--message-new-custom">
+            <title>gst.message_new_custom</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>message_new_custom</methodname>
+                    <methodparam><parameter role="keyword">src</parameter></methodparam>
+                    <methodparam><parameter role="keyword">structure</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                    <listitem><simpara> The object originating the message.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">structure</parameter>&nbsp;:</term>
+                    <listitem><simpara> The structure for the message. The message will take ownership of the structure..</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara>  The new message.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>message_new_custom</methodname>() function create a new custom-typed message. 
+                This can be used for anything not handled by other message-specific functions to pass a message to the app. 
+                The structure field can be <literal>None</literal>.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstmessage--message-new-duration">
+            <title>gst.message_new_duration</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>message_new_duration</methodname>
+                    <methodparam><parameter role="keyword">src</parameter></methodparam>
+                    <methodparam><parameter role="keyword">format</parameter></methodparam>
+                    <methodparam><parameter role="keyword">duration</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                    <listitem><simpara> The object originating the message..</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                    <listitem><simpara> The format of the duration.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">duration</parameter>&nbsp;:</term>
+                    <listitem><simpara> The new duration.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara>  The new duration message.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>message_new_duration</methodname>() function creates a new duration message. 
+                This message is posted by elements that know the duration of a stream in a specific format. 
+                This message is received by bins and is used to calculate the total duration of a pipeline. 
+                Elements may post a duration message with a duration of gst.CLOCK_TIME_NONE to indicate that 
+                the duration has changed and the cached duration should be discarded. 
+                The new duration can then be retrieved via a query.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstmessage--message-new-element">
+            <title>gst.message_new_element</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>message_new_element</methodname>
+                    <methodparam><parameter role="keyword">src</parameter></methodparam>
+                    <methodparam><parameter role="keyword">structure</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                    <listitem><simpara> The object originating the message.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">structure</parameter>&nbsp;:</term>
+                    <listitem><simpara> The structure for the message. The message will take ownership of the structure..</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara>  The new element message.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>message_new_element</methodname>() function creates a new element-specific message. 
+                This is meant as a generic way of allowing one-way communication from an element to an application, 
+                for example "the firewire cable was unplugged". The format of the message should be documented in the element's documentation. 
+                The structure field can be <literal>None</literal>.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstmessage--message-new-eos">
+            <title>gst.message_new_eos</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>message_new_eos</methodname>
+                    <methodparam><parameter role="keyword">src</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                    <listitem><simpara> The object originating the message.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara>  The new eos message.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>message_new_eos</methodname>() function creates a new eos message. 
+                This message is generated and posted in the sink elements of a <link linkend="class-gstbin"><classname>gst.Bin</classname></link>. 
+                The bin will only forward the EOS message to the application if all sinks have posted an EOS message.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstmessage--message-new-error">
+            <title>gst.message_new_error</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>message_new_error</methodname>
+                    <methodparam><parameter role="keyword">src</parameter></methodparam>
+                    <methodparam><parameter role="keyword">error</parameter></methodparam>
+                    <methodparam><parameter role="keyword">debug</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                    <listitem><simpara> The object originating the message..</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">error</parameter>&nbsp;:</term>
+                    <listitem><simpara> The GError for this message.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">debug</parameter>&nbsp;:</term>
+                    <listitem><simpara> A debugging string for something or other.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara>  The new error message.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>message_new_error</methodname>() function creates a new error message. 
+                The message will copy <parameter>error</parameter> and <parameter>debug</parameter>. 
+                This message is posted by element when a fatal event occured. The pipeline will probably (partially) stop.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstmessage--message-new-new-clock">
+            <title>gst.message_new_new_clock</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>message_new_new_clock</methodname>
+                    <methodparam><parameter role="keyword">src</parameter></methodparam>
+                    <methodparam><parameter role="keyword">clock</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                    <listitem><simpara> The object originating the message..</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">clock</parameter>&nbsp;:</term>
+                    <listitem><simpara> The new selected clock.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara>  The new new clock message.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>message_new_new_clock</methodname>() function creates a new clock message. 
+                This message is posted whenever the pipeline selectes a new clock for the pipeline.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstmessage--message-new-segment-done">
+            <title>gst.message_new_segment_done</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>message_new_segment_done</methodname>
+                    <methodparam><parameter role="keyword">src</parameter></methodparam>
+                    <methodparam><parameter role="keyword">format</parameter></methodparam>
+                    <methodparam><parameter role="keyword">position</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                    <listitem><simpara> The object originating the message..</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                    <listitem><simpara> The format of the position being done.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">position</parameter>&nbsp;:</term>
+                    <listitem><simpara> The position of the segment being done.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara>  The new segment done message.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>message_new_segment_done</methodname>() function creates a new segment done message. 
+                This message is posted by elements that finish playback of a segment as a result of a segment seek. 
+                This message is received by the application after all elements that posted a segment_start have posted the segment_done.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstmessage--message-new-segment-start">
+            <title>gst.message_new_segment_start</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>message_new_segment_start</methodname>
+                    <methodparam><parameter role="keyword">src</parameter></methodparam>
+                    <methodparam><parameter role="keyword">format</parameter></methodparam>
+                    <methodparam><parameter role="keyword">position</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                    <listitem><simpara> The object originating the message..</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                    <listitem><simpara> The format of the position being played.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">position</parameter>&nbsp;:</term>
+                    <listitem><simpara> The position of the segment being played.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara>  The new segment start message.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>message_new_segment_start</methodname>() function creates a new segment message. 
+                This message is posted by elements that start playback of a segment as a result of a segment seek. 
+                This message is not received by the application but is used for maintenance reasons in container elements.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstmessage--message-new-state-changed">
+            <title>gst.message_new_state_changed</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>message_new_state_changed</methodname>
+                    <methodparam><parameter role="keyword">src</parameter></methodparam>
+                    <methodparam><parameter role="keyword">oldstate</parameter></methodparam>
+                    <methodparam><parameter role="keyword">newstare</parameter></methodparam>
+                    <methodparam><parameter role="keyword">pending</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                    <listitem><simpara> The object originating the message..</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">oldstate</parameter>&nbsp;:</term>
+                    <listitem><simpara> The previous state.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">newstare</parameter>&nbsp;:</term>
+                    <listitem><simpara> The new (current) state.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">pending</parameter>&nbsp;:</term>
+                    <listitem><simpara> The pending (target) state.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara>  The new state changed message.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>message_new_state_changed</methodname>() function creates a state change message. 
+                This message is posted whenever an element changed its state.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstmessage--message-new-state-dirty">
+            <title>gst.message_new_state_dirty</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>message_new_state_dirty</methodname>
+                    <methodparam><parameter role="keyword">src</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                    <listitem><simpara> The object originating the message..</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara>  The new state dirty message.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>message_new_state_dirty</methodname>() function creates a state dirty message. 
+                This message is posted whenever an element changed its state asynchronously and is used internally to 
+                update the states of container objects.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstmessage--message-new-tag">
+            <title>gst.message_new_tag</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>message_new_tag</methodname>
+                    <methodparam><parameter role="keyword">src</parameter></methodparam>
+                    <methodparam><parameter role="keyword">taglist</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                    <listitem><simpara> The object originating the message..</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">taglist</parameter>&nbsp;:</term>
+                    <listitem><simpara> The tag list for the message.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara>  The new tag message.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>message_new_tag</methodname>() function creates a new tag message. 
+                The message will take ownership of the tag list. The message is posted by elements that discovered a new taglist.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstmessage--message-new-warning">
+            <title>gst.message_new_warning</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>message_new_warning</methodname>
+                    <methodparam><parameter role="keyword">src</parameter></methodparam>
+                    <methodparam><parameter role="keyword">error</parameter></methodparam>
+                    <methodparam><parameter role="keyword">debug</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src</parameter>&nbsp;:</term>
+                    <listitem><simpara> The object originating the message..</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">error</parameter>&nbsp;:</term>
+                    <listitem><simpara> The GError for this message.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">debug</parameter>&nbsp;:</term>
+                    <listitem><simpara> A debugging string for something or other.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara>  The new warning message.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>message_new_warning</methodname>() function creates a new warning message. 
+                The message will make copies of <parameter>error</parameter> and <parameter>debug</parameter>.
+            </para>
+        </refsect2>
+    </refsect1>
 </refentry>
