@@ -12,6 +12,7 @@ src/ChangeLog.xml \
 src/gst-classes.xml \
 src/gst-hierarchy.xml \
 src/gst-reference.xml \
+src/gst-gstbin.xml \
 src/gst-gstbus.xml \
 src/gst-gstclock.xml \
 src/gst-gstelement.xml \

@@ -1,3 +1,9 @@
+2006-02-27  Gian Mario Tagliaretti <g.tagliaretti # parafernalia.org>
+    
+    * Added new class gst.Message
+    * Some cosmetic changes in .css
+    * Minor fixes
+
 2006-02-23  Gian Mario Tagliaretti <g.tagliaretti # parafernalia.org>
     
     * Added new class gst.Event

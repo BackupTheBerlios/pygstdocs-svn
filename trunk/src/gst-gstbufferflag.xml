@@ -57,7 +57,7 @@
     <title>Constructor</title>
     
     <programlisting><constructorsynopsis language="python">
-        <methodname>gst.Buffer</methodname>
+        <methodname>gst.BufferFlag</methodname>
         <methodparam><parameter role="keyword">flag</parameter></methodparam>
     </constructorsynopsis></programlisting>
 

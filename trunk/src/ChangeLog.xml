@@ -1,4 +1,10 @@
 <literallayout>
+<emphasis role="bold">2006-02-27  Gian Mario Tagliaretti &lt;g.tagliaretti # parafernalia.org&gt;</emphasis>
+    
+    * Added new class gst.Message
+    * Some cosmetic changes in .css
+    * Minor fixes
+
 <emphasis role="bold">2006-02-23  Gian Mario Tagliaretti &lt;g.tagliaretti # parafernalia.org&gt;</emphasis>
     
     * Added new class gst.Event

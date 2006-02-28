@@ -1,0 +1,415 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstbin">
+    <refnamediv>
+        <refname>gst.Bin</refname>
+        <refpurpose>Base class and element that can contain other elements.</refpurpose>
+    </refnamediv>
+
+<!-- ************************ -->
+<!-- BEGIN OF GSTBIN SYNOPSIS -->
+<!-- ************************ -->
+
+<refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.Bin</classname></ooclass>
+        <ooclass><classname><link linkend="class-gstelement">gst.Element</link></classname></ooclass>
+    
+    <constructorsynopsis language="python">
+        <methodname><link linkend="constructor-gstbin">gst.Bin</link></methodname>
+        <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
+    </constructorsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbin--add">add</link></methodname>
+        <methodparam><parameter role="keyword">element</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbin--add-many">add_many</link></methodname>
+        <methodparam><parameter role="keyword">element1</parameter></methodparam>
+        <methodparam><parameter role="keyword">element2</parameter></methodparam>
+        <methodparam><parameter role="keyword">...</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbin--elements">elements</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbin--get-by-interface">get_by_interface</link></methodname>
+        <methodparam><parameter role="keyword">interface</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbin--get-by-name">get_by_name</link></methodname>
+        <methodparam><parameter role="keyword">name</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbin--iterate-all-by-interface">iterate_all_by_interface</link></methodname>
+        <methodparam><parameter role="keyword">interface</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+         <methodname><link linkend="method-gstbin--recurse">recurse</link></methodname>
+         <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbin--remove">remove</link></methodname>
+        <methodparam><parameter role="keyword">element</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbin--remove-many">remove_many</link></methodname>
+        <methodparam><parameter role="keyword">element1</parameter></methodparam>
+        <methodparam><parameter role="keyword">element2</parameter></methodparam>
+        <methodparam><parameter role="keyword">...</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbin--sinks">sinks</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstbin--sinks">sorted</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+</classsynopsis>
+</refsect1>
+
+<!-- **************************** -->
+<!-- BEGIN OF GSTBIN ANCESTRY -->
+<!-- **************************** -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+    +-- <link linkend="class-gstobject">gst.Object</link>
+        +-- <link linkend="class-gstelement">gst.Element</link>
+            +-- <link linkend="class-gstbin">gst.Bin</link>
+</synopsis>
+</refsect1>
+
+<!-- ********************************* -->
+<!-- BEGIN OF GSTBIN SIGNAL PROTOTYPES -->
+<!-- ********************************* -->
+
+<refsect1>
+    <title>Signal Prototypes</title>
+    <variablelist>
+        <varlistentry>
+            <term><link linkend="signal-gstbin--element-added">"element-added"</link></term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>gstbin</parameter></methodparam>
+                    <methodparam><parameter>element</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                    <methodparam><parameter>...</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+        
+        <varlistentry>
+            <term><link linkend="signal-gstbin--element-removed">"element-removed"</link></term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>gstbin</parameter></methodparam>
+                    <methodparam><parameter>element</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                    <methodparam><parameter>...</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+    </variablelist>
+</refsect1>
+
+<!-- *************************** -->
+<!-- BEGIN OF GSTBIN DESCRIPTION -->
+<!-- *************************** -->
+
+<refsect1 id="description-gstbin">
+    <title>Description</title>
+
+    <para>
+        <link linkend="class-gstbin"><classname>gst.Bin</classname></link> is an element that can contain other 
+        <link linkend="class-gstelement"><classname>gst.Element</classname></link>, allowing them to be managed as a group. 
+        Pads from the child elements can be ghosted to the bin, see <link linkend="class-gstghostpad"><classname>gst.GhostPad</classname></link>. 
+        This makes the bin look like any other elements and enables creation of higher-level abstraction elements.
+    </para>
+
+    <para>
+        A new <link linkend="class-gstbin"><classname>gst.Bin</classname></link> is created with 
+        <methodname><link linkend="constructor-gstbin">gst.Bin()</link></methodname>. Use a 
+        <link linkend="class-gstpipeline"><classname>gst.Pipeline</classname></link> instead if you want to create a toplevel bin 
+        because a normal bin doesn't have a bus or handle clock distribution of its own.
+    </para>
+  
+    <para>
+        After the bin has been created you will typically add elements to it with 
+        <methodname><link linkend="method-gstbin--add">gst.Bin.add()</link></methodname>. You can remove elements with 
+        <methodname><link linkend="method-gstbin--remove">gst.Bin.remove()</link></methodname>.
+        
+    </para>
+  
+    <para>
+        An element can be retrieved from a bin with <methodname><link linkend="method-gstbin--get-by-name">gst.Bin.get_by_name()</link></methodname>, 
+        using the elements name.
+    </para>
+    
+    <para>
+        An iterator of elements in a bin can be retrieved with <methodname><link linkend="method-gstbin--elements">gst.Bin.elements()</link></methodname>. 
+        Various other iterators exist to retrieve the elements in a bin.
+    </para>
+    
+    <para>
+        The <link linkend="signal-gstbin--element-added">"element-added"</link> signal is fired whenever a new element is added to the bin. Likewise the 
+        <link linkend="signal-gstbin--element-removed">"element-removed"</link> signal is fired whenever an element is removed from the bin.
+    </para>
+    
+    <para>
+        A <link linkend="class-gstbin"><classname>gst.Bin</classname></link> internally intercepts every 
+        <link linkend="class-gstmessage"><classname>gst.Message</classname></link> posted by its children and implements the 
+        following default behaviour for each of them:
+    </para>
+    
+    <blockquote role="properties">
+        <informaltable pgwide="1" frame="none">
+            <tgroup cols="2">
+                <colspec column="1" colwidth="1in"/>
+                <colspec column="2" colwidth="1in"/>
+                <tbody>
+                    <row valign="top">
+                        <entry>gst.MESSAGE_EOS</entry>
+                        <entry>This message is only posted by sinks in the PLAYING state. 
+                            If all sinks posted the EOS message, this bin will post and EOS message upwards.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.MESSAGE_SEGMENT_START</entry>
+                        <entry>Just collected and never forwarded upwards. The messages are used to decide when all elements 
+                            have completed playback of their segment.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.MESSAGE_SEGMENT_DONE</entry>
+                        <entry>Is posted by <link linkend="class-gstbin"><classname>gst.Bin</classname></link> 
+                            when all elements that posted a SEGMENT_START have posted a SEGMENT_DONE.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>OTHERS</entry>
+                        <entry>Posted upwards.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </blockquote>
+    
+    <para>
+        A <link linkend="class-gstbin"><classname>gst.Bin</classname></link> implements the following default behaviour for answering to a 
+        <link linkend="class-gstquery"><classname>gst.Query</classname></link>:
+    </para>
+    
+    <blockquote role="properties">
+        <informaltable pgwide="1" frame="none">
+            <tgroup cols="2">
+                <colspec column="1" colwidth="4in"/>
+                <colspec column="2" colwidth="4in"/>
+                <tbody>
+                    <row valign="top">
+                        <entry>gst.MESSAGE_EOS</entry>
+                        <entry>This message is only posted by sinks in the PLAYING state. 
+                            If all sinks posted the EOS message, this bin will post and EOS message upwards.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.QUERY_DURATION</entry>
+                        <entry>If the query has been asked before with the same format, use the cached previous value. 
+                            If no previous value was cached, the query is sent to all sink elements in the bin and the 
+                            MAXIMUM of all values is returned and cached. If no sinks are available in the bin, the query fails.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>OTHERS</entry>
+                        <entry>the query is forwarded to all sink elements, the result of the first sink that answers the 
+                            query successfully is returned. If no sink is in the bin, the query fails.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </blockquote>
+</refsect1>
+
+<!-- *************************** -->
+<!-- BEGIN OF GSTBIN CONSTRUCTOR -->
+<!-- *************************** -->
+
+<refsect1 id="constructor-gstbin">
+    <title>Constructor</title>
+    
+    <programlisting><constructorsynopsis language="python">
+            <methodname>gst.Bin</methodname>
+            <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
+        </constructorsynopsis></programlisting>
+    
+    <variablelist>
+        <varlistentry>
+            <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+            <listitem><simpara> The name for the bin.</simpara></listitem>
+        </varlistentry>
+    </variablelist>
+    
+    <para>
+        Creates a new bin with the given name.
+    </para>
+</refsect1>
+
+<!-- *********************** -->
+<!-- BEGIN OF GSTBIN METHODS -->
+<!-- *********************** -->
+
+<refsect1>
+    <title>Methods</title>
+
+    <refsect2 id="method-gstbin--add">
+        <title>gst.Bin.add</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>add</methodname>
+            <methodparam><parameter role="keyword">element</parameter></methodparam>
+    	  </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">element</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstelement"><classname>gst.Element</classname></link> to add.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the element could be added, <literal>False</literal> if the bin does not 
+                        want to accept the element.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>add</methodname>() method adds the given element to the bin. Sets the element's parent, 
+            and thus takes ownership of the element. An element can only be added to one bin.
+        </para>
+        <para>
+            If the element's pads are linked to other pads, the pads will be unlinked before the element is added to the bin.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbin--add-many">
+        <title>gst.Bin.add_many</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>add_many</methodname>
+                <methodparam><parameter role="keyword">element1</parameter></methodparam>
+                <methodparam><parameter role="keyword">element2</parameter></methodparam>
+                <methodparam><parameter role="keyword">...</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">element1</parameter>&nbsp;:</term>
+                <listitem><simpara> The first <link linkend="class-gstelement"><classname>gst.Element</classname></link> to add.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">element2</parameter>&nbsp;:</term>
+                <listitem><simpara> The second <link linkend="class-gstelement"><classname>gst.Element</classname></link> to add.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">...</parameter>&nbsp;:</term>
+                <listitem><simpara> Additional elements to add.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>add_many</methodname>() method adds a list of elements to a bin. This function is equivalent to calling 
+            <methodname><link linkend="method-gstbin--add">add</link></methodname> for each member of the list.
+        </para>
+    </refsect2>
+
+</refsect1>
+
+<!-- *********************** -->
+<!-- BEGIN OF GSTBIN SIGNALS -->
+<!-- *********************** --> 
+ 
+<refsect1>
+    <title>Signals</title>
+
+    <refsect2 id="signal-gstbin--element-added">
+        <title>The "element-added" gst.Element Signal</title>
+        <programlisting><methodsynopsis language="python">
+        <methodname>callback</methodname>
+         	  <methodparam><parameter>gstbin</parameter></methodparam>
+	          <methodparam><parameter>element</parameter></methodparam>
+            <methodparam><parameter>user_data</parameter></methodparam>
+            <methodparam><parameter>...</parameter></methodparam>
+	      </methodsynopsis></programlisting>
+
+        <variablelist>
+    	      <varlistentry>
+        	      <term><parameter>gstbin</parameter>&nbsp;:</term>
+        	      <listitem><simpara>The gstbin that received the signal.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>element</parameter>&nbsp;:</term>
+                <listitem><simpara>The gstelement that was added to the bin.</simpara></listitem>
+            </varlistentry>
+    	      <varlistentry>
+        	      <term><parameter>user_data</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional data (if any) specified with the 
+                <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+	          </varlistentry>
+    	      <varlistentry>
+        	      <term><parameter>...</parameter>&nbsp;:</term>
+        	      <listitem><simpara>Additional user parameters (if any)</simpara></listitem>
+    	      </varlistentry>
+        </variablelist>
+
+        <para>
+            The "element-added" signal is emitted after the element was added to the bin.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="signal-gstbin--element-removed">
+        <title>The "element-removed" gst.Element Signal</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>callback</methodname>
+                <methodparam><parameter>gstbin</parameter></methodparam>
+                <methodparam><parameter>element</parameter></methodparam>
+                <methodparam><parameter>user_data</parameter></methodparam>
+                <methodparam><parameter>...</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter>gstbin</parameter>&nbsp;:</term>
+                <listitem><simpara>The gstbin that received the signal.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>element</parameter>&nbsp;:</term>
+                <listitem><simpara>The gstelement that was removed to the bin.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>user_data</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional data (if any) specified with the 
+                        <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>...</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional user parameters (if any)</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The "element-added" signal is emitted after the element was removed from the bin.
+        </para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
