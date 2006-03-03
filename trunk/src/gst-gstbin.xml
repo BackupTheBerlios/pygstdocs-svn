@@ -84,14 +84,14 @@
 </classsynopsis>
 </refsect1>
 
-<!-- **************************** -->
+<!-- ************************ -->
 <!-- BEGIN OF GSTBIN ANCESTRY -->
-<!-- **************************** -->
+<!-- ************************ -->
 
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
     +-- <link linkend="class-gstobject">gst.Object</link>
         +-- <link linkend="class-gstelement">gst.Element</link>
             +-- <link linkend="class-gstbin">gst.Bin</link>
@@ -328,7 +328,228 @@
         
         <para>
             The <methodname>add_many</methodname>() method adds a list of elements to a bin. This function is equivalent to calling 
-            <methodname><link linkend="method-gstbin--add">add</link></methodname> for each member of the list.
+            <methodname><link linkend="method-gstbin--add">gst.Bin.add()</link></methodname> for each member of the list.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbin--elements">
+        <title>gst.Bin.elements</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>elements</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstiterator"><classname>gst.Iterator</classname></link>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>add</methodname>() method adds the given element to the bin. Sets the element's parent, 
+            and thus takes ownership of the element. An element can only be added to one bin.
+        </para>
+        <para>
+            If the element's pads are linked to other pads, the pads will be unlinked before the element is added to the bin.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbin--get-by-interface">
+        <title>gst.Bin.get_by_interface</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_by_interface</methodname>
+                <methodparam><parameter role="keyword">interface</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">interface</parameter>&nbsp;:</term>
+                <listitem><simpara> The GType of an interface.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstelement"><classname>gst.Element</classname></link> inside the bin 
+                        implementing the interface.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_by_interface</methodname>() method looks for an element inside the bin that implements the given interface. 
+            If such an element is found, it returns the element. You can cast this element to the given interface afterwards. 
+            If you want all elements that implement the interface, use 
+            <methodname><link linkend="method-gstbin--iterate-all-by-interface">gst.Bin.iterate_all_by_interface()</link></methodname>. 
+            This function recurses into child bins.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbin--get-by-name">
+        <title>gst.Bin.get_by_name</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_by_name</methodname>
+                <methodparam><parameter role="keyword">name</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+                <listitem><simpara> The element name to search for.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstelement"><classname>gst.Element</classname></link> with the given name, 
+                        or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_by_name</methodname>() method gets the element with the given name from a bin. This function recurses into child bins.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbin--iterate-all-by-interface">
+        <title>gst.Bin.iterate_all_by_interface</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>iterate_all_by_interface</methodname>
+                <methodparam><parameter role="keyword">interface</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">interface</parameter>&nbsp;:</term>
+                <listitem><simpara> The GType of an interface.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstiterator"><classname>gst.Iterator</classname></link> 
+                        of <link linkend="class-gstelement"><classname>gst.Element</classname></link> for all elements in 
+                        the bin implementing the given interface, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>iterate_all_by_interface</methodname>() method looks for all elements inside the bin that implements the given interface. 
+            You can safely cast all returned elements to the given interface. The function recurses inside child bins. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbin--recurse">
+        <title>gst.Bin.recurse</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>recurse</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstiterator"><classname>gst.Iterator</classname></link> 
+                        of <link linkend="class-gstelement"><classname>gst.Element</classname></link> or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>iterate_all_by_interface</methodname>() method looks for all elements inside the bin that implements the given interface. 
+            You can safely cast all returned elements to the given interface. The function recurses inside child bins. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbin--remove">
+        <title>gst.Bin.remove</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>remove</methodname>
+                <methodparam><parameter role="keyword">element</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">element</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstelement"><classname>gst.Element</classname></link> to remove.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the element could be removed, 
+                        <literal>False</literal> if the bin does not want to remove the element.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>remove</methodname>() method removes the element from the bin, unparenting it as well.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbin--remove-many">
+        <title>gst.Bin.remove_many</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>remove_many</methodname>
+                <methodparam><parameter role="keyword">element1</parameter></methodparam>
+                <methodparam><parameter role="keyword">element2</parameter></methodparam>
+                <methodparam><parameter role="keyword">...</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">element1</parameter>&nbsp;:</term>
+                <listitem><simpara> The first <link linkend="class-gstelement"><classname>gst.Element</classname></link> to remove.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">element2</parameter>&nbsp;:</term>
+                <listitem><simpara> The second <link linkend="class-gstelement"><classname>gst.Element</classname></link> to remove.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">...</parameter>&nbsp;:</term>
+                <listitem><simpara> Additional elements to remove.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>remove_many</methodname>() method Remove a list of elements from a bin. This function is equivalent to calling. 
+            This function is equivalent to calling 
+            <methodname><link linkend="method-gstbin--remove">gst.Bin.remove()</link></methodname> for each member of the list.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbin--sinks">
+        <title>gst.Bin.sinks</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>sinks</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstiterator"><classname>gst.Iterator</classname></link> 
+                        of <link linkend="class-gstelement"><classname>gst.Element</classname></link> or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>sinks</methodname>() method gets an iterator for all elements in the bin that have the gst.ELEMENT_IS_SINK flag set.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstbin--sorted">
+        <title>gst.Bin.sorted</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>sorted</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstiterator"><classname>gst.Iterator</classname></link> 
+                        of <link linkend="class-gstelement"><classname>gst.Element</classname></link> or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>sorted</methodname>() method gets an iterator for the elements in this bin in topologically sorted order. 
+            This means that the elements are returned from the most downstream elements (sinks) to the sources.
+        </para>
+        <para>
+            This function is used internally to perform the state changes of the bin elements.
         </para>
     </refsect2>
 
@@ -363,7 +584,8 @@
     	      <varlistentry>
         	      <term><parameter>user_data</parameter>&nbsp;:</term>
                 <listitem><simpara>Additional data (if any) specified with the 
-                <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+                <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html#method-gobject--connect">
+                    <methodname>gobject.connect()</methodname></ulink> method</simpara></listitem>
 	          </varlistentry>
     	      <varlistentry>
         	      <term><parameter>...</parameter>&nbsp;:</term>
@@ -398,7 +620,8 @@
             <varlistentry>
                 <term><parameter>user_data</parameter>&nbsp;:</term>
                 <listitem><simpara>Additional data (if any) specified with the 
-                        <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+                    <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html#method-gobject--connect">
+                    <methodname>gobject.connect()</methodname></ulink> method</simpara></listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>...</parameter>&nbsp;:</term>

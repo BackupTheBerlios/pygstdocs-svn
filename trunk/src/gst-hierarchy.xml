@@ -7,6 +7,7 @@
             <link linkend="class-gstsystemclock">gst.SystemClock</link>
         <link linkend="class-gstelement">gst.Element</link>
             <link linkend="class-gstbin">gst.Bin</link>
+                <link linkend="class-gstpipeline">gst.Pipeline</link>
         <link linkend="class-gstpad">gst.Pad</link>
             <link linkend="class-gstghostpad">gst.GhostPad</link>
         <link linkend="class-gstpadtemplate">gst.PadTemplate</link>

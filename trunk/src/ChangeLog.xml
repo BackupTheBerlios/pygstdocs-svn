@@ -1,4 +1,10 @@
 <literallayout>
+<emphasis role="bold">2006-03-03  Gian Mario Tagliaretti &lt;g.tagliaretti # parafernalia.org&gt;</emphasis>
+    
+    * Added new class gst.Bin
+    * Added new class gst.Pipeline
+    * Minor fixes
+
 <emphasis role="bold">2006-02-27  Gian Mario Tagliaretti &lt;g.tagliaretti # parafernalia.org&gt;</emphasis>
     
     * Added new class gst.Message

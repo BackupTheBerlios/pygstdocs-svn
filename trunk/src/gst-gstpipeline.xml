@@ -1,0 +1,330 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstpipeline">
+    <refnamediv>
+        <refname>gst.Pipeline</refname>
+        <refpurpose>Top-level bin with clocking and bus management functionality.</refpurpose>
+    </refnamediv>
+
+<!-- ***************************** -->
+<!-- BEGIN OF GSTPIPELINE SYNOPSIS -->
+<!-- ***************************** -->
+
+<refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.Pipeline</classname></ooclass>
+        <ooclass><classname><link linkend="class-gstbin">gst.Bin</link></classname></ooclass>
+    
+    <constructorsynopsis language="python">
+        <methodname><link linkend="constructor-gstpipeline">gst.Pipeline</link></methodname>
+        <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
+    </constructorsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpipeline--auto-clock">auto_clock</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpipeline--get-bus">get_bus</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpipeline--get-clock">get_clock</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpipeline--get-last-stream-time">get_last_stream_time</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpipeline--set_clock">set_clock</link></methodname>
+        <methodparam><parameter role="keyword">clock</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpipeline--set-new-stream-time">set_new_stream_time</link></methodname>
+        <methodparam><parameter role="keyword">time</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpipeline--use-clock">use_clock</link></methodname>
+         <methodparam></methodparam>
+    </methodsynopsis>
+  </classsynopsis>
+</refsect1>
+
+<!-- ***************************** -->
+<!-- BEGIN OF GSTPIPELINE ANCESTRY -->
+<!-- ***************************** -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
+    +-- <link linkend="class-gstobject">gst.Object</link>
+        +-- <link linkend="class-gstelement">gst.Element</link>
+            +-- <link linkend="class-gstbin">gst.Bin</link>
+                +-- <link linkend="class-gstpipeline">gst.Pipeline</link>
+</synopsis>
+</refsect1>
+
+<!-- ******************************** -->
+<!-- BEGIN OF GSTPIPELINE DESCRIPTION -->
+<!-- ******************************** -->
+
+<refsect1 id="description-gstpipeline">
+    <title>Description</title>
+
+    <para>
+        In almost all cases, you'll want to use a GstPipeline when creating a filter graph. 
+        The <link linkend="class-gstpipeline"><classname>gst.Pipeline</classname></link> will manage the selection and 
+        distribution of a global clock as well as provide a <link linkend="class-gstbus"><classname>gst.Bus</classname></link> to the application.
+    </para>
+
+    <para>
+        The pipeline will also use the selected clock to calculate the stream time of the pipeline.
+    </para>
+  
+    <para>
+        When sending a seek event to a GstPipeline, it will make sure that the pipeline is properly PAUSED and 
+        resumed as well as update the new stream time after the seek.
+    </para>
+</refsect1>
+
+<!-- ******************************* -->
+<!-- BEGIN OF GSTPIPELINE PROPERTIES -->
+<!-- ******************************* -->
+
+<refsect1>
+    <title>Properties</title>
+    
+    <blockquote role="properties">
+        <informaltable pgwide="1" frame="none">
+            <tgroup cols="3">
+                <colspec column="1" colwidth="1in"/>
+                <colspec column="2" colwidth="1in"/>
+                <colspec column="3" colwidth="4in"/>
+                <tbody>
+                    
+                    <row valign="top">
+                        <entry>"delay"</entry>
+                        <entry>Read-Write</entry>
+                        <entry>Expected delay needed for elements to spin up to PLAYING in nanoseconds. Default value: 0</entry>
+                    </row>
+                    
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </blockquote>
+</refsect1>
+
+<!-- ******************************** -->
+<!-- BEGIN OF GSTPIPELINE CONSTRUCTOR -->
+<!-- ******************************** -->
+
+<refsect1 id="constructor-gstpipeline">
+    <title>Constructor</title>
+    
+    <programlisting><constructorsynopsis language="python">
+            <methodname>gst.Pipeline</methodname>
+            <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
+        </constructorsynopsis></programlisting>
+    
+    <variablelist>
+        <varlistentry>
+            <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+            <listitem><simpara> The name for the pipeline.</simpara></listitem>
+        </varlistentry>
+    </variablelist>
+    
+    <para>
+        Creates a new pipeline with the given name.
+    </para>
+</refsect1>
+
+<!-- ****************************** -->
+<!-- BEGIN OF GSTPIPELINE CONSTANTS -->
+<!-- ****************************** -->
+
+<refsect1 id="constants-gstpipeline">
+    <title>Constants</title>
+    
+    <blockquote role="properties">
+        <informaltable pgwide="1" frame="none">
+            <tgroup cols="2">
+                <colspec column="1" colwidth="1in"/>
+                <colspec column="1" colwidth="1in"/>
+                <tbody>
+                    <row valign="top">
+                        <entry>gst.PIPELINE_FLAG_FIXED_CLOCK</entry>
+                        <entry>This pipeline works with a fixed clock.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.PIPELINE_FLAG_LAST</entry>
+                        <entry>Offset to define more flags</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </blockquote>
+</refsect1>
+
+<!-- **************************** -->
+<!-- BEGIN OF GSTPIPELINE METHODS -->
+<!-- **************************** -->
+
+<refsect1>
+    <title>Methods</title>
+
+    <refsect2 id="method-gstpipeline--auto-clock">
+        <title>gst.Pipeline.auto_clock</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>auto_clock</methodname>
+            <methodparam></methodparam>
+    	  </methodsynopsis></programlisting>
+        
+        <para>
+            The <methodname>auto_clock</methodname>() method lets the pipeline select a clock automatically.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpipeline--get-bus">
+        <title>gst.Pipeline.get_bus</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_bus</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstbus"><classname>gst.Bus</classname></link>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_bus</methodname>() method gets the <link linkend="class-gstbus"><classname>gst.Bus</classname></link> 
+            of this pipeline.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpipeline--get-clock">
+        <title>gst.Pipeline.get_clock</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_clock</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstclock"><classname>gst.Clock</classname></link>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_clock</methodname>() method gets the current clock used by the pipeline.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpipeline--get-last-stream-time">
+        <title>gst.Pipeline.get_last_stream_time</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_last_stream_time</methodname>
+                <methodparam></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstclocktime"><classname>gst.ClockTime</classname></link>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_last_stream_time</methodname>() method gets the last stream time of the pipeline. 
+            If the pipeline is PLAYING, the returned time is the stream time used to configure the elements in the PAUSED->PLAYING state. 
+            If the pipeline is PAUSED, the returned time is the stream time when the pipeline was paused.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpipeline--set-clock">
+        <title>gst.Pipeline.set_clock</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_clock</methodname>
+                <methodparam><parameter role="keyword">clock</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">clock</parameter>&nbsp;:</term>
+                <listitem><simpara> The clock to set.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the clock could be set on the pipeline.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_clock</methodname>() method sets the clock for the pipeline. 
+            The clock will be distributed to all the elements managed by the pipeline.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpipeline--set-new-stream-time">
+        <title>gst.Pipeline.set_new_stream_time</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_new_stream_time</methodname>
+                <methodparam><parameter role="keyword">time</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">time</parameter>&nbsp;:</term>
+                <listitem><simpara> The new stream time to set.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_new_stream_time</methodname>() method sets the new stream time of the pipeline. 
+            The stream time is used to set the base time on the elements (see 
+            <methodname><link linkend="method-gstelement--set-base-time">gst.Element.set_base_time()</link></methodname>) 
+            in the PAUSED->PLAYING state transition.
+        </para>
+        <para>
+            Setting time to gst.CLOCK_TIME_NONE will disable the pipeline's management of element base time. 
+            The application will then be responsible for performing base time distribution. 
+            This is sometimes useful if you want to synchronize capture from multiple pipelines, 
+            and you can also ensure that the pipelines have the same clock.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpipeline--use-clock">
+        <title>gst.Pipeline.use_clock</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>use_clock</methodname>
+                <methodparam><parameter role="keyword">clock</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">clock</parameter>&nbsp;:</term>
+                <listitem><simpara> The clock to use.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>use_clock</methodname>() method forces the pipeline to use the given clock. 
+            The pipeline will always use the given clock even if new clock providers are added to this pipeline.
+        </para>
+    </refsect2>
+  </refsect1>
+</refentry>

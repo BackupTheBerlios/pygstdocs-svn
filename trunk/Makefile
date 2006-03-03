@@ -26,6 +26,7 @@ src/gst-gstpadtemplate.xml \
 src/gst-gstbuffer.xml \
 src/gst-gstbufferflag.xml \
 src/gst-gstcaps.xml \
+src/gst-gstpipeline.xml \
 src/gst-gstmessage.xml
 
 ref-html: gst-reference ${REFERENCELINKS} ${XSLFILES} ${REFERENCEXMLFILES}

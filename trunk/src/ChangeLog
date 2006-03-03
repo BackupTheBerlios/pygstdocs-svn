@@ -1,3 +1,9 @@
+2006-03-03  Gian Mario Tagliaretti <g.tagliaretti # parafernalia.org>
+    
+    * Added new class gst.Bin
+    * Added new class gst.Pipeline
+    * Minor fixes
+
 2006-02-27  Gian Mario Tagliaretti <g.tagliaretti # parafernalia.org>
     
     * Added new class gst.Message
