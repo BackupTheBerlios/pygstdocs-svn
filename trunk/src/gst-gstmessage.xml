@@ -215,7 +215,7 @@
                 <listitem><simpara> The lost clock.</simpara></listitem>
             </varlistentry>
             <varlistentry>
-                <term><parameter role="keyword">clock</parameter>&nbsp;:</term>
+                <term><parameter role="keyword">ready</parameter>&nbsp;:</term>
                 <listitem><simpara> The ready flag.</simpara></listitem>
             </varlistentry>
         </variablelist>

@@ -1,0 +1,628 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstquery">
+    <refnamediv>
+        <refname>gst.Query</refname>
+        <refpurpose>Dynamically register new query types. Provide functions to create queries, and to set and parse values in them.</refpurpose>
+    </refnamediv>
+
+<!-- ************************** -->
+<!-- BEGIN OF GSTQUERY SYNOPSIS -->
+<!-- ************************** -->
+
+<refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.Query</classname></ooclass>
+        <ooclass><classname><link linkend="class-gstminiobject">gst.MiniObject</link></classname></ooclass>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstquery--get-structure">get_structure</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstquery--parse-convert">parse_convert</link></methodname>
+        <methodparam><parameter role="keyword">src_format</parameter></methodparam>
+        <methodparam><parameter role="keyword">src_value</parameter></methodparam>
+        <methodparam><parameter role="keyword">dest_format</parameter></methodparam>
+        <methodparam><parameter role="keyword">dest_value</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstquery--parse-duration">parse_duration</link></methodname>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">duration</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstquery--parse-position">parse_position</link></methodname>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">cur</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstquery--parse-seeking">parse_seeking</link></methodname>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">seekable</parameter></methodparam>
+        <methodparam><parameter role="keyword">segment_start</parameter></methodparam>
+        <methodparam><parameter role="keyword">segment_end</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstquery--parse-segment">parse_segment</link></methodname>
+        <methodparam><parameter role="keyword">rate</parameter></methodparam>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">start_value</parameter></methodparam>
+        <methodparam><parameter role="keyword">stop_value</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstquery--set-convert">set_convert</link></methodname>
+        <methodparam><parameter role="keyword">src_format</parameter></methodparam>
+        <methodparam><parameter role="keyword">src_value</parameter></methodparam>
+        <methodparam><parameter role="keyword">dest_format</parameter></methodparam>
+        <methodparam><parameter role="keyword">dest_value</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstquery--set-duration">set_duration</link></methodname>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">duration</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstquery--set-position">set_position</link></methodname>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">cur</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstquery--set-seeking">set_seeking</link></methodname>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">seekable</parameter></methodparam>
+        <methodparam><parameter role="keyword">segment_start</parameter></methodparam>
+        <methodparam><parameter role="keyword">segment_end</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstquery--set-segment">set_segment</link></methodname>
+        <methodparam><parameter role="keyword">rate</parameter></methodparam>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">start_value</parameter></methodparam>
+        <methodparam><parameter role="keyword">stop_value</parameter></methodparam>
+    </methodsynopsis>
+</classsynopsis>
+
+<programlisting>
+    <emphasis role="bold">Functions</emphasis>
+    
+<methodsynopsis language="python"><methodname><link linkend="function-gstquery--query-new-application">gst.query_new_application</link></methodname>
+    <methodparam><parameter role="keyword">type</parameter></methodparam>
+    <methodparam><parameter role="keyword">structure</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstquery--query-new-convert">gst.query_new_convert</link></methodname>
+    <methodparam><parameter role="keyword">src_format</parameter></methodparam>
+    <methodparam><parameter role="keyword">value</parameter></methodparam>
+    <methodparam><parameter role="keyword">dest_format</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstquery--query-new-duration">gst.query_new_duration</link></methodname>
+    <methodparam><parameter role="keyword">format</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstquery--query-new-position">gst.query_new_position</link></methodname>
+    <methodparam><parameter role="keyword">format</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstquery--query-new-seeking">gst.query_new_seeking</link></methodname>
+    <methodparam><parameter role="keyword">format</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstquery--query-new-segment">gst.query_new_segment</link></methodname>
+    <methodparam><parameter role="keyword">format</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstquery--query-type-get-by-nick">gst.query_type_get_by_nick</link></methodname>
+    <methodparam><parameter role="keyword">nick</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstquery--query-type-iterate-definitions">gst.query_type_iterate_definitions</link></methodname>
+    <methodparam></methodparam></methodsynopsis><methodsynopsis language="python">
+    <methodname><link linkend="function-gstquery--query-type-register">gst.query_type_register</link></methodname>
+    <methodparam><parameter role="keyword">nick</parameter></methodparam>
+    <methodparam><parameter role="keyword">description</parameter></methodparam></methodsynopsis>
+</programlisting>
+</refsect1>
+
+<!-- ************************** -->
+<!-- BEGIN OF GSTQUERY ANCESTRY -->
+<!-- ************************** -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gstminiobject">gst.MiniObject</link>
+    +-- <link linkend="class-gstquery">gst.Query</link>
+</synopsis>
+</refsect1>
+
+<!-- ***************************** -->
+<!-- BEGIN OF GSTQUERY DESCRIPTION -->
+<!-- ***************************** -->
+
+<refsect1 id="description-gstquery">
+    <title>Description</title>
+
+    <para>
+        GstQuery functions are used to register a new query types to the gstreamer core. Query types can be used to perform queries on pads and elements.
+    </para>
+    <para>
+        Queries can be created using the gst_query_new_xxx() functions. Query values can be set using gst.Query.set_xxx(), 
+        and parsed using gst.Query.parse_xxx() helpers.
+    </para>
+</refsect1>
+
+<!-- *************************** -->
+<!-- BEGIN OF GSTQUERY CONSTANTS -->
+<!-- *************************** -->
+
+<refsect1 id="constants-gstquery">
+    <title>Constants</title>
+    
+    <blockquote role="properties">
+        <informaltable pgwide="1" frame="none">
+            <tgroup cols="2">
+                <colspec column="1" colwidth="1in"/>
+                <colspec column="1" colwidth="1in"/>
+                <tbody>
+                    <row valign="top">
+                        <entry>gst.QUERY_NONE</entry>
+                        <entry>Invalid query type.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.QUERY_POSITION</entry>
+                        <entry>Current position in stream.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.QUERY_DURATION</entry>
+                        <entry>Total duration of the stream.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.QUERY_LATENCY</entry>
+                        <entry>Latency of stream.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.QUERY_JITTER</entry>
+                        <entry>Current jitter of stream.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.QUERY_RATE</entry>
+                        <entry>Current rate of the stream.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.QUERY_SEEKING</entry>
+                        <entry>Seeking capabilities.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.QUERY_SEGMENT</entry>
+                        <entry>Segment start/stop positions.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.QUERY_CONVERT</entry>
+                        <entry>Convert values between formats.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry>gst.QUERY_FORMATS</entry>
+                        <entry>Query supported formats for convert.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </blockquote>
+</refsect1>
+
+<!-- ************************* -->
+<!-- BEGIN OF GSTQUERY METHODS -->
+<!-- ************************* -->
+
+<refsect1>
+    <title>Methods</title>
+
+    <refsect2 id="method-gstquery--get-structure">
+        <title>gst.Query.get_structure</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_structure</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+    
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gststructure"><classname>gst.Structure</classname></link> of the query.</simpara></listitem>
+                </varlistentry>
+        </variablelist>
+      
+        <para>
+            The <methodname>get_structure</methodname>() method gets the structure of a query.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstquery--parse-convert">
+        <title>gst.Query.parse_convert</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>parse_convert</methodname>
+                <methodparam><parameter role="keyword">src_format</parameter></methodparam>
+                <methodparam><parameter role="keyword">src_value</parameter></methodparam>
+                <methodparam><parameter role="keyword">dest_format</parameter></methodparam>
+                <methodparam><parameter role="keyword">dest_value</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">src_format</parameter>&nbsp;:</term>
+                <listitem><simpara> The storage for the <link linkend="class-gstformat"><classname>gst.Format</classname></link> 
+                        of the source value, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">src_value</parameter>&nbsp;:</term>
+                <listitem><simpara> The storage for the source value, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">dest_format</parameter>&nbsp;:</term>
+                <listitem><simpara> The storage for the <link linkend="class-gstformat"><classname>gst.Format</classname></link> 
+                        of the destination value, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">dest_value</parameter>&nbsp;:</term>
+                <listitem><simpara> The storage for the destination value, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>parse_convert</methodname>() method parses a convert query answer. 
+            Any of <parameter>src_format</parameter>, <parameter>src_value</parameter>, <parameter>dest_format</parameter>, and 
+            <parameter>dest_value</parameter> may be <literal>None</literal>, in which case that value is omitted.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstquery--parse-duration">
+        <title>gst.Query.parse_duration</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>parse_duration</methodname>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">duration</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> The storage for the <link linkend="class-gstformat"><classname>gst.Format</classname></link> 
+                        of the source value, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">duration</parameter>&nbsp;:</term>
+                <listitem><simpara> The storage for the total duration, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>parse_duration</methodname>() method extracts the duration and format from the duration message. 
+            The duration might be gst.CLOCK_TIME_NONE, which indicates that the duration has changed. 
+            Applications should always use a query to retrieve the duration of a pipeline.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstquery--parse-position">
+        <title>gst.Query.parse_position</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>parse_position</methodname>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">cur</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> The storage for the <link linkend="class-gstformat"><classname>gst.Format</classname></link> 
+                        of the position value, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">cur</parameter>&nbsp;:</term>
+                <listitem><simpara> The storage for the current position, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>parse_position</methodname>() method parses a position query, writing the format into <parameter>format</parameter>, 
+            and the position into <parameter>cur</parameter>, if the respective parameters are non-None.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstquery--parse-seeking">
+        <title>gst.Query.parse_seeking</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>parse_seeking</methodname>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">seekable</parameter></methodparam>
+                <methodparam><parameter role="keyword">segment_start</parameter></methodparam>
+                <methodparam><parameter role="keyword">segment_end</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">src_format</parameter>&nbsp;:</term>
+                <listitem><simpara> The format to set for the <parameter>segment_start</parameter> and 
+                        <parameter>segment_end</parameter> values.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">seekable</parameter>&nbsp;:</term>
+                <listitem><simpara> The seekable flag to set.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">segment_start</parameter>&nbsp;:</term>
+                <listitem><simpara> The segment_start to set.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">segment_end</parameter>&nbsp;:</term>
+                <listitem><simpara> The segment_end to set.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>parse_seeking</methodname>() method parses a seeking query, writing the format into format, 
+            and other results into the passed parameters, if the respective parameters are non-None.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstquery--parse-segment">
+        <title>gst.Query.parse_segment</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>parse_segment</methodname>
+                <methodparam><parameter role="keyword">rate</parameter></methodparam>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">start_value</parameter></methodparam>
+                <methodparam><parameter role="keyword">stop_value</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">rate</parameter>&nbsp;:</term>
+                <listitem><simpara> The storage for the rate of the segment, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> The storage for the <link linkend="class-gstformat"><classname>gst.Format</classname></link> 
+                        of the values, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">start_value</parameter>&nbsp;:</term>
+                <listitem><simpara> The storage for the start value, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">stop_value</parameter>&nbsp;:</term>
+                <listitem><simpara> The storage for the stop value, or <literal>None</literal>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>parse_segment</methodname>() method parses a segment query answer. Any of <parameter>rate</parameter>, <parameter>format</parameter>, 
+            <parameter>start_value</parameter>, and <parameter>stop_value</parameter> may be <literal>None</literal>, which will cause this value to be omitted.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstquery--set-convert">
+        <title>gst.Query.set_convert</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_convert</methodname>
+                <methodparam><parameter role="keyword">src_format</parameter></methodparam>
+                <methodparam><parameter role="keyword">src_value</parameter></methodparam>
+                <methodparam><parameter role="keyword">dest_format</parameter></methodparam>
+                <methodparam><parameter role="keyword">dest_value</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">src_format</parameter>&nbsp;:</term>
+                <listitem><simpara> The source <link linkend="class-gstformat"><classname>gst.Format</classname></link>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">src_value</parameter>&nbsp;:</term>
+                <listitem><simpara> The source value.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">dest_format</parameter>&nbsp;:</term>
+                <listitem><simpara> The destination <link linkend="class-gstformat"><classname>gst.Format</classname></link>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">dest_value</parameter>&nbsp;:</term>
+                <listitem><simpara> The destination value.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_convert</methodname>() method answers a convert query by setting the requested values.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstquery--set-duration">
+        <title>gst.Query.set_duration</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_duration</methodname>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">duration</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstformat"><classname>gst.Format</classname></link> for the duration.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">duration</parameter>&nbsp;:</term>
+                <listitem><simpara> The duration of the stream.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_duration</methodname>() method answers duration query by setting the requested value in the given format.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstquery--set-position">
+        <title>gst.Query.set_position</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_position</methodname>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">cur</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> The requested <link linkend="class-gstformat"><classname>gst.Format</classname></link>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">cur</parameter>&nbsp;:</term>
+                <listitem><simpara> The position to set.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_position</methodname>() method answers a position query by setting the requested value in the given format.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstquery--set-seeking">
+        <title>gst.Query.set_seeking</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_seeking</methodname>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">seekable</parameter></methodparam>
+                <methodparam><parameter role="keyword">segment_start</parameter></methodparam>
+                <methodparam><parameter role="keyword">segment_end</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">src_format</parameter>&nbsp;:</term>
+                <listitem><simpara> The format to set for the <parameter>segment_start</parameter> and 
+                        <parameter>segment_end</parameter> values.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">seekable</parameter>&nbsp;:</term>
+                <listitem><simpara> The seekable flag to set.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">segment_start</parameter>&nbsp;:</term>
+                <listitem><simpara> The segment_start to set.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">segment_end</parameter>&nbsp;:</term>
+                <listitem><simpara> The segment_end to set.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_seeking</methodname>() method sets the seeking query result fields into the query.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstquery--set-segment">
+        <title>gst.Query.set_segment</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_segment</methodname>
+                <methodparam><parameter role="keyword">rate</parameter></methodparam>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">start_value</parameter></methodparam>
+                <methodparam><parameter role="keyword">stop_value</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">rate</parameter>&nbsp;:</term>
+                <listitem><simpara> The rate of the segment.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-gstformat"><classname>gst.Format</classname></link> of the segment values 
+                        (<parameter>start_value</parameter> and <parameter>stop_value</parameter>).</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">start_value</parameter>&nbsp;:</term>
+                <listitem><simpara> The start value.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">stop_value</parameter>&nbsp;:</term>
+                <listitem><simpara> The stop value.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_segment</methodname>() method answers a segment query by setting the requested values.
+        </para>
+    </refsect2>
+  </refsect1>
+
+  <!-- *************************** -->
+  <!-- BEGIN OF GSTQUERY FUNCTIONS -->
+  <!-- *************************** --> 
+  
+  <refsect1>
+        <title>Functions</title>
+      
+        <refsect2 id="function-gstquery--query-new-application">
+            <title>gst.query_new_application</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>query_new_application</methodname>
+                    <methodparam><parameter role="keyword">type</parameter></methodparam>
+                    <methodparam><parameter role="keyword">structure</parameter></methodparam>
+                </methodsynopsis></programlisting>
+          
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">types</parameter>&nbsp;:</term>
+                    <listitem><simpara> The query type.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">structure</parameter>&nbsp;:</term>
+                    <listitem><simpara> The structure for the query.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> A new <link linkend="class-gstquery"><classname>gst.Query</classname></link>.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+          
+            <para>
+                The <methodname>query_new_application</methodname>() function constructs a new custom application query object. 
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstquery--query-new-convert">
+            <title>gst.query_new_convert</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>query_new_convert</methodname>
+                    <methodparam><parameter role="keyword">src_format</parameter></methodparam>
+                    <methodparam><parameter role="keyword">values</parameter></methodparam>
+                    <methodparam><parameter role="keyword">dest_format</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">src_format</parameter>&nbsp;:</term>
+                    <listitem><simpara> The source <link linkend="class-gstformat"><classname>gst.Format</classname></link> for the new query.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">values</parameter>&nbsp;:</term>
+                    <listitem><simpara> The value to convert.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">dest_format</parameter>&nbsp;:</term>
+                    <listitem><simpara> The target <link linkend="class-gstformat"><classname>gst.Format</classname></link>.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> A new <link linkend="class-gstquery"><classname>gst.Query</classname></link>.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>query_new_convert</methodname>() function constructs a new custom application query object. 
+                A convert query is used to ask for a conversion between one format and another.
+            </para>
+        </refsect2>
+
+    
+    
+    </refsect1>
+</refentry>

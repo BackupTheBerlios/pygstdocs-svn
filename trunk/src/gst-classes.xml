@@ -21,6 +21,7 @@
     <xi:include href="gst-gstpad.xml"/>
     <xi:include href="gst-gstpadtemplate.xml"/>
     <xi:include href="gst-gstpipeline.xml"/>
+    <xi:include href="gst-gstquery.xml"/>
     <xi:include href="gst-gstsystemclock.xml"/>
 
 

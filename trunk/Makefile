@@ -27,20 +27,21 @@ src/gst-gstbuffer.xml \
 src/gst-gstbufferflag.xml \
 src/gst-gstcaps.xml \
 src/gst-gstpipeline.xml \
+src/gst-gstquery.xml \
 src/gst-gstmessage.xml
 
 ref-html: gst-reference ${REFERENCELINKS} ${XSLFILES} ${REFERENCEXMLFILES}
 	xsltproc --nonet --xinclude -o gst-reference/ \
-                 --stringparam gtkdoc.bookname gst-reference \
-                 --stringparam gtkdoc.version 2.6 \
+                 --stringparam gstdoc.bookname gst-reference \
+                 --stringparam gstdoc.version 0.10 \
 		xsl/ref-html-style.xsl src/gst-reference.xml
 
 ref-srcdist:
-	tar zcf gst-reference.docbook.tgz ${REFERENCEXMLFILES} ${XSLFILES} \
+	tar cjf gst-reference.docbook.tar.bz2 ${REFERENCEXMLFILES} ${XSLFILES} \
 		src/ChangeLog Makefile
 
 ref-dist:
-	tar zhcf gst-reference.tgz gst-reference
+	tar cjf gst-reference.tar.bz2 gst-reference
 
 gst-reference:
 	-mkdir gst-reference
