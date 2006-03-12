@@ -621,6 +621,179 @@
                 A convert query is used to ask for a conversion between one format and another.
             </para>
         </refsect2>
+        
+        <refsect2 id="function-gstquery--query-new-duration">
+            <title>gst.query_new_duration</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>query_new_duration</methodname>
+                    <methodparam><parameter role="keyword">format</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                    <listitem><simpara> The <link linkend="class-gstformat"><classname>gst.Format</classname></link> for this duration query.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> A new <link linkend="class-gstquery"><classname>gst.Query</classname></link>.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>query_new_duration</methodname>() function constructs a new stream duration query object to query in the given format.
+                A duration query will give the total length of the stream.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstquery--query-new-position">
+            <title>gst.query_new_position</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>query_new_position</methodname>
+                    <methodparam><parameter role="keyword">format</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                    <listitem><simpara> The default <link linkend="class-gstformat"><classname>gst.Format</classname></link> 
+                            for the new query.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> A new <link linkend="class-gstquery"><classname>gst.Query</classname></link>.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>query_new_position</methodname>() function constructss a new query stream position query object. 
+                A position query is used to query the current position of playback in the streams, in some format.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstquery--query-new-seeking">
+            <title>gst.query_new_seeking</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>query_new_seeking</methodname>
+                    <methodparam><parameter role="keyword">format</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                    <listitem><simpara> The default <link linkend="class-gstformat"><classname>gst.Format</classname></link> 
+                            for the new query.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> A new <link linkend="class-gstquery"><classname>gst.Query</classname></link>.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>query_new_seeking</methodname>() function constructs a new query object for querying seeking properties of the stream.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstquery--query-new-segment">
+            <title>gst.query_new_segment</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>query_new_segment</methodname>
+                    <methodparam><parameter role="keyword">format</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                    <listitem><simpara> The default <link linkend="class-gstformat"><classname>gst.Format</classname></link> 
+                            for the new query.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> A new <link linkend="class-gstquery"><classname>gst.Query</classname></link>.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>query_new_segment</methodname>() function constructs a new query object. 
+                A segment query is used to discover information about the currently configured segment for playback.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstquery--query-type-get-by-nick">
+            <title>gst.query_type_get_by_nick</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>query_type_get_by_nick</methodname>
+                    <methodparam><parameter role="keyword">nick</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">nick</parameter>&nbsp;:</term>
+                    <listitem><simpara> The nick of the query.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> The query registered with <parameter>nick</parameter> or gst.QUERY_NONE 
+                            if the query was not registered.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>query_type_get_by_nick</methodname>() function gets the query type registered with <parameter>nick</parameter>.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstquery--query-type-iterate-definitions">
+            <title>gst.query_type_iterate_definitions</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>query_type_iterate_definitions</methodname>
+                    <methodparam></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> A <link linkend="class-gstiterator"><classname>gst.Iterator</classname></link> 
+                            of GstQueryTypeDefinition.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>query_type_iterate_definitions</methodname>() function gets a 
+                <link linkend="class-gstiterator"><classname>gst.Iterator</classname></link> of all the registered query types. 
+                The definitions iterated over are read only.
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstquery--query-type-register">
+            <title>gst.query_type_register</title>
+            <programlisting><methodsynopsis language="python">
+                    <methodname>query_type_register</methodname>
+                    <methodparam><parameter role="keyword">nick</parameter></methodparam>
+                    <methodparam><parameter role="keyword">register</parameter></methodparam>
+                </methodsynopsis></programlisting>
+            
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">nick</parameter>&nbsp;:</term>
+                    <listitem><simpara> The nick of the query.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">register</parameter>&nbsp;:</term>
+                    <listitem><simpara> The description of the new query.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> A new GstQueryType or an already registered query with the same nick.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <para>
+                The <methodname>query_type_register</methodname>() function creates a new GstQueryType based 
+                on the nick or return an already registered query with that nick.
+            </para>
+        </refsect2>
 
     
     

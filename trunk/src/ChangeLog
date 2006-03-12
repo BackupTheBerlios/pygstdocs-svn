@@ -1,3 +1,8 @@
+2006-03-10  Gian Mario Tagliaretti <g.tagliaretti # parafernalia.org>
+    
+    * Added new class gst.Query
+    * Minor fixes
+
 2006-03-03  Gian Mario Tagliaretti <g.tagliaretti # parafernalia.org>
     
     * Added new class gst.Bin
