@@ -1,0 +1,33 @@
+<?xml version='1.0'?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" []>
+
+<book id="gst-tutorial" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <bookinfo>
+        <pubdate>February 24, 2006</pubdate>
+        <title>Python GStreamer Tutorial</title>
+        <edition>Python GStreamer Tutorial version 0.10.2 for PyGST 0.10.2</edition>
+        <releaseinfo>Version 0.10.2</releaseinfo>
+        <authorgroup>
+            <author>
+                <firstname>Jens</firstname>
+                <surname>Persson</surname>
+            </author>
+        </authorgroup>
+    <abstract>
+        <para>This tutorial describes the classes of the Python GStreamer module.</para>
+    </abstract>
+    </bookinfo>
+    
+    <toc>
+    </toc>
+  
+    <chapter id="introduction">
+        <title>1. Introduction</title>
+        <xi:include href="gst-introduction.xml"/>
+    </chapter>
+  
+    <appendix id="pygst-tut-changelog">
+        <title>ChangeLog</title>
+        <xi:include href="ChangeLog.xml"/>
+    </appendix>
+</book>
