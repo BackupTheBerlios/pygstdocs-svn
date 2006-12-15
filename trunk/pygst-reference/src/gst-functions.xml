@@ -1,0 +1,58 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="gst-functions">
+    <refnamediv>
+        <refname>gst Functions</refname>
+        <refpurpose>The built-in functions of the gst module.</refpurpose>
+    </refnamediv>
+
+<!-- ************************ -->
+<!-- BEGIN OF GST Functions SYNOPSIS -->
+
+<!-- ************************ -->
+
+<refsect1>
+<title>Synopsis</title>
+<methodname><link linkend="class-gstbuffer">gst.Buffer </link> Functions</methodname>
+</refsect1>
+
+
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Fuctions Description -->
+    <!-- ************************ -->
+    
+<refsect1 id="description-gst-functions">
+  <title>Description</title>
+    <para>All PyGST functions for the gst module are listed above categorized by class. Those functions 
+    associated with a class have their descriptions included with the class reference. Those functions 
+    that are not associated with a specific class are described below.</para>
+</refsect1>
+    
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Fuctions -->
+    <!-- ************************ -->
+    
+<refsect1 id="gst-functions-standalone">
+  <title>Functions</title>
+  
+    <refsect2 id="gst-functions-standalone">
+      <title>gst.alloc_trace_available</title>
+      <synopsis>def alloc_trace_available()</synopsis>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+
+</refsect1>
+
+
+</refentry>
+
+
