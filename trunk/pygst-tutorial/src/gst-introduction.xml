@@ -1,15 +1,11 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
 
-
-   
-   <refsect1>
-    <para>
-  This tutorial in meant to be a quick way to get to know
-        more about Gstreamer but it'll take som time though because we don't know it ourselves ... yet..
-
-
- </para>
+<refsect1>
+  <para>
+  This tutorial is meant to be a quick way to get to know
+  more about Gstreamer but it'll take some time though because we don't know it ourselves ... yet.
+  </para>
 </refsect1>
 
 

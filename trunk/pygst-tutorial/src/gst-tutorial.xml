@@ -3,10 +3,10 @@
 
 <book id="gst-tutorial" xmlns:xi="http://www.w3.org/2001/XInclude">
     <bookinfo>
-        <pubdate>February 24, 2006</pubdate>
+        <pubdate>December 15, 2006</pubdate>
         <title>Python GStreamer Tutorial</title>
-        <edition>Python GStreamer Tutorial version 0.10.2 for PyGST 0.10.2</edition>
-        <releaseinfo>Version 0.10.2</releaseinfo>
+        <edition>Python GStreamer Tutorial version 0.10.1 for PyGST 0.10.6</edition>
+        <releaseinfo>Version 0.10.1</releaseinfo>
         <authorgroup>
             <author>
                 <firstname>Jens</firstname>
@@ -14,7 +14,7 @@
             </author>
         </authorgroup>
     <abstract>
-        <para>This tutorial describes the classes of the Python GStreamer module.</para>
+        <para>This tutorial aims at giving a brief introduction to the GStreamer multimedia framework.</para>
     </abstract>
     </bookinfo>
     
@@ -25,7 +25,12 @@
         <title>1. Introduction</title>
         <xi:include href="gst-introduction.xml"/>
     </chapter>
-  
+    
+    <chapter id="playbin">
+        <title>2. Playbin</title>
+        <xi:include href="gst-playbin.xml"/>
+    </chapter>
+    
     <appendix id="pygst-tut-changelog">
         <title>ChangeLog</title>
         <xi:include href="ChangeLog.xml"/>
