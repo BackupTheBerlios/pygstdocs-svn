@@ -13,10 +13,25 @@
   
   <para>
   In this first example I have taken the Audio-Player from the Playbin chapter and
-switched the playbin out for my own mp3 capable pipeline. You can also testdrive pipelines
+switched the playbin out for my own mp3 decoding capable pipeline. You can also testdrive pipelines
 with a program called gst-launch-0.10 directly in a shell. IE the next example below would look
 like this:</para>
-<synopsis>gst-launch-0.10 filesrc location=music.mp3 ! mad ! audioconvert ! alsasink</synopsis>
+<synopsis>gst-launch-0.10 filesrc location=file.mp3 ! mad ! audioconvert ! alsasink</synopsis>
+<para>or ASCII style:</para>
+<synopsis>
+
+                                            Pipeline 
+              _____________________________________________________________________
+             |                                                                     |
+             |    _________       _______       ______________       __________    |
+             |   |         |     |       |     |              |     |          |   |
+ file.mp3 ---|---| filesrc |-----|  mad  |-----| audioconvert |-----| alsasink |---|--- Audio Output
+             |   |_________|     |_______|     |______________|     |__________|   |
+             |                                                                     |
+             |_____________________________________________________________________|
+
+</synopsis>
+<para>and the source:</para>
   <synopsis>#!/usr/bin/env python
 
 import sys, os, os.path
