@@ -4,7 +4,17 @@
 <refsect1>
   <para>
   This tutorial is meant to be a quick way to get to know
-  more about Gstreamer but it'll take some time though because we don't know it ourselves ... yet.
+  more about Gstreamer but it'll take some time to write it though because we don't know it ourselves ... yet. 
+  We're usually using GTK in the examples but we try to keep the GUI code ta an absolute minimum so it
+  should not get in the way. We take for granted that you are at least a fairly descent Python coder.
+  For problems related to the Python language we redirect you over to 
+  <ulink url="http://python.org">here</ulink>. :D
+  </para>
+  <para>
+  As you may see this tutorial is far from done and we are always looking for new people to join this
+  project. If you want to write a chapter just do it and submit it to some of the people having commiting 
+  access to the  source. You find us
+ <ulink url="http://developer.berlios.de/projects/pygstdocs/">here</ulink>. TIA
   </para>
 </refsect1>
 

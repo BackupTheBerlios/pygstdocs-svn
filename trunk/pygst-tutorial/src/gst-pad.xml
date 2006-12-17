@@ -3,15 +3,17 @@
 
 <refsect1>
   <para>
-  A playbin is a highlevel, automatic, audio and video player. You create a playbin object with:
-  <synopsis>my_playbin = gst.element_factory_make("playbin", "my-playbin")</synopsis>
-  To get information about a playbin run:
-  <synopsis>gst-inspect-0.10 playbin</synopsis>
-  Ok, time for a few examples.
+  A pipelene is a toplevel bin with it's own bus and clock. If your program only contains one
+  bin-like object, this is what you're looking for. You create a pipeline object with:
+  <synopsis>my_pipeline = gst.Pipeline("my-pipeline")</synopsis>
+  A pipeline is just a "container" where you can put other objects and when everything is
+  in place and the file to play is specified you just set the pipelines state to gst.STATE_PLAYING
+  and there should be multimedia coming out of it.
   </para>
   
   <para>
-  This first example is just a simple audio player. Insert a file and it'll play.
+  In this his first example I have taken the Simple-Player from the playbin chapter and
+switched the playbin out for my own ogg-vorbis capable pipeline.
   <synopsis>#!/usr/bin/env python
 
 import sys, os, os.path
@@ -24,7 +26,7 @@ class GTK_Main:
 	
 	def __init__(self):
 		window = gtk.Window(gtk.WINDOW_TOPLEVEL)
-		window.set_title("Audio-Player")
+		window.set_title("Vorbis-Player")
 		window.set_default_size(400, 300)
 		window.connect("destroy", gtk.main_quit, "WM destroy")
 		vbox = gtk.VBox()
@@ -34,14 +36,19 @@ class GTK_Main:
 		self.button = gtk.Button("Start")
 		self.button.connect("clicked", self.start_stop)
 		vbox.add(self.button)
-		window.show_all()
+		self.player = gst.Pipeline("player")
+		source = gst.element_factory_make("filesrc", "file-source")
+		parser = gst.element_factory_make("oggdemux", "ogg-parser")
+		decoder = gst.element_factory_make("vorbisdec", "vorbis-decoder")
+		conv = gst.element_factory_make("audioconvert", "converter")
+		sink = gst.element_factory_make("alsasink", "alsa-output")
 		
-		self.player = gst.element_factory_make("playbin", "player")
-		fakesink = gst.element_factory_make('fakesink', "my-fakesink")
-		self.player.set_property("video-sink", fakesink)
+		
+		
 		bus = self.player.get_bus()
 		bus.add_signal_watch()
 		bus.connect('message', self.on_message)
+		window.show_all()
 		
 	def start_stop(self, w):
 		if self.button.get_label() == "Start":
@@ -67,7 +74,7 @@ gtk.gdk.threads_init()
 GTK_Main()
 gtk.main()
 </synopsis>
-  If you want to enable video playback just comment out the following lines:
+  If you want to disable video playback just replace the videosink with a fakesink object:
   <synopsis>fakesink = gst.element_factory_make('fakesink', "my-fakesink")
 self.player.set_property("video-sink", fakesink)
 </synopsis>
@@ -90,7 +97,7 @@ class GTK_Main:
 	
 	def __init__(self):
 		window = gtk.Window(gtk.WINDOW_TOPLEVEL)
-		window.set_title("Video-Player")
+		window.set_title("Simple-Player")
 		window.set_default_size(500, 400)
 		window.connect("destroy", gtk.main_quit, "WM destroy")
 		vbox = gtk.VBox()
@@ -104,15 +111,13 @@ class GTK_Main:
 		self.button.connect("clicked", self.start_stop)
 		self.movie_window = gtk.DrawingArea()
 		vbox.add(self.movie_window)
-		window.show_all()
-		
 		self.player = gst.element_factory_make("playbin", "player")
 		bus = self.player.get_bus()
 		bus.add_signal_watch()
 		bus.enable_sync_message_emission()
 		bus.connect('message', self.on_message)
 		bus.connect('sync-message::element', self.on_sync_message)
-		
+		window.show_all()
 		
 	def start_stop(self, w):
 		if self.button.get_label() == "Start":

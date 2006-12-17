@@ -10,7 +10,9 @@ xsl/devhelp.xsl
 TUTORIALXMLFILES = \
 src/ChangeLog.xml \
 src/gst-tutorial.xml \
-src/gst-introduction.xml 
+src/gst-introduction.xml \
+src/gst-playbin.xml \
+src/gst-pipeline.xml 
 
 ref-html: gst-tutorial ${TUTORIALLINKS} ${XSLFILES} ${TUTORIALXMLFILES}
 	xsltproc --nonet --xinclude -o gst-tutorial/ \
