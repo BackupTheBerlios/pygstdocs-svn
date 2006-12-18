@@ -61,7 +61,148 @@
            <methodparam><parameter role="keyword">...</parameter></methodparam></methodsynopsis></programlisting>
   </refsect2>
 
+  <refsect2>
+    <title><link linkend="class-gstevent">gst.Event </link> Functions</title>
+      <programlisting><methodsynopsis language="python">
+         <methodname><link linkend="function-gstevent--event-new-buffer-size">gst.event_new_buffer_size</link></methodname>
+            <methodparam><parameter role="keyword">format</parameter></methodparam>
+  	         <methodparam><parameter role="keyword">minsize</parameter></methodparam>
+            <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
+            <methodparam><parameter role="keyword">async</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstevent--event-new-custom">gst.event_new_custom</link></methodname>
+  	        <methodparam><parameter role="keyword">type</parameter></methodparam>
+           <methodparam><parameter role="keyword">structure</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstevent--event-new-eos">gst.event_new_eos</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstevent--event-new-flush-start">gst.event_new_flush_start</link></methodname>
+           <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstevent--event-new-flush-stop">gst.event_new_flush_stop</link></methodname>
+           <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstevent--event-new-navigation">gst.event_new_navigation</link></methodname>
+  	        <methodparam><parameter role="keyword">structure</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstevent--event-new-new-segment">gst.event_new_new_segment</link></methodname>
+  	        <methodparam><parameter role="keyword">update</parameter></methodparam>
+           <methodparam><parameter role="keyword">rate</parameter></methodparam> 
+           <methodparam><parameter role="keyword">format</parameter></methodparam>
+           <methodparam><parameter role="keyword">start</parameter></methodparam>
+           <methodparam><parameter role="keyword">stop</parameter></methodparam>
+           <methodparam><parameter role="keyword">position</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstevent--event-new-qos">gst.event_new_qos</link></methodname>
+  	        <methodparam><parameter role="keyword">proportion</parameter></methodparam>
+           <methodparam><parameter role="keyword">diff</parameter></methodparam>
+           <methodparam><parameter role="keyword">timestamp</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstevent--event-new-seek">gst.event_new_seek</link></methodname>
+  	        <methodparam><parameter role="keyword">rate</parameter></methodparam>
+           <methodparam><parameter role="keyword">format</parameter></methodparam>
+           <methodparam><parameter role="keyword">flags</parameter></methodparam>
+           <methodparam><parameter role="keyword">cur_type</parameter></methodparam>
+           <methodparam><parameter role="keyword">cur</parameter></methodparam>
+           <methodparam><parameter role="keyword">stop_type</parameter></methodparam>
+           <methodparam><parameter role="keyword">stop</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstevent--event-new-tags">gst.event_new_tags</link></methodname>
+  	        <methodparam><parameter role="keyword">taglist</parameter></methodparam></methodsynopsis></programlisting>
+  </refsect2>
 
+  <refsect2>
+    <title><link linkend="class-gstghostpad">gst.GhostPad </link> Functions</title>
+      <programlisting><methodsynopsis language="python">
+         <methodname><link linkend="function-gstghostpad--ghost-pad-new-notarget">gst.ghost_pad_new_notarget</link></methodname>
+  	        <methodparam><parameter role="keyword">direction</parameter></methodparam></methodsynopsis></programlisting>
+  </refsect2>
+
+  <refsect2>
+    <title><link linkend="class-gstmessage">gst.Message </link> Functions</title>
+      <programlisting><methodsynopsis language="python">
+         <methodname><link linkend="function-gstmessage--message-new-application">gst.message_new_application</link></methodname>
+            <methodparam><parameter role="keyword">src</parameter></methodparam>
+            <methodparam><parameter role="keyword">structure</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstmessage--message-new-clock-lost">gst.message_new_clock_lost</link></methodname>
+  	        <methodparam><parameter role="keyword">src</parameter></methodparam>
+           <methodparam><parameter role="keyword">clock</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstmessage--message-new-clock-provide">gst.message_new_clock_provide</link></methodname>
+  	        <methodparam><parameter role="keyword">src</parameter></methodparam>
+           <methodparam><parameter role="keyword">clock</parameter></methodparam>
+           <methodparam><parameter role="keyword">ready</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstmessage--message-new-custom">gst.message_new_custom</link></methodname>
+           <methodparam><parameter role="keyword">type</parameter></methodparam>
+           <methodparam><parameter role="keyword">src</parameter></methodparam>
+           <methodparam><parameter role="keyword">structure</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstmessage--message-new-duration">gst.message_new_duration</link></methodname>
+           <methodparam><parameter role="keyword">src</parameter></methodparam>
+           <methodparam><parameter role="keyword">format</parameter></methodparam>
+           <methodparam><parameter role="keyword">duration</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstmessage--message-new-element">gst.message_new_element</link></methodname>
+           <methodparam><parameter role="keyword">src</parameter></methodparam>
+  	        <methodparam><parameter role="keyword">structure</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstmessage--message-new-eos">gst.message_new_eos</link></methodname>
+           <methodparam><parameter role="keyword">src</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstmessage--message-new-error">gst.message_new_error</link></methodname>
+  	        <methodparam><parameter role="keyword">src</parameter></methodparam>
+           <methodparam><parameter role="keyword">error</parameter></methodparam>
+           <methodparam><parameter role="keyword">debug</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstmessage--message-new-new-clock">gst.message_new_new_clock</link></methodname>
+  	        <methodparam><parameter role="keyword">src</parameter></methodparam>
+           <methodparam><parameter role="keyword">clock</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstmessage--message-new-segment-done">gst.message_new_segment_done</link></methodname>
+           <methodparam><parameter role="keyword">src</parameter></methodparam>
+           <methodparam><parameter role="keyword">format</parameter></methodparam>
+  	        <methodparam><parameter role="keyword">position</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstmessage--message-new-segment-start">gst.message_new_segment_start</link></methodname>
+           <methodparam><parameter role="keyword">src</parameter></methodparam>
+           <methodparam><parameter role="keyword">format</parameter></methodparam>
+  	        <methodparam><parameter role="keyword">position</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstmessage--message-new-state-changed">gst.message_new_state_changed</link></methodname>
+           <methodparam><parameter role="keyword">src</parameter></methodparam>
+           <methodparam><parameter role="keyword">oldstate</parameter></methodparam>
+           <methodparam><parameter role="keyword">newstate</parameter></methodparam>
+  	        <methodparam><parameter role="keyword">pending</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstmessage--message-new-state-dirty">gst.message_new_state_dirty</link></methodname>
+  	        <methodparam><parameter role="keyword">src</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstmessage--message-new-tag">gst.message_new_tag</link></methodname>
+           <methodparam><parameter role="keyword">src</parameter></methodparam>
+  	        <methodparam><parameter role="keyword">taglist</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstmessage--message-new-warning">gst.message_new_warning</link></methodname>
+           <methodparam><parameter role="keyword">src</parameter></methodparam>
+           <methodparam><parameter role="keyword">error</parameter></methodparam>
+  	        <methodparam><parameter role="keyword">debug</parameter></methodparam></methodsynopsis></programlisting>
+  </refsect2>
+    
+  <refsect2>
+    <title><link linkend="class-gstquery">gst.Query </link> Functions</title>
+      <programlisting><methodsynopsis language="python">
+         <methodname><link linkend="function-gstquery--query-new-application">gst.query_new_application</link></methodname>
+            <methodparam><parameter role="keyword">type</parameter></methodparam>
+  	         <methodparam><parameter role="keyword">structure</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstquery--query-new-convert">gst.query_new_convert</link></methodname>
+  	        <methodparam><parameter role="keyword">src</parameter></methodparam>
+           <methodparam><parameter role="keyword">format</parameter></methodparam>
+           <methodparam><parameter role="keyword">value</parameter></methodparam>
+           <methodparam><parameter role="keyword">dest</parameter></methodparam>
+           <methodparam><parameter role="keyword">format</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstquery--query-new-duration">gst.query_new_duration</link></methodname>
+  	        <methodparam><parameter role="keyword">format</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstquery--query-new-position">gst.query_new_position</link></methodname>
+           <methodparam><parameter role="keyword">format</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstquery--query-new-seeking">gst.query_new_seeking</link></methodname>
+           <methodparam><parameter role="keyword">format</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstquery--query-new-segment">gst.query_new_segment</link></methodname>
+  	        <methodparam><parameter role="keyword">format</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstquery--query-type-get-by-nick">gst.query_type_get_by_nick</link></methodname>
+           <methodparam><parameter role="keyword">nick</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstquery--query-type-iterate-definitions">gst.query_type_iterate_definitions</link></methodname>
+           <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstquery--query-type-register">gst.query_type_register</link></methodname>
+           <methodparam><parameter role="keyword">nick</parameter></methodparam>
+           <methodparam><parameter role="keyword">description</parameter></methodparam></methodsynopsis></programlisting>
+  </refsect2>
+  
+  <refsect2>
+        <title><link linkend="class-gstsystemclock">gst.SystemClock </link> Functions</title>
+        <programlisting><methodsynopsis language="python">
+           <methodname><link linkend="function-gstsystemclock--system-clock-obtain">gst.system_clock_obtain</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam>
+    	  </methodsynopsis></programlisting>
+  </refsect2>
 
   <refsect2>
     <title>Miscellaneous Functions</title>
