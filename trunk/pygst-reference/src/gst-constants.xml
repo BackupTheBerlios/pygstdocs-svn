@@ -1,0 +1,417 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="gst-constants">
+    <refnamediv>
+        <refname>gst Constants</refname>
+        <refpurpose>The built-in constants of the gst module.</refpurpose>
+    </refnamediv>
+
+<!-- ************************ -->
+<!-- BEGIN OF GST Constants SYNOPSIS -->
+
+<!-- ************************ -->
+
+<refsect1>
+    <title>Synopsis</title>
+<synopsis><link linkend="gst-activate-constants">GST Activate Type Constants</link>
+<link linkend="gst-allocate-constants">GST Allocate Type Constants</link>
+<link linkend="gst-association-constants">GST Assotiation Flag Constants</link>
+<link linkend="gst-bin-constants">GST Bin Flag Constants</link>
+<link linkend="gst-buffer-constants">GST Buffer Flag Constants</link>
+<link linkend="gst-bus-constants">GST Bus Type and Flag Constants</link>
+
+<link linkend="gst-caps-constants">GST Caps Flag Constants</link>
+<link linkend="gst-clock-constants">GST Clock Type and Flag Constants</link>
+<link linkend="gst-core-constants">GST Core Type Constants</link>
+<link linkend="gst-debug-constants">GST Debug Type Constants</link></synopsis>
+</refsect1>
+
+
+<refsect1>
+  <title>Description</title>
+     
+    <!-- ************************ -->
+
+    <!-- BEGIN OF GST Activate Type Constants -->
+    <!-- ************************ -->
+
+    <refsect2 id="gst-activate-constants">
+      <title>GST Activate Type Constants</title>
+        <para>The Activate Types ...</para>
+        <variablelist>
+          <varlistentry>
+
+             <listitem><simpara>gst.ACTIVATE_NONE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.ACTIVATE_PULL</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.ACTIVATE_PUSH</simpara></listitem>
+
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Allocate Type Constants -->
+    <!-- ************************ -->
+
+    <refsect2 id="gst-allocate-constants">
+
+      <title>GST Allocate Type Constants</title>
+        <para>The Allocate Types ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.ALLOC_TRACE_LIVE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+
+            <listitem><simpara>gst.ALLOC_TRACE_MEM_LIVE</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Association Flag Constants -->
+    <!-- ************************ -->
+
+    <refsect2 id="gst-association-constants">
+      <title>GST Association Flag Constants</title>
+        <para>The Association Flags ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.ASSOCIATION_FLAG_DELTA_UNIT</simpara></listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <listitem><simpara>gst.ASSOCIATION_FLAG_KEY_UNIT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.ASSOCIATION_FLAG_LAST</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.ASSOCIATION_FLAG_NONE</simpara></listitem>
+
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+
+
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Bin Flag Constants -->
+    <!-- ************************ -->
+
+    <refsect2 id="gst-bin-constants">
+
+      <title>GST Bin Flag Constants</title>
+        <para>The Bin Flags ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.BIN_FLAG_LAST</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+
+    </refsect2>
+
+
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Buffer Flag Constants -->
+    <!-- ************************ -->
+
+    <refsect2 id="gst-buffer-constants">
+      <title>GST Buffer Flag Constants</title>
+        <para>The Buffer Flags ...</para>
+
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.BUFFER_FLAG_DELTA_UNIT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.BUFFER_FLAG_DISCONT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+
+            <listitem><simpara>gst.BUFFER_FLAG_GAP</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.BUFFER_FLAG_IN_CAPS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.BUFFER_FLAG_LAST</simpara></listitem>
+
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.BUFFER_FLAG_PREROLL</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.BUFFER_FLAG_READONLY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+
+            <listitem><simpara>gst.BUFFER_OFFSET_NONE</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Bus Type and Flag Constants -->
+    <!-- ************************ -->
+
+    <refsect2 id="gst-bus-constants">
+      <title>GST Bus Type and Flag Constants</title>
+        <para>The Bus Type and Flags ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.BUS_ASYNC</simpara></listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <listitem><simpara>gst.BUS_DROP</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.BUS_FLAG_LAST</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.BUS_FLUSHING</simpara></listitem>
+
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.BUS_PASS</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+
+    <!-- ************************ -->
+
+    <!-- BEGIN OF GST Caps Flag Constants -->
+    <!-- ************************ -->
+
+    <refsect2 id="gst-caps-constants">
+      <title>GST Caps Flag Constants</title>
+        <para>The Caps Flags ...</para>
+        <variablelist>
+          <varlistentry>
+
+            <listitem><simpara>gst.CAPS_FLAGS_ANY</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Clock Type and Flag Constants -->
+    <!-- ************************ -->
+
+    <refsect2 id="gst-clock-constants">
+      <title>GST Clock Type and Flag Constants</title>
+        <para>The Clock Type and Flags ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.CLOCK_BADTIME</simpara></listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <listitem><simpara>gst.CLOCK_BUSY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CLOCK_EARLY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CLOCK_ENTRY_PERIODIC</simpara></listitem>
+
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CLOCK_ENTRY_SINGLE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CLOCK_ERROR</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+
+            <listitem><simpara>gst.CLOCK_FLAG_CAN_DO_PERIODIC_ASYNC</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CLOCK_FLAG_CAN_DO_PERIODIC_SYNC</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CLOCK_FLAG_CAN_DO_SINGLE_ASYNC</simpara></listitem>
+
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CLOCK_FLAG_CAN_DO_SINGLE_SYNC</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CLOCK_FLAG_CAN_SET_MASTER</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+
+            <listitem><simpara>gst.CLOCK_FLAG_CAN_SET_RESOLUTION</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CLOCK_FLAG_LAST</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CLOCK_OK</simpara></listitem>
+
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CLOCK_TIME_NONE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CLOCK_UNSCHEDULED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+
+            <listitem><simpara>gst.CLOCK_UNSUPPORTED</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Core Type Constants -->
+    <!-- ************************ -->
+
+    <refsect2 id="gst-core-constants">
+      <title>GST Core Type Constants</title>
+        <para>The Core Types ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.CORE_ERROR</simpara></listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <listitem><simpara>gst.CORE_ERROR_CAPS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CORE_ERROR_CLOCK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CORE_ERROR_EVENT</simpara></listitem>
+
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CORE_ERROR_FAILED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CORE_ERROR_MISSING_PLUGIN</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+
+            <listitem><simpara>gst.CORE_ERROR_NEGOTIATION</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CORE_ERROR_NOT_IMPLEMENTED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CORE_ERROR_NUM_ERRORS</simpara></listitem>
+
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CORE_ERROR_PAD</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CORE_ERROR_SEEK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+
+            <listitem><simpara>gst.CORE_ERROR_STATE_CHANGE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CORE_ERROR_TAG</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CORE_ERROR_THREAD</simpara></listitem>
+
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.CORE_ERROR_TOO_LAZY</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+
+    <!-- ************************ -->
+
+    <!-- BEGIN OF GST Debug Type Constants -->
+    <!-- ************************ -->
+
+    <refsect2 id="gst-debug-constants">
+      <title>GST Debug Type Constants</title>
+        <para>The Debug Types ...</para>
+        <variablelist>
+          <varlistentry>
+
+            <listitem><simpara>gst.DEBUG_BG_BLACK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DEBUG_BG_BLUE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DEBUG_BG_CYAN</simpara></listitem>
+
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DEBUG_BG_GREEN</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DEBUG_BG_MAGENTA</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+
+            <listitem><simpara>gst.DEBUG_BG_RED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DEBUG_BG_WHITE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DEBUG_BG_YELLOW</simpara></listitem>
+
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DEBUG_BOLD</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DEBUG_FG_BLACK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+
+            <listitem><simpara>gst.DEBUG_FG_BLUE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DEBUG_FG_CYAN</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DEBUG_FG_GREEN</simpara></listitem>
+
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DEBUG_FG_MAGENTA</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DEBUG_FG_RED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+
+            <listitem><simpara>gst.DEBUG_FG_WHITE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DEBUG_FG_YELLOW</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DEBUG_UNDERLINE</simpara></listitem>
+
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+
+</refsect1>
+</refentry>

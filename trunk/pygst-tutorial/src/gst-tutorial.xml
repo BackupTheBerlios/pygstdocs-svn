@@ -35,6 +35,11 @@
         <title>3. Pipeline</title>
         <xi:include href="gst-pipeline.xml"/>
     </chapter>
+    
+    <chapter id="src-sink-pad">
+        <title>4. Src, sink, pad ... oh my!</title>
+        <xi:include href="gst-src-sink-pad.xml"/>
+    </chapter>
 
     <appendix id="pygst-tut-changelog">
         <title>ChangeLog</title>

@@ -32,6 +32,7 @@ like this:</para>
 
 </synopsis>
 <para>and the source:</para>
+<refsect2><title>Example 3.1</title>
   <synopsis>#!/usr/bin/env python
 
 import sys, os, os.path
@@ -96,13 +97,13 @@ gtk.gdk.threads_init()
 GTK_Main()
 gtk.main()
 </synopsis>
-
+</refsect2>
   <para>This next example is playing mpeg videos. Some demuxers, such as mpegdemux, uses
    dynamic pads which are created at runtime and therefor you can't link between the demuxer
   and the next element in the pipeline before the pad has been created at runtime. Watch out
   for the demuxer_callback() function below. THIS EXAMPLE IS NOT WORKING YET!!!
   </para>
-
+<refsect2><title>Example 3.2</title>
 <synopsis>#!/usr/bin/env python
 
 import sys, os, os.path
@@ -201,6 +202,7 @@ GTK_Main()
 gtk.gdk.threads_init()
 gtk.main()
 </synopsis>
+</refsect2>
 
 </refsect1>
 

@@ -12,13 +12,15 @@ src/ChangeLog.xml \
 src/gst-tutorial.xml \
 src/gst-introduction.xml \
 src/gst-playbin.xml \
-src/gst-pipeline.xml 
-
+src/gst-pipeline.xml \
+src/gst-src-sink-pad.xml
+ 
 ref-html: gst-tutorial ${TUTORIALLINKS} ${XSLFILES} ${TUTORIALXMLFILES}
 	xsltproc --nonet --xinclude -o gst-tutorial/ \
                  --stringparam gstdoc.bookname gst-tutorial \
                  --stringparam gstdoc.version 0.10 \
 		xsl/ref-html-style.xsl src/gst-tutorial.xml
+	cp pygst.css gst-tutorial
 
 ref-srcdist:
 	tar cjf gst-tutorial.docbook.tar.bz2 ${TUTORIALXMLFILES} ${XSLFILES} \
@@ -28,7 +30,8 @@ ref-dist:
 	tar cjf gst-tutorial.tar.bz2 gst-tutorial
 
 gst-tutorial:
-	-mkdir gst-tutorial
+	mkdir gst-tutorial
+	cp pygst.css gst-tutorial
 
 src/ChangeLog.xml: src/ChangeLog
 	(echo '<literallayout>'; \
@@ -47,3 +50,4 @@ src/ChangeLog.xml: src/ChangeLog
 clean:
 	-rm -rf gst-tutorial
 	-rm -rf gst-tutorial.tgz gst-tutorial.docbook.tgz
+
