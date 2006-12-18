@@ -5,10 +5,10 @@
     <title>The Python GStreamer Class Reference</title>
 
     <!-- GSTREAMER OBJECTS -->
-
+    
+    <xi:include href="gst-gstbin.xml"/>
     <xi:include href="gst-gstbuffer.xml"/>
     <xi:include href="gst-gstbufferflag.xml"/>
-    <xi:include href="gst-gstbin.xml"/>
     <xi:include href="gst-gstbus.xml"/>
     <xi:include href="gst-gstcaps.xml"/>
     <xi:include href="gst-gstclock.xml"/>
@@ -23,7 +23,8 @@
     <xi:include href="gst-gstpipeline.xml"/>
     <xi:include href="gst-gstquery.xml"/>
     <xi:include href="gst-gstsystemclock.xml"/>
-
+    <xi:include href="gst-functions.xml"/>
+    <xi:include href="gst-constants.xml"/>
 
 </chapter>
 

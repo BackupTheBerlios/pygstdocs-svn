@@ -12,6 +12,10 @@
                 <firstname>Gian Mario</firstname>
                 <surname>Tagliaretti</surname>
             </author>
+            <author>
+                <firstname>Jens</firstname>
+                <surname>Persson</surname>
+            </author>
         </authorgroup>
     <abstract>
         <para>This reference describes the classes of the Python GStreamer module.</para>

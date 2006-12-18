@@ -1767,7 +1767,8 @@
         
         <para>
             The <methodname>element_factory_make</methodname>() function creates a new element of the type defined by the given elementfactory. 
-            It will be given the name supplied, since all elements require a name as their first argument.
+            It will be given the name supplied, since all elements require a name as their first argument. This function raises gst.NoPluginError
+            if an element could not be created.
         </para>
     </refsect2>
     

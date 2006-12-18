@@ -28,13 +28,16 @@ src/gst-gstbufferflag.xml \
 src/gst-gstcaps.xml \
 src/gst-gstpipeline.xml \
 src/gst-gstquery.xml \
-src/gst-gstmessage.xml
+src/gst-gstmessage.xml \
+src/gst-functions.xml \
+src/gst-constants.xml
 
 ref-html: gst-reference ${REFERENCELINKS} ${XSLFILES} ${REFERENCEXMLFILES}
 	xsltproc --nonet --xinclude -o gst-reference/ \
                  --stringparam gstdoc.bookname gst-reference \
                  --stringparam gstdoc.version 0.10 \
 		xsl/ref-html-style.xsl src/gst-reference.xml
+	cp pygst.css gst-reference
 
 ref-srcdist:
 	tar cjf gst-reference.docbook.tar.bz2 ${REFERENCEXMLFILES} ${XSLFILES} \
@@ -44,7 +47,7 @@ ref-dist:
 	tar cjf gst-reference.tar.bz2 gst-reference
 
 gst-reference:
-	-mkdir gst-reference
+	mkdir gst-reference
 
 src/ChangeLog.xml: src/ChangeLog
 	(echo '<literallayout>'; \

@@ -10,7 +10,7 @@
 <xsl:param name="shade.verbatim" select="1"/>
 -->
 
-<xsl:param name="html.stylesheet">../pygst.css</xsl:param>
+<xsl:param name="html.stylesheet">pygst.css</xsl:param>
 <xsl:param name="use.id.as.filename" select="1"/>
 <xsl:param name="chunk.fast" select="1"/>
 <xsl:param name="chunker.output.encoding" select="'utf-8'"/>

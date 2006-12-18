@@ -14,8 +14,196 @@
 
 <refsect1>
 <title>Synopsis</title>
-<methodname><link linkend="class-gstbuffer">gst.Buffer </link> Functions</methodname>
-</refsect1>
+
+  <refsect2>
+        <title><link linkend="class-gstbuffer">gst.Buffer </link> Functions</title>
+        <programlisting><methodsynopsis language="python">
+           <methodname><link linkend="function-gstbuffer--buffer-new-and-alloc">gst.buffer_new_and_alloc</link></methodname>
+  	        <methodparam><parameter role="keyword">size</parameter></methodparam>
+    	  </methodsynopsis></programlisting>
+  </refsect2>
+ 
+  <refsect2>
+    <title><link linkend="class-gstcaps">gst.Caps </link> Functions</title>
+      <programlisting><methodsynopsis language="python">
+         <methodname><link linkend="function-gstcaps--caps-from-string">gst.caps_from_string</link></methodname>
+  	        <methodparam><parameter role="keyword">size</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstcaps--caps-new-any">gst.caps_gst.caps_new_any</link></methodname>
+  	        <methodparam><parameter role="keyword">size</parameter></methodparam></methodsynopsis></programlisting>
+  </refsect2>
+ 
+  
+  <refsect2>
+    <title><link linkend="class-gstelement">gst.Element </link> Functions</title>
+      <programlisting><methodsynopsis language="python">
+         <methodname><link linkend="function-gstelement--element-factory-find">gst.element_factory_find</link></methodname>
+  	        <methodparam><parameter role="keyword">name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstelement--element-factory-make">gst.element_factory_make</link></methodname>
+  	        <methodparam><parameter role="keyword">name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstelement--element-link-many">gst.element_link_many</link></methodname>
+  	        <methodparam><parameter role="keyword">element_1</parameter></methodparam>
+           <methodparam><parameter role="keyword">element_2</parameter></methodparam>
+           <methodparam><parameter role="keyword">...</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstelement--element-make-from-uri">gst.element_make_from_uri</link></methodname>
+  	        <methodparam><parameter role="keyword">type</parameter></methodparam>
+            <methodparam><parameter role="keyword">uri</parameter></methodparam>
+           <methodparam><parameter role="keyword">element_name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstelement--element-register">gst.element_register</link></methodname>
+  	        <methodparam><parameter role="keyword">plugin</parameter></methodparam>
+            <methodparam><parameter role="keyword">name</parameter></methodparam>
+            <methodparam><parameter role="keyword">rank</parameter></methodparam>
+           <methodparam><parameter role="keyword">type</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstelement--element-state-get-name">gst.element_state_get_name</link></methodname>
+  	        <methodparam><parameter role="keyword">state</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstelement--element-unlink-many">gst.element_unlink_many</link></methodname>
+  	        <methodparam><parameter role="keyword">element_1</parameter></methodparam>
+           <methodparam><parameter role="keyword">element_2</parameter></methodparam>
+           <methodparam><parameter role="keyword">...</parameter></methodparam></methodsynopsis></programlisting>
+  </refsect2>
+
+
+
+  <refsect2>
+    <title>Miscellaneous Functions</title>
+      <programlisting><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--alloc_trace_available">gst.alloc_trace_available</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--alloc_trace_live_all">gst.alloc_trace_live_all</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--alloc_trace_print_all">gst.alloc_trace_print_all</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--alloc_trace_print_live">gst.alloc_trace_print_live</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--alloc_trace_set_flags_all">gst.alloc_trace_set_flags_all</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--debug">gst.debug</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--debug_construct_term_color">gst.debug_construct_term_color</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--debug_get_default_threshold">gst.debug_get_default_threshold</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+          <methodname><link linkend="function-standalone--debug_is_active">gst.debug_is_active</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--debug_is_colored">gst.debug_is_colored</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--debug_set_active">gst.debug_set_active</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--debug_set_colored">gst.debug_set_colored</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--debug_set_default_threshold">gst.debug_set_default_threshold</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--debug_set_threshold_for_name">gst.debug_set_threshold_for_name</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--debug_unset_threshold_for_name">gst.debug_unset_threshold_for_name</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--default_registry_check_feature_version">gst.default_registry_check_feature_version</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--dlsave">gst.dlsave</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--dp_buffer_from_header">gst.dp_buffer_from_header</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--dp_caps_from_packet">gst.dp_caps_from_packet</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--dp_event_from_packet">gst.dp_event_from_packet</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--dp_header_payload_length">gst.dp_header_payload_length</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--dp_header_payload_type">gst.dp_header_payload_type</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--dp_validate_header">gst.dp_validate_header</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--dp_validate_packet">gst.dp_validate_packet</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--dp_validate_payload">gst.dp_validate_payload</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--flow_get_name">gst.flow_get_name</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--get_gst_version">gst.get_gst_version</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--get_pygst_version">gst.get_pygst_version</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--gst_message_new_buffering">gst.gst_message_new_buffering</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--gst_parse_bin_from_description">gst.gst_parse_bin_from_description</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--gst_version">gst.gst_version</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--parse_launch">gst.parse_launch</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--plugin_load_by_name">gst.plugin_load_by_name</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--plugin_load_file">gst.plugin_load_file</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--pygst_version">gst.pygst_version</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--pygtk">gst.pygtk</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--registry_get_default">gst.registry_get_default</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--segtrap_is_enabled">gst.segtrap_is_enabled</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--segtrap_set_enabled">gst.segtrap_set_enabled</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--structure_from_string">gst.structure_from_string</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--tag_exists">gst.tag_exists</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--tag_get_description">gst.tag_get_description</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--tag_get_flag">gst.tag_get_flag</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--tag_get_nick">gst.tag_get_nick</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--tag_is_fixed">gst.tag_is_fixed</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--type_find_factory_get_list">gst.type_find_factory_get_list</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--type_find_helper">gst.type_find_helper</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--type_find_helper_for_buffer">gst.type_find_helper_for_buffer</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--type_find_new">gst.type_find_new</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--uri_construct">gst.uri_construct</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--uri_get_location">gst.uri_get_location</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--uri_get_protocol">gst.uri_get_protocol</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--uri_has_protocol">gst.uri_has_protocol</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--uri_is_valid">gst.uri_is_valid</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--uri_protocol_is_valid">gst.uri_protocol_is_valid</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--util_dump_mem">gst.util_dump_mem</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--util_gdouble_to_guint64">gst.util_gdouble_to_guint64</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--util_guint64_to_gdouble">gst.util_guint64_to_gdouble</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--util_set_object_arg">gst.util_set_object_arg</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--util_uint64_scale">gst.util_uint64_scale</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--util_uint64_scale_int">gst.util_uint64_scale_int</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--version">gst.version</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--version_string">gst.version_string</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--warning">gst.warning</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--xml_make_element">gst.xml_make_element</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--xml_write">gst.xml_write</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--xml_write_file">gst.xml_write_file</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis>
+      </programlisting>
+  </refsect2>
+
+</refsect1> 
 
 
     <!-- ************************ -->
@@ -36,9 +224,987 @@
 <refsect1 id="gst-functions-standalone">
   <title>Functions</title>
   
-    <refsect2 id="gst-functions-standalone">
+    <refsect2 id="function-standalone--alloc_trace_available">
       <title>gst.alloc_trace_available</title>
-      <synopsis>def alloc_trace_available()</synopsis>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.alloc_trace_available</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--alloc_trace_live_all">
+      <title>gst.alloc_trace_live_all</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.alloc_trace_live_all</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--alloc_trace_print_all">
+      <title>gst.alloc_trace_print_all</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.alloc_trace_print_all</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--alloc_trace_print_live">
+      <title>gst.alloc_trace_print_live</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.alloc_trace_print_live</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--alloc_trace_set_flags_all">
+      <title>gst.alloc_trace_set_flags_all</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.alloc_trace_set_flags_all</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--debug_construct_term_color">
+      <title>gst.debug_construct_term_color</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.debug_construct_term_color</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--debug_get_default_threshold">
+      <title>gst.debug_get_default_threshold</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.debug_get_default_threshold</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+    
+    <refsect2 id="function-standalone--debug_is_active">
+      <title>gst.debug_is_active</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.debug_is_active</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--debug_is_colored">
+      <title>gst.debug_is_colored</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.debug_is_colored</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--debug_set_active">
+      <title>gst.debug_set_active</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.debug_set_active</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--debug_set_colored">
+      <title>gst.debug_set_colored</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.debug_set_colored</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--debug_set_default_threshold">
+      <title>gst.debug_set_default_threshold</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.debug_set_default_threshold</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--debug_set_threshold_for_name">
+      <title>gst.debug_set_threshold_for_name</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.debug_set_threshold_for_name</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--debug_unset_threshold_for_name">
+      <title>gst.debug_unset_threshold_for_name</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.debug_unset_threshold_for_name</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--default_registry_check_feature_version">
+      <title>gst.default_registry_check_feature_version</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.default_registry_check_feature_version</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--dlsave">
+      <title>gst.dlsave</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.dlsave</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--dp_buffer_from_header">
+      <title>gst.dp_buffer_from_header</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.dp_buffer_from_header</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--dp_caps_from_packet">
+      <title>gst.dp_caps_from_packet</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.dp_caps_from_packet</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--dp_event_from_packet">
+      <title>gst.dp_event_from_packet</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.dp_event_from_packet</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--dp_header_payload_length">
+      <title>gst.dp_header_payload_length</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.dp_header_payload_length</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--dp_header_payload_type">
+      <title>gst.dp_header_payload_type</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.dp_header_payload_type</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--dp_validate_header">
+      <title>gst.dp_validate_header</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.dp_validate_header</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--dp_validate_packet">
+      <title>gst.dp_validate_packet</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.dp_validate_packet</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--dp_validate_payload">
+      <title>gst.dp_validate_payload</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.dp_validate_payload</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--flow_get_name">
+      <title>gst.flow_get_name</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.flow_get_name</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--get_gst_version">
+      <title>gst.get_gst_version</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.get_gst_version</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--get_pygst_version">
+      <title>gst.get_pygst_version</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.get_pygst_version</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--gst_message_new_buffering">
+      <title>gst.gst_message_new_buffering</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.gst_message_new_buffering</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--gst_parse_bin_from_description">
+      <title>gst.gst_parse_bin_from_description</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.gst_parse_bin_from_description</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--gst_version">
+      <title>gst.gst_version</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.gst_version</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--parse_launch">
+      <title>gst.parse_launch</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.parse_launch</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--plugin_load_by_name">
+      <title>gst.plugin_load_by_name</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.plugin_load_by_name</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--plugin_load_file">
+      <title>gst.plugin_load_file</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.plugin_load_file</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--pygst_version">
+      <title>gst.pygst_version</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.pygst_version</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--pygtk">
+      <title>gst.pygtk</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.pygtk</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--registry_get_default">
+      <title>gst.registry_get_default</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.registry_get_default</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--segtrap_is_enabled">
+      <title>gst.segtrap_is_enabled</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.segtrap_is_enabled</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--segtrap_set_enabled">
+      <title>gst.segtrap_set_enabled</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.segtrap_set_enabled</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--structure_from_string">
+      <title>gst.structure_from_string</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.structure_from_string</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--tag_exists">
+      <title>gst.tag_exists</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.tag_exists</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--tag_get_description">
+      <title>gst.tag_get_description</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.tag_get_description</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--tag_get_flag">
+      <title>gst.tag_get_flag</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.tag_get_flag</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--tag_get_nick">
+      <title>gst.tag_get_nick</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.tag_get_nick</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--tag_is_fixed">
+      <title>gst.tag_is_fixed</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.tag_is_fixed</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--type_find_factory_get_list">
+      <title>gst.type_find_factory_get_list</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.type_find_factory_get_list</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--type_find_helper">
+      <title>gst.type_find_helper</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.type_find_helper</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--type_find_helper_for_buffer">
+      <title>gst.type_find_helper_for_buffer</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.type_find_helper_for_buffer</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--type_find_new">
+      <title>gst.type_find_new</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.type_find_new</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--uri_construct">
+      <title>gst.uri_construct</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.uri_construct</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--uri_get_location">
+      <title>gst.uri_get_location</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.uri_get_location</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--uri_get_protocol">
+      <title>gst.uri_get_protocol</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.uri_get_protocol</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--uri_has_protocol">
+      <title>gst.uri_has_protocol</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.uri_has_protocol</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--uri_is_valid">
+      <title>gst.uri_is_valid</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.uri_is_valid</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--uri_protocol_is_valid">
+      <title>gst.uri_protocol_is_valid</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.uri_protocol_is_valid</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--util_dump_mem">
+      <title>gst.util_dump_mem</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.util_dump_mem</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--util_gdouble_to_guint64">
+      <title>gst.util_gdouble_to_guint64</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.util_gdouble_to_guint64</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--util_guint64_to_gdouble">
+      <title>gst.util_guint64_to_gdouble</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.util_guint64_to_gdouble</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--util_set_object_arg">
+      <title>gst.util_set_object_arg</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.util_set_object_arg</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--util_uint64_scale">
+      <title>gst.util_uint64_scale</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.util_uint64_scale</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--util_uint64_scale_int">
+      <title>gst.util_uint64_scale_int</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.util_uint64_scale_int</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--version">
+      <title>gst.version</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.version</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--version_string">
+      <title>gst.version_string</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.version_string</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--warning">
+      <title>gst.warning</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.warning</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+
+    <refsect2 id="function-standalone--xml_make_element">
+      <title>gst.xml_make_element</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.xml_make_element</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--xml_write">
+      <title>gst.xml_write</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.xml_write</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+   <refsect2 id="function-standalone--xml_write_file">
+      <title>gst.xml_write_file</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.xml_write_file</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
         <variablelist>
           <varlistentry>
             <listitem><simpara></simpara></listitem>
@@ -51,7 +1217,6 @@
 
 
 </refsect1>
-
 
 </refentry>
 

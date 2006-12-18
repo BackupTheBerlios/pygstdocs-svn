@@ -20,7 +20,6 @@
 <link linkend="gst-bin-constants">GST Bin Flag Constants</link>
 <link linkend="gst-buffer-constants">GST Buffer Flag Constants</link>
 <link linkend="gst-bus-constants">GST Bus Type and Flag Constants</link>
-
 <link linkend="gst-caps-constants">GST Caps Flag Constants</link>
 <link linkend="gst-clock-constants">GST Clock Type and Flag Constants</link>
 <link linkend="gst-core-constants">GST Core Type Constants</link>
