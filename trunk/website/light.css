@@ -1,22 +1,22 @@
 html {margin:0;padding:0}
 
-body {background:#587480; color:#000000; padding:0; margin:5mm}
+body {background:#284450; color:#000000; padding:0; margin:5mm}
 
-#title {height:25mm; width:140mm; margin-right:auto; margin-left:auto;
-           right:auto; left:auto; top:0; bottom:auto; background:#aaaaee; color:#222266;
-           border:0.9mm solid #111111; text-align:center}
+div.title {height:22mm; width:100mm; margin-right:auto; margin-left:auto;
+           right:auto; left:auto; top:0; bottom:auto; background:#7894a0; color:#284450;
+           border:1mm solid #000000; text-align:center}
 
 div.mail {text-align:center}
 
 div.h3 {margin-left:5mm}
 
-div.content {background:#cccccc; padding:3mm; border:0.7mm solid #111111}
+div.content {background:#cccccc; padding:3mm; border:1mm solid #000000}
 
 div.code {white-space:pre; font-family:monospace; margin:5mm;
                background:#bbbbbb; border:0.7mm solid #111111; padding:5mm}
 
-h2 {color:#700000; margin-left:5mm}
-h3 {color:#007000; margin-left:10mm}
+h2 {color:#c04040; margin-left:5mm}
+h3 {color:#40c040; margin-left:10mm}
 
 a {color:#111188}
-a:hover {color:#555555}
+a:hover {color:#881111}
