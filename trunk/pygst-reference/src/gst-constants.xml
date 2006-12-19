@@ -23,9 +23,37 @@
 <link linkend="gst-caps-constants">GST Caps Flag Constants</link>
 <link linkend="gst-clock-constants">GST Clock Type and Flag Constants</link>
 <link linkend="gst-core-constants">GST Core Type Constants</link>
-<link linkend="gst-debug-constants">GST Debug Type Constants</link></synopsis>
+<link linkend="gst-debug-constants">GST Debug Type Constants</link>
+<link linkend="gst-element-constants">GST Element Constants</link>
+<link linkend="gst-event-constants">GST Event Type Constants</link>
+<link linkend="gst-flow-constants">GST Flow Type Constants</link>
+<link linkend="gst-format-constants">GST Format Type Constants</link>
+<link linkend="gst-index-constants">GST Index Type Constants</link>
+<link linkend="gst-interpolate-constants">GST Interpolate Type Constants</link>
+<link linkend="gst-iterator-constants">GST Iterator Type Constants</link>
+<link linkend="gst-level-constants">GST Level Type Constants</link>
+<link linkend="gst-library-constants">GST Library Type Constants</link>
+<link linkend="gst-message-constants">GST Message Type Constants</link>
+<link linkend="gst-mini-object-constants">GST MiniObject Flag Constants</link>
+<link linkend="gst-object-constants">GST Object Type Constants</link>
+<link linkend="gst-pad-constants">GST Pad Type Constants</link>
+<link linkend="gst-parse-constants">GST Parse Error Constants</link>
+<link linkend="gst-pipeline-constants">GST Pipelene Flag Constants</link>
+<link linkend="gst-plugin-error-constants">GST Plugin Error Constants</link>
+<link linkend="gst-plugin-flag-constants">GST Plugin Flag Constants</link>
+<link linkend="gst-query-constants">GST Query Type Constants</link>
+<link linkend="gst-rank-constants">GST Rank Type Constants</link>
+<link linkend="gst-resource-constants">GST Resource Error Constants</link>
+<link linkend="gst-rtld-constants">GST RTLD Type Constants</link>
+<link linkend="gst-seek-constants">GST Seek Type Constants</link>
+<link linkend="gst-state-constants">GST State Type Constants</link>
+<link linkend="gst-stream-constants">GST Stream Error Constants</link>
+<link linkend="gst-tag-constants">GST Tag Type Constants</link>
+<link linkend="gst-task-constants">GST Task Flag Constants</link>
+<link linkend="gst-type-constants">GST Type Flag Constants</link>
+<link linkend="gst-uri-constants">GST URI Type Constants</link>
+<link linkend="gst-unknown-constants">GST Unknown Constants</link></synopsis>
 </refsect1>
-
 
 <refsect1>
   <title>Description</title>
@@ -411,6 +439,1078 @@
         </variablelist>
     </refsect2>
 
+   <!-- ************************ -->
+
+    <!-- BEGIN OF GST DP Header Flag Constants -->
+    <!-- ************************ -->
+
+  <refsect2 id="gst-dp-header-flag-constants">
+    <title>GST DP Header Flag Constants</title>
+      <para>The DP Header Flags ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.DP_HEADER_FLAG_CRC</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DP_HEADER_FLAG_CRC_HEADER</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DP_HEADER_FLAG_CRC_PAYLOAD</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DP_HEADER_FLAG_NONE</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+    <!-- ************************ -->
+    <!-- BEGIN OF GST DP Payload Type Constants -->
+    <!-- ************************ -->
+
+  <refsect2 id="gst-dp-payload-type-constants">
+    <title>GST DP Payload Type Constants</title>
+      <para>The DP Payload Types ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.DP_PAYLOAD_BUFFER</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DP_PAYLOAD_CAPS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DP_PAYLOAD_EVENT_NONE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.DP_PAYLOAD_NONE</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Element Constants -->
+    <!-- ************************ -->
+
+  <refsect2 id="gst-element-constants">
+    <title>GST Element Constants</title>
+      <para>The Element ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.ELEMENT_FLAG_LAST</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.ELEMENT_IS_SINK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.ELEMENT_LOCKED_STATE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.ELEMENT_UNPARENTING</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-event-constants">
+    <title>GST Event Type Constants</title>
+      <para>The Event ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_BUFFERSIZE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_CUSTOM_BOTH</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_CUSTOM_BOTH_OOB</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_CUSTOM_DOWNSTREAM</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_CUSTOM_DOWNSTREAM_OOB</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_CUSTOM_UPSTREAM</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_EOS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_FLUSH_START</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_FLUSH_STOP</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_NAVIGATION</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_NEWSEGMENT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_QOS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_SEEK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_TAG</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_TYPE_DOWNSTREAM</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_TYPE_SERIALIZED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_TYPE_UPSTREAM</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.EVENT_UNKNOWN</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-flow-constants">
+    <title>GST Flow Type Constants</title>
+      <para>The Flow ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.FLOW_CUSTOM_ERROR</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.FLOW_CUSTOM_SUCCESS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.FLOW_ERROR</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.FLOW_NOT_LINKED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.FLOW_NOT_NEGOTIATED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.FLOW_NOT_SUPPORTED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.FLOW_OK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.FLOW_RESEND</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.FLOW_UNEXPECTED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.FLOW_WRONG_STATE</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-format-constants">
+    <title>GST Format Type Constants</title>
+      <para>The Format ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.FORMAT_BUFFERS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.FORMAT_BYTES</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.FORMAT_DEFAULT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.FORMAT_PERCENT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.FORMAT_TIME</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.FORMAT_UNDEFINED</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-index-constants">
+    <title>GST Index Type Constants</title>
+      <para>The Index ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_CERTAIN</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_ENTRY_ASSOCIATION</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_ENTRY_FORMAT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_ENTRY_ID</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_ENTRY_OBJECT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_FLAG_LAST</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_FUZZY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_LOOKUP_AFTER</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_LOOKUP_BEFORE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_LOOKUP_EXACT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_READABLE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_RESOLVER_CUSTOM</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_RESOLVER_GTYPE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_RESOLVER_PATH</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_UNKNOWN</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INDEX_WRITABLE</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-interpolate-constants">
+    <title>GST Interpolate Type Constants</title>
+      <para>The Interpolate ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.INTERPOLATE_CUBIC</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INTERPOLATE_LINEAR</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INTERPOLATE_NONE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INTERPOLATE_QUADRATIC</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INTERPOLATE_TRIGGER</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.INTERPOLATE_USER</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-iterator-constants">
+    <title>GST Iterator Type Constants</title>
+      <para>The Iterator ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.ITERATOR_DONE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.ITERATOR_ERROR</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.ITERATOR_ITEM_END</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.ITERATOR_ITEM_PASS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.ITERATOR_ITEM_SKIP</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.ITERATOR_OK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.ITERATOR_RESYNC</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-level-constants">
+    <title>GST Level Type Constants</title>
+      <para>The Iterator ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.LEVEL_COUNT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.LEVEL_DEBUG</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.LEVEL_ERROR</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.LEVEL_INFO</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.LEVEL_LOG</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.LEVEL_NONE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.LEVEL_WARNING</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+ <refsect2 id="gst-library-constants">
+    <title>GST Library Error Constants</title>
+      <para>The Library ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.LIBRARY_ERROR</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.LIBRARY_ERROR_ENCODE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.LIBRARY_ERROR_FAILED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.LIBRARY_ERROR_INIT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.LIBRARY_ERROR_NUM_ERRORS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.LIBRARY_ERROR_SETTINGS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.LIBRARY_ERROR_SHUTDOWN</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.LIBRARY_ERROR_TOO_LAZY</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-message-constants">
+    <title>GST Message Constants</title>
+      <para>The Message ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_ANY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_APPLICATION</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_BUFFERING</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_CLOCK_LOST</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_CLOCK_PROVIDE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_DURATION</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_ELEMENT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_EOS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_ERROR</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_INFO</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_NEW_CLOCK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_SEGMENT_DONE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_SEGMENT_START</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_STATE_CHANGED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_STATE_DIRTY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_STEP_DONE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_STREAM_STATUS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_STRUCTURE_CHANGE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_TAG</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_UNKNOWN</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MESSAGE_WARNING</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-mini-object-constants">
+    <title>GST MiniObject Flag Constants</title>
+      <para>The MiniObject ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.MINI_OBJECT_FLAG_LAST</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MINI_OBJECT_FLAG_READONLY</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-object-constants">
+    <title>GST Object Flag Constants</title>
+      <para>The Object ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.OBJECT_DISPOSING</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.OBJECT_FLAG_LAST</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.OBJECT_FLOATING</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-pad-constants">
+    <title>GST Pad Constants</title>
+      <para>The Pad ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_ALWAYS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_BLOCKED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_BLOCKING</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_FLAG_LAST</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_FLUSHING</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_IN_GETCAPS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_IN_SETCAPS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_LINK_NOFORMAT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_LINK_NOSCHED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_LINK_OK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_LINK_REFUSED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_LINK_WAS_LINKED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_LINK_WRONG_DIRECTION</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_LINK_WRONG_HIERARCHY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_REQUEST</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_SINK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_SOMETIMES</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_SRC</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_TEMPLATE_FIXED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_TEMPLATE_FLAG_LAST</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PAD_UNKNOWN</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-parse-constants">
+    <title>GST Parse Error Constants</title>
+      <para>The Parse ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.PARSE_ERROR_COULD_NOT_SET_PROPERTY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PARSE_ERROR_EMPTY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PARSE_ERROR_EMPTY_BIN</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PARSE_ERROR_LINK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PARSE_ERROR_NO_SUCH_ELEMENT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PARSE_ERROR_NO_SUCH_PROPERTY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PARSE_ERROR_SYNTAX</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-pipeline-constants">
+    <title>GST Pipeline Flag Constants</title>
+      <para>The Pipeline ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.PIPELINE_FLAG_FIXED_CLOCK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PIPELINE_FLAG_LAST</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-plugin-error-constants">
+    <title>GST Plugin Error Constants</title>
+      <para>The Plugin Error ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.PLUGIN_ERROR_DEPENDENCIES</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PLUGIN_ERROR_MODULE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.PLUGIN_ERROR_NAME_MISMATCH</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-plugin-flag-constants">
+    <title>GST Plugin Flag Constants</title>
+      <para>The Plugin Flag ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.PLUGIN_FLAG_CACHED</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-query-constants">
+    <title>GST Query Constants</title>
+      <para>The Query ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.QUERY_CONVERT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.QUERY_DURATION</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.QUERY_FORMATS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.QUERY_JITTER</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.QUERY_LATENCY</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <listitem><simpara>gst.QUERY_NONE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.QUERY_POSITION</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.QUERY_RATE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.QUERY_SEEKING</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.QUERY_SEGMENT</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-rank-constants">
+    <title>GST Rank Constants</title>
+      <para>The Rank ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.RANK_MARGINAL</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RANK_NONE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RANK_PRIMARY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RANK_SECONDARY</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-resource-constants">
+    <title>GST Resource Error Constants</title>
+      <para>The Resource ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR_BUSY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR_CLOSE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR_FAILED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR_NOT_FOUND</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR_NO_SPACE_LEFT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR_NUM_ERRORS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR_OPEN_READ</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR_OPEN_READ_WRITE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR_OPEN_WRITE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR_READ</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR_SEEK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR_SETTINGS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR_SYNC</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR_TOO_LAZY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RESOURCE_ERROR_WRITE</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-rtld-constants">
+    <title>GST RTLD Flag Constants</title>
+      <para>The RTLD ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.RTLD_GLOBAL</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.RTLD_LAZY</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-seek-constants">
+    <title>GST Seek Type Constants</title>
+      <para>The Seek ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.SEEK_TYPE_NONE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.SEEK_TYPE_SET</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+ <refsect2 id="gst-state-constants">
+    <title>GST State Type Constants</title>
+      <para>The State ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.STATE_CHANGE_ASYNC</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STATE_CHANGE_FAILURE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STATE_CHANGE_NO_PREROLL</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STATE_CHANGE_NULL_TO_READY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STATE_CHANGE_PAUSED_TO_PLAYING</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STATE_CHANGE_PAUSED_TO_READY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STATE_CHANGE_PLAYING_TO_PAUSED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STATE_CHANGE_READY_TO_NULL</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STATE_CHANGE_READY_TO_PAUSED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STATE_CHANGE_SUCCESS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STATE_NULL</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STATE_PAUSED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STATE_PLAYING</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STATE_READY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STATE_VOID_PENDING</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+ <refsect2 id="gst-stream-constants">
+    <title>GST Stream Error Constants</title>
+      <para>The Stream ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.STREAM_ERROR</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STREAM_ERROR_CODEC_NOT_FOUND</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STREAM_ERROR_DECODE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STREAM_ERROR_DEMUX</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STREAM_ERROR_ENCODE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STREAM_ERROR_FAILED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STREAM_ERROR_FORMAT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STREAM_ERROR_MUX</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STREAM_ERROR_NOT_IMPLEMENTED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STREAM_ERROR_NUM_ERRORS</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STREAM_ERROR_TOO_LAZY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STREAM_ERROR_TYPE_NOT_FOUND</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.STREAM_ERROR_WRONG_TYPE</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+ <refsect2 id="gst-tag-constants">
+    <title>GST Tag Constants</title>
+      <para>The Tag ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_ALBUM</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_ALBUM_GAIN</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_ALBUM_PEAK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_ALBUM_VOLUME_COUNT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_ALBUM_VOLUME_NUMBER</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_ARTIST</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_AUDIO_CODEC</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_BITRATE</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <listitem><simpara>gst.TAG_CODEC</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_COMMENT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_CONTACT</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <listitem><simpara>gst.TAG_COPYRIGHT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_DATE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_DESCRIPTION</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <listitem><simpara>gst.TAG_DURATION</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_ENCODER</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_ENCODER_VERSION</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_EXTENDED_COMMENT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_FLAG_COUNT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_FLAG_DECODED</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <listitem><simpara>gst.TAG_FLAG_ENCODED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_FLAG_META</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_FLAG_UNDEFINED</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <listitem><simpara>gst.TAG_GENRE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_IMAGE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_ISRC</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_LANGUAGE_CODE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_LICENSE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_LOCATION</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <listitem><simpara>gst.TAG_MAXIMUM_BITRATE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_MERGE_APPEND</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_MERGE_COUNT</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <listitem><simpara>gst.TAG_MERGE_KEEP</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_MERGE_KEEP_ALL</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_MERGE_PREPEND</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_MERGE_REPLACE</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <listitem><simpara>gst.TAG_MERGE_REPLACE_ALL</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_MERGE_UNDEFINED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_MINIMUM_BITRATE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_NOMINAL_BITRATE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_ORGANIZATION</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_PERFORMER</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_PREVIEW_IMAGE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_SERIAL</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_TITLE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_TRACK_COUNT</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_TRACK_GAIN</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_TRACK_NUMBER</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_TRACK_PEAK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_VERSION</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TAG_VIDEO_CODEC</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+
+ <refsect2 id="gst-task-constants">
+    <title>GST Task Constants</title>
+      <para>The Task ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.TASK_PAUSED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TASK_STARTED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TASK_STOPPED</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+ <refsect2 id="gst-type-constants">
+    <title>GST Type Constants</title>
+      <para>The Type ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.TYPE_ELEMENT_FACTORY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TYPE_FIND_LIKELY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TYPE_FIND_MAXIMUM</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TYPE_FIND_MINIMUM</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TYPE_FIND_NEARLY_CERTAIN</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TYPE_FIND_POSSIBLE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TYPE_INDEX_FACTORY</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TYPE_TYPE_FIND_FACTORY</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+ <refsect2 id="gst-uri-constants">
+    <title>GST URI Type Constants</title>
+      <para>The URI ...</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.URI_SINK</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.URI_SRC</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.URI_UNKNOWN</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+  <refsect2 id="gst-unknown-constants">
+    <title>GST Unknown Constants</title>
+      <para>These constansts haven't been identified yet.</para>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara>gst.PARAM_CONTROLLABLE</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.MSECOND</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara>gst.TIME_ARGS</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
 
 </refsect1>
 </refentry>
+
