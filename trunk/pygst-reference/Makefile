@@ -33,21 +33,21 @@ src/gst-functions.xml \
 src/gst-constants.xml
 
 ref-html: gst-reference ${REFERENCELINKS} ${XSLFILES} ${REFERENCEXMLFILES}
-	xsltproc --nonet --xinclude -o gst-reference/ \
+	xsltproc --nonet --xinclude -o pygst-reference/ \
                  --stringparam gstdoc.bookname gst-reference \
                  --stringparam gstdoc.version 0.10 \
 		xsl/ref-html-style.xsl src/gst-reference.xml
-	cp pygst.css gst-reference
+	cp pygst.css pygst-reference
 
 ref-srcdist:
-	tar cjf gst-reference.docbook.tar.bz2 ${REFERENCEXMLFILES} ${XSLFILES} \
+	tar czf pygst-reference.docbook.tar.gz ${REFERENCEXMLFILES} ${XSLFILES} \
 		src/ChangeLog Makefile
 
 ref-dist:
-	tar cjf gst-reference.tar.bz2 gst-reference
+	tar czf pygst-reference.tar.gz pygst-reference
 
 gst-reference:
-	mkdir gst-reference
+	mkdir pygst-reference
 
 src/ChangeLog.xml: src/ChangeLog
 	(echo '<literallayout>'; \
@@ -64,5 +64,5 @@ src/ChangeLog.xml: src/ChangeLog
 	> src/ChangeLog.xml
 
 clean:
-	-rm -rf gst-reference
-	-rm -rf gst-reference.tgz gst-reference.docbook.tgz
+	-rm -rf pygst-reference
+	-rm -rf pygst-reference.tgz pygst-reference.docbook.tgz

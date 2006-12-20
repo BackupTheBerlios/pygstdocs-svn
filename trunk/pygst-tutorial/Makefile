@@ -13,25 +13,25 @@ src/gst-tutorial.xml \
 src/gst-introduction.xml \
 src/gst-playbin.xml \
 src/gst-pipeline.xml \
-src/gst-src-sink-pad.xml
+src/gst-src-sink-pad.xml \
+src/gst-seeking.xml
  
 ref-html: gst-tutorial ${TUTORIALLINKS} ${XSLFILES} ${TUTORIALXMLFILES}
-	xsltproc --nonet --xinclude -o gst-tutorial/ \
+	xsltproc --nonet --xinclude -o pygst-tutorial/ \
                  --stringparam gstdoc.bookname gst-tutorial \
                  --stringparam gstdoc.version 0.10 \
 		xsl/ref-html-style.xsl src/gst-tutorial.xml
-	cp pygst.css gst-tutorial
+	cp var/* pygst-tutorial
 
 ref-srcdist:
 	tar cjf gst-tutorial.docbook.tar.bz2 ${TUTORIALXMLFILES} ${XSLFILES} \
 		src/ChangeLog Makefile
 
 ref-dist:
-	tar cjf gst-tutorial.tar.bz2 gst-tutorial
+	tar cjf pygstgst-tutorial.tar.bz2 pygst-tutorial
 
 gst-tutorial:
-	mkdir gst-tutorial
-	cp pygst.css gst-tutorial
+	mkdir pygst-tutorial
 
 src/ChangeLog.xml: src/ChangeLog
 	(echo '<literallayout>'; \

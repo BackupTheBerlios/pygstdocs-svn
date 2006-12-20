@@ -40,7 +40,12 @@
         <title>4. Src, sink, pad ... oh my!</title>
         <xi:include href="gst-src-sink-pad.xml"/>
     </chapter>
-
+    
+    <chapter id="seeking">
+        <title>5. Seeking</title>
+        <xi:include href="gst-seeking.xml"/>
+    </chapter>
+    
     <appendix id="pygst-tut-changelog">
         <title>ChangeLog</title>
         <xi:include href="ChangeLog.xml"/>
