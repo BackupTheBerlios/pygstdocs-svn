@@ -103,6 +103,18 @@
   	        <methodparam><parameter role="keyword">taglist</parameter></methodparam></methodsynopsis></programlisting>
   </refsect2>
 
+   <refsect2>
+    <title><link linkend="class-gstformat">gst.Format </link> Functions</title>
+      <programlisting><methodsynopsis language="python">
+         <methodname><link linkend="function-gstformat--format-get-by-nick">gst.format_get_by_nick</link></methodname>
+  	        <methodparam><parameter role="keyword">nick</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstformat--format-iterate-definitions">gst.format_iterate_definitions</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstformat--format-register">gst.format_register</link></methodname>
+  	        <methodparam><parameter role="keyword">nick</parameter></methodparam>
+           <methodparam><parameter role="keyword">description</parameter></methodparam></methodsynopsis></programlisting>
+  </refsect2>
+ 
   <refsect2>
     <title><link linkend="class-gstghostpad">gst.GhostPad </link> Functions</title>
       <programlisting><methodsynopsis language="python">
