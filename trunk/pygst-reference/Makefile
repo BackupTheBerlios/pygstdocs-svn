@@ -37,7 +37,7 @@ ref-html: gst-reference ${REFERENCELINKS} ${XSLFILES} ${REFERENCEXMLFILES}
                  --stringparam gstdoc.bookname gst-reference \
                  --stringparam gstdoc.version 0.10 \
 		xsl/ref-html-style.xsl src/gst-reference.xml
-	cp pygst.css pygst-reference
+	cp var/* pygst-reference
 
 ref-srcdist:
 	tar czf pygst-reference.docbook.tar.gz ${REFERENCEXMLFILES} ${XSLFILES} \
@@ -47,7 +47,7 @@ ref-dist:
 	tar czf pygst-reference.tar.gz pygst-reference
 
 gst-reference:
-	mkdir pygst-reference
+	-mkdir pygst-reference
 
 src/ChangeLog.xml: src/ChangeLog
 	(echo '<literallayout>'; \

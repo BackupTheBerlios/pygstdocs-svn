@@ -54,7 +54,7 @@
     </methodsynopsis>
     
     <methodsynopsis language="python">
-        <methodname><link linkend="method-gstelement--get-bus">get_clock</link></methodname>
+        <methodname><link linkend="method-gstelement--get-clock">get_clock</link></methodname>
         <methodparam></methodparam>
     </methodsynopsis>
   
@@ -231,6 +231,13 @@
         <methodparam><parameter role="keyword">cur</parameter></methodparam>
         <methodparam><parameter role="keyword">stop_type</parameter></methodparam>
         <methodparam><parameter role="keyword">stop</parameter></methodparam>
+    </methodsynopsis>
+  
+     <methodsynopsis language="python">
+    	  <methodname><link linkend="method-gstelement--seek-simple">seek_simple</link></methodname>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">flag</parameter></methodparam>
+        <methodparam><parameter role="keyword">cur</parameter></methodparam>
     </methodsynopsis>
   
     <methodsynopsis language="python">
@@ -813,36 +820,17 @@
         <title>gst.Element.get_state</title>
         <programlisting><methodsynopsis language="python">
                 <methodname>get_state</methodname>
-                <methodparam><parameter role="keyword">state</parameter></methodparam>
-                <methodparam><parameter role="keyword">pending</parameter></methodparam>
-                <methodparam><parameter role="keyword">timeout</parameter></methodparam>
             </methodsynopsis></programlisting>
         
         <variablelist>
             <varlistentry>
-                <term><parameter role="keyword">state</parameter>&nbsp;:</term>
-                <listitem><simpara> The name of the request <link linkend="class-gstpad"><classname>gst.Pad</classname></link>
-                to retrieve.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">pending</parameter>&nbsp;:</term>
-                <listitem><simpara> The name of the request <link linkend="class-gstpad"><classname>gst.Pad</classname></link>
-                to retrieve.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">timeout</parameter>&nbsp;:</term>
-                <listitem><simpara> The name of the request <link linkend="class-gstpad"><classname>gst.Pad</classname></link>
-                to retrieve.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> Requested <link linkend="class-gstpad"><classname>gst.Pad</classname></link> 
-                        if found, <literal>None</literal> otherwise.</simpara></listitem>
+                <listitem><simpara> A tuple of the states.</simpara></listitem>
             </varlistentry>
         </variablelist>
         
         <para>
-            The <methodname>get_request_pad</methodname>() method retrieves a pad from the element by name. This version only retrieves request pads.
+            The <methodname>get_state</methodname>() method returns a tuple of the elements current states.
         </para>
     </refsect2>
     
@@ -1280,7 +1268,7 @@
             </varlistentry>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> <literal>True</literal> if the query could be performed.</simpara></listitem>
+                <listitem><simpara>The value and the format constant.</simpara></listitem>
             </varlistentry>
         </variablelist>
         
@@ -1290,9 +1278,9 @@
     </refsect2>
     
     <refsect2 id="method-gstelement--query-position">
-        <title>gst.Element.query_duration</title>
+        <title>gst.Element.query_position</title>
         <programlisting><methodsynopsis language="python">
-                <methodname>query_duration</methodname>
+                <methodname>query_position</methodname>
                 <methodparam><parameter role="keyword">format</parameter></methodparam>
                 <methodparam><parameter role="keyword">cur</parameter></methodparam>
             </methodsynopsis></programlisting>
@@ -1309,7 +1297,7 @@
             </varlistentry>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> <literal>True</literal> if the query could be performed.</simpara></listitem>
+                <listitem><simpara>The value and the format constant.</simpara></listitem>
             </varlistentry>
         </variablelist>
         
@@ -1428,9 +1416,41 @@
                 <listitem><simpara> <literal>True</literal> if the event was handled.</simpara></listitem>
             </varlistentry>
         </variablelist>
+       <para>
+            The <methodname>seek</methodname>() method sends a seek event to an element.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelement--seek-simple">
+        <title>gst.Element.seek_simple</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>seek</methodname>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">flag</parameter></methodparam>
+                <methodparam><parameter role="keyword">cur</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> The format of the seek values.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">flag</parameter>&nbsp;:</term>
+                <listitem><simpara>The seek flag.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">cur</parameter>&nbsp;:</term>
+                <listitem><simpara> The value of the new current position.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal> if the event was handled.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
         
         <para>
-            The <methodname>seek</methodname>() method sends a seek event to an element.
+            The <methodname>seek_simple</methodname>() method sends a seek event to an element.
         </para>
     </refsect2>
     
@@ -1899,7 +1919,7 @@
         </variablelist>
         
         <para>
-            The <methodname>element_register</methodname>() function creates a new elementfactory capable of instantiating objects of the given type.
+            The <methodname>element_state_get_name</methodname>() function returns a string with the name of the state.
         </para>
     </refsect2>
     

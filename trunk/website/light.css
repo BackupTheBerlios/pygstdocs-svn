@@ -15,6 +15,7 @@ div.content {background:#cccccc; padding:3mm; border:1mm solid #808080}
 div.code {white-space:pre; font-family:monospace; margin:5mm;
                background:#bbbbbb; border:0.8mm solid #555555; padding:5mm}
 
+h1 {text-align:center; color:#7894a0}
 h2 {color:#c04040; margin-left:5mm}
 h3 {color:#40c040; margin-left:10mm}
 

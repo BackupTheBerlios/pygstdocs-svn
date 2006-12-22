@@ -440,7 +440,22 @@
         </variablelist>
     </refsect2>
 
-    <refsect2 id="function-standalone--debug_construct_term_color">
+    <refsect2 id="function-standalone--debug">
+      <title>gst.debug</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>gst.debug</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+     <refsect2 id="function-standalone--debug_construct_term_color">
       <title>gst.debug_construct_term_color</title>
       <programlisting><methodsynopsis language="python">
         <methodname>gst.debug_construct_term_color</methodname>

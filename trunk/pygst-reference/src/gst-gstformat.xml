@@ -1,0 +1,158 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstformat">
+    <refnamediv>
+        <refname>gst.Format</refname>
+        <refpurpose>Dynamically register new data formats</refpurpose>
+    </refnamediv>
+
+<!-- *************************** -->
+<!-- BEGIN OF MyClass' SYNOPSIS -->
+<!-- *************************** -->
+
+<refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.Format</classname></ooclass>
+
+    <constructorsynopsis language="python">
+        <methodname><link linkend="constructor-gstformat">gst.Format</link></methodname>
+        <methodparam><parameter role="keyword">type</parameter></methodparam>
+    </constructorsynopsis>
+    </classsynopsis>
+  
+<programlisting>
+    <emphasis role="bold">Functions</emphasis>
+    
+<methodsynopsis language="python"><methodname><link linkend="function-gstformat--format-get-by-nick">gst.format_get_by_nick</link></methodname>
+<methodparam><parameter role="keyword">nick</parameter></methodparam></methodsynopsis>
+</programlisting>
+</refsect1>
+
+
+<!-- *************************** -->
+<!-- BEGIN OF gst.Formats Attributes -->
+<!-- *************************** -->
+
+<refsect1>
+    <title>Attributes</title>
+    
+    <blockquote role="properties">
+        <informaltable pgwide="1" frame="none">
+            <tgroup cols="3">
+                <tbody>
+                    <row valign="top">
+                        <entry><methodname>value_name</methodname></entry>
+                        <entry>Read</entry>
+                        <entry>The name of the type of the format, eg GST_FORMAT_TIME.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry><methodname>value_nick</methodname></entry>
+                        <entry>Read</entry>
+                        <entry>The nick of the type of the format, eg time.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </blockquote>
+</refsect1>
+
+ 
+<!-- ***************************** -->
+<!-- BEGIN OF gst.Format DESCRIPTION -->
+<!-- ***************************** -->
+
+<refsect1 id="description-gstformat">
+    <title>Description</title>
+    <para>
+        Formats can be used to perform seeking or conversions/query operations.
+    </para>
+</refsect1>
+
+
+
+
+  <!-- ************************** -->
+  <!-- BEGIN OF gst.Format's FUNCTIONS -->
+  <!-- ************************** --> 
+  
+    <refsect1>
+        <title>Functions</title>
+      
+        <refsect2 id="function-gstformat--format-get-by-nick">
+            <title>gst.format_get_by_nick</title>
+            <programlisting><methodsynopsis language="python">
+                <methodname>format_get_by_nick</methodname>
+                <methodparam><parameter role="keyword">nick</parameter></methodparam>
+            </methodsynopsis></programlisting>
+          
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">nick</parameter>&nbsp;:</term>
+                    <listitem><simpara> A format nick.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> The new <link linkend="class-gstformat"><classname>gst.Format</classname></link>.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+          
+            <para>
+                The <methodname>format_get_by_nick</methodname>() function checks for a format by the given nick. 
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstformat--format-iterate-definitions">
+            <title>gst.format_iterate_definitions</title>
+            <programlisting><methodsynopsis language="python">
+                <methodname>format_iterate_definitions</methodname>
+            </methodsynopsis></programlisting>
+          
+            <variablelist>
+              <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> A <link linkend="class-gstiterator"><classname>gst.Iterator</classname></link> of all
+                    registered formats.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+          
+            <para>
+                The <methodname>format_iterate_definitions</methodname>() checks for all registered formats. 
+            </para>
+        </refsect2>
+        
+        <refsect2 id="function-gstformat--format-register">
+            <title>gst.format_register</title>
+            <programlisting><methodsynopsis language="python">
+                <methodname>format_register</methodname>
+                <methodparam><parameter role="keyword">nick</parameter></methodparam>
+                <methodparam><parameter role="keyword">description</parameter></methodparam>
+            </methodsynopsis></programlisting>
+          
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">nick</parameter>&nbsp;:</term>
+                    <listitem><simpara>The nick of the new format.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">description</parameter>&nbsp;:</term>
+                    <listitem><simpara>The description of the new format.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> The new <link linkend="class-gstformat"><classname>gst.Format</classname></link>.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+          
+            <para>
+                The <methodname>format_register</methodname>() function creates a new format or returns an already existing
+                format.
+            </para>
+        </refsect2>
+        
+    </refsect1>
+    
+</refentry>
+

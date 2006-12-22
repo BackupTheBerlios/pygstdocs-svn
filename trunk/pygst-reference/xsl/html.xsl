@@ -10,6 +10,11 @@
 <xsl:param name="shade.verbatim" select="1"/>
 -->
 
+<xsl:template name="system.head.content">
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="shortcut icon" href="favicon.png" />
+</xsl:template>
+
 <xsl:param name="html.stylesheet">pygst.css</xsl:param>
 <xsl:param name="use.id.as.filename" select="1"/>
 <xsl:param name="chunk.fast" select="1"/>

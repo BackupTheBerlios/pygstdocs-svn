@@ -1,0 +1,138 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstiterator">
+    <refnamediv>
+        <refname>gst.Iterator</refname>
+        <refpurpose>Object to retrieve multiple elements in a threadsafe way..</refpurpose>
+    </refnamediv>
+
+<!-- *************************** -->
+<!-- BEGIN OF MyClass' SYNOPSIS -->
+<!-- *************************** -->
+
+<refsect1>
+  <title>Synopsis</title>
+
+  <classsynopsis language="python">
+        <ooclass><classname>gst.Iterator</classname></ooclass>
+
+    <constructorsynopsis language="python">
+        <methodname><link linkend="constructor-gstevent">gst.Iterator</link></methodname>
+        <methodparam></methodparam>
+    </constructorsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstiterator--next">next</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstiterator--push">push</link></methodname>
+        <methodparam><parameter role="keyword"></parameter></methodparam>
+       
+    </methodsynopsis>
+    
+     <methodsynopsis language="python">
+        <methodname><link linkend="method-gstiterator--resync">resync</link></methodname>
+        <methodparam><parameter role="keyword"></parameter></methodparam>
+       
+    </methodsynopsis>
+  </classsynopsis>
+
+</refsect1>
+
+
+ 
+<!-- ***************************** -->
+<!-- BEGIN OF MyClass' DESCRIPTION -->
+<!-- ***************************** -->
+
+<refsect1 id="description-gstiterator">
+  <title>Description</title>
+    <para>
+        A gst.Iterator is used to retrieve multiple objects from another object in a threadsafe way.
+       Various GStreamer objects provide access to their internal structures using an iterator.
+    </para>
+   
+</refsect1>
+
+
+<!-- ************************* -->
+<!-- BEGIN OF MyClass' METHODS -->
+<!-- ************************* -->
+
+<refsect1>
+    <title>Methods</title>
+
+    <refsect2 id="method-gstiterator--next">
+        <title>gst.Iterator.next</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>next</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+    
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara></simpara></listitem>
+            </varlistentry>
+        </variablelist>
+      
+        <para>
+            The <methodname>next</methodname>() method .
+        </para>
+    </refsect2>
+
+    <refsect2 id="method-gstiterator--push">
+        <title>gst.Iterator.push</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>push</methodname>
+            <methodparam><parameter role="keyword"></parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword"></parameter>&nbsp;:</term>
+                <listitem><simpara></simpara></listitem>
+            </varlistentry>
+          <varlistentry>
+             <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+     
+        <para>
+            The <methodname>push</methodname>() method.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstiterator--resync">
+        <title>gst.Iterator.resync</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>resync</methodname>
+            <methodparam><parameter role="keyword"></parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+          <varlistentry>
+                <term><parameter role="keyword"></parameter>&nbsp;:</term>
+                <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>resync</methodname>() method 
+        </para>
+    </refsect2>
+  </refsect1>
+
+ 
+</refentry>
+
+
+

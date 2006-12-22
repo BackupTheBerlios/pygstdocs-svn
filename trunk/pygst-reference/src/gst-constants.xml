@@ -24,7 +24,7 @@
 <link linkend="gst-clock-constants">GST Clock Type and Flag Constants</link>
 <link linkend="gst-core-constants">GST Core Type Constants</link>
 <link linkend="gst-debug-constants">GST Debug Type Constants</link>
-<link linkend="gst-element-constants">GST Element Constants</link>
+<link linkend="gst-element-constants">GST Element Flag Constants</link>
 <link linkend="gst-event-constants">GST Event Type Constants</link>
 <link linkend="gst-flow-constants">GST Flow Type Constants</link>
 <link linkend="gst-format-constants">GST Format Type Constants</link>
@@ -69,14 +69,17 @@
         <variablelist>
           <varlistentry>
 
-             <listitem><simpara>gst.ACTIVATE_NONE</simpara></listitem>
+             <term><methodname>gst.ACTIVATE_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.ACTIVATE_PULL</simpara></listitem>
+            <term><methodname>gst.ACTIVATE_PULL</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.ACTIVATE_PUSH</simpara></listitem>
+            <term><methodname>gst.ACTIVATE_PUSH</methodname></term>
 
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
@@ -92,11 +95,13 @@
         <para>The Allocate Types ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.ALLOC_TRACE_LIVE</simpara></listitem>
+            <term><methodname>gst.ALLOC_TRACE_LIVE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
 
-            <listitem><simpara>gst.ALLOC_TRACE_MEM_LIVE</simpara></listitem>
+            <term><methodname>gst.ALLOC_TRACE_MEM_LIVE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
@@ -111,18 +116,22 @@
         <para>The Association Flags ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.ASSOCIATION_FLAG_DELTA_UNIT</simpara></listitem>
+            <term><methodname>gst.ASSOCIATION_FLAG_DELTA_UNIT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
 
           <varlistentry>
-            <listitem><simpara>gst.ASSOCIATION_FLAG_KEY_UNIT</simpara></listitem>
+            <term><methodname>gst.ASSOCIATION_FLAG_KEY_UNIT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.ASSOCIATION_FLAG_LAST</simpara></listitem>
+            <term><methodname>gst.ASSOCIATION_FLAG_LAST</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.ASSOCIATION_FLAG_NONE</simpara></listitem>
+            <term><methodname>gst.ASSOCIATION_FLAG_NONE</methodname></term>
 
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
@@ -139,7 +148,8 @@
         <para>The Bin Flags ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.BIN_FLAG_LAST</simpara></listitem>
+            <term><methodname>gst.BIN_FLAG_LAST</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
 
@@ -156,31 +166,39 @@
 
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.BUFFER_FLAG_DELTA_UNIT</simpara></listitem>
+            <term><methodname>gst.BUFFER_FLAG_DELTA_UNIT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.BUFFER_FLAG_DISCONT</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-
-            <listitem><simpara>gst.BUFFER_FLAG_GAP</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.BUFFER_FLAG_IN_CAPS</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.BUFFER_FLAG_LAST</simpara></listitem>
-
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.BUFFER_FLAG_PREROLL</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.BUFFER_FLAG_READONLY</simpara></listitem>
+            <term><methodname>gst.BUFFER_FLAG_DISCONT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
 
-            <listitem><simpara>gst.BUFFER_OFFSET_NONE</simpara></listitem>
+            <term><methodname>gst.BUFFER_FLAG_GAP</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.BUFFER_FLAG_IN_CAPS</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.BUFFER_FLAG_LAST</methodname></term>
+
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.BUFFER_FLAG_PREROLL</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.BUFFER_FLAG_READONLY</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+
+            <term><methodname>gst.BUFFER_OFFSET_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
@@ -195,21 +213,26 @@
         <para>The Bus Type and Flags ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.BUS_ASYNC</simpara></listitem>
+            <term><methodname>gst.BUS_ASYNC</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
 
           <varlistentry>
-            <listitem><simpara>gst.BUS_DROP</simpara></listitem>
+            <term><methodname>gst.BUS_DROP</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.BUS_FLAG_LAST</simpara></listitem>
+            <term><methodname>gst.BUS_FLAG_LAST</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.BUS_FLUSHING</simpara></listitem>
+            <term><methodname>gst.BUS_FLUSHING</methodname></term>
 
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.BUS_PASS</simpara></listitem>
+            <term><methodname>gst.BUS_PASS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
@@ -226,7 +249,8 @@
         <variablelist>
           <varlistentry>
 
-            <listitem><simpara>gst.CAPS_FLAGS_ANY</simpara></listitem>
+            <term><methodname>gst.CAPS_FLAGS_ANY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
@@ -241,62 +265,79 @@
         <para>The Clock Type and Flags ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.CLOCK_BADTIME</simpara></listitem>
+            <term><methodname>gst.CLOCK_BADTIME</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
 
           <varlistentry>
-            <listitem><simpara>gst.CLOCK_BUSY</simpara></listitem>
+            <term><methodname>gst.CLOCK_BUSY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.CLOCK_EARLY</simpara></listitem>
+            <term><methodname>gst.CLOCK_EARLY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.CLOCK_ENTRY_PERIODIC</simpara></listitem>
+            <term><methodname>gst.CLOCK_ENTRY_PERIODIC</methodname></term>
 
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.CLOCK_ENTRY_SINGLE</simpara></listitem>
+            <term><methodname>gst.CLOCK_ENTRY_SINGLE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.CLOCK_ERROR</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-
-            <listitem><simpara>gst.CLOCK_FLAG_CAN_DO_PERIODIC_ASYNC</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.CLOCK_FLAG_CAN_DO_PERIODIC_SYNC</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.CLOCK_FLAG_CAN_DO_SINGLE_ASYNC</simpara></listitem>
-
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.CLOCK_FLAG_CAN_DO_SINGLE_SYNC</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.CLOCK_FLAG_CAN_SET_MASTER</simpara></listitem>
+            <term><methodname>gst.CLOCK_ERROR</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
 
-            <listitem><simpara>gst.CLOCK_FLAG_CAN_SET_RESOLUTION</simpara></listitem>
+            <term><methodname>gst.CLOCK_FLAG_CAN_DO_PERIODIC_ASYNC</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.CLOCK_FLAG_LAST</simpara></listitem>
+            <term><methodname>gst.CLOCK_FLAG_CAN_DO_PERIODIC_SYNC</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.CLOCK_OK</simpara></listitem>
+            <term><methodname>gst.CLOCK_FLAG_CAN_DO_SINGLE_ASYNC</methodname></term>
 
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.CLOCK_TIME_NONE</simpara></listitem>
+            <term><methodname>gst.CLOCK_FLAG_CAN_DO_SINGLE_SYNC</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.CLOCK_UNSCHEDULED</simpara></listitem>
+            <term><methodname>gst.CLOCK_FLAG_CAN_SET_MASTER</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
 
-            <listitem><simpara>gst.CLOCK_UNSUPPORTED</simpara></listitem>
+            <term><methodname>gst.CLOCK_FLAG_CAN_SET_RESOLUTION</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_FLAG_LAST</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_OK</methodname></term>
+
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_TIME_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_UNSCHEDULED</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+
+            <term><methodname>gst.CLOCK_UNSUPPORTED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
@@ -311,55 +352,70 @@
         <para>The Core Types ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.CORE_ERROR</simpara></listitem>
+            <term><methodname>gst.CORE_ERROR</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
 
           <varlistentry>
-            <listitem><simpara>gst.CORE_ERROR_CAPS</simpara></listitem>
+            <term><methodname>gst.CORE_ERROR_CAPS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.CORE_ERROR_CLOCK</simpara></listitem>
+            <term><methodname>gst.CORE_ERROR_CLOCK</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.CORE_ERROR_EVENT</simpara></listitem>
+            <term><methodname>gst.CORE_ERROR_EVENT</methodname></term>
 
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.CORE_ERROR_FAILED</simpara></listitem>
+            <term><methodname>gst.CORE_ERROR_FAILED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.CORE_ERROR_MISSING_PLUGIN</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-
-            <listitem><simpara>gst.CORE_ERROR_NEGOTIATION</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.CORE_ERROR_NOT_IMPLEMENTED</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.CORE_ERROR_NUM_ERRORS</simpara></listitem>
-
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.CORE_ERROR_PAD</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.CORE_ERROR_SEEK</simpara></listitem>
+            <term><methodname>gst.CORE_ERROR_MISSING_PLUGIN</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
 
-            <listitem><simpara>gst.CORE_ERROR_STATE_CHANGE</simpara></listitem>
+            <term><methodname>gst.CORE_ERROR_NEGOTIATION</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.CORE_ERROR_TAG</simpara></listitem>
+            <term><methodname>gst.CORE_ERROR_NOT_IMPLEMENTED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.CORE_ERROR_THREAD</simpara></listitem>
+            <term><methodname>gst.CORE_ERROR_NUM_ERRORS</methodname></term>
 
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.CORE_ERROR_TOO_LAZY</simpara></listitem>
+            <term><methodname>gst.CORE_ERROR_PAD</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CORE_ERROR_SEEK</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+
+            <term><methodname>gst.CORE_ERROR_STATE_CHANGE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CORE_ERROR_TAG</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CORE_ERROR_THREAD</methodname></term>
+
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CORE_ERROR_TOO_LAZY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
@@ -376,65 +432,83 @@
         <variablelist>
           <varlistentry>
 
-            <listitem><simpara>gst.DEBUG_BG_BLACK</simpara></listitem>
+            <term><methodname>gst.DEBUG_BG_BLACK</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DEBUG_BG_BLUE</simpara></listitem>
+            <term><methodname>gst.DEBUG_BG_BLUE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DEBUG_BG_CYAN</simpara></listitem>
+            <term><methodname>gst.DEBUG_BG_CYAN</methodname></term>
 
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DEBUG_BG_GREEN</simpara></listitem>
+            <term><methodname>gst.DEBUG_BG_GREEN</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DEBUG_BG_MAGENTA</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-
-            <listitem><simpara>gst.DEBUG_BG_RED</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.DEBUG_BG_WHITE</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.DEBUG_BG_YELLOW</simpara></listitem>
-
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.DEBUG_BOLD</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <listitem><simpara>gst.DEBUG_FG_BLACK</simpara></listitem>
+            <term><methodname>gst.DEBUG_BG_MAGENTA</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
 
-            <listitem><simpara>gst.DEBUG_FG_BLUE</simpara></listitem>
+            <term><methodname>gst.DEBUG_BG_RED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DEBUG_FG_CYAN</simpara></listitem>
+            <term><methodname>gst.DEBUG_BG_WHITE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DEBUG_FG_GREEN</simpara></listitem>
+            <term><methodname>gst.DEBUG_BG_YELLOW</methodname></term>
 
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DEBUG_FG_MAGENTA</simpara></listitem>
+            <term><methodname>gst.DEBUG_BOLD</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DEBUG_FG_RED</simpara></listitem>
+            <term><methodname>gst.DEBUG_FG_BLACK</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
 
-            <listitem><simpara>gst.DEBUG_FG_WHITE</simpara></listitem>
+            <term><methodname>gst.DEBUG_FG_BLUE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DEBUG_FG_YELLOW</simpara></listitem>
+            <term><methodname>gst.DEBUG_FG_CYAN</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DEBUG_UNDERLINE</simpara></listitem>
+            <term><methodname>gst.DEBUG_FG_GREEN</methodname></term>
 
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.DEBUG_FG_MAGENTA</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.DEBUG_FG_RED</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+
+            <term><methodname>gst.DEBUG_FG_WHITE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.DEBUG_FG_YELLOW</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.DEBUG_UNDERLINE</methodname></term>
+
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
@@ -449,16 +523,20 @@
       <para>The DP Header Flags ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.DP_HEADER_FLAG_CRC</simpara></listitem>
+            <term><methodname>gst.DP_HEADER_FLAG_CRC</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DP_HEADER_FLAG_CRC_HEADER</simpara></listitem>
+            <term><methodname>gst.DP_HEADER_FLAG_CRC_HEADER</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DP_HEADER_FLAG_CRC_PAYLOAD</simpara></listitem>
+            <term><methodname>gst.DP_HEADER_FLAG_CRC_PAYLOAD</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DP_HEADER_FLAG_NONE</simpara></listitem>
+            <term><methodname>gst.DP_HEADER_FLAG_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -472,16 +550,20 @@
       <para>The DP Payload Types ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.DP_PAYLOAD_BUFFER</simpara></listitem>
+            <term><methodname>gst.DP_PAYLOAD_BUFFER</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DP_PAYLOAD_CAPS</simpara></listitem>
+            <term><methodname>gst.DP_PAYLOAD_CAPS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DP_PAYLOAD_EVENT_NONE</simpara></listitem>
+            <term><methodname>gst.DP_PAYLOAD_EVENT_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.DP_PAYLOAD_NONE</simpara></listitem>
+            <term><methodname>gst.DP_PAYLOAD_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -491,20 +573,24 @@
     <!-- ************************ -->
 
   <refsect2 id="gst-element-constants">
-    <title>GST Element Constants</title>
+    <title>GST Element Flag Constants</title>
       <para>The Element ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.ELEMENT_FLAG_LAST</simpara></listitem>
+            <term><methodname>gst.ELEMENT_FLAG_LAST</methodname></term>
+            <listitem><simpara>offset to define more flags</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.ELEMENT_IS_SINK</simpara></listitem>
+            <term><methodname>gst.ELEMENT_IS_SINK</methodname></term>
+            <listitem><simpara>the element is a sink</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.ELEMENT_LOCKED_STATE</simpara></listitem>
+            <term><methodname>gst.ELEMENT_LOCKED_STATE</methodname></term>
+            <listitem><simpara>ignore state changes from parent</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.ELEMENT_UNPARENTING</simpara></listitem>
+            <term><methodname>gst.ELEMENT_UNPARENTING</methodname></term>
+            <listitem><simpara>Child is being removed from the parent bin. remove() on a child already being removed immediately returns FALSE.</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -514,58 +600,76 @@
       <para>The Event ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_BUFFERSIZE</simpara></listitem>
+            <term><methodname>gst.EVENT_BUFFERSIZE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_CUSTOM_BOTH</simpara></listitem>
+            <term><methodname>gst.EVENT_CUSTOM_BOTH</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_CUSTOM_BOTH_OOB</simpara></listitem>
+            <term><methodname>gst.EVENT_CUSTOM_BOTH_OOB</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_CUSTOM_DOWNSTREAM</simpara></listitem>
+            <term><methodname>gst.EVENT_CUSTOM_DOWNSTREAM</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_CUSTOM_DOWNSTREAM_OOB</simpara></listitem>
+            <term><methodname>gst.EVENT_CUSTOM_DOWNSTREAM_OOB</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_CUSTOM_UPSTREAM</simpara></listitem>
+            <term><methodname>gst.EVENT_CUSTOM_UPSTREAM</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_EOS</simpara></listitem>
+            <term><methodname>gst.EVENT_EOS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_FLUSH_START</simpara></listitem>
+            <term><methodname>gst.EVENT_FLUSH_START</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_FLUSH_STOP</simpara></listitem>
+            <term><methodname>gst.EVENT_FLUSH_STOP</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_NAVIGATION</simpara></listitem>
+            <term><methodname>gst.EVENT_NAVIGATION</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_NEWSEGMENT</simpara></listitem>
+            <term><methodname>gst.EVENT_NEWSEGMENT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_QOS</simpara></listitem>
+            <term><methodname>gst.EVENT_QOS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_SEEK</simpara></listitem>
+            <term><methodname>gst.EVENT_SEEK</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_TAG</simpara></listitem>
+            <term><methodname>gst.EVENT_TAG</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_TYPE_DOWNSTREAM</simpara></listitem>
+            <term><methodname>gst.EVENT_TYPE_DOWNSTREAM</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_TYPE_SERIALIZED</simpara></listitem>
+            <term><methodname>gst.EVENT_TYPE_SERIALIZED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_TYPE_UPSTREAM</simpara></listitem>
+            <term><methodname>gst.EVENT_TYPE_UPSTREAM</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.EVENT_UNKNOWN</simpara></listitem>
+            <term><methodname>gst.EVENT_UNKNOWN</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -575,34 +679,44 @@
       <para>The Flow ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.FLOW_CUSTOM_ERROR</simpara></listitem>
+            <term><methodname>gst.FLOW_CUSTOM_ERROR</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.FLOW_CUSTOM_SUCCESS</simpara></listitem>
+            <term><methodname>gst.FLOW_CUSTOM_SUCCESS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.FLOW_ERROR</simpara></listitem>
+            <term><methodname>gst.FLOW_ERROR</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.FLOW_NOT_LINKED</simpara></listitem>
+            <term><methodname>gst.FLOW_NOT_LINKED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.FLOW_NOT_NEGOTIATED</simpara></listitem>
+            <term><methodname>gst.FLOW_NOT_NEGOTIATED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.FLOW_NOT_SUPPORTED</simpara></listitem>
+            <term><methodname>gst.FLOW_NOT_SUPPORTED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.FLOW_OK</simpara></listitem>
+            <term><methodname>gst.FLOW_OK</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.FLOW_RESEND</simpara></listitem>
+            <term><methodname>gst.FLOW_RESEND</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.FLOW_UNEXPECTED</simpara></listitem>
+            <term><methodname>gst.FLOW_UNEXPECTED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.FLOW_WRONG_STATE</simpara></listitem>
+            <term><methodname>gst.FLOW_WRONG_STATE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -612,22 +726,28 @@
       <para>The Format ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.FORMAT_BUFFERS</simpara></listitem>
+            <term><methodname>gst.FORMAT_BUFFERS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.FORMAT_BYTES</simpara></listitem>
+            <term><methodname>gst.FORMAT_BYTES</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.FORMAT_DEFAULT</simpara></listitem>
+            <term><methodname>gst.FORMAT_DEFAULT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.FORMAT_PERCENT</simpara></listitem>
+            <term><methodname>gst.FORMAT_PERCENT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.FORMAT_TIME</simpara></listitem>
+            <term><methodname>gst.FORMAT_TIME</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.FORMAT_UNDEFINED</simpara></listitem>
+            <term><methodname>gst.FORMAT_UNDEFINED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -637,52 +757,68 @@
       <para>The Index ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_CERTAIN</simpara></listitem>
+            <term><methodname>gst.INDEX_CERTAIN</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_ENTRY_ASSOCIATION</simpara></listitem>
+            <term><methodname>gst.INDEX_ENTRY_ASSOCIATION</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_ENTRY_FORMAT</simpara></listitem>
+            <term><methodname>gst.INDEX_ENTRY_FORMAT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_ENTRY_ID</simpara></listitem>
+            <term><methodname>gst.INDEX_ENTRY_ID</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_ENTRY_OBJECT</simpara></listitem>
+            <term><methodname>gst.INDEX_ENTRY_OBJECT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_FLAG_LAST</simpara></listitem>
+            <term><methodname>gst.INDEX_FLAG_LAST</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_FUZZY</simpara></listitem>
+            <term><methodname>gst.INDEX_FUZZY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_LOOKUP_AFTER</simpara></listitem>
+            <term><methodname>gst.INDEX_LOOKUP_AFTER</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_LOOKUP_BEFORE</simpara></listitem>
+            <term><methodname>gst.INDEX_LOOKUP_BEFORE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_LOOKUP_EXACT</simpara></listitem>
+            <term><methodname>gst.INDEX_LOOKUP_EXACT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_READABLE</simpara></listitem>
+            <term><methodname>gst.INDEX_READABLE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_RESOLVER_CUSTOM</simpara></listitem>
+            <term><methodname>gst.INDEX_RESOLVER_CUSTOM</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_RESOLVER_GTYPE</simpara></listitem>
+            <term><methodname>gst.INDEX_RESOLVER_GTYPE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_RESOLVER_PATH</simpara></listitem>
+            <term><methodname>gst.INDEX_RESOLVER_PATH</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_UNKNOWN</simpara></listitem>
+            <term><methodname>gst.INDEX_UNKNOWN</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INDEX_WRITABLE</simpara></listitem>
+            <term><methodname>gst.INDEX_WRITABLE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -692,22 +828,28 @@
       <para>The Interpolate ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.INTERPOLATE_CUBIC</simpara></listitem>
+            <term><methodname>gst.INTERPOLATE_CUBIC</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INTERPOLATE_LINEAR</simpara></listitem>
+            <term><methodname>gst.INTERPOLATE_LINEAR</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INTERPOLATE_NONE</simpara></listitem>
+            <term><methodname>gst.INTERPOLATE_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INTERPOLATE_QUADRATIC</simpara></listitem>
+            <term><methodname>gst.INTERPOLATE_QUADRATIC</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INTERPOLATE_TRIGGER</simpara></listitem>
+            <term><methodname>gst.INTERPOLATE_TRIGGER</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.INTERPOLATE_USER</simpara></listitem>
+            <term><methodname>gst.INTERPOLATE_USER</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -717,25 +859,32 @@
       <para>The Iterator ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.ITERATOR_DONE</simpara></listitem>
+            <term><methodname>gst.ITERATOR_DONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.ITERATOR_ERROR</simpara></listitem>
+            <term><methodname>gst.ITERATOR_ERROR</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.ITERATOR_ITEM_END</simpara></listitem>
+            <term><methodname>gst.ITERATOR_ITEM_END</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.ITERATOR_ITEM_PASS</simpara></listitem>
+            <term><methodname>gst.ITERATOR_ITEM_PASS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.ITERATOR_ITEM_SKIP</simpara></listitem>
+            <term><methodname>gst.ITERATOR_ITEM_SKIP</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.ITERATOR_OK</simpara></listitem>
+            <term><methodname>gst.ITERATOR_OK</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.ITERATOR_RESYNC</simpara></listitem>
+            <term><methodname>gst.ITERATOR_RESYNC</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -745,25 +894,32 @@
       <para>The Iterator ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.LEVEL_COUNT</simpara></listitem>
+            <term><methodname>gst.LEVEL_COUNT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.LEVEL_DEBUG</simpara></listitem>
+            <term><methodname>gst.LEVEL_DEBUG</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.LEVEL_ERROR</simpara></listitem>
+            <term><methodname>gst.LEVEL_ERROR</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.LEVEL_INFO</simpara></listitem>
+            <term><methodname>gst.LEVEL_INFO</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.LEVEL_LOG</simpara></listitem>
+            <term><methodname>gst.LEVEL_LOG</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.LEVEL_NONE</simpara></listitem>
+            <term><methodname>gst.LEVEL_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.LEVEL_WARNING</simpara></listitem>
+            <term><methodname>gst.LEVEL_WARNING</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -773,28 +929,36 @@
       <para>The Library ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.LIBRARY_ERROR</simpara></listitem>
+            <term><methodname>gst.LIBRARY_ERROR</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.LIBRARY_ERROR_ENCODE</simpara></listitem>
+            <term><methodname>gst.LIBRARY_ERROR_ENCODE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.LIBRARY_ERROR_FAILED</simpara></listitem>
+            <term><methodname>gst.LIBRARY_ERROR_FAILED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.LIBRARY_ERROR_INIT</simpara></listitem>
+            <term><methodname>gst.LIBRARY_ERROR_INIT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.LIBRARY_ERROR_NUM_ERRORS</simpara></listitem>
+            <term><methodname>gst.LIBRARY_ERROR_NUM_ERRORS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.LIBRARY_ERROR_SETTINGS</simpara></listitem>
+            <term><methodname>gst.LIBRARY_ERROR_SETTINGS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.LIBRARY_ERROR_SHUTDOWN</simpara></listitem>
+            <term><methodname>gst.LIBRARY_ERROR_SHUTDOWN</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.LIBRARY_ERROR_TOO_LAZY</simpara></listitem>
+            <term><methodname>gst.LIBRARY_ERROR_TOO_LAZY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -804,67 +968,88 @@
       <para>The Message ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_ANY</simpara></listitem>
+            <term><methodname>gst.MESSAGE_ANY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_APPLICATION</simpara></listitem>
+            <term><methodname>gst.MESSAGE_APPLICATION</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_BUFFERING</simpara></listitem>
+            <term><methodname>gst.MESSAGE_BUFFERING</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_CLOCK_LOST</simpara></listitem>
+            <term><methodname>gst.MESSAGE_CLOCK_LOST</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_CLOCK_PROVIDE</simpara></listitem>
+            <term><methodname>gst.MESSAGE_CLOCK_PROVIDE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_DURATION</simpara></listitem>
+            <term><methodname>gst.MESSAGE_DURATION</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_ELEMENT</simpara></listitem>
+            <term><methodname>gst.MESSAGE_ELEMENT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_EOS</simpara></listitem>
+            <term><methodname>gst.MESSAGE_EOS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_ERROR</simpara></listitem>
+            <term><methodname>gst.MESSAGE_ERROR</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_INFO</simpara></listitem>
+            <term><methodname>gst.MESSAGE_INFO</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_NEW_CLOCK</simpara></listitem>
+            <term><methodname>gst.MESSAGE_NEW_CLOCK</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_SEGMENT_DONE</simpara></listitem>
+            <term><methodname>gst.MESSAGE_SEGMENT_DONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_SEGMENT_START</simpara></listitem>
+            <term><methodname>gst.MESSAGE_SEGMENT_START</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_STATE_CHANGED</simpara></listitem>
+            <term><methodname>gst.MESSAGE_STATE_CHANGED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_STATE_DIRTY</simpara></listitem>
+            <term><methodname>gst.MESSAGE_STATE_DIRTY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_STEP_DONE</simpara></listitem>
+            <term><methodname>gst.MESSAGE_STEP_DONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_STREAM_STATUS</simpara></listitem>
+            <term><methodname>gst.MESSAGE_STREAM_STATUS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_STRUCTURE_CHANGE</simpara></listitem>
+            <term><methodname>gst.MESSAGE_STRUCTURE_CHANGE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_TAG</simpara></listitem>
+            <term><methodname>gst.MESSAGE_TAG</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_UNKNOWN</simpara></listitem>
+            <term><methodname>gst.MESSAGE_UNKNOWN</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MESSAGE_WARNING</simpara></listitem>
+            <term><methodname>gst.MESSAGE_WARNING</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -874,10 +1059,12 @@
       <para>The MiniObject ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.MINI_OBJECT_FLAG_LAST</simpara></listitem>
+            <term><methodname>gst.MINI_OBJECT_FLAG_LAST</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MINI_OBJECT_FLAG_READONLY</simpara></listitem>
+            <term><methodname>gst.MINI_OBJECT_FLAG_READONLY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -887,13 +1074,16 @@
       <para>The Object ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.OBJECT_DISPOSING</simpara></listitem>
+            <term><methodname>gst.OBJECT_DISPOSING</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.OBJECT_FLAG_LAST</simpara></listitem>
+            <term><methodname>gst.OBJECT_FLAG_LAST</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.OBJECT_FLOATING</simpara></listitem>
+            <term><methodname>gst.OBJECT_FLOATING</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -903,67 +1093,88 @@
       <para>The Pad ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.PAD_ALWAYS</simpara></listitem>
+            <term><methodname>gst.PAD_ALWAYS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_BLOCKED</simpara></listitem>
+            <term><methodname>gst.PAD_BLOCKED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_BLOCKING</simpara></listitem>
+            <term><methodname>gst.PAD_BLOCKING</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_FLAG_LAST</simpara></listitem>
+            <term><methodname>gst.PAD_FLAG_LAST</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_FLUSHING</simpara></listitem>
+            <term><methodname>gst.PAD_FLUSHING</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_IN_GETCAPS</simpara></listitem>
+            <term><methodname>gst.PAD_IN_GETCAPS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_IN_SETCAPS</simpara></listitem>
+            <term><methodname>gst.PAD_IN_SETCAPS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_LINK_NOFORMAT</simpara></listitem>
+            <term><methodname>gst.PAD_LINK_NOFORMAT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_LINK_NOSCHED</simpara></listitem>
+            <term><methodname>gst.PAD_LINK_NOSCHED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_LINK_OK</simpara></listitem>
+            <term><methodname>gst.PAD_LINK_OK</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_LINK_REFUSED</simpara></listitem>
+            <term><methodname>gst.PAD_LINK_REFUSED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_LINK_WAS_LINKED</simpara></listitem>
+            <term><methodname>gst.PAD_LINK_WAS_LINKED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_LINK_WRONG_DIRECTION</simpara></listitem>
+            <term><methodname>gst.PAD_LINK_WRONG_DIRECTION</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_LINK_WRONG_HIERARCHY</simpara></listitem>
+            <term><methodname>gst.PAD_LINK_WRONG_HIERARCHY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_REQUEST</simpara></listitem>
+            <term><methodname>gst.PAD_REQUEST</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_SINK</simpara></listitem>
+            <term><methodname>gst.PAD_SINK</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_SOMETIMES</simpara></listitem>
+            <term><methodname>gst.PAD_SOMETIMES</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_SRC</simpara></listitem>
+            <term><methodname>gst.PAD_SRC</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_TEMPLATE_FIXED</simpara></listitem>
+            <term><methodname>gst.PAD_TEMPLATE_FIXED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_TEMPLATE_FLAG_LAST</simpara></listitem>
+            <term><methodname>gst.PAD_TEMPLATE_FLAG_LAST</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PAD_UNKNOWN</simpara></listitem>
+            <term><methodname>gst.PAD_UNKNOWN</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -973,25 +1184,32 @@
       <para>The Parse ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.PARSE_ERROR_COULD_NOT_SET_PROPERTY</simpara></listitem>
+            <term><methodname>gst.PARSE_ERROR_COULD_NOT_SET_PROPERTY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PARSE_ERROR_EMPTY</simpara></listitem>
+            <term><methodname>gst.PARSE_ERROR_EMPTY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PARSE_ERROR_EMPTY_BIN</simpara></listitem>
+            <term><methodname>gst.PARSE_ERROR_EMPTY_BIN</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PARSE_ERROR_LINK</simpara></listitem>
+            <term><methodname>gst.PARSE_ERROR_LINK</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PARSE_ERROR_NO_SUCH_ELEMENT</simpara></listitem>
+            <term><methodname>gst.PARSE_ERROR_NO_SUCH_ELEMENT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PARSE_ERROR_NO_SUCH_PROPERTY</simpara></listitem>
+            <term><methodname>gst.PARSE_ERROR_NO_SUCH_PROPERTY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PARSE_ERROR_SYNTAX</simpara></listitem>
+            <term><methodname>gst.PARSE_ERROR_SYNTAX</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1001,10 +1219,12 @@
       <para>The Pipeline ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.PIPELINE_FLAG_FIXED_CLOCK</simpara></listitem>
+            <term><methodname>gst.PIPELINE_FLAG_FIXED_CLOCK</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PIPELINE_FLAG_LAST</simpara></listitem>
+            <term><methodname>gst.PIPELINE_FLAG_LAST</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1014,13 +1234,16 @@
       <para>The Plugin Error ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.PLUGIN_ERROR_DEPENDENCIES</simpara></listitem>
+            <term><methodname>gst.PLUGIN_ERROR_DEPENDENCIES</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PLUGIN_ERROR_MODULE</simpara></listitem>
+            <term><methodname>gst.PLUGIN_ERROR_MODULE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.PLUGIN_ERROR_NAME_MISMATCH</simpara></listitem>
+            <term><methodname>gst.PLUGIN_ERROR_NAME_MISMATCH</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1030,7 +1253,8 @@
       <para>The Plugin Flag ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.PLUGIN_FLAG_CACHED</simpara></listitem>
+            <term><methodname>gst.PLUGIN_FLAG_CACHED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1040,34 +1264,44 @@
       <para>The Query ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.QUERY_CONVERT</simpara></listitem>
+            <term><methodname>gst.QUERY_CONVERT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.QUERY_DURATION</simpara></listitem>
+            <term><methodname>gst.QUERY_DURATION</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.QUERY_FORMATS</simpara></listitem>
+            <term><methodname>gst.QUERY_FORMATS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.QUERY_JITTER</simpara></listitem>
+            <term><methodname>gst.QUERY_JITTER</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.QUERY_LATENCY</simpara></listitem>
+            <term><methodname>gst.QUERY_LATENCY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
            <varlistentry>
-            <listitem><simpara>gst.QUERY_NONE</simpara></listitem>
+            <term><methodname>gst.QUERY_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.QUERY_POSITION</simpara></listitem>
+            <term><methodname>gst.QUERY_POSITION</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.QUERY_RATE</simpara></listitem>
+            <term><methodname>gst.QUERY_RATE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.QUERY_SEEKING</simpara></listitem>
+            <term><methodname>gst.QUERY_SEEKING</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.QUERY_SEGMENT</simpara></listitem>
+            <term><methodname>gst.QUERY_SEGMENT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1077,16 +1311,20 @@
       <para>The Rank ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.RANK_MARGINAL</simpara></listitem>
+            <term><methodname>gst.RANK_MARGINAL</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RANK_NONE</simpara></listitem>
+            <term><methodname>gst.RANK_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RANK_PRIMARY</simpara></listitem>
+            <term><methodname>gst.RANK_PRIMARY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RANK_SECONDARY</simpara></listitem>
+            <term><methodname>gst.RANK_SECONDARY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1096,52 +1334,68 @@
       <para>The Resource ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR_BUSY</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR_BUSY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR_CLOSE</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR_CLOSE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR_FAILED</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR_FAILED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR_NOT_FOUND</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR_NOT_FOUND</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
            <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR_NO_SPACE_LEFT</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR_NO_SPACE_LEFT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR_NUM_ERRORS</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR_NUM_ERRORS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR_OPEN_READ</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR_OPEN_READ</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR_OPEN_READ_WRITE</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR_OPEN_READ_WRITE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR_OPEN_WRITE</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR_OPEN_WRITE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR_READ</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR_READ</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
            <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR_SEEK</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR_SEEK</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR_SETTINGS</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR_SETTINGS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR_SYNC</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR_SYNC</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR_TOO_LAZY</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR_TOO_LAZY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RESOURCE_ERROR_WRITE</simpara></listitem>
+            <term><methodname>gst.RESOURCE_ERROR_WRITE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1151,10 +1405,12 @@
       <para>The RTLD ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.RTLD_GLOBAL</simpara></listitem>
+            <term><methodname>gst.RTLD_GLOBAL</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.RTLD_LAZY</simpara></listitem>
+            <term><methodname>gst.RTLD_LAZY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1164,10 +1420,12 @@
       <para>The Seek ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.SEEK_TYPE_NONE</simpara></listitem>
+            <term><methodname>gst.SEEK_TYPE_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.SEEK_TYPE_SET</simpara></listitem>
+            <term><methodname>gst.SEEK_TYPE_SET</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1177,49 +1435,64 @@
       <para>The State ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.STATE_CHANGE_ASYNC</simpara></listitem>
+            <term><methodname>gst.STATE_CHANGE_ASYNC</methodname></term>
+          <listitem><simpara>the state change will happen asynchronously</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STATE_CHANGE_FAILURE</simpara></listitem>
+            <term><methodname>gst.STATE_CHANGE_FAILURE</methodname></term>
+            <listitem><simpara>the state change failed</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STATE_CHANGE_NO_PREROLL</simpara></listitem>
+            <term><methodname>gst.STATE_CHANGE_NO_PREROLL</methodname></term>
+            <listitem><simpara>the state change cannot be prerolled</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STATE_CHANGE_NULL_TO_READY</simpara></listitem>
+            <term><methodname>gst.STATE_CHANGE_NULL_TO_READY</methodname></term>
+            <listitem><simpara>state change from NULL to READY</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STATE_CHANGE_PAUSED_TO_PLAYING</simpara></listitem>
+            <term><methodname>gst.STATE_CHANGE_PAUSED_TO_PLAYING</methodname></term>
+            <listitem><simpara>state change from PAUSED to PLAYING</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STATE_CHANGE_PAUSED_TO_READY</simpara></listitem>
+            <term><methodname>gst.STATE_CHANGE_PAUSED_TO_READY</methodname></term>
+            <listitem><simpara>state change from PAUSED to READY</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STATE_CHANGE_PLAYING_TO_PAUSED</simpara></listitem>
+            <term><methodname>gst.STATE_CHANGE_PLAYING_TO_PAUSED</methodname></term>
+            <listitem><simpara>state change from PLAYING to PAUSED</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STATE_CHANGE_READY_TO_NULL</simpara></listitem>
+            <term><methodname>gst.STATE_CHANGE_READY_TO_NULL</methodname></term>
+            <listitem><simpara>state change from READY to NULL</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STATE_CHANGE_READY_TO_PAUSED</simpara></listitem>
+            <term><methodname>gst.STATE_CHANGE_READY_TO_PAUSED</methodname></term>
+            <listitem><simpara>state change from READY to PAUSED</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STATE_CHANGE_SUCCESS</simpara></listitem>
+            <term><methodname>gst.STATE_CHANGE_SUCCESS</methodname></term>
+            <listitem><simpara>the state change succeeded</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STATE_NULL</simpara></listitem>
+            <term><methodname>gst.STATE_NULL</methodname></term>
+            <listitem><simpara>the NULL state or initial state of an element</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STATE_PAUSED</simpara></listitem>
+            <term><methodname>gst.STATE_PAUSED</methodname></term>
+            <listitem><simpara>the element is PAUSED</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STATE_PLAYING</simpara></listitem>
+            <term><methodname>gst.STATE_PLAYING</methodname></term>
+            <listitem><simpara>the element is PLAYING</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STATE_READY</simpara></listitem>
+            <term><methodname>gst.STATE_READY</methodname></term>
+            <listitem><simpara>the element is ready to go to PAUSED</simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STATE_VOID_PENDING</simpara></listitem>
+            <term><methodname>gst.STATE_VOID_PENDING</methodname></term>
+            <listitem><simpara>no pending state</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1229,43 +1502,56 @@
       <para>The Stream ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.STREAM_ERROR</simpara></listitem>
+            <term><methodname>gst.STREAM_ERROR</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STREAM_ERROR_CODEC_NOT_FOUND</simpara></listitem>
+            <term><methodname>gst.STREAM_ERROR_CODEC_NOT_FOUND</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STREAM_ERROR_DECODE</simpara></listitem>
+            <term><methodname>gst.STREAM_ERROR_DECODE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STREAM_ERROR_DEMUX</simpara></listitem>
+            <term><methodname>gst.STREAM_ERROR_DEMUX</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STREAM_ERROR_ENCODE</simpara></listitem>
+            <term><methodname>gst.STREAM_ERROR_ENCODE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STREAM_ERROR_FAILED</simpara></listitem>
+            <term><methodname>gst.STREAM_ERROR_FAILED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STREAM_ERROR_FORMAT</simpara></listitem>
+            <term><methodname>gst.STREAM_ERROR_FORMAT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STREAM_ERROR_MUX</simpara></listitem>
+            <term><methodname>gst.STREAM_ERROR_MUX</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STREAM_ERROR_NOT_IMPLEMENTED</simpara></listitem>
+            <term><methodname>gst.STREAM_ERROR_NOT_IMPLEMENTED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STREAM_ERROR_NUM_ERRORS</simpara></listitem>
+            <term><methodname>gst.STREAM_ERROR_NUM_ERRORS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STREAM_ERROR_TOO_LAZY</simpara></listitem>
+            <term><methodname>gst.STREAM_ERROR_TOO_LAZY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STREAM_ERROR_TYPE_NOT_FOUND</simpara></listitem>
+            <term><methodname>gst.STREAM_ERROR_TYPE_NOT_FOUND</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.STREAM_ERROR_WRONG_TYPE</simpara></listitem>
+            <term><methodname>gst.STREAM_ERROR_WRONG_TYPE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1275,157 +1561,208 @@
       <para>The Tag ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.TAG_ALBUM</simpara></listitem>
+            <term><methodname>gst.TAG_ALBUM</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_ALBUM_GAIN</simpara></listitem>
+            <term><methodname>gst.TAG_ALBUM_GAIN</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_ALBUM_PEAK</simpara></listitem>
+            <term><methodname>gst.TAG_ALBUM_PEAK</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_ALBUM_VOLUME_COUNT</simpara></listitem>
+            <term><methodname>gst.TAG_ALBUM_VOLUME_COUNT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_ALBUM_VOLUME_NUMBER</simpara></listitem>
+            <term><methodname>gst.TAG_ALBUM_VOLUME_NUMBER</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_ARTIST</simpara></listitem>
+            <term><methodname>gst.TAG_ARTIST</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_AUDIO_CODEC</simpara></listitem>
+            <term><methodname>gst.TAG_AUDIO_CODEC</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_BITRATE</simpara></listitem>
+            <term><methodname>gst.TAG_BITRATE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
            <varlistentry>
-            <listitem><simpara>gst.TAG_CODEC</simpara></listitem>
+            <term><methodname>gst.TAG_CODEC</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_COMMENT</simpara></listitem>
+            <term><methodname>gst.TAG_COMMENT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_CONTACT</simpara></listitem>
+            <term><methodname>gst.TAG_CONTACT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
            <varlistentry>
-            <listitem><simpara>gst.TAG_COPYRIGHT</simpara></listitem>
+            <term><methodname>gst.TAG_COPYRIGHT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_DATE</simpara></listitem>
+            <term><methodname>gst.TAG_DATE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_DESCRIPTION</simpara></listitem>
+            <term><methodname>gst.TAG_DESCRIPTION</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
            <varlistentry>
-            <listitem><simpara>gst.TAG_DURATION</simpara></listitem>
+            <term><methodname>gst.TAG_DURATION</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_ENCODER</simpara></listitem>
+            <term><methodname>gst.TAG_ENCODER</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_ENCODER_VERSION</simpara></listitem>
+            <term><methodname>gst.TAG_ENCODER_VERSION</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_EXTENDED_COMMENT</simpara></listitem>
+            <term><methodname>gst.TAG_EXTENDED_COMMENT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_FLAG_COUNT</simpara></listitem>
+            <term><methodname>gst.TAG_FLAG_COUNT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_FLAG_DECODED</simpara></listitem>
+            <term><methodname>gst.TAG_FLAG_DECODED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
            <varlistentry>
-            <listitem><simpara>gst.TAG_FLAG_ENCODED</simpara></listitem>
+            <term><methodname>gst.TAG_FLAG_ENCODED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_FLAG_META</simpara></listitem>
+            <term><methodname>gst.TAG_FLAG_META</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_FLAG_UNDEFINED</simpara></listitem>
+            <term><methodname>gst.TAG_FLAG_UNDEFINED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
            <varlistentry>
-            <listitem><simpara>gst.TAG_GENRE</simpara></listitem>
+            <term><methodname>gst.TAG_GENRE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_IMAGE</simpara></listitem>
+            <term><methodname>gst.TAG_IMAGE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_ISRC</simpara></listitem>
+            <term><methodname>gst.TAG_ISRC</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_LANGUAGE_CODE</simpara></listitem>
+            <term><methodname>gst.TAG_LANGUAGE_CODE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_LICENSE</simpara></listitem>
+            <term><methodname>gst.TAG_LICENSE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_LOCATION</simpara></listitem>
+            <term><methodname>gst.TAG_LOCATION</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
            <varlistentry>
-            <listitem><simpara>gst.TAG_MAXIMUM_BITRATE</simpara></listitem>
+            <term><methodname>gst.TAG_MAXIMUM_BITRATE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_MERGE_APPEND</simpara></listitem>
+            <term><methodname>gst.TAG_MERGE_APPEND</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_MERGE_COUNT</simpara></listitem>
+            <term><methodname>gst.TAG_MERGE_COUNT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
            <varlistentry>
-            <listitem><simpara>gst.TAG_MERGE_KEEP</simpara></listitem>
+            <term><methodname>gst.TAG_MERGE_KEEP</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_MERGE_KEEP_ALL</simpara></listitem>
+            <term><methodname>gst.TAG_MERGE_KEEP_ALL</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_MERGE_PREPEND</simpara></listitem>
+            <term><methodname>gst.TAG_MERGE_PREPEND</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_MERGE_REPLACE</simpara></listitem>
+            <term><methodname>gst.TAG_MERGE_REPLACE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
            <varlistentry>
-            <listitem><simpara>gst.TAG_MERGE_REPLACE_ALL</simpara></listitem>
+            <term><methodname>gst.TAG_MERGE_REPLACE_ALL</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_MERGE_UNDEFINED</simpara></listitem>
+            <term><methodname>gst.TAG_MERGE_UNDEFINED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_MINIMUM_BITRATE</simpara></listitem>
+            <term><methodname>gst.TAG_MINIMUM_BITRATE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_NOMINAL_BITRATE</simpara></listitem>
+            <term><methodname>gst.TAG_NOMINAL_BITRATE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_ORGANIZATION</simpara></listitem>
+            <term><methodname>gst.TAG_ORGANIZATION</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_PERFORMER</simpara></listitem>
+            <term><methodname>gst.TAG_PERFORMER</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_PREVIEW_IMAGE</simpara></listitem>
+            <term><methodname>gst.TAG_PREVIEW_IMAGE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_SERIAL</simpara></listitem>
+            <term><methodname>gst.TAG_SERIAL</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_TITLE</simpara></listitem>
+            <term><methodname>gst.TAG_TITLE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_TRACK_COUNT</simpara></listitem>
+            <term><methodname>gst.TAG_TRACK_COUNT</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_TRACK_GAIN</simpara></listitem>
+            <term><methodname>gst.TAG_TRACK_GAIN</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_TRACK_NUMBER</simpara></listitem>
+            <term><methodname>gst.TAG_TRACK_NUMBER</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_TRACK_PEAK</simpara></listitem>
+            <term><methodname>gst.TAG_TRACK_PEAK</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_VERSION</simpara></listitem>
+            <term><methodname>gst.TAG_VERSION</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TAG_VIDEO_CODEC</simpara></listitem>
+            <term><methodname>gst.TAG_VIDEO_CODEC</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1436,13 +1773,16 @@
       <para>The Task ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.TASK_PAUSED</simpara></listitem>
+            <term><methodname>gst.TASK_PAUSED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TASK_STARTED</simpara></listitem>
+            <term><methodname>gst.TASK_STARTED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TASK_STOPPED</simpara></listitem>
+            <term><methodname>gst.TASK_STOPPED</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1452,28 +1792,36 @@
       <para>The Type ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.TYPE_ELEMENT_FACTORY</simpara></listitem>
+            <term><methodname>gst.TYPE_ELEMENT_FACTORY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TYPE_FIND_LIKELY</simpara></listitem>
+            <term><methodname>gst.TYPE_FIND_LIKELY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TYPE_FIND_MAXIMUM</simpara></listitem>
+            <term><methodname>gst.TYPE_FIND_MAXIMUM</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TYPE_FIND_MINIMUM</simpara></listitem>
+            <term><methodname>gst.TYPE_FIND_MINIMUM</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TYPE_FIND_NEARLY_CERTAIN</simpara></listitem>
+            <term><methodname>gst.TYPE_FIND_NEARLY_CERTAIN</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TYPE_FIND_POSSIBLE</simpara></listitem>
+            <term><methodname>gst.TYPE_FIND_POSSIBLE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TYPE_INDEX_FACTORY</simpara></listitem>
+            <term><methodname>gst.TYPE_INDEX_FACTORY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TYPE_TYPE_FIND_FACTORY</simpara></listitem>
+            <term><methodname>gst.TYPE_TYPE_FIND_FACTORY</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1483,13 +1831,16 @@
       <para>The URI ...</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.URI_SINK</simpara></listitem>
+            <term><methodname>gst.URI_SINK</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.URI_SRC</simpara></listitem>
+            <term><methodname>gst.URI_SRC</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.URI_UNKNOWN</simpara></listitem>
+            <term><methodname>gst.URI_UNKNOWN</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1499,13 +1850,16 @@
       <para>These constansts haven't been identified yet.</para>
         <variablelist>
           <varlistentry>
-            <listitem><simpara>gst.PARAM_CONTROLLABLE</simpara></listitem>
+            <term><methodname>gst.PARAM_CONTROLLABLE</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.MSECOND</simpara></listitem>
+            <term><methodname>gst.MSECOND</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <listitem><simpara>gst.TIME_ARGS</simpara></listitem>
+            <term><methodname>gst.TIME_ARGS</methodname></term>
+            <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>

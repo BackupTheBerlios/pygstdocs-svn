@@ -31,7 +31,7 @@ ref-dist:
 	tar cjf pygstgst-tutorial.tar.bz2 pygst-tutorial
 
 gst-tutorial:
-	mkdir pygst-tutorial
+	-mkdir pygst-tutorial
 
 src/ChangeLog.xml: src/ChangeLog
 	(echo '<literallayout>'; \
@@ -48,6 +48,6 @@ src/ChangeLog.xml: src/ChangeLog
 	> src/ChangeLog.xml
 
 clean:
-	-rm -rf gst-tutorial
-	-rm -rf gst-tutorial.tgz gst-tutorial.docbook.tgz
+	-rm -rf pygst-tutorial
+	-rm -rf pygst-tutorial.tgz pygst-tutorial.docbook.tgz
 
