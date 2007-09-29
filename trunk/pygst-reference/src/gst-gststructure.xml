@@ -1,0 +1,306 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gststructure">
+    <refnamediv>
+        <refname>gst.Structure</refname>
+        <refpurpose>Describe your class here.</refpurpose>
+    </refnamediv>
+
+<!-- *************************** -->
+<!-- BEGIN OF MyClass' SYNOPSIS -->
+<!-- *************************** -->
+
+<refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.Structure</classname></ooclass>
+        <ooclass><classname><link linkend="class-gstminiobject">gst.MiniObject</link></classname></ooclass>
+
+    <constructorsynopsis language="python">
+        <methodname><link linkend="constructor-gststructure">gst.Structure</link></methodname>
+        <methodparam></methodparam>
+    </constructorsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--copy">copy</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--fixate_field_boolean">fixate_field_boolean</link></methodname>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">minsize</parameter></methodparam>
+        <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
+        <methodparam><parameter role="keyword">async</parameter></methodparam>
+    </methodsynopsis>
+</classsynopsis>
+
+<programlisting>
+    <emphasis role="bold">Functions</emphasis>
+    
+<methodsynopsis language="python"><methodname><link linkend="function-gststructure--structure_from_string">gst.structure_from_string</link></methodname>
+  <methodparam><parameter role="keyword">format</parameter></methodparam>
+  <methodparam><parameter role="keyword">minsize</parameter></methodparam>
+  <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
+</methodsynopsis>
+</programlisting>
+</refsect1>
+
+
+<!-- *************************** -->
+<!-- BEGIN OF MyClass' Properties -->
+<!-- *************************** -->
+
+<refsect1>
+    <title>Properties</title>
+    <blockquote role="properties">
+        <informaltable pgwide="1" frame="none">
+            <tgroup cols="3">
+                <tbody>
+                    <row valign="top">
+                        <entry><methodname>value_name</methodname></entry>
+                        <entry>Read</entry>
+                        <entry>The name of the type of the format, eg GST_FORMAT_TIME.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry><methodname>value_nick</methodname></entry>
+                        <entry>Read/Write</entry>
+                        <entry>The nick of the type of the format, eg time.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </blockquote>
+</refsect1>
+
+<!-- *************************** -->
+<!-- BEGIN OF MyClass' Attributes -->
+<!-- *************************** -->
+
+<refsect1>
+    <title>Attributes</title>
+    <blockquote role="properties">
+        <informaltable pgwide="1" frame="none">
+            <tgroup cols="3">
+                <tbody>
+                    <row valign="top">
+                        <entry><methodname>value_name</methodname></entry>
+                        <entry>Read</entry>
+                        <entry>The name of the type of the format, eg GST_FORMAT_TIME.</entry>
+                    </row>
+                    <row valign="top">
+                        <entry><methodname>value_nick</methodname></entry>
+                        <entry>Read/Write</entry>
+                        <entry>The nick of the type of the format, eg time.</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+    </blockquote>
+</refsect1>
+
+ 
+<!-- ************************** -->
+<!-- BEGIN OF MyClass' ANCESTRY -->
+<!-- ************************** -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <link linkend="class-gstminiobject">gst.MiniObject</link>
+    +-- <link linkend="class-gstevent">gst.Event</link>
+</synopsis>
+</refsect1>
+
+<!-- ********************************* -->
+<!-- BEGIN OF MyClass' SIGNAL PROTOTYPES -->
+<!-- ********************************* -->
+
+<refsect1>
+    <title>Signal Prototypes</title>
+    <variablelist>
+        <varlistentry>
+            <term><link linkend="signal-gstbin--element-added">"element-added"</link></term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>gstbin</parameter></methodparam>
+                    <methodparam><parameter>element</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                    <methodparam><parameter>...</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+        
+        <varlistentry>
+            <term><link linkend="signal-gstbin--element-removed">"element-removed"</link></term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>gstbin</parameter></methodparam>
+                    <methodparam><parameter>element</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                    <methodparam><parameter>...</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+    </variablelist>
+</refsect1>
+
+
+<!-- ***************************** -->
+<!-- BEGIN OF MyClass' DESCRIPTION -->
+<!-- ***************************** -->
+
+<refsect1 id="description-gststructure">
+    <title>Description</title>
+
+    <para>
+        The structure ...
+    </para>
+    <para>
+    </para>
+</refsect1>
+
+<!-- ******************************** -->
+<!-- BEGIN OF MyClass' CONSTRUCTOR -->
+<!-- ******************************** -->
+
+<refsect1 id="constructor-gststructure">
+    <title>Constructor</title>
+    
+    <programlisting><constructorsynopsis language="python">
+            <methodname>gst.Pipeline</methodname>
+            <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
+        </constructorsynopsis></programlisting>
+    
+    <variablelist>
+        <varlistentry>
+            <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+            <listitem><simpara> The name for the pipeline.</simpara></listitem>
+        </varlistentry>
+    </variablelist>
+    
+    <para>
+        Creates a new pipeline with the given name.
+    </para>
+</refsect1>
+
+<!-- ************************* -->
+<!-- BEGIN OF MyClass' METHODS -->
+<!-- ************************* -->
+
+<refsect1>
+    <title>Methods</title>
+
+    <refsect2 id="method-gststructure--copy">
+        <title>gst.Structure.get_structure</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>copy</methodname>
+            <methodparam></methodparam>
+        </methodsynopsis></programlisting>
+    
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The structure of the event..</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+      
+        <para>
+            The <methodname>get_structure</methodname>() method accesses the structure of the event.
+        </para>
+    </refsect2>
+
+    <refsect2 id="method-gststructure--fixate_field_boolean">
+        <title>gst.Structure.fixate_field_boolean</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>fixate_field_boolean</methodname>
+            <methodparam><parameter role="keyword">format</parameter></methodparam>
+            <methodparam><parameter role="keyword">minsize</parameter></methodparam>
+            <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
+            <methodparam><parameter role="keyword">async</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> The format.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">minsize</parameter>&nbsp;:</term>
+                <listitem><simpara> The minsize.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">maxsize</parameter>&nbsp;:</term>
+                <listitem><simpara> The maxsize.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">async</parameter>&nbsp;:</term>
+                <listitem><simpara> The async flag.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>parse_buffer_size</methodname>() method gets the format, minsize, maxsize and async-flag in the buffersize event.
+        </para>
+    </refsect2>
+
+</refsect1>
+
+
+  <!-- ************************** -->
+  <!-- BEGIN OF MyClass' FUNCTIONS -->
+  <!-- ************************** --> 
+  
+    <refsect1>
+        <title>Functions</title>
+      
+        <refsect2 id="function-gststructure--structure_from_string">
+            <title>gst.structure_from_string</title>
+            <programlisting><methodsynopsis language="python">
+                <methodname>structure_from_string</methodname>
+                <methodparam><parameter role="keyword">format</parameter></methodparam>
+                <methodparam><parameter role="keyword">minsize</parameter></methodparam>
+                <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
+                <methodparam><parameter role="keyword">async</parameter></methodparam>
+            </methodsynopsis></programlisting>
+          
+            <variablelist>
+                <varlistentry>
+                    <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                    <listitem><simpara> The buffer format.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">minsize</parameter>&nbsp;:</term>
+                    <listitem><simpara> The minimum buffer size.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">maxsize</parameter>&nbsp;:</term>
+                    <listitem><simpara> The maximum buffer size.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><parameter role="keyword">async</parameter>&nbsp;:</term>
+                    <listitem><simpara> The thread behavior.</simpara></listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                    <listitem><simpara> The new <link linkend="class-gstevent"><classname>gst.Event</classname></link>.</simpara></listitem>
+                </varlistentry>
+            </variablelist>
+          
+            <para>
+                The <methodname>event_new_buffer_size</methodname>() function creates a new buffersize event. 
+                The event is sent downstream and notifies elements that they should provide a buffer of the specified dimensions.
+            </para>
+            <para>
+                When the async flag is set, a thread boundary is prefered.
+            </para>
+        </refsect2>
+    </refsect1>
+    
+ 
+</refentry>
+
+
+
