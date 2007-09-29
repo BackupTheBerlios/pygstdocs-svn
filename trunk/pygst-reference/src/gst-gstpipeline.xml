@@ -44,7 +44,7 @@
     </methodsynopsis>
     
     <methodsynopsis language="python">
-        <methodname><link linkend="method-gstpipeline--set_clock">set_clock</link></methodname>
+        <methodname><link linkend="method-gstpipeline--set-clock">set_clock</link></methodname>
         <methodparam><parameter role="keyword">clock</parameter></methodparam>
     </methodsynopsis>
     
@@ -244,7 +244,7 @@
         <variablelist>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> A <link linkend="class-gstclocktime"><classname>gst.ClockTime</classname></link>.</simpara></listitem>
+                <listitem><simpara>The Clock Time.</simpara></listitem>
             </varlistentry>
         </variablelist>
         

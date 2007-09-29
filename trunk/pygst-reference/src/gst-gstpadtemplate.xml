@@ -45,7 +45,7 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
     +-- <link linkend="class-gstobject">gst.Object</link>
         +-- <link linkend="class-gstpadtemplate">gst.PadTemplate</link>
 </synopsis>
@@ -112,11 +112,11 @@
         </varlistentry>
         <varlistentry>
             <term><parameter role="keyword">direction</parameter>&nbsp;:</term>
-            <listitem><simpara> the <link linkend="class-gstpaddirection"><classname>gst.PadDirection</classname></link> of the template.</simpara></listitem>
+            <listitem><simpara> the <link linkend="gst-pad-direction-constants">Pad Direction</link> of the template.</simpara></listitem>
         </varlistentry>
         <varlistentry>
             <term><parameter role="keyword">direction</parameter>&nbsp;:</term>
-            <listitem><simpara> the <link linkend="class-gstpadpresence"><classname>gst.PadPresence</classname></link> of the pad.</simpara></listitem>
+            <listitem><simpara> the <link linkend="gst-pad-presence-constants">Pad Presence</link> of the pad.</simpara></listitem>
         </varlistentry>
         <varlistentry>
             <term><parameter role="keyword">caps</parameter>&nbsp;:</term>
@@ -211,7 +211,7 @@
             <varlistentry>
                 <term><parameter>user_data</parameter>&nbsp;:</term>
                 <listitem><simpara>Additional data (if any) specified with the 
-                <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+                <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html#method-gobject--connect"><methodname>connect</methodname>()</ulink> method</simpara></listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>...</parameter>&nbsp;:</term>

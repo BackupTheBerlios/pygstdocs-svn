@@ -50,7 +50,7 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+<synopsis>+-- gobject.GObject
     +-- <link linkend="class-gstobject">gst.Object</link>
         +-- <link linkend="class-gstpad">gst.Pad</link>
             +-- <link linkend="class-gstghostpad">gst.GhostPad</link>

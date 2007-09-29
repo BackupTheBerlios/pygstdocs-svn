@@ -19,7 +19,7 @@
         <ooclass><classname><link linkend="class-gstminiobject">gst.MiniObject</link></classname></ooclass>
 
     <constructorsynopsis language="python">
-        <methodname><link linkend="constructor-gstevent">gst.Event</link></methodname>
+        <methodname>gst.Event</methodname>
         <methodparam></methodparam>
     </constructorsynopsis>
     
@@ -383,7 +383,7 @@
                 <methodparam><parameter role="keyword">stop_type</parameter></methodparam>
                 <methodparam><parameter role="keyword">stop</parameter></methodparam>
             </methodsynopsis></programlisting>
-        
+      
         <variablelist>
             <varlistentry>
                 <term><parameter role="keyword">rate</parameter>&nbsp;:</term>
@@ -396,12 +396,12 @@
             <varlistentry>
                 <term><parameter role="keyword">flags</parameter>&nbsp;:</term>
                 <listitem><simpara> The result location for 
-                        <link linkend="class-gstseekflags"><classname>gst.SeekFlags</classname></link>.</simpara></listitem>
+                        <link linkend="gst-seek-flag-constants">Seek Flags</link>.</simpara></listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter role="keyword">cur_type</parameter>&nbsp;:</term>
                 <listitem><simpara> The The result location for 
-                        <link linkend="class-gstseektype"><classname>gst.SeekType</classname></link> of the current position.</simpara></listitem>
+                        <link linkend="gst-seek-type-constants">Seek Type</link> of the current position.</simpara></listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter role="keyword">cur</parameter>&nbsp;:</term>
@@ -410,7 +410,7 @@
             <varlistentry>
                 <term><parameter role="keyword">cur_type</parameter>&nbsp;:</term>
                 <listitem><simpara> The The result location for 
-                        <link linkend="class-gstseektype"><classname>gst.SeekType</classname></link> of the stop position.</simpara></listitem>
+                        <link linkend="gst-seek-type-constants">Seek Type</link> of the stop position.</simpara></listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter role="keyword">cur</parameter>&nbsp;:</term>

@@ -32,14 +32,9 @@
   	        <methodparam><parameter role="keyword">size</parameter></methodparam></methodsynopsis></programlisting>
   </refsect2>
  
-  
   <refsect2>
     <title><link linkend="class-gstelement">gst.Element </link> Functions</title>
       <programlisting><methodsynopsis language="python">
-         <methodname><link linkend="function-gstelement--element-factory-find">gst.element_factory_find</link></methodname>
-  	        <methodparam><parameter role="keyword">name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
-         <methodname><link linkend="function-gstelement--element-factory-make">gst.element_factory_make</link></methodname>
-  	        <methodparam><parameter role="keyword">name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
          <methodname><link linkend="function-gstelement--element-link-many">gst.element_link_many</link></methodname>
   	        <methodparam><parameter role="keyword">element_1</parameter></methodparam>
            <methodparam><parameter role="keyword">element_2</parameter></methodparam>
@@ -48,17 +43,26 @@
   	        <methodparam><parameter role="keyword">type</parameter></methodparam>
             <methodparam><parameter role="keyword">uri</parameter></methodparam>
            <methodparam><parameter role="keyword">element_name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
-         <methodname><link linkend="function-gstelement--element-register">gst.element_register</link></methodname>
-  	        <methodparam><parameter role="keyword">plugin</parameter></methodparam>
-            <methodparam><parameter role="keyword">name</parameter></methodparam>
-            <methodparam><parameter role="keyword">rank</parameter></methodparam>
-           <methodparam><parameter role="keyword">type</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
          <methodname><link linkend="function-gstelement--element-state-get-name">gst.element_state_get_name</link></methodname>
   	        <methodparam><parameter role="keyword">state</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
          <methodname><link linkend="function-gstelement--element-unlink-many">gst.element_unlink_many</link></methodname>
   	        <methodparam><parameter role="keyword">element_1</parameter></methodparam>
            <methodparam><parameter role="keyword">element_2</parameter></methodparam>
            <methodparam><parameter role="keyword">...</parameter></methodparam></methodsynopsis></programlisting>
+  </refsect2>
+
+  <refsect2>
+    <title><link linkend="class-gstelement">gst.ElementFactory </link> Functions</title>
+      <programlisting><methodsynopsis language="python">
+         <methodname><link linkend="function-gstelementfactory--element-factory-find">gst.element_factory_find</link></methodname>
+  	        <methodparam><parameter role="keyword">name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstelementfactory--element-factory-make">gst.element_factory_make</link></methodname>
+  	        <methodparam><parameter role="keyword">name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-gstelementfactory--element-register">gst.element_register</link></methodname>
+  	        <methodparam><parameter role="keyword">plugin</parameter></methodparam>
+            <methodparam><parameter role="keyword">name</parameter></methodparam>
+            <methodparam><parameter role="keyword">rank</parameter></methodparam>
+           <methodparam><parameter role="keyword">type</parameter></methodparam></methodsynopsis></programlisting>
   </refsect2>
 
   <refsect2>

@@ -19,7 +19,7 @@
         <ooclass><classname><link linkend="class-gstminiobject">gst.MiniObject</link></classname></ooclass>
 
     <constructorsynopsis language="python">
-        <methodname><link linkend="constructor-gstmessage">gst.Message</link></methodname>
+        <methodname>gst.Message</methodname>
         <methodparam></methodparam>
     </constructorsynopsis>
     

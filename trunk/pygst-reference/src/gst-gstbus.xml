@@ -221,7 +221,7 @@
 
         <para>
             The <methodname>add_watch</methodname>() method adds a bus watch to the default main context with the default priority.
-            The watch can be removed using <methodname><link linkend="function-gobject--source-remove">gobject.source_remove</link></methodname>
+            The watch can be removed using <methodname><ulink url="http://www.pygtk.org/pygtk2reference/gobject-functions.html#function-gobject--source-remove">gobject.source_remove</ulink></methodname>
 	      </para>
     </refsect2>
     
@@ -277,7 +277,7 @@
         <variablelist>
             <varlistentry>
                 <term><parameter role="keyword">events</parameter>&nbsp;:</term>
-                <listitem><simpara> a mask of <link linkend="class-gstmessagetype"><classname>gst.MessageType</classname></link>, 
+                <listitem><simpara> a mask of <link linkend="gst-message-constants">Message Types</link>, 
                         representing the set of message types to poll for.</simpara></listitem>
             </varlistentry>
             <varlistentry>
@@ -451,7 +451,7 @@
     	      <varlistentry>
         	      <term><parameter>user_data</parameter>&nbsp;:</term>
                 <listitem><simpara>Additional data (if any) specified with the 
-                <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+                <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html#method-gobject--connect"><methodname>connect</methodname>()</ulink> method</simpara></listitem>
 	          </varlistentry>
     	      <varlistentry>
         	      <term><parameter>...</parameter>&nbsp;:</term>
@@ -486,7 +486,7 @@
             <varlistentry>
                 <term><parameter>user_data</parameter>&nbsp;:</term>
                 <listitem><simpara>Additional data (if any) specified with the 
-                        <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+                    <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html#method-gobject--connect"><methodname>connect</methodname>()</ulink> method</simpara></listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>...</parameter>&nbsp;:</term>

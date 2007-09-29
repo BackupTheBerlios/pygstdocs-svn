@@ -26,7 +26,7 @@
 <link linkend="gst-debug-constants">GST Debug Type Constants</link>
 <link linkend="gst-element-constants">GST Element Flag Constants</link>
 <link linkend="gst-event-constants">GST Event Type Constants</link>
-<link linkend="gst-flow-constants">GST Flow Type Constants</link>
+<link linkend="gst-flow-return-constants">GST Flow Return Constants</link>
 <link linkend="gst-format-constants">GST Format Type Constants</link>
 <link linkend="gst-index-constants">GST Index Type Constants</link>
 <link linkend="gst-interpolate-constants">GST Interpolate Type Constants</link>
@@ -36,7 +36,10 @@
 <link linkend="gst-message-constants">GST Message Type Constants</link>
 <link linkend="gst-mini-object-constants">GST MiniObject Flag Constants</link>
 <link linkend="gst-object-constants">GST Object Type Constants</link>
+<link linkend="gst-pad-direction-constants">GST Pad Direction Constants</link>
 <link linkend="gst-pad-constants">GST Pad Type Constants</link>
+<link linkend="gst-pad-presence-constants">GST Pad Presence Constants</link>
+<link linkend="gst-pad-template-constants">GST Pad Template Constants</link>
 <link linkend="gst-parse-constants">GST Parse Error Constants</link>
 <link linkend="gst-pipeline-constants">GST Pipelene Flag Constants</link>
 <link linkend="gst-plugin-error-constants">GST Plugin Error Constants</link>
@@ -45,7 +48,8 @@
 <link linkend="gst-rank-constants">GST Rank Type Constants</link>
 <link linkend="gst-resource-constants">GST Resource Error Constants</link>
 <link linkend="gst-rtld-constants">GST RTLD Type Constants</link>
-<link linkend="gst-seek-constants">GST Seek Type Constants</link>
+<link linkend="gst-seek-flag-constants">GST Seek Flag Constants</link>
+<link linkend="gst-seek-type-constants">GST Seek Type Constants</link>
 <link linkend="gst-state-constants">GST State Type Constants</link>
 <link linkend="gst-stream-constants">GST Stream Error Constants</link>
 <link linkend="gst-tag-constants">GST Tag Type Constants</link>
@@ -674,9 +678,9 @@
         </variablelist>
   </refsect2>
 
-  <refsect2 id="gst-flow-constants">
-    <title>GST Flow Type Constants</title>
-      <para>The Flow ...</para>
+  <refsect2 id="gst-flow-return-constants">
+    <title>GST Flow Return Constants</title>
+      <para>The Flow Return ...</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.FLOW_CUSTOM_ERROR</methodname></term>
@@ -964,7 +968,7 @@
   </refsect2>
 
   <refsect2 id="gst-message-constants">
-    <title>GST Message Constants</title>
+    <title>GST Message Type Constants</title>
       <para>The Message ...</para>
         <variablelist>
           <varlistentry>
@@ -1088,14 +1092,29 @@
         </variablelist>
   </refsect2>
 
+  <refsect2 id="gst-pad-direction-constants">
+    <title>GST Pad Direction Constants</title>
+      <para>The Pad Direction ...</para>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>gst.PAD_SINK</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.PAD_SRC</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.PAD_UNKNOWN</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+  
   <refsect2 id="gst-pad-constants">
     <title>GST Pad Constants</title>
       <para>The Pad ...</para>
         <variablelist>
-          <varlistentry>
-            <term><methodname>gst.PAD_ALWAYS</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
           <varlistentry>
             <term><methodname>gst.PAD_BLOCKED</methodname></term>
             <listitem><simpara></simpara></listitem>
@@ -1148,22 +1167,31 @@
             <term><methodname>gst.PAD_LINK_WRONG_HIERARCHY</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.PAD_REQUEST</methodname></term>
+          
+        </variablelist>
+  </refsect2>
+  
+   <refsect2 id="gst-pad-presence-constants">
+    <title>GST Pad Presence Constants</title>
+      <para>The Pad Presence ...</para>
+        <varlistentry>
+            <term><methodname>gst.PAD_ALWAYS</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.PAD_SINK</methodname></term>
+        <varlistentry>
+            <term><methodname>gst.PAD_REQUEST</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PAD_SOMETIMES</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.PAD_SRC</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
+  </refsect2>
+  
+  <refsect2 id="gst-pad-template-constants">
+    <title>GST Pad Template Constants</title>
+      <para>The Pad Template ...</para>
+        <variablelist>
           <varlistentry>
             <term><methodname>gst.PAD_TEMPLATE_FIXED</methodname></term>
             <listitem><simpara></simpara></listitem>
@@ -1172,13 +1200,9 @@
             <term><methodname>gst.PAD_TEMPLATE_FLAG_LAST</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.PAD_UNKNOWN</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
         </variablelist>
   </refsect2>
-
+  
   <refsect2 id="gst-parse-constants">
     <title>GST Parse Error Constants</title>
       <para>The Parse ...</para>
@@ -1415,7 +1439,34 @@
         </variablelist>
   </refsect2>
 
-  <refsect2 id="gst-seek-constants">
+  <refsect2 id="gst-seek-flag-constants">
+    <title>GST Seek Flag Constants</title>
+      <para>The Seek ...</para>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>gst.SEEK_FLAG_ACCURATE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.SEEK_FLAG_FLUSH</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.SEEK_FLAG_KEY_UNIT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <term><methodname>gst.SEEK_FLAG_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <term><methodname>gst.SEEK_FLAG_SEGMENT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+
+ <refsect2 id="gst-seek-type-constants">
     <title>GST Seek Type Constants</title>
       <para>The Seek ...</para>
         <variablelist>

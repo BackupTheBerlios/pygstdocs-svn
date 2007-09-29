@@ -1,11 +1,13 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
 
+
 <refentry id="class-myclass">
     <refnamediv>
         <refname>gst.MyClass</refname>
         <refpurpose>Describe your class here.</refpurpose>
     </refnamediv>
+
 
 <!-- *************************** -->
 <!-- BEGIN OF MyClass' SYNOPSIS -->
@@ -40,12 +42,20 @@
 <programlisting>
     <emphasis role="bold">Functions</emphasis>
     
-<methodsynopsis language="python"><methodname><link linkend="function-gstevent--event-new-buffer-size">gst.event_new_buffer_size</link></methodname>
-<methodparam><parameter role="keyword">format</parameter></methodparam>
-<methodparam><parameter role="keyword">minsize</parameter></methodparam>
-<methodparam><parameter role="keyword">maxsize</parameter></methodparam>
-</methodparam></methodsynopsis>
+<methodsynopsis language="python"><methodname><link linkend="function-index--index_factory_find">gst.index_factory_find</link></methodname>
+  <methodparam><parameter role="keyword">format</parameter></methodparam>
+  <methodparam><parameter role="keyword">minsize</parameter></methodparam>
+  <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
+</methodsynopsis>
+
+<methodsynopsis language="python"><methodname><link linkend="function-index--index_factory_make">gst.index_factory_make</link></methodname>
+  <methodparam><parameter role="keyword">format</parameter></methodparam>
+  <methodparam><parameter role="keyword">minsize</parameter></methodparam>
+  <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
+</methodsynopsis>
+
 </programlisting>
+
 </refsect1>
 
 
@@ -114,6 +124,7 @@
 </synopsis>
 </refsect1>
 
+
 <!-- ********************************* -->
 <!-- BEGIN OF MyClass' SIGNAL PROTOTYPES -->
 <!-- ********************************* -->
@@ -165,6 +176,31 @@
 </refsect1>
 
 
+<!-- ******************************** -->
+<!-- BEGIN OF MyClass' CONSTRUCTOR -->
+<!-- ******************************** -->
+
+<refsect1 id="constructor-gststructure">
+    <title>Constructor</title>
+    
+    <programlisting><constructorsynopsis language="python">
+            <methodname>gst.Pipeline</methodname>
+            <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
+        </constructorsynopsis></programlisting>
+    
+    <variablelist>
+        <varlistentry>
+            <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+            <listitem><simpara> The name for the pipeline.</simpara></listitem>
+        </varlistentry>
+    </variablelist>
+    
+    <para>
+        Creates a new pipeline with the given name.
+    </para>
+</refsect1>
+
+
 <!-- ************************* -->
 <!-- BEGIN OF MyClass' METHODS -->
 <!-- ************************* -->
@@ -172,27 +208,8 @@
 <refsect1>
     <title>Methods</title>
 
-    <refsect2 id="method-gstevent--get-structure">
-        <title>gst.Event.get_structure</title>
-        <programlisting><methodsynopsis language="python">
-            <methodname>get_structure</methodname>
-            <methodparam></methodparam>
-        </methodsynopsis></programlisting>
-    
-        <variablelist>
-            <varlistentry>
-                <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> The structure of the event..</simpara></listitem>
-            </varlistentry>
-        </variablelist>
-      
-        <para>
-            The <methodname>get_structure</methodname>() method accesses the structure of the event.
-        </para>
-    </refsect2>
-
-    <refsect2 id="method-gstevent--parse-buffer-size">
-        <title>gst.Event.parse_buffer_size</title>
+    <refsect2 id="method-gstindex--parse-buffer-size">
+        <title>gst.Index.parse_buffer_size</title>
         <programlisting><methodsynopsis language="python">
             <methodname>parse_buffer_size</methodname>
             <methodparam><parameter role="keyword">format</parameter></methodparam>
@@ -225,19 +242,20 @@
         </para>
     </refsect2>
   
-  </refsect1>
+</refsect1>
 
-  <!-- ************************** -->
-  <!-- BEGIN OF MyClass' FUNCTIONS -->
-  <!-- ************************** --> 
+
+<!-- ************************** -->
+<!-- BEGIN OF MyClass' FUNCTIONS -->
+<!-- ************************** --> 
   
-    <refsect1>
+<refsect1>
         <title>Functions</title>
       
-        <refsect2 id="function-gstevent--event-new-buffer-size">
-            <title>gst.event_new_buffer_size</title>
+        <refsect2 id="function-index--index_factory_find">
+            <title>gst.index_factory_find</title>
             <programlisting><methodsynopsis language="python">
-                <methodname>event_new_buffer_size</methodname>
+                <methodname>index_factory_find</methodname>
                 <methodparam><parameter role="keyword">format</parameter></methodparam>
                 <methodparam><parameter role="keyword">minsize</parameter></methodparam>
                 <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
@@ -275,7 +293,8 @@
                 When the async flag is set, a thread boundary is prefered.
             </para>
         </refsect2>
-    </refsect1>
+        
+</refsect1>
     
  
 </refentry>

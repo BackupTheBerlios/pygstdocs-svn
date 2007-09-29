@@ -36,7 +36,7 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
   +-- <link linkend="class-gstobject">gst.Object</link>
     +-- <link linkend="class-gstclock">gst.Clock</link>
       +-- <link linkend="class-gstsystemclock">gst.SystemClock</link>

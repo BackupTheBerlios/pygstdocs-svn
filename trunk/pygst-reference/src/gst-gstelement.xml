@@ -306,10 +306,7 @@
 <programlisting>
 <emphasis role="bold">Functions</emphasis>
 
-<methodsynopsis language="python"><methodname><link linkend="function-gstelement--element-factory-find">gst.element_factory_find</link></methodname>
-<methodparam><parameter role="keyword">name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
-<methodname><link linkend="function-gstelement--element-factory-make">gst.element_factory_make</link></methodname>
-<methodparam><parameter role="keyword">name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+<methodsynopsis language="python">
 <methodname><link linkend="function-gstelement--element-link-many">gst.element_link_many</link></methodname>
 <methodparam><parameter role="keyword">element_1</parameter></methodparam>
 <methodparam><parameter role="keyword">element_2</parameter></methodparam>
@@ -318,11 +315,6 @@
 <methodparam><parameter role="keyword">type</parameter></methodparam>
 <methodparam><parameter role="keyword">uri</parameter></methodparam>
 <methodparam><parameter role="keyword">element_name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
-<methodname><link linkend="function-gstelement--element-register">gst.element_register</link></methodname>
-<methodparam><parameter role="keyword">plugin</parameter></methodparam>
-<methodparam><parameter role="keyword">name</parameter></methodparam>
-<methodparam><parameter role="keyword">rank</parameter></methodparam>
-<methodparam><parameter role="keyword">type</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
 <methodname><link linkend="function-gstelement--element-state-get-name">gst.element_state_get_name</link></methodname>
 <methodparam><parameter role="keyword">state</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
 <methodname><link linkend="function-gstelement--element-unlink-many">gst.element_unlink_many</link></methodname>
@@ -339,7 +331,7 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+<synopsis>+-- gobject.GObject
     +-- <link linkend="class-gstobject">gst.Object</link>
         +-- <link linkend="class-gstelement">gst.Element</link>
 </synopsis>
@@ -432,10 +424,10 @@
     </para>
     
     <para>
-        Each element has a state (see <link linkend="class-gststate"><classname>gst.State</classname></link>). 
+        Each element has a state (see <link linkend="gst-state-constants">States</link>). 
         You can get and set the state of an element with <methodname><link linkend="method-gstelement--get-state">get_state</link></methodname> 
         and <methodname><link linkend="method-gstelement--set-state">set_state</link></methodname>. To get a string representation of a 
-        <link linkend="class-gststate"><classname>gst.State</classname></link> , use 
+        <link linkend="gst-state-constants">State</link> , use 
         <methodname><link linkend="function-gstelement--element-state-get-name">gst.element_state_get_name</link></methodname>.
     </para>
     
@@ -780,7 +772,7 @@
         <variablelist>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> A list of <link linkend="class-gstquerytype"><classname>gst.QueryType</classname></link> 
+                <listitem><simpara> A list of <link linkend="gst-query-constants">Query Types</link> 
                 elements.</simpara></listitem>
             </varlistentry>
         </variablelist>
@@ -1595,7 +1587,7 @@
         <variablelist>
             <varlistentry>
                 <term><parameter role="keyword">state</parameter>&nbsp;:</term>
-                <listitem><simpara> The element's new <link linkend="class-gststate"><classname>gst.State</classname></link>.</simpara></listitem>
+                <listitem><simpara> The element's new <link linkend="gst-state-constants">State</link>.</simpara></listitem>
             </varlistentry>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
@@ -1735,63 +1727,6 @@
 <!-- ***************************** --> 
 
 <refsect1>
-    <title>Functions</title>
-    
-    <refsect2 id="function-gstelement--element-factory-find">
-        <title>gst.element_factory_find</title>
-        <programlisting><methodsynopsis language="python">
-                <methodname>element_factory_find</methodname>
-                <methodparam><parameter role="keyword">name</parameter></methodparam>
-            </methodsynopsis></programlisting>
-        
-        <variablelist>
-            <varlistentry>
-                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
-                <listitem><simpara> Name of factory to find.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> <link linkend="class-gstelementfactory"><classname>gst.ElementFactory</classname></link> 
-                <literal>None</literal> otherwise.</simpara></listitem>
-            </varlistentry>
-        </variablelist>
-        
-        <para>
-            The <methodname>element_factory_find</methodname>() function search for an element factory of the given name.
-        </para>
-    </refsect2>
-    
-    <refsect2 id="function-gstelement--element-factory-make">
-        <title>gst.element_factory_make</title>
-        <programlisting><methodsynopsis language="python">
-                <methodname>element_factory_make</methodname>
-                <methodparam><parameter role="keyword">factory</parameter></methodparam>
-                <methodparam><parameter role="keyword">name</parameter></methodparam>
-            </methodsynopsis></programlisting>
-        
-        <variablelist>
-            <varlistentry>
-                <term><parameter role="keyword">factory</parameter>&nbsp;:</term>
-                <listitem><simpara> Factory to instantiate.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
-                <listitem><simpara> Name of new element.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> A new <link linkend="class-gstelement"><classname>gst.Element</classname></link> or
-                        <literal>None</literal> if the element couldn't be created.</simpara></listitem>
-            </varlistentry>
-        </variablelist>
-        
-        <para>
-            The <methodname>element_factory_make</methodname>() function creates a new element of the type defined by the given elementfactory. 
-            It will be given the name supplied, since all elements require a name as their first argument. This function raises gst.NoPluginError
-            if an element could not be created.
-        </para>
-    </refsect2>
-    
     <refsect2 id="function-gstelement--element-link-many">
         <title>gst.element_link_many</title>
         <programlisting><methodsynopsis language="python">
@@ -1862,43 +1797,7 @@
         </para>
     </refsect2>
     
-    <refsect2 id="function-gstelement--element-register">
-        <title>gst.element_register</title>
-        <programlisting><methodsynopsis language="python">
-                <methodname>element_register</methodname>
-                <methodparam><parameter role="keyword">plugin</parameter></methodparam>
-                <methodparam><parameter role="keyword">name</parameter></methodparam>
-                <methodparam><parameter role="keyword">rank</parameter></methodparam>
-                <methodparam><parameter role="keyword">type</parameter></methodparam>
-            </methodsynopsis></programlisting>
-        
-        <variablelist>
-            <varlistentry>
-                <term><parameter role="keyword">plugin</parameter>&nbsp;:</term>
-                <listitem><simpara> A <link linkend="class-gstplugin"><classname>gst.Plugin</classname></link> to register the element with.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
-                <listitem><simpara> name of elements of this type.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">rank</parameter>&nbsp;:</term>
-                <listitem><simpara> rank of element (higher rank means more importance when autoplugging).</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">type</parameter>&nbsp;:</term>
-                <listitem><simpara> GType of element to register.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> <literal>True</literal>, if the registering succeeded, <literal>False</literal> on error.</simpara></listitem>
-            </varlistentry>
-        </variablelist>
-        
-        <para>
-            The <methodname>element_register</methodname>() function creates a new elementfactory capable of instantiating objects of the given type.
-        </para>
-    </refsect2>
+  
     
     <refsect2 id="function-gstelement--element-state-get-name">
         <title>gst.element_state_get_name</title>
@@ -1910,7 +1809,7 @@
         <variablelist>
             <varlistentry>
                 <term><parameter role="keyword">state</parameter>&nbsp;:</term>
-                <listitem><simpara> A <link linkend="class-gststate"><classname>gst.State</classname></link> to get the name of.</simpara></listitem>
+                <listitem><simpara> A <link linkend="gst-state-constants">State</link> to get the name of.</simpara></listitem>
             </varlistentry>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
@@ -1979,7 +1878,7 @@
     	      <varlistentry>
         	      <term><parameter>user_data</parameter>&nbsp;:</term>
                 <listitem><simpara>Additional data (if any) specified with the 
-                <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+                <methodname>connect</methodname>() method</simpara></listitem>
 	          </varlistentry>
     	      <varlistentry>
         	      <term><parameter>...</parameter>&nbsp;:</term>
@@ -2014,7 +1913,7 @@
             <varlistentry>
                 <term><parameter>user_data</parameter>&nbsp;:</term>
                 <listitem><simpara>Additional data (if any) specified with the 
-                        <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+                        <methodname>connect</methodname>() method</simpara></listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>...</parameter>&nbsp;:</term>
@@ -2050,7 +1949,7 @@
             <varlistentry>
                 <term><parameter>user_data</parameter>&nbsp;:</term>
                 <listitem><simpara>Additional data (if any) specified with the 
-                        <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+                        <methodname>connect</methodname>() method</simpara></listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>...</parameter>&nbsp;:</term>

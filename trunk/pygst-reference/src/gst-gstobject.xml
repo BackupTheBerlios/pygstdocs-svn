@@ -16,7 +16,7 @@
 
   <classsynopsis language="python">
   <ooclass><classname>gst.Object</classname></ooclass>
-  <ooclass><classname><link linkend="class-gobject">gobject-GObject</link></classname></ooclass>
+  <ooclass><classname><ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject-GObject</ulink></classname></ooclass>
 
   <!--
   <methodsynopsis language="python">
@@ -102,7 +102,7 @@
   </methodsynopsis>
     
   <methodsynopsis language="python">
-  	<methodname><link linkend="method-gstobject--unref">unset_flag</link></methodname>
+  	<methodname><link linkend="method-gstobject--unset-flag">unset_flag</link></methodname>
     <methodparam><parameter role="keyword">flag</parameter></methodparam>
   </methodsynopsis>
  
@@ -124,7 +124,7 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
   +-- <link linkend="class-gstobject">gst.Object</link>
 </synopsis>
 </refsect1>
@@ -608,7 +608,7 @@
 	    <varlistentry>
 	      <term><parameter>user_data</parameter>&nbsp;:</term>
           <listitem><simpara>additional data (if any) specified with the 
-          <link linkend="method-gobject--connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+          <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html#method-gobject--connect"><methodname>connect</methodname>()</ulink> method</simpara></listitem>
 	    </varlistentry>
 	    <varlistentry>
 	      <term><parameter>...</parameter>&nbsp;:</term>
@@ -643,7 +643,7 @@
 	    <varlistentry>
 	      <term><parameter>user_data</parameter>&nbsp;:</term>
           <listitem><simpara>additional data (if any) specified with the 
-          <link linkend="method-gobject--connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+          <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html#method-gobject--connect"><methodname>connect</methodname>()</ulink> method</simpara></listitem>
 	    </varlistentry>
 	    <varlistentry>
 	      <term><parameter>...</parameter>&nbsp;:</term>
@@ -678,7 +678,7 @@
 	    <varlistentry>
 	      <term><parameter>user_data</parameter>&nbsp;:</term>
           <listitem><simpara>additional data (if any) specified with the 
-          <link linkend="method-gobject--connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+          <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html#method-gobject--connect"><methodname>connect</methodname>()</ulink> method</simpara></listitem>
 	    </varlistentry>
 	    <varlistentry>
 	      <term><parameter>...</parameter>&nbsp;:</term>
@@ -719,7 +719,7 @@
 	    <varlistentry>
 	      <term><parameter>user_data</parameter>&nbsp;:</term>
           <listitem><simpara>additional data (if any) specified with the 
-          <link linkend="method-gobject--connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+          <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html#method-gobject--connect"><methodname>connect</methodname>()</ulink> method</simpara></listitem>
 	    </varlistentry>
 	    <varlistentry>
 	      <term><parameter>...</parameter>&nbsp;:</term>

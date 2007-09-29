@@ -345,7 +345,7 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis>+-- <link linkend="class-gobject">gobject.GObject</link>
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
     +-- <link linkend="class-gstobject">gst.Object</link>
         +-- <link linkend="class-gstpad">gst.Pad</link>
 </synopsis>
@@ -373,7 +373,7 @@
                     <row valign="top">
                         <entry>"direction"</entry>
                         <entry>Read / Write/Construct only</entry>
-                        <entry>A <link linkend="class-gstpaddirection"><classname>gst.PadDirection</classname></link>.</entry>
+                        <entry>A <link linkend="gst-pad-direction-constants">Pad Direction</link>.</entry>
                     </row>
                     <row valign="top">
                         <entry>"template"</entry>
@@ -527,7 +527,7 @@
         </varlistentry>
         <varlistentry>
             <term><parameter role="keyword">direction</parameter>&nbsp;:</term>
-            <listitem><simpara> the <link linkend="class-gstpaddirection"><classname>gst.PadDirection</classname></link>.</simpara></listitem>
+            <listitem><simpara> the <link linkend="gst-pad-direction-constants">Pad Direction</link>.</simpara></listitem>
         </varlistentry>
         <varlistentry>
             <term><emphasis>Returns</emphasis>&nbsp;:</term>
@@ -822,7 +822,7 @@
             </varlistentry>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> A <link linkend="class-gstflowreturn"><classname>gst.FlowReturn</classname></link> from the pad.</simpara></listitem>
+                <listitem><simpara> A <link linkend="gst-flow-return-constants">Flow Return</link> from the pad.</simpara></listitem>
             </varlistentry>
         </variablelist>
         
@@ -953,7 +953,7 @@
         <variablelist>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> the <link linkend="class-gstpaddirection"><classname>gst.PadDirection</classname></link> of the pad.</simpara></listitem>
+                <listitem><simpara> the <link linkend="gst-pad-direction-constants">Pad Direction</link> of the pad.</simpara></listitem>
             </varlistentry>
         </variablelist>
         
@@ -1139,7 +1139,7 @@
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
                 <listitem><simpara> A zero-terminated array of 
-                        <link linkend="class-gstquerytype"><classname>gst.QueryType</classname></link>.</simpara></listitem>
+                        <link linkend="gst-query-constants">Query Type</link>.</simpara></listitem>
             </varlistentry>
         </variablelist>
         
@@ -1159,7 +1159,7 @@
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
                 <listitem><simpara> A zero-terminated array of 
-                        <link linkend="class-gstquerytype"><classname>gst.QueryType</classname></link>, or <literal>None</literal> if none of the
+                        <link linkend="gst-query-constants">Query Type</link>, or <literal>None</literal> if none of the
                         internally-linked pads has a query types function..</simpara></listitem>
             </varlistentry>
         </variablelist>
@@ -1193,7 +1193,7 @@
             </varlistentry>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> A <link linkend="class-gstflowreturn"><classname>gst.FlowReturn</classname></link> for the buffer.</simpara></listitem>
+                <listitem><simpara> A <link linkend="gst-flow-return-constants">Flow Return</link> for the buffer.</simpara></listitem>
             </varlistentry>
         </variablelist>
         
@@ -1418,7 +1418,7 @@
             </varlistentry>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> A <link linkend="class-gstflowreturn"><classname>gst.FlowReturn</classname></link> for the peer pad.</simpara></listitem>
+                <listitem><simpara> A <link linkend="gst-flow-return-constants">Flow Return</link> for the peer pad.</simpara></listitem>
             </varlistentry>
         </variablelist>
         
@@ -1441,7 +1441,7 @@
             </varlistentry>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> A <link linkend="class-gstflowreturn"><classname>gst.FlowReturn</classname></link> from the peer pad.</simpara></listitem>
+                <listitem><simpara> A <link linkend="gst-flow-return-constants">Flow Return</link> from the peer pad.</simpara></listitem>
             </varlistentry>
         </variablelist>
         
@@ -2039,7 +2039,7 @@
             <varlistentry>
                 <term><parameter>user_data</parameter>&nbsp;:</term>
                 <listitem><simpara>Additional data (if any) specified with the 
-                <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+                <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html#method-gobject--connect"><methodname>connect</methodname>()</ulink> method</simpara></listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>...</parameter>&nbsp;:</term>
@@ -2075,7 +2075,7 @@
             <varlistentry>
                 <term><parameter>user_data</parameter>&nbsp;:</term>
                 <listitem><simpara>Additional data (if any) specified with the 
-                        <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+                <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html#method-gobject--connect"><methodname>connect</methodname>()</ulink> method</simpara></listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>...</parameter>&nbsp;:</term>
@@ -2110,7 +2110,7 @@
             <varlistentry>
                 <term><parameter>user_data</parameter>&nbsp;:</term>
                 <listitem><simpara>Additional data (if any) specified with the 
-                        <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+                <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html#method-gobject--connect"><methodname>connect</methodname>()</ulink> method</simpara></listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>...</parameter>&nbsp;:</term>
@@ -2145,7 +2145,7 @@
             <varlistentry>
                 <term><parameter>user_data</parameter>&nbsp;:</term>
                 <listitem><simpara>Additional data (if any) specified with the 
-                        <link linkend="method-gobject-connect"><methodname>connect</methodname>()</link> method</simpara></listitem>
+                <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html#method-gobject--connect"><methodname>connect</methodname>()</ulink> method</simpara></listitem>
             </varlistentry>
             <varlistentry>
                 <term><parameter>...</parameter>&nbsp;:</term>

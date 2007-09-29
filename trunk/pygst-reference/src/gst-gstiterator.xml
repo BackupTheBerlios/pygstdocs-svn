@@ -18,7 +18,7 @@
         <ooclass><classname>gst.Iterator</classname></ooclass>
 
     <constructorsynopsis language="python">
-        <methodname><link linkend="constructor-gstevent">gst.Iterator</link></methodname>
+        <methodname><link linkend="constructor-gstiterator">gst.Iterator</link></methodname>
         <methodparam></methodparam>
     </constructorsynopsis>
     
@@ -57,6 +57,30 @@
    
 </refsect1>
 
+
+<!-- ******************************** -->
+<!-- BEGIN OF MyClass' CONSTRUCTOR -->
+<!-- ******************************** -->
+
+<refsect1 id="constructor-gstiterator">
+    <title>Constructor</title>
+    
+    <programlisting><constructorsynopsis language="python">
+            <methodname>gst.Iterator</methodname>
+            <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
+        </constructorsynopsis></programlisting>
+    
+    <variablelist>
+        <varlistentry>
+            <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+            <listitem><simpara> The name for the pipeline.</simpara></listitem>
+        </varlistentry>
+    </variablelist>
+    
+    <para>
+        Creates a new pipeline with the given name.
+    </para>
+</refsect1>
 
 <!-- ************************* -->
 <!-- BEGIN OF MyClass' METHODS -->

@@ -18,7 +18,7 @@
         <ooclass><classname>gst.Format</classname></ooclass>
 
     <constructorsynopsis language="python">
-        <methodname><link linkend="constructor-gstformat">gst.Format</link></methodname>
+        <methodname>gst.Format</methodname>
         <methodparam><parameter role="keyword">type</parameter></methodparam>
     </constructorsynopsis>
     </classsynopsis>

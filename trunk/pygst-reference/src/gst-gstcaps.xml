@@ -33,7 +33,11 @@
         <methodparam><parameter role="keyword">structure</parameter></methodparam>
     </methodsynopsis>
     
-    <methodsynopsis language="python">
+     <methodsynopsis language="python">
+        <methodname><link linkend="method-gstcaps--copy">copy</link></methodname>
+    </methodsynopsis>
+    
+     <methodsynopsis language="python">
         <methodname><link linkend="method-gstcaps--copy-nth">copy_nth</link></methodname>
         <methodparam><parameter role="keyword">nth</parameter></methodparam>
     </methodsynopsis>
@@ -136,7 +140,7 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis>+-- <link linkend="class-gobject">gobject.GBoxed</link>
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobjectgboxed.html">gobject.GBoxed</ulink>
     +-- <link linkend="class-gstcaps">gst.Caps</link>
 </synopsis>
 </refsect1>
@@ -238,6 +242,24 @@
         <para>
             The <methodname>append_structure</methodname>() method appends structure to caps. 
             The structure is not copied; caps becomes the owner of structure.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstcaps--copy">
+        <title>gst.Caps.copy</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>copy</methodname>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The new <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>copy</methodname>() method creates a new <link linkend="class-gstcaps"><classname>gst.Caps</classname></link>.
         </para>
     </refsect2>
     
