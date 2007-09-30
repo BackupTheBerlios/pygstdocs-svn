@@ -34,35 +34,36 @@ src/gst-constants.xml
 
 ref-html: gst-reference ${REFERENCELINKS} ${XSLFILES} ${REFERENCEXMLFILES}
 	xsltproc --nonet --xinclude -o pygst-reference/ \
-                 --stringparam gstdoc.bookname gst-reference \
-                 --stringparam gstdoc.version 0.10 \
-		xsl/ref-html-style.xsl src/gst-reference.xml
+    --stringparam gstdoc.bookname gst-reference \
+    --stringparam gstdoc.version 0.10 \
+      xsl/ref-html-style.xsl src/gst-reference.xml
 	cp var/* pygst-reference
 
 ref-srcdist:
 	tar czf pygst-reference.docbook.tar.gz ${REFERENCEXMLFILES} ${XSLFILES} \
-		src/ChangeLog Makefile
+    src/ChangeLog Makefile
 
 ref-dist:
 	tar czf pygst-reference.tar.gz pygst-reference
 
 gst-reference:
-	-mkdir pygst-reference
+	mkdir pygst-reference
 
 src/ChangeLog.xml: src/ChangeLog
 	(echo '<literallayout>'; \
-		sed \
-		-e 's/&/\&amp;/g' \
-		-e 's/</\&lt;/g' \
-		-e 's/>/\&gt;/g' \
-		-e 's/^	\* \([^ ]*\) \(.*\)$$/	* <filename>\1<\/filename> \2/' \
-		-e 's/	/        /' \
-		-e '/^20[0-9][0-9]-[0-9][0-9]-.*$$/s/^\(.*\)$$/<emphasis role="bold">\1<\/emphasis>/' \
-		-e 's/(\([^)]*\))/(<emphasis>\1<\/emphasis>)/g' \
-		src/ChangeLog; \
-		echo '</literallayout>') \
-	> src/ChangeLog.xml
+  sed \
+    -e 's/&/\&amp;/g' \
+    -e 's/</\&lt;/g' \
+    -e 's/>/\&gt;/g' \
+    -e 's/^	\* \([^ ]*\) \(.*\)$$/	* <filename>\1<\/filename> \2/' \
+    -e 's/	/        /' \
+    -e '/^20[0-9][0-9]-[0-9][0-9]-.*$$/s/^\(.*\)$$/<emphasis role="bold">\1<\/emphasis>/' \
+    -e 's/(\([^)]*\))/(<emphasis>\1<\/emphasis>)/g' \
+    src/ChangeLog; \
+    echo '</literallayout>') \
+  > src/ChangeLog.xml
 
 clean:
 	-rm -rf pygst-reference
 	-rm -rf pygst-reference.tgz pygst-reference.docbook.tgz
+
