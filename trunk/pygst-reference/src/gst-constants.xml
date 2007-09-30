@@ -1174,11 +1174,12 @@
    <refsect2 id="gst-pad-presence-constants">
     <title>GST Pad Presence Constants</title>
       <para>The Pad Presence ...</para>
-        <varlistentry>
+        <variablelist>
+          <varlistentry>
             <term><methodname>gst.PAD_ALWAYS</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
-        <varlistentry>
+          <varlistentry>
             <term><methodname>gst.PAD_REQUEST</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
@@ -1186,6 +1187,7 @@
             <term><methodname>gst.PAD_SOMETIMES</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
+        </variablelist>
   </refsect2>
   
   <refsect2 id="gst-pad-template-constants">
