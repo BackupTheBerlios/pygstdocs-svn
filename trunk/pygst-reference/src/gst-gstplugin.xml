@@ -4,7 +4,7 @@
 <refentry id="class-gstplugin">
     <refnamediv>
         <refname>gst.Plugin</refname>
-        <refpurpose>Describe your class here.</refpurpose>
+        <refpurpose>Container for features loaded from a shared object module</refpurpose>
     </refnamediv>
 
 <!-- *************************** -->
@@ -25,87 +25,30 @@
     
     <methodsynopsis language="python">
         <methodname><link linkend="method-gstplugin--get_description">get_description</link></methodname>
-        <methodparam></methodparam>
     </methodsynopsis>
   
     <methodsynopsis language="python">
         <methodname><link linkend="method-gstplugin--get_filename">get_filename</link></methodname>
-        <methodparam><parameter role="keyword">format</parameter></methodparam>
-        <methodparam><parameter role="keyword">minsize</parameter></methodparam>
-        <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
-        <methodparam><parameter role="keyword">async</parameter></methodparam>
     </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstplugin--get_name">get_name</link></methodname>
+    </methodsynopsis>
+    
 </classsynopsis>
 
 <programlisting>
-    <emphasis role="bold">Functions</emphasis>
+<emphasis role="bold">Functions</emphasis>
     
 <methodsynopsis language="python"><methodname><link linkend="function-gstplugin--plugin_load_by_name">gst.plugin_load_by_name</link></methodname>
-  <methodparam><parameter role="keyword">format</parameter></methodparam>
-  <methodparam><parameter role="keyword">minsize</parameter></methodparam>
-  <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
-</methodsynopsis>
-
-<methodsynopsis language="python"><methodname><link linkend="function-gstplugin--plugin_load_file">gst.plugin_load_file</link></methodname>
-  <methodparam><parameter role="keyword">format</parameter></methodparam>
-  <methodparam><parameter role="keyword">minsize</parameter></methodparam>
-  <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
+<methodparam><parameter role="keyword">name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+<methodname><link linkend="function-gstplugin--plugin_load_file">gst.plugin_load_file</link></methodname>
+<methodparam><parameter role="keyword">filename</parameter></methodparam>
+<methodparam><parameter role="keyword">error</parameter></methodparam>
 </methodsynopsis>
 
 </programlisting>
-</refsect1>
 
-
-<!-- *************************** -->
-<!-- BEGIN OF MyClass' Properties -->
-<!-- *************************** -->
-
-<refsect1>
-    <title>Properties</title>
-    <blockquote role="properties">
-        <informaltable pgwide="1" frame="none">
-            <tgroup cols="3">
-                <tbody>
-                    <row valign="top">
-                        <entry><methodname>value_name</methodname></entry>
-                        <entry>Read</entry>
-                        <entry>The name of the type of the format, eg GST_FORMAT_TIME.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry><methodname>value_nick</methodname></entry>
-                        <entry>Read/Write</entry>
-                        <entry>The nick of the type of the format, eg time.</entry>
-                    </row>
-                </tbody>
-            </tgroup>
-        </informaltable>
-    </blockquote>
-</refsect1>
-
-<!-- *************************** -->
-<!-- BEGIN OF MyClass' Attributes -->
-<!-- *************************** -->
-
-<refsect1>
-    <title>Attributes</title>
-    <blockquote role="properties">
-        <informaltable pgwide="1" frame="none">
-            <tgroup cols="3">
-                <tbody>
-                    <row valign="top">
-                        <entry><methodname>value_name</methodname></entry>
-                        <entry>Read</entry>
-                        <entry>The name of the type of the format, eg GST_FORMAT_TIME.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry><methodname>value_nick</methodname></entry>
-                        <entry>Read/Write</entry>
-                        <entry>The nick of the type of the format, eg time.</entry>
-                    </row>
-                </tbody>
-            </tgroup>
-        </informaltable>
-    </blockquote>
 </refsect1>
 
  
@@ -116,42 +59,10 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis>+-- <link linkend="class-gstminiobject">gst.MiniObject</link>
-    +-- <link linkend="class-gstevent">gst.Event</link>
+<synopsis><ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
+    +-- <link linkend="class-gstobject">gst.Object</link>
+        +-- <link linkend="class-gstplugin">gst.Plugin</link>
 </synopsis>
-</refsect1>
-
-<!-- ********************************* -->
-<!-- BEGIN OF MyClass' SIGNAL PROTOTYPES -->
-<!-- ********************************* -->
-
-<refsect1>
-    <title>Signal Prototypes</title>
-    <variablelist>
-        <varlistentry>
-            <term><link linkend="signal-gstbin--element-added">"element-added"</link></term>
-            <listitem>
-                <methodsynopsis language="python"><methodname>callback</methodname>
-                    <methodparam><parameter>gstbin</parameter></methodparam>
-                    <methodparam><parameter>element</parameter></methodparam>
-                    <methodparam><parameter>user_data</parameter></methodparam>
-                    <methodparam><parameter>...</parameter></methodparam>
-                </methodsynopsis>
-            </listitem>
-        </varlistentry>
-        
-        <varlistentry>
-            <term><link linkend="signal-gstbin--element-removed">"element-removed"</link></term>
-            <listitem>
-                <methodsynopsis language="python"><methodname>callback</methodname>
-                    <methodparam><parameter>gstbin</parameter></methodparam>
-                    <methodparam><parameter>element</parameter></methodparam>
-                    <methodparam><parameter>user_data</parameter></methodparam>
-                    <methodparam><parameter>...</parameter></methodparam>
-                </methodsynopsis>
-            </listitem>
-        </varlistentry>
-    </variablelist>
 </refsect1>
 
 
@@ -159,15 +70,31 @@
 <!-- BEGIN OF MyClass' DESCRIPTION -->
 <!-- ***************************** -->
 
-<refsect1 id="description-gstevent">
+<refsect1 id="description-gstplugin">
     <title>Description</title>
 
     <para>
-        The event classes are used to construct and query events.
+        GStreamer is extensible, so gst.Element instances can be loaded at runtime. A plugin system can 
+        provide one or more of the basic GStreamer gst.PluginFeature subclasses.
     </para>
     <para>
-        Events are usually created with gst.event_new_*() which takes the extra event parameters as arguments. 
-        Events can be parsed with their respective gst.Event.parse_*() methods.
+       A plugin should export a symbol plugin_desc that is a struct of type gst.PluginDesc. 
+       The plugin loader will check the version of the core library the plugin was linked against 
+       and will create a new GstPlugin. It will then call the gst.PluginInitFunc function that was provided 
+       in the plugin_desc.
+    </para>
+    <para>
+        Once you have a handle to a gst.Plugin (e.g. from the gst.RegistryPool), you can add any object 
+        that subclasses GstPluginFeature.
+    </para>
+    <para>
+        Use gst_plugin_find_feature() and gst_plugin_get_feature_list() to find features in a plugin.
+    </para>
+    <para>
+        Usually plugins are always automaticlly loaded so you don't need to call gst_plugin_load() 
+        explicitly to bring it into memory. There are options to statically link plugins to an app or
+        even use GStreamer without a plugin repository in which case gst_plugin_load() can be needed
+        to bring the plugin into memory.
     </para>
 </refsect1>
 
@@ -187,12 +114,12 @@
     <variablelist>
         <varlistentry>
             <term><parameter role="keyword">name</parameter>&nbsp;:</term>
-            <listitem><simpara> The name for the pipeline.</simpara></listitem>
+            <listitem><simpara> The name for the plugin.</simpara></listitem>
         </varlistentry>
     </variablelist>
     
     <para>
-        Creates a new pipeline with the given name.
+        Creates a new plugin with the given name.
     </para>
 </refsect1>
 
@@ -214,12 +141,12 @@
         <variablelist>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> The structure of the event..</simpara></listitem>
+                <listitem><simpara> the long name of the plugin.</simpara></listitem>
             </varlistentry>
         </variablelist>
       
         <para>
-            The <methodname>get_structure</methodname>() method accesses the structure of the event.
+            The <methodname>get_description</methodname>() method gets the long descriptive name of the plugin.
         </para>
     </refsect2>
 
@@ -227,84 +154,67 @@
         <title>gst.Plugin.get_filename</title>
         <programlisting><methodsynopsis language="python">
             <methodname>get_filename</methodname>
-            <methodparam><parameter role="keyword">format</parameter></methodparam>
-            <methodparam><parameter role="keyword">minsize</parameter></methodparam>
-            <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
-            <methodparam><parameter role="keyword">async</parameter></methodparam>
         </methodsynopsis></programlisting>
       
         <variablelist>
-            <varlistentry>
-                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
-                <listitem><simpara> The format.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">minsize</parameter>&nbsp;:</term>
-                <listitem><simpara> The minsize.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">maxsize</parameter>&nbsp;:</term>
-                <listitem><simpara> The maxsize.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">async</parameter>&nbsp;:</term>
-                <listitem><simpara> The async flag.</simpara></listitem>
+             <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the filename of the plugin.</simpara></listitem>
             </varlistentry>
         </variablelist>
 
         <para>
-            The <methodname>parse_buffer_size</methodname>() method gets the format, minsize, maxsize and async-flag in the buffersize event.
+            The <methodname>get_filename</methodname>() method gets the filename of the plugin.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstplugin--get_name">
+        <title>gst.Plugin.get_name</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_name</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the name of the plugin.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>get_name</methodname>() method gets the short name of the plugin.
         </para>
     </refsect2>
   
-  </refsect1>
+</refsect1>
 
-  <!-- ************************** -->
-  <!-- BEGIN OF MyClass' FUNCTIONS -->
-  <!-- ************************** --> 
+<!-- ************************** -->
+<!-- BEGIN OF MyClass' FUNCTIONS -->
+<!-- ************************** --> 
   
-    <refsect1>
+<refsect1>
         <title>Functions</title>
       
         <refsect2 id="function-gstplugin--plugin_load_by_name">
             <title>gst.plugin_load_by_name</title>
             <programlisting><methodsynopsis language="python">
                 <methodname>plugin_load_by_name</methodname>
-                <methodparam><parameter role="keyword">format</parameter></methodparam>
-                <methodparam><parameter role="keyword">minsize</parameter></methodparam>
-                <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
-                <methodparam><parameter role="keyword">async</parameter></methodparam>
+                <methodparam><parameter role="keyword">name</parameter></methodparam>
             </methodsynopsis></programlisting>
           
             <variablelist>
                 <varlistentry>
-                    <term><parameter role="keyword">format</parameter>&nbsp;:</term>
-                    <listitem><simpara> The buffer format.</simpara></listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term><parameter role="keyword">minsize</parameter>&nbsp;:</term>
-                    <listitem><simpara> The minimum buffer size.</simpara></listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term><parameter role="keyword">maxsize</parameter>&nbsp;:</term>
-                    <listitem><simpara> The maximum buffer size.</simpara></listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term><parameter role="keyword">async</parameter>&nbsp;:</term>
-                    <listitem><simpara> The thread behavior.</simpara></listitem>
+                    <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+                    <listitem><simpara> The name of the plugin to load.</simpara></listitem>
                 </varlistentry>
                 <varlistentry>
                     <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                    <listitem><simpara> The new <link linkend="class-gstevent"><classname>gst.Event</classname></link>.</simpara></listitem>
+                    <listitem><simpara> The new plugin or None.</simpara></listitem>
                 </varlistentry>
             </variablelist>
           
             <para>
-                The <methodname>event_new_buffer_size</methodname>() function creates a new buffersize event. 
-                The event is sent downstream and notifies elements that they should provide a buffer of the specified dimensions.
-            </para>
-            <para>
-                When the async flag is set, a thread boundary is prefered.
+                The <methodname>plugin_load_by_name</methodname>() function loads the named plugin. Refs the plugin.
             </para>
         </refsect2>
         
@@ -312,46 +222,33 @@
             <title>gst.plugin_load_file</title>
             <programlisting><methodsynopsis language="python">
                 <methodname>plugin_load_file</methodname>
-                <methodparam><parameter role="keyword">format</parameter></methodparam>
-                <methodparam><parameter role="keyword">minsize</parameter></methodparam>
-                <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
-                <methodparam><parameter role="keyword">async</parameter></methodparam>
+                <methodparam><parameter role="keyword">filename</parameter></methodparam>
+                <methodparam><parameter role="keyword">error</parameter></methodparam>
             </methodsynopsis></programlisting>
           
             <variablelist>
                 <varlistentry>
-                    <term><parameter role="keyword">format</parameter>&nbsp;:</term>
-                    <listitem><simpara> The buffer format.</simpara></listitem>
+                    <term><parameter role="keyword">filename</parameter>&nbsp;:</term>
+                    <listitem><simpara> the plugin filename to load</simpara></listitem>
                 </varlistentry>
                 <varlistentry>
-                    <term><parameter role="keyword">minsize</parameter>&nbsp;:</term>
-                    <listitem><simpara> The minimum buffer size.</simpara></listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term><parameter role="keyword">maxsize</parameter>&nbsp;:</term>
-                    <listitem><simpara> The maximum buffer size.</simpara></listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term><parameter role="keyword">async</parameter>&nbsp;:</term>
-                    <listitem><simpara> The thread behavior.</simpara></listitem>
+                    <term><parameter role="keyword">error</parameter>&nbsp;:</term>
+                    <listitem><simpara> a NULL-valued GError</simpara></listitem>
                 </varlistentry>
                 <varlistentry>
                     <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                    <listitem><simpara> The new <link linkend="class-gstevent"><classname>gst.Event</classname></link>.</simpara></listitem>
+                    <listitem><simpara> A reference to the existing loaded gst.Plugin, a reference to the newly-loaded gst.Plugin, 
+                    or None if an error occurred..</simpara></listitem>
                 </varlistentry>
             </variablelist>
           
             <para>
-                The <methodname>event_new_buffer_size</methodname>() function creates a new buffersize event. 
-                The event is sent downstream and notifies elements that they should provide a buffer of the specified dimensions.
-            </para>
-            <para>
-                When the async flag is set, a thread boundary is prefered.
+                The <methodname>plugin_load_file</methodname>() function loads the given plugin and refs it. Caller needs to unref after use.
             </para>
         </refsect2>
         
         
-    </refsect1>
+</refsect1>
     
  
 </refentry>

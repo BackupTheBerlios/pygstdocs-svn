@@ -29,8 +29,8 @@
     <xi:include href="gst-gstpluginfeature.xml"/>
     <xi:include href="gst-gstquery.xml"/>
     <xi:include href="gst-gststructure.xml"/>
-    <xi:include href="gst-gsttask.xml"/>
     <xi:include href="gst-gstsystemclock.xml"/>
+    <xi:include href="gst-gsttask.xml"/>
     <xi:include href="gst-functions.xml"/>
     <xi:include href="gst-constants.xml"/>
 

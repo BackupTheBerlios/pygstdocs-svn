@@ -5,7 +5,7 @@
 <refentry id="class-gsttask">
     <refnamediv>
         <refname>gst.Task</refname>
-        <refpurpose>Describe your class here.</refpurpose>
+        <refpurpose>Abstraction of GStreamer streaming threads.</refpurpose>
     </refnamediv>
 
 
@@ -17,7 +17,7 @@
     <title>Synopsis</title>
 
     <classsynopsis language="python">
-        <ooclass><classname>gst.MyClass</classname></ooclass>
+        <ooclass><classname>gst.Task</classname></ooclass>
         <ooclass><classname><link linkend="class-gstobject">gst.Object</link></classname></ooclass>
 
     <constructorsynopsis language="python">
@@ -27,72 +27,13 @@
     
     <methodsynopsis language="python">
         <methodname><link linkend="method-gsttask--join">join</link></methodname>
-        <methodparam></methodparam>
     </methodsynopsis>
   
     <methodsynopsis language="python">
         <methodname><link linkend="method-gsttask--pause">pause</link></methodname>
-        <methodparam><parameter role="keyword">format</parameter></methodparam>
-        <methodparam><parameter role="keyword">minsize</parameter></methodparam>
-        <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
-        <methodparam><parameter role="keyword">async</parameter></methodparam>
     </methodsynopsis>
 </classsynopsis>
 
-
-</refsect1>
-
-
-<!-- *************************** -->
-<!-- BEGIN OF MyClass' Properties -->
-<!-- *************************** -->
-
-<refsect1>
-    <title>Properties</title>
-    <blockquote role="properties">
-        <informaltable pgwide="1" frame="none">
-            <tgroup cols="3">
-                <tbody>
-                    <row valign="top">
-                        <entry><methodname>value_name</methodname></entry>
-                        <entry>Read</entry>
-                        <entry>The name of the type of the format, eg GST_FORMAT_TIME.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry><methodname>value_nick</methodname></entry>
-                        <entry>Read/Write</entry>
-                        <entry>The nick of the type of the format, eg time.</entry>
-                    </row>
-                </tbody>
-            </tgroup>
-        </informaltable>
-    </blockquote>
-</refsect1>
-
-<!-- *************************** -->
-<!-- BEGIN OF MyClass' Attributes -->
-<!-- *************************** -->
-
-<refsect1>
-    <title>Attributes</title>
-    <blockquote role="properties">
-        <informaltable pgwide="1" frame="none">
-            <tgroup cols="3">
-                <tbody>
-                    <row valign="top">
-                        <entry><methodname>value_name</methodname></entry>
-                        <entry>Read</entry>
-                        <entry>The name of the type of the format, eg GST_FORMAT_TIME.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry><methodname>value_nick</methodname></entry>
-                        <entry>Read/Write</entry>
-                        <entry>The nick of the type of the format, eg time.</entry>
-                    </row>
-                </tbody>
-            </tgroup>
-        </informaltable>
-    </blockquote>
 </refsect1>
 
  
@@ -103,43 +44,10 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis>+-- <link linkend="class-gstobject">gst.Object</link>
-    +-- <link linkend="class-gstevent">gst.Event</link>
+<synopsis><ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
+    +-- <link linkend="class-gstobject">gst.Object</link>
+        +-- <link linkend="class-gsttask">gst.Task</link>
 </synopsis>
-</refsect1>
-
-
-<!-- ********************************* -->
-<!-- BEGIN OF MyClass' SIGNAL PROTOTYPES -->
-<!-- ********************************* -->
-
-<refsect1>
-    <title>Signal Prototypes</title>
-    <variablelist>
-        <varlistentry>
-            <term><link linkend="signal-gstbin--element-added">"element-added"</link></term>
-            <listitem>
-                <methodsynopsis language="python"><methodname>callback</methodname>
-                    <methodparam><parameter>gstbin</parameter></methodparam>
-                    <methodparam><parameter>element</parameter></methodparam>
-                    <methodparam><parameter>user_data</parameter></methodparam>
-                    <methodparam><parameter>...</parameter></methodparam>
-                </methodsynopsis>
-            </listitem>
-        </varlistentry>
-        
-        <varlistentry>
-            <term><link linkend="signal-gstbin--element-removed">"element-removed"</link></term>
-            <listitem>
-                <methodsynopsis language="python"><methodname>callback</methodname>
-                    <methodparam><parameter>gstbin</parameter></methodparam>
-                    <methodparam><parameter>element</parameter></methodparam>
-                    <methodparam><parameter>user_data</parameter></methodparam>
-                    <methodparam><parameter>...</parameter></methodparam>
-                </methodsynopsis>
-            </listitem>
-        </varlistentry>
-    </variablelist>
 </refsect1>
 
 
@@ -147,15 +55,37 @@
 <!-- BEGIN OF MyClass' DESCRIPTION -->
 <!-- ***************************** -->
 
-<refsect1 id="description-gstevent">
+<refsect1 id="description-gsttask">
     <title>Description</title>
 
     <para>
-        The event classes are used to construct and query events.
+        A gst.Task is used by gst.Element and gst.Pad to provide the data passing threads in a gst.Pipeline.
     </para>
     <para>
-        Events are usually created with gst.event_new_*() which takes the extra event parameters as arguments. 
-        Events can be parsed with their respective gst.Event.parse_*() methods.
+        A gst.Pad will typically start a gst.Task to push or pull data to/from the peer pads. Most source 
+        elements start a GstTask to push data. In some cases a demuxer element can start a gst.Task to pull 
+        data from a peer element. This is typically done when the demuxer can perform random access on the 
+        upstream peer element for improved performance.
+    </para>
+    <para>
+        Although convenience functions exist on GstPad to start/pause/stop tasks, it might sometimes be 
+        needed to create a gst.Task manually if it is not related to a gst.Pad.
+    </para>
+     <para>
+        Before the gst.Task can be run, it needs a GStaticRecMutex that can be set with set_lock().
+    </para>
+     <para>
+        The task can be started, paused and stopped with start(), pause() and 
+        stop() respectively.
+    </para>
+     <para>
+        A gst.Task will repeadedly call the gst.TaskFunction with the user data that was provided when 
+        creating the task with create(). Before calling the function it will acquire the provided 
+        lock.
+    </para>
+     <para>
+        Stopping a task with stop() will not immediatly make sure the task is not running 
+        anymore. Use join() to make sure the task is completely stopped and the thread is stopped.
     </para>
 </refsect1>
 
@@ -169,15 +99,7 @@
     
     <programlisting><constructorsynopsis language="python">
             <methodname>gst.Task</methodname>
-            <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
         </constructorsynopsis></programlisting>
-    
-    <variablelist>
-        <varlistentry>
-            <term><parameter role="keyword">name</parameter>&nbsp;:</term>
-            <listitem><simpara> The name for the pipeline.</simpara></listitem>
-        </varlistentry>
-    </variablelist>
     
     <para>
         Creates a new pipeline with the given name.
@@ -196,33 +118,21 @@
         <title>gst.Task.join</title>
         <programlisting><methodsynopsis language="python">
             <methodname>join</methodname>
-            <methodparam><parameter role="keyword">format</parameter></methodparam>
-            <methodparam><parameter role="keyword">minsize</parameter></methodparam>
-            <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
-            <methodparam><parameter role="keyword">async</parameter></methodparam>
         </methodsynopsis></programlisting>
       
         <variablelist>
-            <varlistentry>
-                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
-                <listitem><simpara> The format.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">minsize</parameter>&nbsp;:</term>
-                <listitem><simpara> The minsize.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">maxsize</parameter>&nbsp;:</term>
-                <listitem><simpara> The maxsize.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">async</parameter>&nbsp;:</term>
-                <listitem><simpara> The async flag.</simpara></listitem>
+           <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> True if the task could be joined. MT safe.</simpara></listitem>
             </varlistentry>
         </variablelist>
 
         <para>
-            The <methodname>parse_buffer_size</methodname>() method gets the format, minsize, maxsize and async-flag in the buffersize event.
+            The <methodname>join</methodname>() method joins task. After this call, it is safe to unref the 
+            task and clean up the lock set with gst_task_set_lock().
+            The task will automatically be stopped with this call.
+            This function cannot be called from within a task function as this would cause a deadlock. 
+            The function will detect this and print a g_warning.
         </para>
     </refsect2>
     
@@ -230,36 +140,21 @@
         <title>gst.Task.pause</title>
         <programlisting><methodsynopsis language="python">
             <methodname>pause</methodname>
-            <methodparam><parameter role="keyword">format</parameter></methodparam>
-            <methodparam><parameter role="keyword">minsize</parameter></methodparam>
-            <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
-            <methodparam><parameter role="keyword">async</parameter></methodparam>
         </methodsynopsis></programlisting>
       
         <variablelist>
-            <varlistentry>
-                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
-                <listitem><simpara> The format.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">minsize</parameter>&nbsp;:</term>
-                <listitem><simpara> The minsize.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">maxsize</parameter>&nbsp;:</term>
-                <listitem><simpara> The maxsize.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">async</parameter>&nbsp;:</term>
-                <listitem><simpara> The async flag.</simpara></listitem>
+           <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> True if the task could be paused. MT safe.</simpara></listitem>
             </varlistentry>
         </variablelist>
 
         <para>
-            The <methodname>parse_buffer_size</methodname>() method gets the format, minsize, maxsize and async-flag in the buffersize event.
+            The <methodname>pause</methodname>() method pauses task. This method can also be called on 
+            a task in the stopped state, in which case a thread will be started and will remain in the
+             paused state. This function does not wait for the task to complete the paused state.
         </para>
     </refsect2>
- 
  
 </refsect1>
     

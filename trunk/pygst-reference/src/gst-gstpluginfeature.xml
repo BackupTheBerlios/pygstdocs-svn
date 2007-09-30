@@ -4,7 +4,7 @@
 <refentry id="class-gstpluginfeature">
     <refnamediv>
         <refname>gst.PluginFeature</refname>
-        <refpurpose>Describe your class here.</refpurpose>
+        <refpurpose>Base class for contents of a gst.Plugin</refpurpose>
     </refnamediv>
 
 <!-- *************************** -->
@@ -12,11 +12,11 @@
 <!-- *************************** -->
 
 <refsect1>
-    <title>Synopsis</title>
+  <title>Synopsis</title>
 
-    <classsynopsis language="python">
-        <ooclass><classname>gst.PluginFeature</classname></ooclass>
-        <ooclass><classname><link linkend="class-gstobject">gst.Object</link></classname></ooclass>
+  <classsynopsis language="python">
+      <ooclass><classname>gst.PluginFeature</classname></ooclass>
+      <ooclass><classname><link linkend="class-gstobject">gst.Object</link></classname></ooclass>
     
      <constructorsynopsis language="python">
         <methodname>gst.PluginFeature</methodname>
@@ -24,74 +24,19 @@
     </constructorsynopsis>
     
     <methodsynopsis language="python">
-        <methodname><link linkend="method-gstpluginfeature--feature_get_name">feature_get_name</link></methodname>
-        <methodparam></methodparam>
+        <methodname><link linkend="method-gstpluginfeature--get_name">get_name</link></methodname>
     </methodsynopsis>
   
     <methodsynopsis language="python">
-        <methodname><link linkend="method-gstpluginfeature--feature_get_rank">feature_get_rank</link></methodname>
-        <methodparam><parameter role="keyword">format</parameter></methodparam>
-        <methodparam><parameter role="keyword">minsize</parameter></methodparam>
-        <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
-        <methodparam><parameter role="keyword">async</parameter></methodparam>
+        <methodname><link linkend="method-gstpluginfeature--get_rank">get_rank</link></methodname>
     </methodsynopsis>
-</classsynopsis>
+    
+
+  </classsynopsis>
   
 
 </refsect1>
 
-
-<!-- *************************** -->
-<!-- BEGIN OF MyClass' Properties -->
-<!-- *************************** -->
-
-<refsect1>
-    <title>Properties</title>
-    <blockquote role="properties">
-        <informaltable pgwide="1" frame="none">
-            <tgroup cols="3">
-                <tbody>
-                    <row valign="top">
-                        <entry><methodname>value_name</methodname></entry>
-                        <entry>Read</entry>
-                        <entry>The name of the type of the format, eg GST_FORMAT_TIME.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry><methodname>value_nick</methodname></entry>
-                        <entry>Read/Write</entry>
-                        <entry>The nick of the type of the format, eg time.</entry>
-                    </row>
-                </tbody>
-            </tgroup>
-        </informaltable>
-    </blockquote>
-</refsect1>
-
-<!-- *************************** -->
-<!-- BEGIN OF MyClass' Attributes -->
-<!-- *************************** -->
-
-<refsect1>
-    <title>Attributes</title>
-    <blockquote role="properties">
-        <informaltable pgwide="1" frame="none">
-            <tgroup cols="3">
-                <tbody>
-                    <row valign="top">
-                        <entry><methodname>value_name</methodname></entry>
-                        <entry>Read</entry>
-                        <entry>The name of the type of the format, eg GST_FORMAT_TIME.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry><methodname>value_nick</methodname></entry>
-                        <entry>Read/Write</entry>
-                        <entry>The nick of the type of the format, eg time.</entry>
-                    </row>
-                </tbody>
-            </tgroup>
-        </informaltable>
-    </blockquote>
-</refsect1>
 
  
 <!-- ************************** -->
@@ -101,42 +46,10 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis>+-- <link linkend="class-gstminiobject">gst.MiniObject</link>
-    +-- <link linkend="class-gstevent">gst.Event</link>
+<synopsis><ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
+    +-- <link linkend="class-gstobject">gst.Object</link>
+        +-- <link linkend="class-gstpluginfeature">gst.PluginFeature</link>
 </synopsis>
-</refsect1>
-
-<!-- ********************************* -->
-<!-- BEGIN OF MyClass' SIGNAL PROTOTYPES -->
-<!-- ********************************* -->
-
-<refsect1>
-    <title>Signal Prototypes</title>
-    <variablelist>
-        <varlistentry>
-            <term><link linkend="signal-gstbin--element-added">"element-added"</link></term>
-            <listitem>
-                <methodsynopsis language="python"><methodname>callback</methodname>
-                    <methodparam><parameter>gstbin</parameter></methodparam>
-                    <methodparam><parameter>element</parameter></methodparam>
-                    <methodparam><parameter>user_data</parameter></methodparam>
-                    <methodparam><parameter>...</parameter></methodparam>
-                </methodsynopsis>
-            </listitem>
-        </varlistentry>
-        
-        <varlistentry>
-            <term><link linkend="signal-gstbin--element-removed">"element-removed"</link></term>
-            <listitem>
-                <methodsynopsis language="python"><methodname>callback</methodname>
-                    <methodparam><parameter>gstbin</parameter></methodparam>
-                    <methodparam><parameter>element</parameter></methodparam>
-                    <methodparam><parameter>user_data</parameter></methodparam>
-                    <methodparam><parameter>...</parameter></methodparam>
-                </methodsynopsis>
-            </listitem>
-        </varlistentry>
-    </variablelist>
 </refsect1>
 
 
@@ -148,11 +61,7 @@
     <title>Description</title>
 
     <para>
-        The event classes are used to construct and query events.
-    </para>
-    <para>
-        Events are usually created with gst.event_new_*() which takes the extra event parameters as arguments. 
-        Events can be parsed with their respective gst.Event.parse_*() methods.
+        This is a base class for anything that can be added to a gst.Plugin.
     </para>
 </refsect1>
 
@@ -164,56 +73,39 @@
 <refsect1>
     <title>Methods</title>
 
-    <refsect2 id="method-gstpluginfeature--feature_get_name">
-        <title>gst.PluginFeature.feature_get_name</title>
+    <refsect2 id="method-gstpluginfeature--get_name">
+        <title>gst.PluginFeature.get_name</title>
         <programlisting><methodsynopsis language="python">
-            <methodname>feature_get_name</methodname>
-            <methodparam></methodparam>
+            <methodname>get_name</methodname>
         </methodsynopsis></programlisting>
     
         <variablelist>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> The structure of the event..</simpara></listitem>
+                <listitem><simpara> The name of the feature.</simpara></listitem>
             </varlistentry>
         </variablelist>
       
         <para>
-            The <methodname>get_structure</methodname>() method accesses the structure of the event.
+            The <methodname>get_name</methodname>() method gets the name of the feature.
         </para>
     </refsect2>
 
-    <refsect2 id="method-gstpluginfeature--feature_get_rank">
-        <title>gst.PluginFeature.feature_get_rank</title>
+    <refsect2 id="method-gstpluginfeature--get_rank">
+        <title>gst.PluginFeature.get_rank</title>
         <programlisting><methodsynopsis language="python">
-            <methodname>feature_get_rank</methodname>
-            <methodparam><parameter role="keyword">format</parameter></methodparam>
-            <methodparam><parameter role="keyword">minsize</parameter></methodparam>
-            <methodparam><parameter role="keyword">maxsize</parameter></methodparam>
-            <methodparam><parameter role="keyword">async</parameter></methodparam>
+            <methodname>get_rank</methodname>
         </methodsynopsis></programlisting>
       
         <variablelist>
             <varlistentry>
-                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
-                <listitem><simpara> The format.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">minsize</parameter>&nbsp;:</term>
-                <listitem><simpara> The minsize.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">maxsize</parameter>&nbsp;:</term>
-                <listitem><simpara> The maxsize.</simpara></listitem>
-            </varlistentry>
-            <varlistentry>
-                <term><parameter role="keyword">async</parameter>&nbsp;:</term>
-                <listitem><simpara> The async flag.</simpara></listitem>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The rank of the feature.</simpara></listitem>
             </varlistentry>
         </variablelist>
 
         <para>
-            The <methodname>parse_buffer_size</methodname>() method gets the format, minsize, maxsize and async-flag in the buffersize event.
+            The <methodname>get_rank</methodname>() method gets the rank of the feature.
         </para>
     </refsect2>
   
