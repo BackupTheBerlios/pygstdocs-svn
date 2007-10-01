@@ -64,7 +64,7 @@
     <variablelist>
         <varlistentry>
             <term><parameter role="keyword">flag</parameter>&nbsp;:</term>
-            <listitem><simpara> A buffer flag, see <link linkend="gst-buffer-constants">gst.BufferFlag() constants</link>.</simpara></listitem>
+            <listitem><simpara> A buffer flag, see <link linkend="gst-buffer-flag-constants">gst.BufferFlag() constants</link>.</simpara></listitem>
         </varlistentry>
         <varlistentry>
             <term><emphasis>Returns</emphasis>&nbsp;:</term>

@@ -18,26 +18,32 @@
 <link linkend="gst-allocate-constants">GST Allocate Type Constants</link>
 <link linkend="gst-association-constants">GST Assotiation Flag Constants</link>
 <link linkend="gst-bin-constants">GST Bin Flag Constants</link>
-<link linkend="gst-buffer-constants">GST Buffer Flag Constants</link>
-<link linkend="gst-bus-constants">GST Bus Type and Flag Constants</link>
+<link linkend="gst-buffer-copy-constants">GST Buffer Copy Constants</link>
+<link linkend="gst-buffer-flag-constants">GST Buffer Flag Constants</link>
+<link linkend="gst-bus-flag-constants">GST Bus Flag Constants</link>
+<link linkend="gst-bus-sync-constants">GST Bus Sync Constants</link>
 <link linkend="gst-caps-constants">GST Caps Flag Constants</link>
-<link linkend="gst-clock-constants">GST Clock Type and Flag Constants</link>
+<link linkend="gst-clock-flag-constants">GST Clock Flag Constants</link>
+<link linkend="gst-clock-return-constants">GST Clock Return Constants</link>
 <link linkend="gst-core-constants">GST Core Type Constants</link>
 <link linkend="gst-debug-constants">GST Debug Type Constants</link>
 <link linkend="gst-element-constants">GST Element Flag Constants</link>
-<link linkend="gst-event-constants">GST Event Type Constants</link>
+<link linkend="gst-event-type-constants">GST Event Type Constants</link>
+<link linkend="gst-event-type-flag-constants">GST Event Type Flag Constants</link>
 <link linkend="gst-flow-return-constants">GST Flow Return Constants</link>
 <link linkend="gst-format-constants">GST Format Type Constants</link>
 <link linkend="gst-index-constants">GST Index Type Constants</link>
 <link linkend="gst-interpolate-constants">GST Interpolate Type Constants</link>
 <link linkend="gst-iterator-constants">GST Iterator Type Constants</link>
+<link linkend="gst-iterator-item-constants">GST Iterator Item Constants</link>
 <link linkend="gst-level-constants">GST Level Type Constants</link>
 <link linkend="gst-library-constants">GST Library Type Constants</link>
 <link linkend="gst-message-constants">GST Message Type Constants</link>
 <link linkend="gst-mini-object-constants">GST MiniObject Flag Constants</link>
 <link linkend="gst-object-constants">GST Object Type Constants</link>
+<link linkend="gst-pad-constants">GST Pad Constants</link>
 <link linkend="gst-pad-direction-constants">GST Pad Direction Constants</link>
-<link linkend="gst-pad-constants">GST Pad Type Constants</link>
+<link linkend="gst-pad-link-constants">GST Pad Link Constants</link>
 <link linkend="gst-pad-presence-constants">GST Pad Presence Constants</link>
 <link linkend="gst-pad-template-constants">GST Pad Template Constants</link>
 <link linkend="gst-parse-constants">GST Parse Error Constants</link>
@@ -61,29 +67,27 @@
 
 <refsect1>
   <title>Description</title>
-     
+    
     <!-- ************************ -->
-
     <!-- BEGIN OF GST Activate Type Constants -->
     <!-- ************************ -->
 
     <refsect2 id="gst-activate-constants">
       <title>GST Activate Type Constants</title>
-        <para>The Activate Types ...</para>
+        <para>The status of a GstPad. After activating a pad, which usually happens when the parent 
+        element goes from READY to PAUSED, the GstActivateMode defines if the pad operates in push or pull mode.</para>
         <variablelist>
           <varlistentry>
-
              <term><methodname>gst.ACTIVATE_NONE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Pad will not handle dataflow</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.ACTIVATE_PULL</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Pad handles dataflow in downstream push mode</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.ACTIVATE_PUSH</methodname></term>
-
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Pad handles dataflow in upstream pull mode</simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
@@ -96,16 +100,15 @@
     <refsect2 id="gst-allocate-constants">
 
       <title>GST Allocate Type Constants</title>
-        <para>The Allocate Types ...</para>
+        <para>The Allocate Flags indicating which tracing feature to enable.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.ALLOC_TRACE_LIVE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Trace number of non-freed memory</simpara></listitem>
           </varlistentry>
           <varlistentry>
-
             <term><methodname>gst.ALLOC_TRACE_MEM_LIVE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Trace pointers of unfreed memory</simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
@@ -117,29 +120,28 @@
 
     <refsect2 id="gst-association-constants">
       <title>GST Association Flag Constants</title>
-        <para>The Association Flags ...</para>
+        <para>The Association Flags for an association entry.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.ASSOCIATION_FLAG_DELTA_UNIT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the entry marks a delta unit, a delta unit is one that marks a place where one 
+            can relatively seek to.</simpara></listitem>
           </varlistentry>
-
           <varlistentry>
             <term><methodname>gst.ASSOCIATION_FLAG_KEY_UNIT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the entry marks a key unit, a key unit is one that marks a place where one can 
+            randomly seek to.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.ASSOCIATION_FLAG_LAST</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>extra user defined flags should start here.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.ASSOCIATION_FLAG_NONE</methodname></term>
-
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>no extra flags</simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
-
 
 
     <!-- ************************ -->
@@ -149,11 +151,14 @@
     <refsect2 id="gst-bin-constants">
 
       <title>GST Bin Flag Constants</title>
-        <para>The Bin Flags ...</para>
+        <para>The Bin Flags are a set of flags specific to bins. Most are set/used internally. 
+        They can be checked using the GST_OBJECT_FLAG_IS_SET() macro, and (un)set using GST_OBJECT_FLAG_SET() 
+        and GST_OBJECT_FLAG_UNSET().</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.BIN_FLAG_LAST</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the last enum in the series of flags for bins. Derived classes can use
+             this as first value in a list of flags.</simpara></listitem>
           </varlistentry>
         </variablelist>
 
@@ -161,46 +166,72 @@
 
 
     <!-- ************************ -->
+    <!-- BEGIN OF GST Bin Flag Constants -->
+    <!-- ************************ -->
+
+    <refsect2 id="gst-buffer-copy-constants">
+
+      <title>GST Buffer Copy Constants</title>
+        <para>The Buffer Copy ...</para>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>GST_BUFFER_COPY_CAPS</methodname></term>
+            <listitem><simpara>flag indicating that buffer caps should be copied</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <term><methodname>GST_BUFFER_COPY_FLAGS</methodname></term>
+            <listitem><simpara>flag indicating that buffer flags should be copied</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <term><methodname>GST_BUFFER_COPY_TIMESTAMPS</methodname></term>
+            <listitem><simpara>flag indicating that buffer timestamp, duration, offset and offset_end 
+            should be copied</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+
+    </refsect2>
+    
+    
+    <!-- ************************ -->
     <!-- BEGIN OF GST Buffer Flag Constants -->
     <!-- ************************ -->
 
-    <refsect2 id="gst-buffer-constants">
+    <refsect2 id="gst-buffer-flag-constants">
       <title>GST Buffer Flag Constants</title>
-        <para>The Buffer Flags ...</para>
+        <para>The Buffer Flags are used to describe properties of a gst.Buffer.</para>
 
         <variablelist>
           <varlistentry>
             <term><methodname>gst.BUFFER_FLAG_DELTA_UNIT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>this unit cannot be decoded independently.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.BUFFER_FLAG_DISCONT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the buffer marks a discontinuity in the stream. This typically occurs after 
+            a seek or a dropped buffer from a live or network source.</simpara></listitem>
           </varlistentry>
           <varlistentry>
-
             <term><methodname>gst.BUFFER_FLAG_GAP</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the buffer has been created to fill a gap in the stream.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.BUFFER_FLAG_IN_CAPS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the buffer has been added as a field in a gst.Caps.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.BUFFER_FLAG_LAST</methodname></term>
-
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>additional flags can be added starting from this flag.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.BUFFER_FLAG_PREROLL</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the buffer is part of a preroll and should not be displayed.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.BUFFER_FLAG_READONLY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the buffer is read-only. This means the data of the buffer should not be 
+            modified. The metadata might still be modified.</simpara></listitem>
           </varlistentry>
           <varlistentry>
-
             <term><methodname>gst.BUFFER_OFFSET_NONE</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
@@ -212,141 +243,159 @@
     <!-- BEGIN OF GST Bus Type and Flag Constants -->
     <!-- ************************ -->
 
-    <refsect2 id="gst-bus-constants">
-      <title>GST Bus Type and Flag Constants</title>
-        <para>The Bus Type and Flags ...</para>
+    <refsect2 id="gst-bus-flag-constants">
+      <title>GST Bus Flag Constants</title>
+        <para>The Bus Flags that a bus may have.</para>
+        
         <variablelist>
           <varlistentry>
-            <term><methodname>gst.BUS_ASYNC</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-
-          <varlistentry>
-            <term><methodname>gst.BUS_DROP</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
             <term><methodname>gst.BUS_FLAG_LAST</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>offset to define more flags</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.BUS_FLUSHING</methodname></term>
+            <listitem><simpara>The bus is currently dropping all messages</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+    
+    
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Bus Type and Flag Constants -->
+    <!-- ************************ -->
 
-            <listitem><simpara></simpara></listitem>
+    <refsect2 id="gst-bus-sync-constants">
+      <title>GST Bus Sync Constants</title>
+        <para>The Bus Sync constants are result values for a gst.BusSyncHandler.</para>
+        
+        <variablelist>
+          <varlistentry>
+            <term><methodname>gst.BUS_ASYNC</methodname></term>
+            <listitem><simpara>pass message to async queue, continue if message is handled</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.BUS_DROP</methodname></term>
+            <listitem><simpara>drop the message</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.BUS_PASS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>pass the message to the async queue</simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
 
 
     <!-- ************************ -->
-
     <!-- BEGIN OF GST Caps Flag Constants -->
     <!-- ************************ -->
 
     <refsect2 id="gst-caps-constants">
       <title>GST Caps Flag Constants</title>
-        <para>The Caps Flags ...</para>
+        <para>The Caps Flags are extra flags for a caps.</para>
+        
         <variablelist>
           <varlistentry>
-
             <term><methodname>gst.CAPS_FLAGS_ANY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Caps has no specific content, but can contain anything.</simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
 
 
     <!-- ************************ -->
-    <!-- BEGIN OF GST Clock Type and Flag Constants -->
+    <!-- BEGIN OF GST Clock Flag Constants -->
     <!-- ************************ -->
 
-    <refsect2 id="gst-clock-constants">
-      <title>GST Clock Type and Flag Constants</title>
-        <para>The Clock Type and Flags ...</para>
+    <refsect2 id="gst-clock-flag-constants">
+      <title>GST Clock Flag Constants</title>
+        <para>The Clock Flags are capabilities of this clock.</para>
+        
         <variablelist>
           <varlistentry>
-            <term><methodname>gst.CLOCK_BADTIME</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-
-          <varlistentry>
-            <term><methodname>gst.CLOCK_BUSY</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.CLOCK_EARLY</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.CLOCK_ENTRY_PERIODIC</methodname></term>
-
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.CLOCK_ENTRY_SINGLE</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.CLOCK_ERROR</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-
             <term><methodname>gst.CLOCK_FLAG_CAN_DO_PERIODIC_ASYNC</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>clock can do async periodic timeout callbacks</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CLOCK_FLAG_CAN_DO_PERIODIC_SYNC</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>clock can do sync periodic timeout requests</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CLOCK_FLAG_CAN_DO_SINGLE_ASYNC</methodname></term>
-
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>clock can do a single async timeout request</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CLOCK_FLAG_CAN_DO_SINGLE_SYNC</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>clock can do a single sync timeout request</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CLOCK_FLAG_CAN_SET_MASTER</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>clock can be slaved to a master clock</simpara></listitem>
           </varlistentry>
           <varlistentry>
-
             <term><methodname>gst.CLOCK_FLAG_CAN_SET_RESOLUTION</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>clock's resolution can be changed</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CLOCK_FLAG_LAST</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.CLOCK_OK</methodname></term>
-
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.CLOCK_TIME_NONE</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.CLOCK_UNSCHEDULED</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-
-            <term><methodname>gst.CLOCK_UNSUPPORTED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>subclasses can add additional flags starting from this flag</simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
 
 
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Clock Return Constants -->
+    <!-- ************************ -->
+
+    <refsect2 id="gst-clock-return-constants">
+      <title>GST Clock Return Constants</title>
+        <para>The Clock Returns are the return value of a clock operation.</para>
+        
+        <variablelist>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_BADTIME</methodname></term>
+            <listitem><simpara>A bad time was provided to a function.</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_BUSY</methodname></term>
+            <listitem><simpara>The ClockID is busy</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_EARLY</methodname></term>
+            <listitem><simpara>The operation was scheduled too late.</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_ENTRY_PERIODIC</methodname></term>
+            <listitem><simpara>a periodic timeout request</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_ENTRY_SINGLE</methodname></term>
+            <listitem><simpara>a single shot timeout</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_ERROR</methodname></term>
+            <listitem><simpara>An error occured</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_OK</methodname></term>
+            <listitem><simpara>The operation succeded.</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_TIME_NONE</methodname></term>
+            <listitem><simpara>Constant to define an undefined clock time.</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_UNSCHEDULED</methodname></term>
+            <listitem><simpara>The clockID was unscheduled</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_UNSUPPORTED</methodname></term>
+            <listitem><simpara>Operation is not supported</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+    
+    
     <!-- ************************ -->
     <!-- BEGIN OF GST Core Type Constants -->
     <!-- ************************ -->
@@ -354,12 +403,12 @@
     <refsect2 id="gst-core-constants">
       <title>GST Core Type Constants</title>
         <para>The Core Types ...</para>
+        
         <variablelist>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
-
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_CAPS</methodname></term>
             <listitem><simpara></simpara></listitem>
@@ -370,7 +419,6 @@
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_EVENT</methodname></term>
-
             <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
@@ -382,7 +430,6 @@
             <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-
             <term><methodname>gst.CORE_ERROR_NEGOTIATION</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
@@ -392,7 +439,6 @@
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_NUM_ERRORS</methodname></term>
-
             <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
@@ -404,7 +450,6 @@
             <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-
             <term><methodname>gst.CORE_ERROR_STATE_CHANGE</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
@@ -414,7 +459,6 @@
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_THREAD</methodname></term>
-
             <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
@@ -426,7 +470,6 @@
 
 
     <!-- ************************ -->
-
     <!-- BEGIN OF GST Debug Type Constants -->
     <!-- ************************ -->
 
@@ -445,7 +488,6 @@
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_BG_CYAN</methodname></term>
-
             <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
@@ -457,7 +499,6 @@
             <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-
             <term><methodname>gst.DEBUG_BG_RED</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
@@ -467,7 +508,6 @@
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_BG_YELLOW</methodname></term>
-
             <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
@@ -479,7 +519,6 @@
             <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-
             <term><methodname>gst.DEBUG_FG_BLUE</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
@@ -489,7 +528,6 @@
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_FG_GREEN</methodname></term>
-
             <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
@@ -501,7 +539,6 @@
             <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-
             <term><methodname>gst.DEBUG_FG_WHITE</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
@@ -511,14 +548,13 @@
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_UNDERLINE</methodname></term>
-
             <listitem><simpara></simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
-
-   <!-- ************************ -->
-
+    
+    
+    <!-- ************************ -->
     <!-- BEGIN OF GST DP Header Flag Constants -->
     <!-- ************************ -->
 
@@ -544,6 +580,7 @@
           </varlistentry>
         </variablelist>
   </refsect2>
+
 
     <!-- ************************ -->
     <!-- BEGIN OF GST DP Payload Type Constants -->
@@ -572,6 +609,7 @@
         </variablelist>
   </refsect2>
 
+
     <!-- ************************ -->
     <!-- BEGIN OF GST Element Constants -->
     <!-- ************************ -->
@@ -594,164 +632,201 @@
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.ELEMENT_UNPARENTING</methodname></term>
-            <listitem><simpara>Child is being removed from the parent bin. remove() on a child already being removed immediately returns FALSE.</simpara></listitem>
+            <listitem><simpara>Child is being removed from the parent bin. remove() on a child 
+            already being removed immediately returns FALSE.</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
 
-  <refsect2 id="gst-event-constants">
+
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Event Type Constants -->
+    <!-- ************************ -->
+    
+  <refsect2 id="gst-event-type-constants">
     <title>GST Event Type Constants</title>
-      <para>The Event ...</para>
+      <para>The Event Types lists the standard event types that can be sent in a pipeline.</para>
+      
         <variablelist>
           <varlistentry>
             <term><methodname>gst.EVENT_BUFFERSIZE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Notification of buffering requirements</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.EVENT_CUSTOM_BOTH</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Custom upstream or downstream event. In-band when travelling 
+            downstream.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.EVENT_CUSTOM_BOTH_OOB</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Custom upstream or downstream out-of-band event.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.EVENT_CUSTOM_DOWNSTREAM</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Downstream custom event that travels in the data flow.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.EVENT_CUSTOM_DOWNSTREAM_OOB</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Custom out-of-band downstream event.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.EVENT_CUSTOM_UPSTREAM</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Upstream custom event</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.EVENT_EOS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>End-Of-Stream. No more data is to be expected to follow without a 
+            NEWSEGMENT event.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.EVENT_FLUSH_START</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Start a flush operation</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.EVENT_FLUSH_STOP</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Stop a flush operation</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.EVENT_LATENCY</methodname></term>
+            <listitem><simpara>Notification of new latency adjustment.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.EVENT_NAVIGATION</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Navigation events are usually used for communicating user requests, such as mouse or
+             keyboard movements, to upstream elements.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.EVENT_NEWSEGMENT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>A new media segment follows in the dataflow.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.EVENT_QOS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>A quality message. Used to indicate to upstream elements that the downstream elements
+             are being starved of or flooded with data.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.EVENT_SEEK</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>A request for a new playback position and rate.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.EVENT_TAG</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.EVENT_TYPE_DOWNSTREAM</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.EVENT_TYPE_SERIALIZED</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.EVENT_TYPE_UPSTREAM</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>A new set of metadata tags has been found in the stream.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.EVENT_UNKNOWN</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>unknown event.</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
+  
+  
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Event Type Flag Constants -->
+    <!-- ************************ -->
+    
+  <refsect2 id="gst-event-type-flag-constants">
+    <title>GST Event Type Flag Constants</title>
+      <para>The Event Type Flags indicates the aspects of the different gst.EventType values. You can get the type 
+      flags of a gst.EventType with the gst_event_type_get_flags() function.</para>
+      
+        <variablelist>
+          <varlistentry>
+            <term><methodname>gst.EVENT_TYPE_DOWNSTREAM</methodname></term>
+            <listitem><simpara>Set if the event can travel downstream.</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.EVENT_TYPE_SERIALIZED</methodname></term>
+            <listitem><simpara>Set if the event should be serialized with data flow.</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.EVENT_TYPE_UPSTREAM</methodname></term>
+            <listitem><simpara>Set if the event can travel upstream.</simpara></listitem>
+          </varlistentry>
+       </variablelist>
+  </refsect2>
+  
 
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Flow Return Constants -->
+    <!-- ************************ -->
+    
   <refsect2 id="gst-flow-return-constants">
     <title>GST Flow Return Constants</title>
-      <para>The Flow Return ...</para>
+      <para>The Flow Return constants are the result of passing data to a pad.</para>
+      
         <variablelist>
           <varlistentry>
             <term><methodname>gst.FLOW_CUSTOM_ERROR</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Elements can use values starting from this to define custom error codes. </simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.FLOW_CUSTOM_SUCCESS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Elements can use values starting from this to define custom success codes. </simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.FLOW_ERROR</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Some (fatal) error occured. Element generating this error should post an error 
+            message with more details.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.FLOW_NOT_LINKED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Pad is not linked.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.FLOW_NOT_NEGOTIATED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Pad is not negotiated.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.FLOW_NOT_SUPPORTED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>This operation is not supported.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.FLOW_OK</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Data passing was ok.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.FLOW_RESEND</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Resend buffer, possibly with new caps (not send yet).</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.FLOW_UNEXPECTED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Did not expect anything, like after EOS.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.FLOW_WRONG_STATE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Pad is in wrong state.</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
 
   <refsect2 id="gst-format-constants">
-    <title>GST Format Type Constants</title>
-      <para>The Format ...</para>
+    <title>GST Format Constants</title>
+      <para>The Format constants is a set of standard predefined formats.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.FORMAT_BUFFERS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>buffers</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.FORMAT_BYTES</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>bytes</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.FORMAT_DEFAULT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the default format of the pad/element. This can be samples for raw audio, 
+            frames/fields for raw video.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.FORMAT_PERCENT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>percentage of stream</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.FORMAT_TIME</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>time in nanoseconds</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.FORMAT_UNDEFINED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>undefined format</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -762,67 +837,67 @@
         <variablelist>
           <varlistentry>
             <term><methodname>gst.INDEX_CERTAIN</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>accuracy is perfect</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.INDEX_ENTRY_ASSOCIATION</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>This entry is an association between formats</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.INDEX_ENTRY_FORMAT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>A format definition</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.INDEX_ENTRY_ID</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>This entry is an id that maps an index id to its owner object</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.INDEX_ENTRY_OBJECT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>An object</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.INDEX_FLAG_LAST</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>First flag that can be used by subclasses</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.INDEX_FUZZY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>accuracy is fuzzy</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.INDEX_LOOKUP_AFTER</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>The exact entry or the one after it</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.INDEX_LOOKUP_BEFORE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>The exact entry or the one before it</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.INDEX_LOOKUP_EXACT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>There has to be an exact indexentry with the given format/value</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.INDEX_READABLE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>The index is readable</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.INDEX_RESOLVER_CUSTOM</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use a custom resolver</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.INDEX_RESOLVER_GTYPE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Resolve based on the GType of the object</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.INDEX_RESOLVER_PATH</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Resolve on the path in graph</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.INDEX_UNKNOWN</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>accuracy is not known</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.INDEX_WRITABLE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>The index is writable</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -861,38 +936,48 @@
   <refsect2 id="gst-iterator-constants">
     <title>GST Iterator Type Constants</title>
       <para>The Iterator ...</para>
+      
         <variablelist>
           <varlistentry>
             <term><methodname>gst.ITERATOR_DONE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>No more items in the iterator</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.ITERATOR_ERROR</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.ITERATOR_ITEM_END</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.ITERATOR_ITEM_PASS</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.ITERATOR_ITEM_SKIP</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>An error happened</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.ITERATOR_OK</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>An item was retrieved</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.ITERATOR_RESYNC</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Datastructure changed while iterating</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
-
+  
+  <refsect2 id="gst-iterator-item-constants">
+    <title>GST Iterator Item Constants</title>
+      <para>The Iterator Item Constants are the result of a GstIteratorItemFunction.</para>
+      
+        <variablelist>
+           <varlistentry>
+            <term><methodname>gst.ITERATOR_ITEM_END</methodname></term>
+            <listitem><simpara>Stop after this item.</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.ITERATOR_ITEM_PASS</methodname></term>
+            <listitem><simpara>Return item</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.ITERATOR_ITEM_SKIP</methodname></term>
+            <listitem><simpara>Skip this item</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+        
+        
   <refsect2 id="gst-level-constants">
     <title>GST Level Type Constants</title>
       <para>The Iterator ...</para>
@@ -969,91 +1054,111 @@
 
   <refsect2 id="gst-message-constants">
     <title>GST Message Type Constants</title>
-      <para>The Message ...</para>
+      <para>The Messages are posted on the bus when an event happens.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.MESSAGE_ANY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>mask for all of the other messages.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_APPLICATION</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>message posted by the application, possibly via an application-specific element.</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <term><methodname>gst.MESSAGE_ASYNC_DONE</methodname></term>
+            <listitem><simpara>Posted by elements when they complete an ASYNC state change. </simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <term><methodname>gst.MESSAGE_ASYNC_START</methodname></term>
+            <listitem><simpara>Posted by elements when they start an ASYNC state change.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_BUFFERING</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the pipeline is buffering. When the application receives a buffering message in 
+            the PLAYING state for a non-live pipeline it must PAUSE the pipeline until the buffering completes, 
+            when the percentage field in the message is 100%. For live pipelines, no action must be performed and 
+            the buffering percentage can be used to infor the user about the progress.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_CLOCK_LOST</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>The current clock as selected by the pipeline became unusable. The pipeline will
+             select a new clock on the next PLAYING state change.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_CLOCK_PROVIDE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>an element notifies its capability of providing a clock.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_DURATION</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>The duration of a pipeline changed.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_ELEMENT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>element-specific message, see the specific element's documentation</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_EOS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>end-of-stream reached in a pipeline. The application will only receive this 
+            message in the PLAYING state and every time it sets a pipeline to PLAYING that is in the EOS state. 
+            The application can perform a seek in the pipeline to a new position.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_ERROR</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>an error occured. Whe the application receives an error message it should stop 
+            playback of the pipeline and not assume that more data will be played.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_INFO</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>an info message occured</simpara></listitem>
+          </varlistentry> 
+          <varlistentry>
+            <term><methodname>gst.MESSAGE_Latency</methodname></term>
+            <listitem><simpara>Posted by elements when their latency changes. The pipeline will calculate and 
+            distribute a new latency.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_NEW_CLOCK</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>a new clock was selected in the pipeline.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_SEGMENT_DONE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>pipeline completed playback of a segment.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_SEGMENT_START</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>pipeline started playback of a segment.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_STATE_CHANGED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>a state change happened</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_STATE_DIRTY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>an element changed state in a streaming thread. This message is deprecated.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_STEP_DONE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>a framestep finished. This message is not yet implemented.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_STREAM_STATUS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>status about a stream, emitted when it starts, stops, errors, etc.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_STRUCTURE_CHANGE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the structure of the pipeline changed.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_TAG</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>a tag was found.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_UNKNOWN</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>an undefined message</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MESSAGE_WARNING</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>a warning occured.</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1064,143 +1169,150 @@
         <variablelist>
           <varlistentry>
             <term><methodname>gst.MINI_OBJECT_FLAG_LAST</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>first flag that can be used by subclasses.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.MINI_OBJECT_FLAG_READONLY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>is the miniobject readonly or writable</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
 
   <refsect2 id="gst-object-constants">
     <title>GST Object Flag Constants</title>
-      <para>The Object ...</para>
+      <para>The standard flags that an gstobject may have.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.OBJECT_DISPOSING</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the object is been destroyed, do use it anymore</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.OBJECT_FLAG_LAST</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>subclasses can add additional flags starting from this flag</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.OBJECT_FLOATING</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the object has a floating reference count (e.g. its not assigned to a bin)</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
 
-  <refsect2 id="gst-pad-direction-constants">
-    <title>GST Pad Direction Constants</title>
-      <para>The Pad Direction ...</para>
-        <variablelist>
-          <varlistentry>
-            <term><methodname>gst.PAD_SINK</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.PAD_SRC</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.PAD_UNKNOWN</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-        </variablelist>
-  </refsect2>
-  
   <refsect2 id="gst-pad-constants">
     <title>GST Pad Constants</title>
       <para>The Pad ...</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.PAD_BLOCKED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>is dataflow on a pad blocked</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PAD_BLOCKING</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>is pad currently blocking on a buffer or event</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PAD_FLAG_LAST</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>offset to define more flags</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PAD_FLUSHING</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>is pad refusing buffers</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PAD_IN_GETCAPS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>gst.PadGetCapsFunction() is running now</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PAD_IN_SETCAPS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>gst.PadSetCapsFunction() is running now</simpara></listitem>
           </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.PAD_LINK_NOFORMAT</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.PAD_LINK_NOSCHED</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.PAD_LINK_OK</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.PAD_LINK_REFUSED</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.PAD_LINK_WAS_LINKED</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.PAD_LINK_WRONG_DIRECTION</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.PAD_LINK_WRONG_HIERARCHY</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          
         </variablelist>
   </refsect2>
   
-   <refsect2 id="gst-pad-presence-constants">
+  <refsect2 id="gst-pad-direction-constants">
+    <title>GST Pad Direction Constants</title>
+      <para>The Pad Direction constants tells the direction of a pad.</para>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>gst.PAD_SINK</methodname></term>
+            <listitem><simpara>the pad is a sink pad.</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.PAD_SRC</methodname></term>
+            <listitem><simpara>the pad is a source pad.</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.PAD_UNKNOWN</methodname></term>
+            <listitem><simpara>direction is unknown.</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+  
+  <refsect2 id="gst-pad-link-constants">
+    <title>GST Pad Link Constants</title>
+      <para>The Pad Link constants </para>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>gst.PAD_LINK_NOFORMAT</methodname></term>
+            <listitem><simpara>pads do not have common format</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.PAD_LINK_NOSCHED</methodname></term>
+            <listitem><simpara>pads cannot cooperate in scheduling</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.PAD_LINK_OK</methodname></term>
+            <listitem><simpara>link succeeded</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.PAD_LINK_REFUSED</methodname></term>
+            <listitem><simpara>refused for some reason </simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.PAD_LINK_WAS_LINKED</methodname></term>
+            <listitem><simpara>pad was already linked</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.PAD_LINK_WRONG_DIRECTION</methodname></term>
+            <listitem><simpara>pads have wrong direction</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.PAD_LINK_WRONG_HIERARCHY</methodname></term>
+            <listitem><simpara>pads have no common grandparent</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+  
+  <refsect2 id="gst-pad-presence-constants">
     <title>GST Pad Presence Constants</title>
-      <para>The Pad Presence ...</para>
+      <para>The Pad Presence flags.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.PAD_ALWAYS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the pad is always available</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PAD_REQUEST</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the pad is only available on request with gst_element_request_pad_by_name() or 
+            gst.Element.request_compatible_pad().</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PAD_SOMETIMES</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the pad will become available depending on the media stream</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
   
   <refsect2 id="gst-pad-template-constants">
     <title>GST Pad Template Constants</title>
-      <para>The Pad Template ...</para>
+      <para>The Pad Template flags.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.PAD_TEMPLATE_FIXED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the padtemplate has no variable properties</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PAD_TEMPLATE_FLAG_LAST</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>first flag that can be used by subclasses.</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1242,34 +1354,34 @@
 
   <refsect2 id="gst-pipeline-constants">
     <title>GST Pipeline Flag Constants</title>
-      <para>The Pipeline ...</para>
+      <para>The Pipeline Flags</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.PIPELINE_FLAG_FIXED_CLOCK</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>this pipeline works with a fixed clock</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PIPELINE_FLAG_LAST</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>offset to define more flags</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
 
   <refsect2 id="gst-plugin-error-constants">
     <title>GST Plugin Error Constants</title>
-      <para>The Plugin Error ...</para>
+      <para>The Plugin loading error constants.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.PLUGIN_ERROR_DEPENDENCIES</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>The plugin has unresolved dependencies</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PLUGIN_ERROR_MODULE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>The plugin could not be loaded</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PLUGIN_ERROR_NAME_MISMATCH</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>The plugin has already be loaded from a different file</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1291,66 +1403,67 @@
         <variablelist>
           <varlistentry>
             <term><methodname>gst.QUERY_CONVERT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>convert values between formats</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.QUERY_DURATION</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>total duration of the stream</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.QUERY_FORMATS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>query supported formats for convert</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.QUERY_JITTER</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>current jitter of stream</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.QUERY_LATENCY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>latency of stream</simpara></listitem>
           </varlistentry>
            <varlistentry>
             <term><methodname>gst.QUERY_NONE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>invalid query type</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.QUERY_POSITION</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>current position in stream</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.QUERY_RATE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>current rate of the stream</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.QUERY_SEEKING</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>seeking capabilities</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.QUERY_SEGMENT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>segment start/stop positions</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
 
   <refsect2 id="gst-rank-constants">
     <title>GST Rank Constants</title>
-      <para>The Rank ...</para>
+      <para>Element priority ranks. Defines the order in which the autoplugger (or similar rank-picking mechanisms) 
+      will choose this element over an alternative one with the same function.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.RANK_MARGINAL</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>unlikly to be chosen</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RANK_NONE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>will be chosen last or not at all</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RANK_PRIMARY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>will be chosen first</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RANK_SECONDARY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>likely to be chosen</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1443,42 +1556,62 @@
 
   <refsect2 id="gst-seek-flag-constants">
     <title>GST Seek Flag Constants</title>
-      <para>The Seek ...</para>
+      <para>The Seek Flags to be used with gst.Element.seek() or gst.event_new_seek(). All flags can be used together.
+
+A non flushing seek might take some time to perform as the currently playing data in the pipeline will not be cleared.
+
+An accurate seek might be slower for formats that don't have any indexes or timestamp markers in the stream. Specifying 
+this flag might require a complete scan of the file in those cases.
+
+When performing a segment seek: after the playback of the segment completes, no EOS will be emmited by the element 
+that performed the seek, but a gst.MESSAGE_SEGMENT_DONE message will be posted on the bus by the element. When this
+ message is posted, it is possible to send a new seek event to continue playback. With this seek method it is possible
+  to perform seemless looping or simple linear editing.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.SEEK_FLAG_ACCURATE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>accurate position is requested, this might be considerably slower for some formats.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.SEEK_FLAG_FLUSH</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>flush pipeline</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.SEEK_FLAG_KEY_UNIT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>seek to the nearest keyframe. This might be faster but less accurate.</simpara></listitem>
           </varlistentry>
            <varlistentry>
             <term><methodname>gst.SEEK_FLAG_NONE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>no flag</simpara></listitem>
           </varlistentry>
            <varlistentry>
             <term><methodname>gst.SEEK_FLAG_SEGMENT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>perform a segment seek.</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
 
- <refsect2 id="gst-seek-type-constants">
+  <refsect2 id="gst-seek-type-constants">
     <title>GST Seek Type Constants</title>
-      <para>The Seek ...</para>
+      <para>The Seek Types of seek events. When constructing a seek event with gst.event_new_seek(),
+      a format, a seek method and optional flags are to be provided. The seek event is then inserted into the graph 
+      with gst.Pad.send_event() or gst.Element.send_event().</para>
         <variablelist>
           <varlistentry>
+            <term><methodname>gst.SEEK_TYPE_CUR</methodname></term>
+            <listitem><simpara>change relative to current position</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.SEEK_TYPE_END</methodname></term>
+            <listitem><simpara>relative position to duration is requested</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
             <term><methodname>gst.SEEK_TYPE_NONE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>no change in position is required</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.SEEK_TYPE_SET</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>absolute position is requested</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1823,19 +1956,19 @@
 
  <refsect2 id="gst-task-constants">
     <title>GST Task Constants</title>
-      <para>The Task ...</para>
+      <para>The different states a task can be in.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.TASK_PAUSED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the task is paused</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.TASK_STARTED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the task is started and running</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.TASK_STOPPED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the task is stopped</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
