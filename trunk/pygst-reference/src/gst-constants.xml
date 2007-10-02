@@ -9,7 +9,6 @@
 
 <!-- ************************ -->
 <!-- BEGIN OF GST Constants SYNOPSIS -->
-
 <!-- ************************ -->
 
 <refsect1>
@@ -23,10 +22,11 @@
 <link linkend="gst-bus-flag-constants">GST Bus Flag Constants</link>
 <link linkend="gst-bus-sync-constants">GST Bus Sync Constants</link>
 <link linkend="gst-caps-constants">GST Caps Flag Constants</link>
+<link linkend="gst-clock-entry-type-constants">GST Clock Entry Type Constants</link>
 <link linkend="gst-clock-flag-constants">GST Clock Flag Constants</link>
 <link linkend="gst-clock-return-constants">GST Clock Return Constants</link>
-<link linkend="gst-core-constants">GST Core Type Constants</link>
-<link linkend="gst-debug-constants">GST Debug Type Constants</link>
+<link linkend="gst-core-error-constants">GST Core Error Constants</link>
+<link linkend="gst-debug-color-constants">GST Debug Color Constants</link>
 <link linkend="gst-element-constants">GST Element Flag Constants</link>
 <link linkend="gst-event-type-constants">GST Event Type Constants</link>
 <link linkend="gst-event-type-flag-constants">GST Event Type Flag Constants</link>
@@ -37,7 +37,7 @@
 <link linkend="gst-iterator-constants">GST Iterator Type Constants</link>
 <link linkend="gst-iterator-item-constants">GST Iterator Item Constants</link>
 <link linkend="gst-level-constants">GST Level Type Constants</link>
-<link linkend="gst-library-constants">GST Library Type Constants</link>
+<link linkend="gst-library-error-constants">GST Library Error Constants</link>
 <link linkend="gst-message-constants">GST Message Type Constants</link>
 <link linkend="gst-mini-object-constants">GST MiniObject Flag Constants</link>
 <link linkend="gst-object-constants">GST Object Type Constants</link>
@@ -52,15 +52,18 @@
 <link linkend="gst-plugin-flag-constants">GST Plugin Flag Constants</link>
 <link linkend="gst-query-constants">GST Query Type Constants</link>
 <link linkend="gst-rank-constants">GST Rank Type Constants</link>
-<link linkend="gst-resource-constants">GST Resource Error Constants</link>
+<link linkend="gst-resource-error-constants">GST Resource Error Constants</link>
 <link linkend="gst-rtld-constants">GST RTLD Type Constants</link>
 <link linkend="gst-seek-flag-constants">GST Seek Flag Constants</link>
 <link linkend="gst-seek-type-constants">GST Seek Type Constants</link>
 <link linkend="gst-state-constants">GST State Type Constants</link>
-<link linkend="gst-stream-constants">GST Stream Error Constants</link>
+<link linkend="gst-stream-error-constants">GST Stream Error Constants</link>
 <link linkend="gst-tag-constants">GST Tag Type Constants</link>
+<link linkend="gst-tag-flag-constants">GST Tag Flag Constants</link>
+<link linkend="gst-tag-merge-constants">GST Tag Merge Constants</link>
 <link linkend="gst-task-constants">GST Task Flag Constants</link>
 <link linkend="gst-type-constants">GST Type Flag Constants</link>
+<link linkend="gst-type-find-constants">GST Type Find Constants</link>
 <link linkend="gst-uri-constants">GST URI Type Constants</link>
 <link linkend="gst-unknown-constants">GST Unknown Constants</link></synopsis>
 </refsect1>
@@ -149,11 +152,11 @@
     <!-- ************************ -->
 
     <refsect2 id="gst-bin-constants">
-
       <title>GST Bin Flag Constants</title>
         <para>The Bin Flags are a set of flags specific to bins. Most are set/used internally. 
         They can be checked using the GST_OBJECT_FLAG_IS_SET() macro, and (un)set using GST_OBJECT_FLAG_SET() 
         and GST_OBJECT_FLAG_UNSET().</para>
+        
         <variablelist>
           <varlistentry>
             <term><methodname>gst.BIN_FLAG_LAST</methodname></term>
@@ -161,7 +164,6 @@
              this as first value in a list of flags.</simpara></listitem>
           </varlistentry>
         </variablelist>
-
     </refsect2>
 
 
@@ -170,9 +172,9 @@
     <!-- ************************ -->
 
     <refsect2 id="gst-buffer-copy-constants">
-
       <title>GST Buffer Copy Constants</title>
         <para>The Buffer Copy ...</para>
+        
         <variablelist>
           <varlistentry>
             <term><methodname>GST_BUFFER_COPY_CAPS</methodname></term>
@@ -188,7 +190,6 @@
             should be copied</simpara></listitem>
           </varlistentry>
         </variablelist>
-
     </refsect2>
     
     
@@ -303,6 +304,27 @@
 
 
     <!-- ************************ -->
+    <!-- BEGIN OF GST Clock Entry Type Constants -->
+    <!-- ************************ -->
+
+    <refsect2 id="gst-clock-entry-type-constants">
+      <title>GST Clock Entry Type Constants</title>
+        <para>The type of the clock entry.</para>
+        
+        <variablelist>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_ENTRY_PERIODIC</methodname></term>
+            <listitem><simpara>a periodic timeout request</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CLOCK_ENTRY_SINGLE</methodname></term>
+            <listitem><simpara>a single shot timeout</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+
+    <!-- ************************ -->
     <!-- BEGIN OF GST Clock Flag Constants -->
     <!-- ************************ -->
 
@@ -341,8 +363,8 @@
           </varlistentry>
         </variablelist>
     </refsect2>
-
-
+    
+    
     <!-- ************************ -->
     <!-- BEGIN OF GST Clock Return Constants -->
     <!-- ************************ -->
@@ -363,14 +385,6 @@
           <varlistentry>
             <term><methodname>gst.CLOCK_EARLY</methodname></term>
             <listitem><simpara>The operation was scheduled too late.</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.CLOCK_ENTRY_PERIODIC</methodname></term>
-            <listitem><simpara>a periodic timeout request</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.CLOCK_ENTRY_SINGLE</methodname></term>
-            <listitem><simpara>a single shot timeout</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CLOCK_ERROR</methodname></term>
@@ -400,70 +414,76 @@
     <!-- BEGIN OF GST Core Type Constants -->
     <!-- ************************ -->
 
-    <refsect2 id="gst-core-constants">
-      <title>GST Core Type Constants</title>
-        <para>The Core Types ...</para>
+    <refsect2 id="gst-core-error-constants">
+      <title>GST Core Error Constants</title>
+        <para>Core errors are errors inside the core GStreamer library.</para>
         
         <variablelist>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used for any errors.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_CAPS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used for caps-related errors.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_CLOCK</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used for clock related errors. </simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.CORE_ERROR_DISABLED</methodname></term>
+            <listitem><simpara>used if functionality has been disabled at compile time</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_EVENT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used for event-related errors.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_FAILED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>a general error which doesn't fit in any other category. Make sure you add a custom 
+            message to the error call.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_MISSING_PLUGIN</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used if a plugin is missing.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_NEGOTIATION</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used for negotiation-related errors.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_NOT_IMPLEMENTED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>use this when you do not want to implement this functionality yet.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_NUM_ERRORS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the number of core error types.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_PAD</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used for pad-related errors.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_SEEK</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used for seek-related errors. </simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_STATE_CHANGE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used for state change errors.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_TAG</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used for negotiation-related errors.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_THREAD</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used for thread-related errors.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.CORE_ERROR_TOO_LAZY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>do not use this except as a placeholder for deciding where to go while developing 
+            code.</simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
@@ -473,82 +493,83 @@
     <!-- BEGIN OF GST Debug Type Constants -->
     <!-- ************************ -->
 
-    <refsect2 id="gst-debug-constants">
-      <title>GST Debug Type Constants</title>
-        <para>The Debug Types ...</para>
+    <refsect2 id="gst-debug-color-constants">
+      <title>GST Debug Color Constants</title>
+        <para>These are some terminal style flags you can use when creating your debugging categories to make them stand 
+        out in debugging output.</para>
+        
         <variablelist>
           <varlistentry>
-
             <term><methodname>gst.DEBUG_BG_BLACK</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use black as background color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_BG_BLUE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use blue as background color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_BG_CYAN</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use cyan as background color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_BG_GREEN</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use green as background color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_BG_MAGENTA</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use magenta as background color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_BG_RED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use red as background color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_BG_WHITE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use white as background color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_BG_YELLOW</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use yellow as background color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_BOLD</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Make the output bold.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_FG_BLACK</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use black as foreground color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_FG_BLUE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use blue as foreground color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_FG_CYAN</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use cyan as foreground color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_FG_GREEN</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use green as foreground color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_FG_MAGENTA</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use magenta as foreground color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_FG_RED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use red as foreground color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_FG_WHITE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use white as foreground color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_FG_YELLOW</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Use yellow as foreground color.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.DEBUG_UNDERLINE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Underline the output.</simpara></listitem>
           </varlistentry>
         </variablelist>
     </refsect2>
@@ -616,7 +637,7 @@
 
   <refsect2 id="gst-element-constants">
     <title>GST Element Flag Constants</title>
-      <para>The Element ...</para>
+      <para>The standard flags that an element may have.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.ELEMENT_FLAG_LAST</methodname></term>
@@ -976,78 +997,90 @@
           </varlistentry>
         </variablelist>
   </refsect2>
-        
-        
+  
   <refsect2 id="gst-level-constants">
     <title>GST Level Type Constants</title>
-      <para>The Iterator ...</para>
+      <para>The level defines the importance of a debugging message. The more important a message is, the greater the 
+      probability that the debugging system outputs it.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.LEVEL_COUNT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>The number of defined debugging levels.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.LEVEL_DEBUG</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Debugging messages should be used when something common happens that is not the expected 
+            default behavior. An example would be notifications about state changes or receiving/sending of events.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.LEVEL_ERROR</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Error messages are to be used only when an error occured that stops the application from 
+            keeping working correctly. An examples is gst_element_error, which outputs a message with this priority. It 
+            does not mean that the application is terminating as with g_errror.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.LEVEL_INFO</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Informational messages should be used to keep the developer updated about what is happening. 
+            Examples where this should be used are when a typefind function has successfully determined the type of the 
+            stream or when an mp3 plugin detects the format to be used. ("This file has mono sound.")</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.LEVEL_LOG</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Log messages are messages that are very common but might be useful to know. As a rule of 
+            thumb a pipeline that is iterating as expected should never output anzthing else but LOG messages. Examples 
+            for this are referencing/dereferencing of objects or cothread switches.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.LEVEL_NONE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>No debugging level specified or desired. Used to deactivate debugging output.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.LEVEL_WARNING</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>Warning messages are to inform about abnormal behaviour that could lead to problems or weird 
+            behaviour later on. An example of this would be clocking issues ("your computer is pretty slow") or broken input 
+            data ("Can't synchronize to stream.")</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
 
- <refsect2 id="gst-library-constants">
+ <refsect2 id="gst-library-error-constants">
     <title>GST Library Error Constants</title>
-      <para>The Library ...</para>
+      <para>Library errors are for errors from the library being used by elements (initializing, finalizing, 
+      settings, ...)</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.LIBRARY_ERROR</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used for any error.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.LIBRARY_ERROR_ENCODE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when the library generated an encoding error.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.LIBRARY_ERROR_FAILED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>a general error which doesn't fit in any other category. Make sure you add a custom 
+            message to the error call.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.LIBRARY_ERROR_INIT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when the library could not be opened. </simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.LIBRARY_ERROR_NUM_ERRORS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the number of library error types.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.LIBRARY_ERROR_SETTINGS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when the library doesn't accept settings.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.LIBRARY_ERROR_SHUTDOWN</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when the library could not be closed.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.LIBRARY_ERROR_TOO_LAZY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>do not use this except as a placeholder for deciding where to go while developing 
+            code.</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1319,35 +1352,35 @@
   
   <refsect2 id="gst-parse-constants">
     <title>GST Parse Error Constants</title>
-      <para>The Parse ...</para>
+      <para>The different parsing errors that can occur.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.PARSE_ERROR_COULD_NOT_SET_PROPERTY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>There was an error setting a property</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PARSE_ERROR_EMPTY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>An empty description was specified</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PARSE_ERROR_EMPTY_BIN</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>An empty bin was specified.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PARSE_ERROR_LINK</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>There was an error linking two pads.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PARSE_ERROR_NO_SUCH_ELEMENT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>The description contained an unknown element</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PARSE_ERROR_NO_SUCH_PROPERTY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>An element did not have a specified property</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.PARSE_ERROR_SYNTAX</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>A syntax error occured.</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1468,73 +1501,77 @@
         </variablelist>
   </refsect2>
 
-  <refsect2 id="gst-resource-constants">
+  <refsect2 id="gst-resource-error-constants">
     <title>GST Resource Error Constants</title>
-      <para>The Resource ...</para>
+      <para>Resource errors are for any resource used by an element: memory, files, network connections,
+       process space, ... They're typically used by source and sink elements.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used for any error.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR_BUSY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when resource is busy.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR_CLOSE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when the resource can't be closed.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR_FAILED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>a general error which doesn't fit in any other category. Make sure you add a 
+            custom message to the error call.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR_NOT_FOUND</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when the resource could not be found.</simpara></listitem>
           </varlistentry>
            <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR_NO_SPACE_LEFT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when the resource has no space left.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR_NUM_ERRORS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the number of resource error types.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR_OPEN_READ</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when resource fails to open for reading.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR_OPEN_READ_WRITE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when resource cannot be opened for both reading and writing, or either 
+            (but unspecified which).</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR_OPEN_WRITE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when resource fails to open for writing.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR_READ</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when the resource can't be read from.</simpara></listitem>
           </varlistentry>
            <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR_SEEK</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when a seek on the resource fails.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR_SETTINGS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when settings can't be manipulated on.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR_SYNC</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when a synchronize on the resource fails.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR_TOO_LAZY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>do not use this except as a placeholder for deciding where to go while 
+            developing code.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.RESOURCE_ERROR_WRITE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when the resource can't be written to.</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1683,61 +1720,64 @@ that performed the seek, but a gst.MESSAGE_SEGMENT_DONE message will be posted o
         </variablelist>
   </refsect2>
 
- <refsect2 id="gst-stream-constants">
+ <refsect2 id="gst-stream-error-constants">
     <title>GST Stream Error Constants</title>
-      <para>The Stream ...</para>
+      <para>Stream errors are for anything related to the stream being processed: format errors, 
+      media type errors, ... They're typically used by decoders, demuxers, converters, ...</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.STREAM_ERROR</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used for any stream errors.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.STREAM_ERROR_CODEC_NOT_FOUND</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when there's no codec to handle the stream's type.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.STREAM_ERROR_DECODE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when decoding fails.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.STREAM_ERROR_DEMUX</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when demuxing fails.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.STREAM_ERROR_ENCODE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when encoding fails.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.STREAM_ERROR_FAILED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>a general error which doesn't fit in any other category. Make sure you add a 
+            custom message to the error call.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.STREAM_ERROR_FORMAT</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when the stream is of the wrong format (for example, wrong caps).</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.STREAM_ERROR_MUX</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when muxing fails.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.STREAM_ERROR_NOT_IMPLEMENTED</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>use this when you do not want to implement this functionality yet.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.STREAM_ERROR_NUM_ERRORS</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>the number of stream error types.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.STREAM_ERROR_TOO_LAZY</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>do not use this except as a placeholder for deciding where to go while 
+            developing code.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.STREAM_ERROR_TYPE_NOT_FOUND</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when the element doesn't know the stream's type.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.STREAM_ERROR_WRONG_TYPE</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>used when the element doesn't handle this type of stream.</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
@@ -1819,26 +1859,6 @@ that performed the seek, but a gst.MESSAGE_SEGMENT_DONE message will be posted o
             <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
-            <term><methodname>gst.TAG_FLAG_COUNT</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.TAG_FLAG_DECODED</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-           <varlistentry>
-            <term><methodname>gst.TAG_FLAG_ENCODED</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.TAG_FLAG_META</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.TAG_FLAG_UNDEFINED</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-           <varlistentry>
             <term><methodname>gst.TAG_GENRE</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
@@ -1864,38 +1884,6 @@ that performed the seek, but a gst.MESSAGE_SEGMENT_DONE message will be posted o
           </varlistentry>
            <varlistentry>
             <term><methodname>gst.TAG_MAXIMUM_BITRATE</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.TAG_MERGE_APPEND</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.TAG_MERGE_COUNT</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-           <varlistentry>
-            <term><methodname>gst.TAG_MERGE_KEEP</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.TAG_MERGE_KEEP_ALL</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.TAG_MERGE_PREPEND</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.TAG_MERGE_REPLACE</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-           <varlistentry>
-            <term><methodname>gst.TAG_MERGE_REPLACE_ALL</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.TAG_MERGE_UNDEFINED</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
@@ -1953,8 +1941,86 @@ that performed the seek, but a gst.MESSAGE_SEGMENT_DONE message will be posted o
         </variablelist>
   </refsect2>
 
-
- <refsect2 id="gst-task-constants">
+  <refsect2 id="gst-tag-flag-constants">
+    <title>GST Tag Flag Constants</title>
+      <para>Extra tag flags used when registering tags.</para>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>gst.TAG_FLAG_COUNT</methodname></term>
+            <listitem><simpara>number of tag flags</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.TAG_FLAG_DECODED</methodname></term>
+            <listitem><simpara>tag is decoded</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <term><methodname>gst.TAG_FLAG_ENCODED</methodname></term>
+            <listitem><simpara>tag is encoded</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.TAG_FLAG_META</methodname></term>
+            <listitem><simpara>tag is meta data</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.TAG_FLAG_UNDEFINED</methodname></term>
+            <listitem><simpara>undefined flag</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+        
+  <refsect2 id="gst-tag-merge-constants">
+    <title>GST Tag Merge Constants</title>
+      <para>The different tag merging modes are basically replace, overwrite and append, but they can be seen from 
+      two directions. Given two taglists: A - the one that are supplied to gst.tag_setter_merge_tags() or 
+      gst.tag_setter_add_tags() and B - the tags already in the element, how are the tags merged? In the table below
+       this is shown for the cases that a tag exists in the list (A) or does not exists (!A) and combination thereof.</para>
+      <emphasis role="bold">Table 1. merge mode</emphasis>
+      <table class="simple">
+        <tr><th>merge mode</th><th>A + B</th><th>A + !B</th><th>!A + B</th><th>!A + !B</th></tr>
+        <tr><td>REPLACE_ALL</td><td>B</td><td>-</td><td>B</td><td>-</td></tr>
+        <tr><td>REPLACE</td><td>B</td><td>A</td><td>B</td><td>-</td></tr>
+        <tr><td>APPEND</td><td>A, B</td><td>A</td><td>B</td><td>-</td></tr>
+        <tr><td>PREPEND</td><td>B, A</td><td>A</td><td>B</td><td>-</td></tr>
+        <tr><td>KEEP</td><td>A</td><td>A</td><td>B</td><td>-</td></tr>
+        <tr><td>KEEP_ALL</td><td>A</td><td>A</td><td>-</td><td>-</td></tr>
+      </table>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>gst.TAG_MERGE_APPEND</methodname></term>
+            <listitem><simpara>append tags</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.TAG_MERGE_COUNT</methodname></term>
+            <listitem><simpara>the number of merge modes</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <term><methodname>gst.TAG_MERGE_KEEP</methodname></term>
+            <listitem><simpara>keep existing tags</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.TAG_MERGE_KEEP_ALL</methodname></term>
+            <listitem><simpara>keep all existing tags</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.TAG_MERGE_PREPEND</methodname></term>
+            <listitem><simpara>prepend tags</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.TAG_MERGE_REPLACE</methodname></term>
+            <listitem><simpara>replace tags</simpara></listitem>
+          </varlistentry>
+           <varlistentry>
+            <term><methodname>gst.TAG_MERGE_REPLACE_ALL</methodname></term>
+            <listitem><simpara>replace all tags (clear list and append)</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.TAG_MERGE_UNDEFINED</methodname></term>
+            <listitem><simpara>undefined merge mode</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+  
+  <refsect2 id="gst-task-constants">
     <title>GST Task Constants</title>
       <para>The different states a task can be in.</para>
         <variablelist>
@@ -1972,33 +2038,13 @@ that performed the seek, but a gst.MESSAGE_SEGMENT_DONE message will be posted o
           </varlistentry>
         </variablelist>
   </refsect2>
-
- <refsect2 id="gst-type-constants">
+  
+  <refsect2 id="gst-type-constants">
     <title>GST Type Constants</title>
-      <para>The Type ...</para>
+      <para></para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.TYPE_ELEMENT_FACTORY</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.TYPE_FIND_LIKELY</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.TYPE_FIND_MAXIMUM</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.TYPE_FIND_MINIMUM</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.TYPE_FIND_NEARLY_CERTAIN</methodname></term>
-            <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.TYPE_FIND_POSSIBLE</methodname></term>
             <listitem><simpara></simpara></listitem>
           </varlistentry>
           <varlistentry>
@@ -2011,22 +2057,49 @@ that performed the seek, but a gst.MESSAGE_SEGMENT_DONE message will be posted o
           </varlistentry>
         </variablelist>
   </refsect2>
+  
+  <refsect2 id="gst-type-find-constants">
+    <title>GST Type Find Constants</title>
+      <para>The probability of the typefind function. Higher values have more certainty in doing a reliable typefind.</para>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>gst.TYPE_FIND_LIKELY</methodname></term>
+            <listitem><simpara>likely a type was detected</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.TYPE_FIND_MAXIMUM</methodname></term>
+            <listitem><simpara>very certain a type was detected.</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.TYPE_FIND_MINIMUM</methodname></term>
+            <listitem><simpara>unlikely typefind</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.TYPE_FIND_NEARLY_CERTAIN</methodname></term>
+            <listitem><simpara>nearly certain that a type was detected</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.TYPE_FIND_POSSIBLE</methodname></term>
+            <listitem><simpara>possible type detected</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
 
- <refsect2 id="gst-uri-constants">
+  <refsect2 id="gst-uri-constants">
     <title>GST URI Type Constants</title>
-      <para>The URI ...</para>
+      <para>The different types of URI direction.</para>
         <variablelist>
           <varlistentry>
             <term><methodname>gst.URI_SINK</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>The URI is a consumer.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.URI_SRC</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>The URI is a producer.</simpara></listitem>
           </varlistentry>
           <varlistentry>
             <term><methodname>gst.URI_UNKNOWN</methodname></term>
-            <listitem><simpara></simpara></listitem>
+            <listitem><simpara>The URI direction is unknown</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>
