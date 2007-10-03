@@ -97,7 +97,7 @@
 </classsynopsis>
 
 <programlisting>
-    <emphasis role="bold">Functions</emphasis>
+<emphasis role="bold">Functions</emphasis>
     
 <methodsynopsis language="python"><methodname><link linkend="function-gstquery--query-new-application">gst.query_new_application</link></methodname>
     <methodparam><parameter role="keyword">type</parameter></methodparam>
@@ -144,72 +144,16 @@
     <title>Description</title>
 
     <para>
-        GstQuery functions are used to register a new query types to the gstreamer core. Query types can be used to perform queries on pads and elements.
+        gst.Query functions are used to register a new query types to the gstreamer core. Query types can 
+        be used to perform queries on pads and elements.
     </para>
     <para>
-        Queries can be created using the gst_query_new_xxx() functions. Query values can be set using gst.Query.set_xxx(), 
+        Queries can be created using the gst_query_new_xxx() functions. Query values can be set using 
+        gst.Query.set_xxx(), 
         and parsed using gst.Query.parse_xxx() helpers.
     </para>
 </refsect1>
 
-<!-- *************************** -->
-<!-- BEGIN OF GSTQUERY CONSTANTS -->
-<!-- *************************** -->
-
-<refsect1 id="constants-gstquery">
-    <title>Constants</title>
-    
-    <blockquote role="properties">
-        <informaltable pgwide="1" frame="none">
-            <tgroup cols="2">
-                <colspec column="1" colwidth="1in"/>
-                <colspec column="1" colwidth="1in"/>
-                <tbody>
-                    <row valign="top">
-                        <entry>gst.QUERY_NONE</entry>
-                        <entry>Invalid query type.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.QUERY_POSITION</entry>
-                        <entry>Current position in stream.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.QUERY_DURATION</entry>
-                        <entry>Total duration of the stream.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.QUERY_LATENCY</entry>
-                        <entry>Latency of stream.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.QUERY_JITTER</entry>
-                        <entry>Current jitter of stream.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.QUERY_RATE</entry>
-                        <entry>Current rate of the stream.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.QUERY_SEEKING</entry>
-                        <entry>Seeking capabilities.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.QUERY_SEGMENT</entry>
-                        <entry>Segment start/stop positions.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.QUERY_CONVERT</entry>
-                        <entry>Convert values between formats.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.QUERY_FORMATS</entry>
-                        <entry>Query supported formats for convert.</entry>
-                    </row>
-                </tbody>
-            </tgroup>
-        </informaltable>
-    </blockquote>
-</refsect1>
 
 <!-- ************************* -->
 <!-- BEGIN OF GSTQUERY METHODS -->

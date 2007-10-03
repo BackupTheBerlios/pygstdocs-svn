@@ -32,9 +32,11 @@ mp3_pipeline = gst.parse_launch("filesrc name=source ! mad name=decoder ! audioc
 </synopsis>
 You can of course also link pads manually with the link() method. Just make sure that you try to link a src-pad
 to a sink-pad. No rule though without exceptions. :D A gst.GhostPad should be linked to a pad of the same kind as
-it self. We have already showed how a ghostpad works in the addition to example 2.2. A gst.Bin can't link to other 
-objects if you don't link a ghostpad to an element inside the bin. In ASCII style example 2.2
-should look something like this:
+it self. We have already showed how a ghostpad works in the addition to example 2.2. A 
+<ulink url="../pygst-reference/class-gstbin.html">gst.Bin</ulink> can't link to other 
+objects if you don't link a 
+<ulink url="../pygst-reference/class-gstghostpad.html">gst.GhostPad</ulink> to an element inside the bin. 
+In ASCII style example 2.2 should look something like this:
 <synopsis>
 
                                                    gst.Bin

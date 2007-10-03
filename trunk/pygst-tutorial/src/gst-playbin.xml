@@ -12,7 +12,7 @@
   
   <para>
   This first example is just a simple audio player. Insert a file and it'll play. </para>
-<refsect2><title>Example 2.1</title>
+<emphasis role="bold">Example 2.1</emphasis>
   <synopsis>#!/usr/bin/env python
 
 import sys, os, os.path
@@ -68,7 +68,7 @@ gtk.gdk.threads_init()
 GTK_Main()
 gtk.main()
 </synopsis>
-</refsect2>
+
    <para>If you want to enable video playback just comment out the following lines:
   <synopsis>fakesink = gst.element_factory_make('fakesink', "my-fakesink")
 self.player.set_property("video-sink", fakesink)
@@ -79,7 +79,7 @@ self.player.set_property("video-sink", fakesink)
    enable_sync_message_emission() method on the bus. Here is an example with the 
    video window embedded in the program.
   </para>
-<refsect2><title>Example 2.2</title>
+<emphasis role="bold">Example 2.2</emphasis>
 <synopsis>#!/usr/bin/env python
 
 import sys, os, os.path
@@ -149,9 +149,11 @@ GTK_Main()
 gtk.gdk.threads_init()
 gtk.main()
 </synopsis>
-</refsect2>
-<para>And just to make things a little more complicated you can switch the playbins videosink to a gst.Bin 
-with a gst.GhostPad on it. Here's an example with a timeoverlay.
+
+<para>And just to make things a little more complicated you can switch the playbins videosink to a
+<ulink url="../pygst-reference/class-gstbin.html">gst.Bin</ulink>
+with a <ulink url="../pygst-reference/class-gstghostpad.html">gst.GhostPad</ulink> on it. 
+Here's an example with a timeoverlay.
 </para>
 <synopsis>bin = gst.Bin('my-bin')
 timeoverlay = gst.element_factory_make('timeoverlay')

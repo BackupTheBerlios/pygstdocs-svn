@@ -1,76 +1,87 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-   <link rel="stylesheet" type="text/css" href="light.css" title="Light" />
-   <link rel="alternate stylesheet" type="text/css" href="dark.css" title="Dark" />
-   <link rel="icon" type="image/png" href="favicon.png" />
-   <link rel="shortcut icon" href="favicon.png" />
-   <title>Python GStreamer Documents</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta name="keywords" content="python gstreamer documents documentation docs tutorial pygst gst" />
+  <meta name="description" content="Documents for the Python bindings for the GStreamer multimedia framework." />
+  <link rel="stylesheet" type="text/css" href="light.css" title="Light" />
+  <link rel="alternate stylesheet" type="text/css" href="dark.css" title="Dark" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="shortcut icon" href="favicon.png" />
+  <title>Python GStreamer Documents</title>
 </head>
+
 <body>
 
- <h1>Python GStreamer Documents</h1>
+<h1>Python GStreamer Documents</h1>
+
 <h2>About</h2>
-  <div class="content">Documents for the Python 
+<div class="content">Documents for the Python 
   <a href="http://gstreamer.freedesktop.org/modules/gst-python.html">bindings</a> for the
-  <a href="http://gstreamer.freedesktop.org">GStreamer </a> multimedia framework.</div>
+  <a href="http://gstreamer.freedesktop.org">GStreamer </a> multimedia framework.
+</div>
+
 <h2 id="toc">Table Of Contents</h2>
 <div class="content">
-   <ol>
-      <li><a href="#news">News</a></li>
-      <li><a href="#license">License</a></li>
-       
-       <li><a href="#documentation">Documentation</a></li>
-            <ol>
-            <li><a href="#online">View Online</a></li>
-             
-            </ol>
-     <li><a href="#download">Download</a></li>
-            <ol>
-            <li><a href="#stable">Stable</a></li>
-             <li><a href="#devel">Devel</a></li>
-            </ol>
-      <li><a href="#projects">Projects</a></li>
-            <ol>
-            <li><a href="#audio">Audio</a></li>
-             <li><a href="#video">Video</a></li>
-             <li><a href="#server">Server</a></li>
-            </ol>
-       <li><a href="#faq">FAQ</a></li>
+  <ol>
+    <li><a href="#news">News</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#documentation">Documentation</a>
+      <ol>
+        <li><a href="#online">View Online</a></li>
+      </ol>
+    </li>
+    <li><a href="#download">Download</a>
+      <ol>
+        <li><a href="#stable">Stable</a></li>
+        <li><a href="#devel">Devel</a></li>
+      </ol>
+    </li>
+    <li><a href="#projects">Projects</a>
+      <ol>
+        <li><a href="#audio">Audio</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#server">Server</a></li>
+      </ol>
+    </li>
+    <li><a href="#faq">FAQ</a></li>
   </ol>
-  </div>
+</div>
+
 <h2 id="news">News</h2>
 <div class="content">
   News and lots of other stuff can be found on the
   <a href="http://developer.berlios.de/projects/pygstdocs/">projectpage</a> at Berlios. This project
-  is under "heavy" development atm so please be patient or fix it yourself. No fix is to
+  is under "heavy" development atm so please be patient or fix it yourself. No fix is too
   small to not go in and if you want to fix lots of stuff just let us know and we'll give
   you commiting access to the source.
- </div>
+</div>
+
 <h2 id="license">License</h2>
 <div class="content">
   Pygstdocs is distributed under GNU Lesser General Public License 
         (<a href="http://www.gnu.org/licenses/lgpl.html">LGPL</a>).
-  </div>
+</div>
   
 <h2 id="documentation">Documentation</h2>
-  <h3 id="online">View Online</h3>
-  <div class="content">
-<a href="http://pygstdocs.berlios.de/pygst-reference/index.html">PyGST Reference Manual</a><br />
-<a href="http://pygstdocs.berlios.de/pygst-tutorial/index.html">PyGST Tutorial</a>
+<h3 id="online">View Online</h3>
+<div class="content">
+  <a href="http://pygstdocs.berlios.de/pygst-reference/index.html">PyGST Reference Manual</a><br />
+  <a href="http://pygstdocs.berlios.de/pygst-tutorial/index.html">PyGST Tutorial</a>
 </div>
 
 <h2 id="download">Download</h2>
-  <h3 id="stable">Stable</h3>
+<h3 id="stable">Stable</h3>
 <div class="content">
- No file releases yet.
- </div>
+  No file releases yet.
+</div>
  
- <h3 id="devel">Devel</h3>
- <div class="content">
-      Install from Subversion, eg pygst-reference:
-    <div class="code">svn checkout svn://svn.berlios.de/pygstdocs/trunk/pygst-reference
+<h3 id="devel">Devel</h3>
+<div class="content">
+      Install from Subversion, eg pygst-reference (you will need docbook-xml and docbook-xsl):
+  <div class="code">svn checkout svn://svn.berlios.de/pygstdocs/trunk/pygst-reference
 cd pygst-reference
 make
   </div>
@@ -79,25 +90,25 @@ make
 <h2 id="projects">Projects</h2>
 <h3 id="audio">Audio</h3>
 <div class="content">
-<a href="http://fuplayer.org/">FUPlayer</a><br />
-<a href="http://live.gnome.org/Istanbul">Istanbul</a><br />
-<a href="http://www.jokosher.org/">Jokosher</a><br />
-<a href="http://listengnome.free.fr/">Listen</a><br />
-<a href="http://www.sacredchao.net/quodlibet">Quodlibet</a>
- </div>
+  <a href="http://fuplayer.org/">FUPlayer</a><br />
+  <a href="http://live.gnome.org/Istanbul">Istanbul</a><br />
+  <a href="http://www.jokosher.org/">Jokosher</a><br />
+  <a href="http://listengnome.free.fr/">Listen</a><br />
+  <a href="http://www.sacredchao.net/quodlibet">Quodlibet</a>
+</div>
  
 <h3 id="video">Video</h3>
-  <div class="content">
-<a href="http://www.fluendo.com/elisa">Elisa</a><br />
-<a href="http://www.pitivi.org/">PiTiVi</a><br />
-<a href="http://home.gna.org/ticasto/">Ticasto</a>
- </div>
+<div class="content">
+  <a href="http://www.fluendo.com/elisa">Elisa</a><br />
+  <a href="http://www.pitivi.org/">PiTiVi</a><br />
+  <a href="http://home.gna.org/whaawmp/">Whaaw</a>
+</div>
 
 <h3 id="server">Server</h3>
-  <div class="content">
-<a href="http://www.flumotion.net/">Flumotion</a>
-
- </div>
+<div class="content">
+  <a href="http://www.flumotion.net/">Flumotion</a><br />
+  <a href="http://home.gna.org/ticasto/">Ticasto</a>
+</div>
  
 <h2 id="faq">FAQ</h2>
 <div class="content">
@@ -106,7 +117,7 @@ Q: I think the docs sucks and are incomplete. Why's that?<br /><br />
 A: Well, GStreamer is one he** of a big project so it's not easy to make complete docs for it.
 And as this is on a voluntary basis work it may take some time so please be a little patient. 
 Thanks for your cooperation.
- </div>
+</div>
  
 </body>
 </html>

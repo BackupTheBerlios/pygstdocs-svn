@@ -1,3 +1,7 @@
+.list-of-tables {
+  display: none;
+}
+
 h1, h2 {
   color: #527bbd;
 }

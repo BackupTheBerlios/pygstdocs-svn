@@ -3,7 +3,8 @@
 
 <refsect1>
   <para>
-  A pipeline is a toplevel bin with its own bus and clock. If your program only contains one
+  A <ulink url="../pygst-reference/class-gstpipeline.html">gst.Pipeline</ulink>
+  is a toplevel bin with its own bus and clock. If your program only contains one
   bin-like object, this is what you're looking for. You create a pipeline object with:
   <synopsis>my_pipeline = gst.Pipeline("my-pipeline")</synopsis>
   A pipeline is just a "container" where you can put other objects and when everything is
@@ -25,14 +26,14 @@ like this:</para>
              |                                                                     |
              |    _________       _______       ______________       __________    |
              |   |         |     |       |     |              |     |          |   |
- file.mp3 ---|---| filesrc |-----|  mad  |-----| audioconvert |-----| alsasink |---|--- Audio Output
+ file.mp3 ->-|---| filesrc |-->--|  mad  |-->--| audioconvert |-->--| alsasink |---|->- Audio Output
              |   |_________|     |_______|     |______________|     |__________|   |
              |                                                                     |
              |_____________________________________________________________________|
 
 </synopsis>
 <para>and the source:</para>
-<refsect2><title>Example 3.1</title>
+<emphasis role="bold">Example 3.1</emphasis>
   <synopsis>#!/usr/bin/env python
 
 import sys, os, os.path
@@ -88,16 +89,17 @@ class GTK_Main:
 			self.player.set_state(gst.STATE_NULL)
 			self.button.set_label("Start")
 		elif t == gst.MESSAGE_ERROR:
-			err, debug = message.parse_error()
-			print "Error: %s" % err, debug
 			self.player.set_state(gst.STATE_NULL)
 			self.button.set_label("Start")
+			err, debug = message.parse_error()
+			print "Error: %s" % err, debug
+			
 
 gtk.gdk.threads_init()
 GTK_Main()
 gtk.main()
 </synopsis>
-</refsect2>
+
   <para>This next example is playing mpeg videos. Some demuxers, such as mpegdemux, uses
    dynamic pads which are created at runtime and therefor you can't link between the demuxer
   and the next element in the pipeline before the pad has been created at runtime. Watch out
@@ -107,7 +109,7 @@ gtk.main()
 that gets, at your option, a date with Richard M Stallman, Eric S Raymond or Scarlett Johansson. And before
 anyone asks, NO, you may only choose ONE of the above choices! TIA
   </para>
-<refsect2><title>Example 3.2</title>
+<emphasis role="bold">Example 3.2</emphasis>
 <synopsis>#!/usr/bin/env python
 
 import sys, os, os.path
@@ -206,7 +208,7 @@ GTK_Main()
 gtk.gdk.threads_init()
 gtk.main()
 </synopsis>
-</refsect2>
+
 
 </refsect1>
 

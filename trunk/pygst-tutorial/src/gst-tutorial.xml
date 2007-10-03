@@ -46,6 +46,11 @@
         <xi:include href="gst-seeking.xml"/>
     </chapter>
     
+    <chapter id="capabilities">
+        <title>6. Capabilities</title>
+        <xi:include href="gst-caps.xml"/>
+    </chapter>
+
     <appendix id="pygst-tut-changelog">
         <title>ChangeLog</title>
         <xi:include href="ChangeLog.xml"/>

@@ -63,11 +63,6 @@
 	    <methodname><link linkend="method-gstclock--new-single-shot-id">new_single_shot_id</link></methodname>
         <methodparam><parameter role="keyword">time</parameter></methodparam>
     </methodsynopsis>
-      
-    <methodsynopsis language="python">
-      	<methodname><link linkend="method-gstclock--reset">reset</link></methodname>
-      	<methodparam></methodparam>
-    </methodsynopsis>
     
     <methodsynopsis language="python">
       	<methodname><link linkend="method-gstclock--set-active">set_active</link></methodname>
@@ -94,8 +89,9 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis>+-- <link linkend="class-gstobject">gst.Object</link>
-  +-- <link linkend="class-gstclock">gst.Clock</link>
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
+    +-- <link linkend="class-gstobject">gst.Object</link>
+      +-- <link linkend="class-gstclock">gst.Clock</link>
 </synopsis>
 </refsect1>
 
@@ -113,23 +109,30 @@
                 <colspec column="2" colwidth="1in"/>
                 <colspec column="3" colwidth="4in"/>
                 <tbody>
-                    
                     <row valign="top">
                         <entry>"stats"</entry>
-                        <entry>Read-Write</entry>
-                        <entry>Boolean property to activate stat generation on the clock. Default value: <literal>FALSE</literal>.</entry>
+                        <entry>Read/Write</entry>
+                        <entry>Enable clock stats (unimplemented)..
+                         Default value: <literal>False</literal>.</entry>
                     </row>
                     <row valign="top">
-                        <entry>"max-diff"</entry>
-                        <entry>Read-Write</entry>
-                        <entry>Maximum allowed diff for clock sync requests against the real time. Allowed values: &gt;= 0. Default value: 2000000000.</entry>
+                        <entry>"timeout"</entry>
+                        <entry>Read/Write</entry>
+                        <entry>The amount of time, in nanoseconds, to sample master and slave clocks. 
+                        Default value: <literal>100000000</literal>.</entry>
                     </row>
                     <row valign="top">
-                        <entry>"event-diff"</entry>
-                        <entry>Read-Write</entry>
-                        <entry>The amount of time that may elapse until 2 events are treated as happening at different times. Default value: 1000000000.</entry>
+                        <entry>"window-size"</entry>
+                        <entry>Read/Write</entry>
+                        <entry>The size of the window used to calculate rate and offset.
+                        Allowed values: <literal>[2,1024]</literal>, Default value: <literal>32</literal>.</entry>
                     </row>
-
+                    <row valign="top">
+                        <entry>"window-threshold"</entry>
+                        <entry>Read/Write</entry>
+                        <entry>The threshold to start calculating rate and offset.
+                        Allowed values: <literal>[2,1024]</literal>, Default value: <literal>4</literal>.</entry>
+                    </row>
                 </tbody>
             </tgroup>
         </informaltable>
@@ -296,7 +299,7 @@
     <variablelist>
 	    <varlistentry>
 	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
-	      <listitem><simpara> <literal>TRUE</literal> if the clock is active.</simpara></listitem>
+	      <listitem><simpara> <literal>True</literal> if the clock is active.</simpara></listitem>
 	    </varlistentry>
     </variablelist>
 
@@ -357,22 +360,6 @@
       notification at the requested time.
 	  </para>
   </refsect2> 
-  
-  <refsect2 id="method-gstclock--reset">
-    <title>gst.Clock.reset</title>
-    <programlisting><methodsynopsis language="python">
-	    <methodname>reset</methodname>
-  	    <methodparam></methodparam>
-	    </methodsynopsis></programlisting>
-      
-    <variablelist>
-	  
-    </variablelist>
-
-    <para>
-      The <methodname>reset</methodname>() method reset the clock to time 0.
-	  </para>
-  </refsect2>
   
   <refsect2 id="method-gstclock--set-active">
     <title>gst.Clock.set_active</title>
