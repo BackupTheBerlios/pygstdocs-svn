@@ -19,25 +19,22 @@
 
     <constructorsynopsis language="python">
         <methodname><link linkend="constructor-gstiterator">gst.Iterator</link></methodname>
-        <methodparam></methodparam>
+        <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
     </constructorsynopsis>
     
     <methodsynopsis language="python">
         <methodname><link linkend="method-gstiterator--next">next</link></methodname>
-        <methodparam></methodparam>
     </methodsynopsis>
   
     <methodsynopsis language="python">
         <methodname><link linkend="method-gstiterator--push">push</link></methodname>
-        <methodparam><parameter role="keyword"></parameter></methodparam>
-       
+        <methodparam><parameter role="keyword">iterator</parameter></methodparam>
     </methodsynopsis>
     
      <methodsynopsis language="python">
         <methodname><link linkend="method-gstiterator--resync">resync</link></methodname>
-        <methodparam><parameter role="keyword"></parameter></methodparam>
-       
     </methodsynopsis>
+    
   </classsynopsis>
 
 </refsect1>
@@ -73,12 +70,12 @@
     <variablelist>
         <varlistentry>
             <term><parameter role="keyword">name</parameter>&nbsp;:</term>
-            <listitem><simpara> The name for the pipeline.</simpara></listitem>
+            <listitem><simpara> The name for the iterator.</simpara></listitem>
         </varlistentry>
     </variablelist>
     
     <para>
-        Creates a new pipeline with the given name.
+        Creates a new gst.Iterator with the given name.
     </para>
 </refsect1>
 
@@ -99,12 +96,15 @@
         <variablelist>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara></simpara></listitem>
+                <listitem><simpara>The result of the iteration. Unref after usage if this is a 
+                refcounted object. MT safe.</simpara></listitem>
             </varlistentry>
         </variablelist>
       
         <para>
-            The <methodname>next</methodname>() method .
+            The <methodname>next</methodname>() method gets the next item from the iterator. For iterators 
+            that return refcounted objects, the returned object will have its refcount increased and should 
+            therefore be unreffed after usage.
         </para>
     </refsect2>
 
@@ -112,22 +112,24 @@
         <title>gst.Iterator.push</title>
         <programlisting><methodsynopsis language="python">
             <methodname>push</methodname>
-            <methodparam><parameter role="keyword"></parameter></methodparam>
+            <methodparam><parameter role="keyword">iterator</parameter></methodparam>
         </methodsynopsis></programlisting>
       
         <variablelist>
             <varlistentry>
-                <term><parameter role="keyword"></parameter>&nbsp;:</term>
-                <listitem><simpara></simpara></listitem>
+                <term><parameter role="keyword">iterator</parameter>&nbsp;:</term>
+                <listitem><simpara>The gst.Iterator to push</simpara></listitem>
             </varlistentry>
           <varlistentry>
              <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara></simpara></listitem>
+                <listitem><simpara>None</simpara></listitem>
           </varlistentry>
         </variablelist>
      
         <para>
-            The <methodname>push</methodname>() method.
+            The <methodname>push</methodname>() method pushes other iterator onto it. All calls performed 
+            on it are forwarded tot other. If other returns GST_ITERATOR_DONE, it is popped again and calls
+             are handled by it again.
         </para>
     </refsect2>
     
@@ -135,22 +137,18 @@
         <title>gst.Iterator.resync</title>
         <programlisting><methodsynopsis language="python">
             <methodname>resync</methodname>
-            <methodparam><parameter role="keyword"></parameter></methodparam>
         </methodsynopsis></programlisting>
       
         <variablelist>
           <varlistentry>
-                <term><parameter role="keyword"></parameter>&nbsp;:</term>
-                <listitem><simpara></simpara></listitem>
-          </varlistentry>
-          <varlistentry>
              <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara></simpara></listitem>
+                <listitem><simpara>None</simpara></listitem>
           </varlistentry>
         </variablelist>
 
         <para>
-            The <methodname>resync</methodname>() method 
+            The <methodname>resync</methodname>() method resyncs the iterator. This function is mostly 
+            called after next() returned gst.ITERATOR_RESYNC.
         </para>
     </refsect2>
   </refsect1>

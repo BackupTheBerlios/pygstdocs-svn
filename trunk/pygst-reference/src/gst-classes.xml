@@ -17,8 +17,8 @@
     <xi:include href="gst-gstevent.xml"/>
     <xi:include href="gst-gstformat.xml"/>
     <xi:include href="gst-gstghostpad.xml"/>
-    <xi:include href="gst-gstiterator.xml"/>
     <xi:include href="gst-gstindex.xml"/>
+    <xi:include href="gst-gstiterator.xml"/>
     <xi:include href="gst-gstmessage.xml"/>
     <xi:include href="gst-gstminiobject.xml"/>
     <xi:include href="gst-gstobject.xml"/>

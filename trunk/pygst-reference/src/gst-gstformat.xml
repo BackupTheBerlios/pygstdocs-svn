@@ -18,16 +18,20 @@
         <ooclass><classname>gst.Format</classname></ooclass>
 
     <constructorsynopsis language="python">
-        <methodname>gst.Format</methodname>
+        <methodname><link linkend="constructor-gstformat">gst.Format</link></methodname>
         <methodparam><parameter role="keyword">type</parameter></methodparam>
     </constructorsynopsis>
     </classsynopsis>
   
 <programlisting>
-    <emphasis role="bold">Functions</emphasis>
+<emphasis role="bold">Functions</emphasis>
     
 <methodsynopsis language="python"><methodname><link linkend="function-gstformat--format-get-by-nick">gst.format_get_by_nick</link></methodname>
-<methodparam><parameter role="keyword">nick</parameter></methodparam></methodsynopsis>
+<methodparam><parameter role="keyword">nick</parameter></methodparam>
+</methodsynopsis><methodsynopsis language="python"><methodname><link linkend="function-gstformat--format-iterate-definitions">gst.format_iterate_definitions</link></methodname>
+</methodsynopsis><methodsynopsis language="python"><methodname><link linkend="function-gstformat--format-register">gst.format_register</link></methodname>
+<methodparam><parameter role="keyword">nick</parameter></methodparam>
+<methodparam><parameter role="keyword">description</parameter></methodparam></methodsynopsis>
 </programlisting>
 </refsect1>
 
@@ -44,12 +48,12 @@
             <tgroup cols="3">
                 <tbody>
                     <row valign="top">
-                        <entry><methodname>value_name</methodname></entry>
+                        <entry><methodname>"value_name"</methodname></entry>
                         <entry>Read</entry>
-                        <entry>The name of the type of the format, eg GST_FORMAT_TIME.</entry>
+                        <entry>The name of the type of the format, eg gst.FORMAT_TIME.</entry>
                     </row>
                     <row valign="top">
-                        <entry><methodname>value_nick</methodname></entry>
+                        <entry><methodname>"value_nick"</methodname></entry>
                         <entry>Read</entry>
                         <entry>The nick of the type of the format, eg time.</entry>
                     </row>
@@ -72,7 +76,29 @@
 </refsect1>
 
 
+<!-- ******************************** -->
+<!-- BEGIN OF MyClass' CONSTRUCTOR -->
+<!-- ******************************** -->
 
+<refsect1 id="constructor-gstformat">
+    <title>Constructor</title>
+    
+    <programlisting><constructorsynopsis language="python">
+            <methodname>gst.Format</methodname>
+            <methodparam><parameter role="keyword">type</parameter><initializer>None</initializer></methodparam>
+        </constructorsynopsis></programlisting>
+    
+    <variablelist>
+        <varlistentry>
+            <term><parameter role="keyword">type</parameter>&nbsp;:</term>
+            <listitem><simpara>a format <link linkend="gst-format-constants">type</link></simpara></listitem>
+        </varlistentry>
+    </variablelist>
+    
+    <para>
+        Creates a new gst.Format of the given type.
+    </para>
+</refsect1>
 
   <!-- ************************** -->
   <!-- BEGIN OF gst.Format's FUNCTIONS -->
@@ -119,7 +145,7 @@
             </variablelist>
           
             <para>
-                The <methodname>format_iterate_definitions</methodname>() checks for all registered formats. 
+                The <methodname>format_iterate_definitions</methodname>() function checks for all registered formats. 
             </para>
         </refsect2>
         

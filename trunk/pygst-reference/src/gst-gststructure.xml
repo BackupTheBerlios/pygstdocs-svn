@@ -31,6 +31,83 @@
         <methodparam><parameter role="keyword">field_name</parameter></methodparam>
         <methodparam><parameter role="keyword">target</parameter></methodparam>
     </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--fixate_field_nearest_double">fixate_field_nearest_double</link></methodname>
+        <methodparam><parameter role="keyword">field_name</parameter></methodparam>
+        <methodparam><parameter role="keyword">target</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--fixate_field_nearest_int">fixate_field_nearest_int</link></methodname>
+        <methodparam><parameter role="keyword">field_name</parameter></methodparam>
+        <methodparam><parameter role="keyword">target</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--foreach">foreach</link></methodname>
+        <methodparam><parameter role="keyword">func</parameter></methodparam>
+        <methodparam><parameter role="keyword">user_data</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--get_field_type">get_field_type</link></methodname>
+        <methodparam><parameter role="keyword">field_name</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--get_name">get_name</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--has_field">has_field</link></methodname>
+        <methodparam><parameter role="keyword">field_name</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--has_field_typed">has_field_typed</link></methodname>
+        <methodparam><parameter role="keyword">field_name</parameter></methodparam>
+        <methodparam><parameter role="keyword">type</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--has_name">has_name</link></methodname>
+        <methodparam><parameter role="keyword">name</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--n_fields">n_fields</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--nth_field_name">nth_field_name</link></methodname>
+        <methodparam><parameter role="keyword">index</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--remove_all_fields">remove_all_fields</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--remove_field">remove_field</link></methodname>
+        <methodparam><parameter role="keyword">field_name</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--set_name">set_name</link></methodname>
+        <methodparam><parameter role="keyword">name</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--set_value">set_value</link></methodname>
+        <methodparam><parameter role="keyword">field_name</parameter></methodparam>
+        <methodparam><parameter role="keyword">value</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gststructure--to_string">to_string</link></methodname>
+    </methodsynopsis>
+    
 </classsynopsis>
 
 <programlisting>
@@ -53,27 +130,26 @@
     <title>Description</title>
 
     <para>
-        A GstStructure is a collection of key/value pairs. The keys are expressed as GQuarks and the 
+        A gst.Structure is a collection of key/value pairs. The keys are expressed as GQuarks and the 
         values can be of any GType.
     </para>
     <para>
     In addition to the key/value pairs, a gst.Structure also has a name.
     </para>
      <para>
-    gst.Structure is used by various GStreamer subsystems to store information in a flexible and extensible
+    A gst.Structure is used by various GStreamer subsystems to store information in a flexible and extensible
     way. A gst.Structure does not have a refcount because it usually is part of a higher level object such as 
-    gst.Caps. It provides a means to enforce mutability using the refcount of the parent with the 
-    gst_structure_set_parent_refcount() method.
+    gst.Caps.
     </para>
      <para>
-    Field values can be changed with set_value() or gst_structure_set().
+    Field values can be changed with set_value().
     </para>
      <para>
     Field values can be retrieved with get_value() or the more convenient 
-    gst_structure_get_*() functions.
+    gst.Structure.get_*() functions.
     </para>
     <para>
-    Fields can be removed with remove_field() or remove_fields(). 
+    Fields can be removed with remove_field() or remove_all_fields(). 
     </para>
 </refsect1>
 
@@ -86,7 +162,7 @@
     
     <programlisting><constructorsynopsis language="python">
             <methodname>gst.Structure</methodname>
-            <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
+            <methodparam><parameter role="keyword">name</parameter></methodparam>
         </constructorsynopsis></programlisting>
     
     <variablelist>
@@ -154,6 +230,368 @@
             field_name field to the given target boolean if that field is not fixed yet.
         </para>
     </refsect2>
+    
+    <refsect2 id="method-gststructure--fixate_field_nearest_double">
+        <title>gst.Structure.fixate_field_nearest_double</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>fixate_field_nearest_double</methodname>
+            <methodparam><parameter role="keyword">field_name</parameter></methodparam>
+            <methodparam><parameter role="keyword">target</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">field_name</parameter>&nbsp;:</term>
+                <listitem><simpara> a field in structure</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">target</parameter>&nbsp;:</term>
+                <listitem><simpara> the target value of the fixation</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> True if the structure could be fixated.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>fixate_field_nearest_double</methodname>() method fixates a structure by changing the given 
+            field to the nearest integer to target that is a subset of the existing field.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gststructure--fixate_field_nearest_int">
+        <title>gst.Structure.fixate_field_nearest_int</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>fixate_field_nearest_int</methodname>
+            <methodparam><parameter role="keyword">field_name</parameter></methodparam>
+            <methodparam><parameter role="keyword">target</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">field_name</parameter>&nbsp;:</term>
+                <listitem><simpara> a field in structure</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">target</parameter>&nbsp;:</term>
+                <listitem><simpara> the target value of the fixation</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> True if the structure could be fixated.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>fixate_field_nearest_int</methodname>() method fixates a structure by changing the given 
+            field to the nearest double to target that is a subset of the existing field.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gststructure--foreach">
+        <title>gst.Structure.foreach</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>foreach</methodname>
+            <methodparam><parameter role="keyword">func</parameter></methodparam>
+            <methodparam><parameter role="keyword">user_data</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">func</parameter>&nbsp;:</term>
+                <listitem><simpara>a function to call for each field</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">user_data</parameter>&nbsp;:</term>
+                <listitem><simpara>private data</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>True if the supplied function returns True For each of the fields 
+                False otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>foreach</methodname>() method calls the provided function once for each field in the 
+            gst.Structure. The function must not modify the fields.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gststructure--get_field_type">
+        <title>gst.Structure.get_field_type</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_field_type</methodname>
+            <methodparam><parameter role="keyword">field_name</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">field_name</parameter>&nbsp;:</term>
+                <listitem><simpara>the name of the field</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>the GValue of the field</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>get_field_type</methodname>() method finds the field with the given name, and returns 
+            the type of the value it contains. If the field is not found, G_TYPE_INVALID is returned.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gststructure--get_name">
+        <title>gst.Structure.get_name</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_name</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>the name of the structure.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>get_name</methodname>() method gets the name of the structure as a string.
+        </para>
+    </refsect2>
+    
+     <refsect2 id="method-gststructure--has_field">
+        <title>gst.Structure.has_field</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>has_field</methodname>
+            <methodparam><parameter role="keyword">field_name</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">field_name</parameter>&nbsp;:</term>
+                <listitem><simpara>the name of the field</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>True if the structure contains a field with the given name</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>has_field</methodname>() method checks if a structure contains a field named field_name.
+        </para>
+    </refsect2>
+    
+     <refsect2 id="method-gststructure--has_field_typed">
+        <title>gst.Structure.has_field_typed</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>has_field_typed</methodname>
+            <methodparam><parameter role="keyword">field_name</parameter></methodparam>
+            <methodparam><parameter role="keyword">type</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">field_name</parameter>&nbsp;:</term>
+                <listitem><simpara>the name of the field</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">type</parameter>&nbsp;:</term>
+                <listitem><simpara>the type of a value</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>True if the structure contains a field with the given name and type</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>has_field_typed</methodname>() method checks if a structure contains a field named 
+            field_name and with GType type.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gststructure--has_name">
+        <title>gst.Structure.has_name</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>has_name</methodname>
+            <methodparam><parameter role="keyword">name</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+                <listitem><simpara>structure name to check for</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>True if name matches the name of the structure.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>has_name</methodname>() method checks if the structure has the given name.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gststructure--n_fields">
+        <title>gst.Structure.n_fields</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>n_fields</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>the number of fields in the structure</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>n_fields</methodname>() method gets the number of fields in the structure.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gststructure--nth_field_name">
+        <title>gst.Structure.nth_field_name</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>nth_field_name</methodname>
+            <methodparam><parameter role="keyword">index</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">index</parameter>&nbsp;:</term>
+                <listitem><simpara>the index to get the name of</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>the name of the given field number</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>nth_field_name</methodname>() method gets the name of the given field number, 
+            counting from 0 onwards.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gststructure--remove_all_fields">
+        <title>gst.Structure.remove_all_fields</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>remove_all_fields</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>None</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>remove_all_fields</methodname>() method removes all fields in a gst.Structure.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gststructure--remove_field">
+        <title>gst.Structure.remove_field</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>remove_field</methodname>
+            <methodparam><parameter role="keyword">field_name</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">field_name</parameter>&nbsp;:</term>
+                <listitem><simpara>the name of the field to remove</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>None</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>remove_field</methodname>() method removes the field with the given name. If the field with 
+            the given name does not exist, the structure is unchanged.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gststructure--set_name">
+        <title>gst.Structure.set_name</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>set_name</methodname>
+            <methodparam><parameter role="keyword">name</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+                <listitem><simpara>the new name of the structure</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>None</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>set_name</methodname>() method sets the name of the structure to the given name. The 
+            string provided is copied before being used.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gststructure--set_value">
+        <title>gst.Structure.set_value</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>set_name</methodname>
+            <methodparam><parameter role="keyword">field_name</parameter></methodparam>
+            <methodparam><parameter role="keyword">value</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">field_name</parameter>&nbsp;:</term>
+                <listitem><simpara>the name of the field to set</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">value</parameter>&nbsp;:</term>
+                <listitem><simpara>the new value of the field</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>None</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>set_value</methodname>() method sets the field with the given name field to value. If the 
+            field does not exist, it is created. If the field exists, the previous value is replaced and freed.
+
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gststructure--to_string">
+        <title>gst.Structure.to_string</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>to_string</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>a string.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>to_string</methodname>() method converts structure to a human-readable string representation.
+
+        </para>
+    </refsect2>
 
 </refsect1>
 
@@ -189,8 +627,8 @@
             </variablelist>
           
             <para>
-                The <methodname>structure_from_string</methodname>() function creates a GstStructure from a string 
-                representation. If end is not NULL, a pointer to the place inside the given string where parsing ended 
+                The <methodname>structure_from_string</methodname>() function creates a gst.Structure from a string 
+                representation. If end is not None, a pointer to the place inside the given string where parsing ended 
                 will be returned.
             </para>
         </refsect2>

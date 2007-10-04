@@ -18,10 +18,12 @@
       <ooclass><classname>gst.PluginFeature</classname></ooclass>
       <ooclass><classname><link linkend="class-gstobject">gst.Object</link></classname></ooclass>
     
-     <constructorsynopsis language="python">
-        <methodname>gst.PluginFeature</methodname>
-        <methodparam></methodparam>
-    </constructorsynopsis>
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpluginfeature--check_version">check_version</link></methodname>
+        <methodparam><parameter role="keyword">major</parameter></methodparam>
+        <methodparam><parameter role="keyword">minor</parameter></methodparam>
+        <methodparam><parameter role="keyword">micro</parameter></methodparam>
+    </methodsynopsis>
     
     <methodsynopsis language="python">
         <methodname><link linkend="method-gstpluginfeature--get_name">get_name</link></methodname>
@@ -29,6 +31,20 @@
   
     <methodsynopsis language="python">
         <methodname><link linkend="method-gstpluginfeature--get_rank">get_rank</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpluginfeature--load">load</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpluginfeature--set_name">set_name</link></methodname>
+        <methodparam><parameter role="keyword">name</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstpluginfeature--set_rank">set_rank</link></methodname>
+        <methodparam><parameter role="keyword">rank</parameter></methodparam>
     </methodsynopsis>
     
 
@@ -46,7 +62,7 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis><ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
     +-- <link linkend="class-gstobject">gst.Object</link>
         +-- <link linkend="class-gstpluginfeature">gst.PluginFeature</link>
 </synopsis>
@@ -73,6 +89,40 @@
 <refsect1>
     <title>Methods</title>
 
+    <refsect2 id="method-gstpluginfeature--check_version">
+        <title>gst.PluginFeature.check_version</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>check_version</methodname>
+            <methodparam><parameter role="keyword">major</parameter></methodparam>
+            <methodparam><parameter role="keyword">minor</parameter></methodparam>
+            <methodparam><parameter role="keyword">micro</parameter></methodparam>
+        </methodsynopsis></programlisting>
+    
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">major</parameter>&nbsp;:</term>
+                <listitem><simpara>minimum required major version</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">minor</parameter>&nbsp;:</term>
+                <listitem><simpara>minimum required minor version</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">micro</parameter>&nbsp;:</term>
+                <listitem><simpara>minimum required micro version</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>True if the plugin feature has at least the required version, otherwise False.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+      
+        <para>
+            The <methodname>check_version</methodname>() method checks whether the given plugin feature 
+            is at least the required version.
+        </para>
+    </refsect2>
+    
     <refsect2 id="method-gstpluginfeature--get_name">
         <title>gst.PluginFeature.get_name</title>
         <programlisting><methodsynopsis language="python">
@@ -108,8 +158,77 @@
             The <methodname>get_rank</methodname>() method gets the rank of the feature.
         </para>
     </refsect2>
+    
+    <refsect2 id="method-gstpluginfeature--load">
+        <title>gst.PluginFeature.load</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>load</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>A reference to the loaded feature, or None on error.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>load</methodname>() method loads the plugin containing feature if it's not already loaded. 
+            The feature is unaffected; use the return value instead.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpluginfeature--set_name">
+        <title>gst.PluginFeature.set_name</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>set_name</methodname>
+            <methodparam><parameter role="keyword">name</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+                <listitem><simpara>the name to set</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>None</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>set_name</methodname>() method sets the name of a plugin feature. The name uniquely 
+            identifies a feature within all features of the same type. Renaming a plugin feature is not allowed. 
+            A copy is made of the name so you should free the supplied name after calling this function.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstpluginfeature--set_rank">
+        <title>gst.PluginFeature.set_rank</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>set_rank</methodname>
+            <methodparam><parameter role="keyword">rank</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">rank</parameter>&nbsp;:</term>
+                <listitem><simpara>rank value - higher number means more priority rank</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>None</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>set_rank</methodname>() method specifies a rank for a plugin feature, so that 
+            autoplugging uses the most appropriate feature.
+        </para>
+    </refsect2>
+    
   
-  </refsect1>
+</refsect1>
 
  
 </refentry>

@@ -15,7 +15,7 @@
     <title>Synopsis</title>
 
     <classsynopsis language="python">
-        <ooclass><classname>gst.MyClass</classname></ooclass>
+        <ooclass><classname>gst.Plugin</classname></ooclass>
         <ooclass><classname><link linkend="class-gstobject">gst.Object</link></classname></ooclass>
 
     <constructorsynopsis language="python">
@@ -32,7 +32,40 @@
     </methodsynopsis>
     
     <methodsynopsis language="python">
+        <methodname><link linkend="method-gstplugin--get_license">get_license</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
         <methodname><link linkend="method-gstplugin--get_name">get_name</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstplugin--get_origin">get_origin</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstplugin--get_package">get_package</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstplugin--get_source">get_source</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstplugin--get_version">get_version</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstplugin--is_loaded">is_loaded</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstplugin--load">load</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstplugin--name_filter">name_filter</link></methodname>
+        <methodparam><parameter role="keyword">name</parameter></methodparam>
     </methodsynopsis>
     
 </classsynopsis>
@@ -59,7 +92,7 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis><ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
     +-- <link linkend="class-gstobject">gst.Object</link>
         +-- <link linkend="class-gstplugin">gst.Plugin</link>
 </synopsis>
@@ -80,20 +113,17 @@
     <para>
        A plugin should export a symbol plugin_desc that is a struct of type gst.PluginDesc. 
        The plugin loader will check the version of the core library the plugin was linked against 
-       and will create a new GstPlugin. It will then call the gst.PluginInitFunc function that was provided 
+       and will create a new gst.Plugin. It will then call the gst.PluginInitFunc function that was provided 
        in the plugin_desc.
     </para>
     <para>
         Once you have a handle to a gst.Plugin (e.g. from the gst.RegistryPool), you can add any object 
-        that subclasses GstPluginFeature.
+        that subclasses gst.PluginFeature.
     </para>
     <para>
-        Use gst_plugin_find_feature() and gst_plugin_get_feature_list() to find features in a plugin.
-    </para>
-    <para>
-        Usually plugins are always automaticlly loaded so you don't need to call gst_plugin_load() 
+        Usually plugins are always automaticlly loaded so you don't need to call gst.Plugin.load() 
         explicitly to bring it into memory. There are options to statically link plugins to an app or
-        even use GStreamer without a plugin repository in which case gst_plugin_load() can be needed
+        even use GStreamer without a plugin repository in which case gst.Plugin.load() can be needed
         to bring the plugin into memory.
     </para>
 </refsect1>
@@ -108,18 +138,10 @@
     
     <programlisting><constructorsynopsis language="python">
             <methodname>gst.Plugin</methodname>
-            <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
         </constructorsynopsis></programlisting>
     
-    <variablelist>
-        <varlistentry>
-            <term><parameter role="keyword">name</parameter>&nbsp;:</term>
-            <listitem><simpara> The name for the plugin.</simpara></listitem>
-        </varlistentry>
-    </variablelist>
-    
     <para>
-        Creates a new plugin with the given name.
+        Creates a new gst.Plugin.
     </para>
 </refsect1>
 
@@ -168,6 +190,24 @@
         </para>
     </refsect2>
     
+    <refsect2 id="method-gstplugin--get_license">
+        <title>gst.Plugin.get_license</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_license</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+             <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the license of the plugin.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>get_license</methodname>() method gets the gets the license of the plugin.
+        </para>
+    </refsect2>
+    
     <refsect2 id="method-gstplugin--get_name">
         <title>gst.Plugin.get_name</title>
         <programlisting><methodsynopsis language="python">
@@ -183,6 +223,139 @@
 
         <para>
             The <methodname>get_name</methodname>() method gets the short name of the plugin.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstplugin--get_origin">
+        <title>gst.Plugin.get_origin</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_origin</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the url of the plugin.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>get_origin</methodname>() method gets the URL where the plugin comes from.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstplugin--get_package">
+        <title>gst.Plugin.get_package</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_package</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the package of the plugin.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>get_package</methodname>() method gets the package the plugin belongs to.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstplugin--get_source">
+        <title>gst.Plugin.get_source</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_source</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the source of the plugin.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>get_source</methodname>() method gets the source module the plugin belongs to.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstplugin--get_version">
+        <title>gst.Plugin.get_version</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_version</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the version of the plugin.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>get_version</methodname>() method gets he version of the plugin.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstplugin--is_loaded">
+        <title>gst.Plugin.is_loaded</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>is_loaded</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>True if loaded, False otherwise</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>is_loaded</methodname>() method queries if the plugin is loaded into memory.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstplugin--load">
+        <title>gst.Plugin.load</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>load</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>A reference to a loaded plugin, or None on error.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>load</methodname>() method loads a plugin. Note that the *return value* is 
+            the loaded plugin; plugin is untouched.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstplugin--name_filter">
+        <title>gst.Plugin.name_filter</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>name_filter</methodname>
+            <methodparam><parameter role="keyword">name</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">nome</parameter>&nbsp;:</term>
+                <listitem><simpara>the name of the plugin</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>True if the plugin is of the given name.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>name_filter</methodname>() method is standard filter that returns 
+            True when the plugin is of the given name.
         </para>
     </refsect2>
   

@@ -26,11 +26,23 @@
     </constructorsynopsis>
     
     <methodsynopsis language="python">
+        <methodname><link linkend="method-gsttask--get_state">get_state</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
         <methodname><link linkend="method-gsttask--join">join</link></methodname>
     </methodsynopsis>
   
     <methodsynopsis language="python">
         <methodname><link linkend="method-gsttask--pause">pause</link></methodname>
+    </methodsynopsis>
+    
+     <methodsynopsis language="python">
+        <methodname><link linkend="method-gsttask--start">start</link></methodname>
+    </methodsynopsis>
+    
+     <methodsynopsis language="python">
+        <methodname><link linkend="method-gsttask--stop">stop</link></methodname>
     </methodsynopsis>
 </classsynopsis>
 
@@ -44,7 +56,7 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis><ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
     +-- <link linkend="class-gstobject">gst.Object</link>
         +-- <link linkend="class-gsttask">gst.Task</link>
 </synopsis>
@@ -63,16 +75,16 @@
     </para>
     <para>
         A gst.Pad will typically start a gst.Task to push or pull data to/from the peer pads. Most source 
-        elements start a GstTask to push data. In some cases a demuxer element can start a gst.Task to pull 
+        elements start a gst.Task to push data. In some cases a demuxer element can start a gst.Task to pull 
         data from a peer element. This is typically done when the demuxer can perform random access on the 
         upstream peer element for improved performance.
     </para>
     <para>
-        Although convenience functions exist on GstPad to start/pause/stop tasks, it might sometimes be 
+        Although convenience functions exist on gst.Pad to start/pause/stop tasks, it might sometimes be 
         needed to create a gst.Task manually if it is not related to a gst.Pad.
     </para>
      <para>
-        Before the gst.Task can be run, it needs a GStaticRecMutex that can be set with set_lock().
+        Before the gst.Task can be run, it needs a gst.StaticRecMutex that can be set with set_lock().
     </para>
      <para>
         The task can be started, paused and stopped with start(), pause() and 
@@ -102,7 +114,7 @@
         </constructorsynopsis></programlisting>
     
     <para>
-        Creates a new pipeline with the given name.
+        Creates a new gst.Task.
     </para>
 </refsect1>
 
@@ -114,6 +126,24 @@
 <refsect1>
     <title>Methods</title>
 
+    <refsect2 id="method-gsttask--get_state">
+        <title>gst.Task.get_state</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_state</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+           <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>The gst.TaskState of the task. MT safe.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>get_state</methodname>() method gets the current state of the task.
+        </para>
+    </refsect2>
+    
     <refsect2 id="method-gsttask--join">
         <title>gst.Task.join</title>
         <programlisting><methodsynopsis language="python">
@@ -129,7 +159,7 @@
 
         <para>
             The <methodname>join</methodname>() method joins task. After this call, it is safe to unref the 
-            task and clean up the lock set with gst_task_set_lock().
+            task and clean up the lock set with set_lock().
             The task will automatically be stopped with this call.
             This function cannot be called from within a task function as this would cause a deadlock. 
             The function will detect this and print a g_warning.
@@ -153,6 +183,42 @@
             The <methodname>pause</methodname>() method pauses task. This method can also be called on 
             a task in the stopped state, in which case a thread will be started and will remain in the
              paused state. This function does not wait for the task to complete the paused state.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gsttask--start">
+        <title>gst.Task.start</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>start</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+           <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> True if the task could be started. MT safe.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>start</methodname>() method starts task.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gsttask--stop">
+        <title>gst.Task.stop</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>stop</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+           <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> True if the task could be stopped. MT safe.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>stop</methodname>() method stops task.
         </para>
     </refsect2>
  
