@@ -1,0 +1,432 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstindex">
+    <refnamediv>
+        <refname>gst.Index</refname>
+        <refpurpose>Generate indexes on objects.</refpurpose>
+    </refnamediv>
+
+<!-- *************************** -->
+<!-- BEGIN OF MyClass' SYNOPSIS -->
+<!-- *************************** -->
+
+<refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.Index</classname></ooclass>
+        <ooclass><classname><link linkend="class-gstobject">gst.Object</link></classname></ooclass>
+        
+    <constructorsynopsis language="python">
+        <methodname><link linkend="constructor-gstindex">gst.Index</link></methodname>
+        <methodparam></methodparam>
+    </constructorsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstindex--add_format">add_format</link></methodname>
+        <methodparam><parameter role="keyword">id</parameter></methodparam>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstindex--add_id">add_id</link></methodname>
+        <methodparam><parameter role="keyword">id</parameter></methodparam>
+        <methodparam><parameter role="keyword">description</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstindex--commit">commit</link></methodname>
+        <methodparam><parameter role="keyword">id</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstindex--get_assoc_entry">get_assoc_entry</link></methodname>
+        <methodparam><parameter role="keyword">id</parameter></methodparam>
+        <methodparam><parameter role="keyword">method</parameter></methodparam>
+        <methodparam><parameter role="keyword">flags</parameter></methodparam>
+        <methodparam><parameter role="keyword">format</parameter></methodparam>
+        <methodparam><parameter role="keyword">value</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstindex--get_certainty">get_certainty</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstindex--get_group">get_group</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstindex--new_group">new_group</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstindex--set_certainty">set_certainty</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstindex--set_group">set_group</link></methodname>
+        <methodparam><parameter role="keyword">groupnum</parameter></methodparam>
+    </methodsynopsis>
+</classsynopsis>
+
+</refsect1>
+
+ 
+<!-- ************************** -->
+<!-- BEGIN OF MyClass' ANCESTRY -->
+<!-- ************************** -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
+    +-- <link linkend="class-gstobject">gst.Object</link>
+        +-- <link linkend="class-gstindex">gst.Index</link>
+</synopsis>
+</refsect1>
+
+
+<!-- *************************** -->
+<!-- BEGIN OF MyClass' Properties -->
+<!-- *************************** -->
+
+<refsect1>
+    <title>Properties</title>
+    
+    <blockquote role="properties">
+        <informaltable pgwide="1" frame="none">
+            <tgroup cols="3">
+                <colspec column="1" colwidth="1in"/>
+                <colspec column="2" colwidth="1in"/>
+                <colspec column="3" colwidth="4in"/>
+                <tbody>
+                    <row valign="top">
+                        <entry>"resolver"</entry>
+                        <entry>Read/Write</entry>
+                        <entry>Select a predefined object to string mapper.
+                        Default value: gst.INDEX_RESOLVER_PATH</entry>
+                   </row>
+               </tbody>
+            </tgroup>
+        </informaltable>
+    </blockquote>
+</refsect1>
+
+
+<!-- ********************************* -->
+<!-- BEGIN OF MyClass' SIGNAL PROTOTYPES -->
+<!-- ********************************* -->
+
+<refsect1>
+    <title>Signal Prototypes</title>
+    
+    <variablelist>
+        <varlistentry>
+            <term>"<link linkend="signal-gstindex--entry-added">entry-added</link>"</term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>index</parameter></methodparam>
+                    <methodparam><parameter>entry</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+    </variablelist>
+</refsect1>
+
+
+<!-- ***************************** -->
+<!-- BEGIN OF MyClass' DESCRIPTION -->
+<!-- ***************************** -->
+
+<refsect1 id="description-gstindex">
+    <title>Description</title>
+    <para>
+        A gst.Index is used to generate a stream index of one or more elements in a pipeline.
+    </para>
+</refsect1>
+
+
+<!-- ******************************** -->
+<!-- BEGIN OF MyClass' CONSTRUCTOR -->
+<!-- ******************************** -->
+
+<refsect1 id="constructor-gstindex">
+    <title>Constructor</title>
+    
+    <programlisting><constructorsynopsis language="python">
+            <methodname>gst.Index</methodname>
+        </constructorsynopsis></programlisting>
+    
+    <para>
+        Creates a new gst.Index.
+    </para>
+</refsect1>
+
+
+<!-- ************************* -->
+<!-- BEGIN OF MyClass' METHODS -->
+<!-- ************************* -->
+
+<refsect1>
+    <title>Methods</title>
+    
+    <refsect2 id="method-gstindex--add_format">
+        <title>gst.Index.add_format</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>add_format</methodname>
+            <methodparam><parameter role="keyword">id</parameter></methodparam>
+            <methodparam><parameter role="keyword">format</parameter></methodparam>
+        </methodsynopsis></programlisting>
+    
+        <variablelist>
+             <varlistentry>
+                <term><parameter role="keyword">id</parameter>&nbsp;:</term>
+                <listitem><simpara> The id.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> The format.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The newly added entry in the index.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+      
+        <para>
+            The <methodname>add_format</methodname>() method adds a format entry into the index. This function is 
+            used to map dynamic gst.Format ids to their original format key.
+        </para>
+    </refsect2>
+
+    <refsect2 id="method-gstindex--add_id">
+        <title>gst.Index.add_id</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>add_id</methodname>
+            <methodparam><parameter role="keyword">id</parameter></methodparam>
+            <methodparam><parameter role="keyword">description</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">id</parameter>&nbsp;:</term>
+                <listitem><simpara> the id of the index writer</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">description</parameter>&nbsp;:</term>
+                <listitem><simpara> the description of the index writer</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> The newly added entry in the index.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>add_id</methodname>() method adds an id entry into the index.
+        </para>
+    </refsect2>
+    
+     <refsect2 id="method-gstindex--commit">
+        <title>gst.Index.commit</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>commit</methodname>
+            <methodparam><parameter role="keyword">id</parameter></methodparam>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">id</parameter>&nbsp;:</term>
+                <listitem><simpara> the writer that commited the index</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>commit</methodname>() method tells the index that the writer with the given id is done with this index and is 
+            not going to write any more entries to it.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstindex--get_assoc_entry">
+        <title>gst.Index.get_assoc_entry</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_assoc_entry</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">id</parameter>&nbsp;:</term>
+                <listitem><simpara> the id of the index writer</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">method</parameter>&nbsp;:</term>
+                <listitem><simpara> The lookup method to use</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">flags</parameter>&nbsp;:</term>
+                <listitem><simpara> Flags for the entry</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">format</parameter>&nbsp;:</term>
+                <listitem><simpara> the format of the value</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">value</parameter>&nbsp;:</term>
+                <listitem><simpara> the value to find</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the entry associated with the value or NULL if the value was not found.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>get_assoc_entry</methodname>() method finds the given format/value in the index.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstindex--get_certainty">
+        <title>gst.Index.get_certainty</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_certainty</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the certainty of the index.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>get_certainty</methodname>() method gets the certainty of the given index.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstindex--get_group">
+        <title>gst.Index.get_group</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_group</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the id of the current group.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>get_group</methodname>() method gets the id of the current group.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstindex--new_group">
+        <title>gst.Index.new_group</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>new_group</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the id of the newly created group.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>new_group</methodname>() method creates a new group for the given index. 
+            It will be set as the current group.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstindex--set_certainty">
+        <title>gst.Index.set_certainty</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>set_certainty</methodname>
+        </methodsynopsis></programlisting>
+      
+        <variablelist>
+            <varlistentry>
+                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the certainty of the index.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>set_certainty</methodname>() method gets the certainty of the given index.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstindex--set_group">
+        <title>gst.Index.set_group</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>set_group</methodname>
+            <methodparam><parameter role="keyword">groupnum</parameter></methodparam>
+        </methodsynopsis></programlisting>
+     
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">groupnum</parameter>&nbsp;:</term>
+                <listitem><simpara>  the groupnumber to set</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> True if the operation succeeded, False if the group did not exist.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>set_group</methodname>() method sets the current groupnumber to the given argument..
+        </para>
+    </refsect2>
+
+</refsect1>
+
+
+<!-- *************************** -->
+<!-- BEGIN OF GSTINDEX SIGNALS -->
+<!-- *************************** --> 
+ 
+<refsect1>
+    <title>Signals</title>
+
+    <refsect2 id="signal-gstindex--entry-added">
+        <title>The gst.Index "entry-added" Signal</title>
+        <programlisting><methodsynopsis language="python">
+        <methodname>callback</methodname>
+         	  <methodparam><parameter>index</parameter></methodparam>
+            <methodparam><parameter>entry</parameter></methodparam>
+	          <methodparam><parameter>user_data</parameter></methodparam>   
+	      </methodsynopsis></programlisting>
+
+        <variablelist>
+    	      <varlistentry>
+        	      <term><parameter>index</parameter>&nbsp;:</term>
+        	      <listitem><simpara>The gst.Index that received the signal</simpara></listitem>
+    	      </varlistentry>
+           <varlistentry>
+        	      <term><parameter>The entry added to the index.</parameter>&nbsp;:</term>
+        	      <listitem><simpara>The entry added to the index.</simpara></listitem>
+    	      </varlistentry>
+    	      <varlistentry>
+        	      <term><parameter>user_data</parameter>&nbsp;:</term>
+                <listitem><simpara>Additional data (if any) specified with the 
+                <methodname>connect</methodname>() method</simpara></listitem>
+	          </varlistentry>
+        </variablelist>
+
+        <para>
+           The "entry-added" signal is emitted when a new entry is added to the index.
+        </para>
+    </refsect2>
+
+</refsect1>
+    
+</refentry>
+
+
+
