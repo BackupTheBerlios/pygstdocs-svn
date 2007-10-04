@@ -1,0 +1,435 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-gstelementfactory">
+    <refnamediv>
+        <refname>gst.ElementFactory</refname>
+        <refpurpose>Create gst.Elements from a factory</refpurpose>
+    </refnamediv>
+
+<!-- **************************** -->
+<!-- BEGIN OF GSTELEMENT SYNOPSIS -->
+<!-- **************************** -->
+
+<refsect1>
+    <title>Synopsis</title>
+
+    <classsynopsis language="python">
+        <ooclass><classname>gst.ElementFactory</classname></ooclass>
+        <ooclass><classname><link linkend="class-gstpluginfeature">gst.PluginFeature</link></classname></ooclass>
+    
+     <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelementfactory--can-sink-caps">can_sink_caps</link></methodname>
+        <methodparam><parameter role="keyword">caps</parameter></methodparam>
+    </methodsynopsis>
+    
+     <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelementfactory--can-src-caps">can_src_caps</link></methodname>
+        <methodparam><parameter role="keyword">caps</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelementfactory--get-author">get_author</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelementfactory--get-description">get_description</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelementfactory--get-element-type">get-element_type</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelementfactory--get-klass">get_klass</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelementfactory--get-longname">get_longname</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+         <methodname><link linkend="method-gstelementfactory--get-num-pad-templates">get_num_pad_templates</link></methodname>
+         <methodparam></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelementfactory--get-static-pad-templates">get_static_pad_templates</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+   
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelementfactory--get-uri-protocols">get_uri_protocols</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-gstelementfactory--get-uri-type">get_uri_type</link></methodname>
+        <methodparam></methodparam>
+    </methodsynopsis>
+    
+</classsynopsis>
+
+<programlisting>
+<emphasis role="bold">Functions</emphasis>
+
+<methodsynopsis language="python"><methodname><link linkend="function-gstelementfactory--element-factory-find">gst.element_factory_find</link></methodname>
+<methodparam><parameter role="keyword">name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+<methodname><link linkend="function-gstelementfactory--element-factory-make">gst.element_factory_make</link></methodname>
+<methodparam><parameter role="keyword">name</parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+<methodname><link linkend="function-gstelementfactory--element-register">gst.element_register</link></methodname>
+<methodparam><parameter role="keyword">plugin</parameter></methodparam>
+<methodparam><parameter role="keyword">name</parameter></methodparam>
+<methodparam><parameter role="keyword">rank</parameter></methodparam>
+<methodparam><parameter role="keyword">type</parameter></methodparam></methodsynopsis>
+</programlisting>
+</refsect1>
+
+<!-- **************************** -->
+<!-- BEGIN OF GSTELEMENT ANCESTRY -->
+<!-- **************************** -->
+
+<refsect1>
+    <title>Ancestry</title>
+
+<synopsis>+-- gobject.GObject
+    +-- <link linkend="class-gstobject">gst.Object</link>
+        +-- <link linkend="class-gstpluginfeature">gst.PluginFeature</link>
+            +-- <link linkend="class-gstelementfactory">gst.ElementFactory</link>
+</synopsis>
+</refsect1>
+
+<!-- ******************************* -->
+<!-- BEGIN OF GSTELEMENTFACTORY DESCRIPTION -->
+<!-- ******************************* -->
+
+<refsect1 id="description-gstelementfactory">
+    <title>Description</title>
+
+    <para>
+        gst.ElementFactory is used to create instances of elements. A gst.Elementfactory can be added to a gst.Plugin
+        as it is also a gst.PluginFeature.
+        Use the gst.element_factory_find() function to create element instances
+        or use gst.element_factory_make() as a convenient shortcut.
+        The following code example shows you how to create a gst.FileSrc element. 
+    </para>
+
+    <para>
+    <emphasis role="bold">Example:</emphasis> How to create an element with gst.element_factory_make().
+    <synopsis>filesrc = gst.element_factory_make("filesrc", "my-src")</synopsis> 
+    </para>
+</refsect1>
+ 
+
+<!-- *************************** -->
+<!-- BEGIN OF GSTELEMENTFACTORY METHODS -->
+<!-- *************************** -->
+
+<refsect1>
+    <title>Methods</title>
+
+    <refsect2 id="method-gstelementfactory--can-sink-caps">
+        <title>gst.ElementFactory.can_sink_caps</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>can_sink_caps</methodname>
+  	        <methodparam><parameter role="keyword">caps</parameter></methodparam>
+    	  </methodsynopsis></programlisting>
+        <variablelist>
+            <varlistentry>
+            <term><parameter role="keyword">caps</parameter>&nbsp;:</term>
+                <listitem><simpara> Name of caps to check.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+    	          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara><literal>True</literal> if it can sink the capabilities.</simpara></listitem>
+           </varlistentry>
+        </variablelist>
+        <para>
+            The <methodname>can_sink_caps</methodname>() method checks if the factory can sink the given capability. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelementfactory--can-src-caps">
+        <title>gst.ElementFactory.can_src_caps</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>can_src_caps</methodname>
+  	        <methodparam><parameter role="keyword">caps</parameter></methodparam>
+    	  </methodsynopsis></programlisting>
+        <variablelist>
+            <varlistentry>
+            <term><parameter role="keyword">caps</parameter>&nbsp;:</term>
+                <listitem><simpara> Name of caps to check.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+    	          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara><literal>True</literal> if it can source the given capabilities.</simpara></listitem>
+           </varlistentry>
+        </variablelist>
+        <para>
+            The <methodname>can_src_caps</methodname>() method checks if the factory can source the given capability. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelementfactory--get-author">
+        <title>gst.ElementFactory.get_author</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_author</methodname>
+    	  </methodsynopsis></programlisting>
+        <variablelist>          
+            <varlistentry>
+    	          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>the author</simpara></listitem>
+           </varlistentry>
+        </variablelist>
+        <para>
+            The <methodname>get-author</methodname>() method gets the author for this factory.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelementfactory--get-description">
+        <title>gst.ElementFactory.get_description</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_description</methodname>
+    	  </methodsynopsis></programlisting>
+        <variablelist>
+            <varlistentry>
+    	          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>the description</simpara></listitem>
+           </varlistentry>
+        </variablelist>
+        <para>
+            The <methodname>get_description</methodname>() method gets the description for this factory.
+        </para>
+    </refsect2>
+    
+     <refsect2 id="method-gstelementfactory--get-element-type">
+        <title>gst.ElementFactory.get_element_type</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_element_type</methodname>
+    	  </methodsynopsis></programlisting>
+        <variablelist>
+            <varlistentry>
+    	          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>the GType for elements managed by this factory or 0 if 
+            the factory is not loaded. </simpara></listitem>
+           </varlistentry>
+        </variablelist>
+        <para>
+            The <methodname>get_element_type</methodname>() method gets the GType for elements managed by this factory.
+             The type can only be retrieved if the element factory is loaded, which can be assured with gst_plugin_feature_load().
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelementfactory--get-klass">
+        <title>gst.ElementFactory.get_klass</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_klass</methodname>
+    	  </methodsynopsis></programlisting>
+        <variablelist>
+            <varlistentry>
+    	          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>the class</simpara></listitem>
+           </varlistentry>
+        </variablelist>
+        <para>
+            The <methodname>get_klass</methodname>() method gets the class for this factory.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelementfactory--get-longname">
+        <title>gst.ElementFactory.get_longname</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_longname</methodname>
+    	  </methodsynopsis></programlisting>
+        <variablelist>
+            <varlistentry>
+    	          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>the longname</simpara></listitem>
+           </varlistentry>
+        </variablelist>
+        <para>
+            The <methodname>get_longname</methodname>() method gets the longname for this factory.
+        </para>
+    </refsect2>
+
+    <refsect2 id="method-gstelementfactory--get-num-pad-templates">
+        <title>gst.ElementFactory.get_num_pad_templates</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_num_pad_templates</methodname>
+    	  </methodsynopsis></programlisting>
+        <variablelist>
+            <varlistentry>
+    	          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>the number of pad_templates</simpara></listitem>
+           </varlistentry>
+        </variablelist>
+        <para>
+            The <methodname>get_num_pad_templates</methodname>() method gets the number of pad_templates in this factory.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelementfactory--get-static-pad-templates">
+        <title>gst.ElementFactory.get_static_pad_templates</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_static_pad_templates</methodname>
+    	  </methodsynopsis></programlisting>
+        <variablelist>
+            <varlistentry>
+    	          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>the padtemplates</simpara></listitem>
+           </varlistentry>
+        </variablelist>
+        <para>
+            The <methodname>get_static_pad_templates</methodname>() method gets the GList of gst.StaticPadTemplate 
+            for this factory.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelementfactory--get-uri-protocols">
+        <title>gst.ElementFactory.get_uri_protocols</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_uri_protocols</methodname>
+    	  </methodsynopsis></programlisting>
+        <variablelist>
+            <varlistentry>
+    	          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>the supported protocols or None</simpara></listitem>
+	         </varlistentry>
+        </variablelist>
+        <para>
+            The <methodname>get_uri_protocols</methodname>() method gets a NULL-terminated array of protocols this
+             element supports or NULL if no protocols are supported. You may not change the contents of the returned
+              array, as it is still owned by the element factory. Use g_strdupv() to make a copy of the protocol 
+              string array if you need to.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-gstelementfactory--get-uri-type">
+        <title>gst.ElementFactory.get_uri_type</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>get_uri_type</methodname>
+    	  </methodsynopsis></programlisting>
+        <variablelist>
+            <varlistentry>
+    	          <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara>type of URIs this element supports</simpara></listitem>
+	         </varlistentry>
+        </variablelist>
+        <para>
+            The <methodname>get_uri_type</methodname>() method gets the type of URIs the element 
+            supports or gst.GST_URI_UNKNOWN if none.
+        </para>
+    </refsect2>
+
+  
+</refsect1>
+
+<!-- ***************************** -->
+<!-- BEGIN OF GSTELEMENTFACTORY FUNCTIONS -->
+<!-- ***************************** --> 
+
+<refsect1>
+    <title>Functions</title>
+    
+    <refsect2 id="function-gstelementfactory--element-factory-find">
+        <title>gst.element_factory_find</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>element_factory_find</methodname>
+                <methodparam><parameter role="keyword">name</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+                <listitem><simpara> Name of factory to find.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <link linkend="class-gstelementfactory"><classname>gst.ElementFactory</classname></link> 
+                <literal>None</literal> otherwise.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>element_factory_find</methodname>() function search for an element factory of the given name.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="function-gstelementfactory--element-factory-make">
+        <title>gst.element_factory_make</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>element_factory_make</methodname>
+                <methodparam><parameter role="keyword">factory</parameter></methodparam>
+                <methodparam><parameter role="keyword">name</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">factory</parameter>&nbsp;:</term>
+                <listitem><simpara> Factory to instantiate.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+                <listitem><simpara> Name of new element.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A new <link linkend="class-gstelement"><classname>gst.Element</classname></link> or
+                        <literal>None</literal> if the element couldn't be created.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>element_factory_make</methodname>() function creates a new element of the type defined by the given elementfactory. 
+            It will be given the name supplied, since all elements require a name as their first argument. This function raises gst.NoPluginError
+            if an element could not be created.
+        </para>
+    </refsect2>
+    
+    
+    <refsect2 id="function-gstelementfactory--element-register">
+        <title>gst.element_register</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>element_register</methodname>
+                <methodparam><parameter role="keyword">plugin</parameter></methodparam>
+                <methodparam><parameter role="keyword">name</parameter></methodparam>
+                <methodparam><parameter role="keyword">rank</parameter></methodparam>
+                <methodparam><parameter role="keyword">type</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">plugin</parameter>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="class-gstplugin"><classname>gst.Plugin</classname></link> to register the element with.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+                <listitem><simpara> name of elements of this type.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">rank</parameter>&nbsp;:</term>
+                <listitem><simpara> rank of element (higher rank means more importance when autoplugging).</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">type</parameter>&nbsp;:</term>
+                <listitem><simpara> GType of element to register.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> <literal>True</literal>, if the registering succeeded, <literal>False</literal> on error.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>element_register</methodname>() function creates a new elementfactory capable of instantiating objects of the given type.
+        </para>
+    </refsect2>
+    
+  
+
+</refsect1>
+</refentry>
+
