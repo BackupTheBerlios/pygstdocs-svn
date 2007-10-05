@@ -56,7 +56,8 @@
 <link linkend="gst-rtld-constants">GST RTLD Type Constants</link>
 <link linkend="gst-seek-flag-constants">GST Seek Flag Constants</link>
 <link linkend="gst-seek-type-constants">GST Seek Type Constants</link>
-<link linkend="gst-state-constants">GST State Type Constants</link>
+<link linkend="gst-state-constants">GST State Constants</link>
+<link linkend="gst-state-change-constants">GST State Change Constants</link>
 <link linkend="gst-stream-error-constants">GST Stream Error Constants</link>
 <link linkend="gst-tag-constants">GST Tag Type Constants</link>
 <link linkend="gst-tag-flag-constants">GST Tag Flag Constants</link>
@@ -1654,7 +1655,34 @@ that performed the seek, but a gst.MESSAGE_SEGMENT_DONE message will be posted o
   </refsect2>
 
  <refsect2 id="gst-state-constants">
-    <title>GST State Type Constants</title>
+    <title>GST State Constants</title>
+      <para>The State ...</para>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>gst.STATE_NULL</methodname></term>
+            <listitem><simpara>the NULL state or initial state of an element</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.STATE_PAUSED</methodname></term>
+            <listitem><simpara>the element is PAUSED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.STATE_PLAYING</methodname></term>
+            <listitem><simpara>the element is PLAYING</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.STATE_READY</methodname></term>
+            <listitem><simpara>the element is ready to go to PAUSED</simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>gst.STATE_VOID_PENDING</methodname></term>
+            <listitem><simpara>no pending state</simpara></listitem>
+          </varlistentry>
+        </variablelist>
+  </refsect2>
+  
+  <refsect2 id="gst-state-change-constants">
+    <title>GST State Change Constants</title>
       <para>The State ...</para>
         <variablelist>
           <varlistentry>
@@ -1696,26 +1724,6 @@ that performed the seek, but a gst.MESSAGE_SEGMENT_DONE message will be posted o
           <varlistentry>
             <term><methodname>gst.STATE_CHANGE_SUCCESS</methodname></term>
             <listitem><simpara>the state change succeeded</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.STATE_NULL</methodname></term>
-            <listitem><simpara>the NULL state or initial state of an element</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.STATE_PAUSED</methodname></term>
-            <listitem><simpara>the element is PAUSED</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.STATE_PLAYING</methodname></term>
-            <listitem><simpara>the element is PLAYING</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.STATE_READY</methodname></term>
-            <listitem><simpara>the element is ready to go to PAUSED</simpara></listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><methodname>gst.STATE_VOID_PENDING</methodname></term>
-            <listitem><simpara>no pending state</simpara></listitem>
           </varlistentry>
         </variablelist>
   </refsect2>

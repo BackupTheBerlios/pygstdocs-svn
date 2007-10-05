@@ -17,11 +17,6 @@
     <classsynopsis language="python">
         <ooclass><classname>gst.Event</classname></ooclass>
         <ooclass><classname><link linkend="class-gstminiobject">gst.MiniObject</link></classname></ooclass>
-
-    <constructorsynopsis language="python">
-        <methodname>gst.Event</methodname>
-        <methodparam></methodparam>
-    </constructorsynopsis>
     
     <methodsynopsis language="python">
         <methodname><link linkend="method-gstevent--get-structure">get_structure</link></methodname>
@@ -71,7 +66,7 @@
 </classsynopsis>
 
 <programlisting>
-    <emphasis role="bold">Functions</emphasis>
+<emphasis role="bold">Functions</emphasis>
     
 <methodsynopsis language="python"><methodname><link linkend="function-gstevent--event-new-buffer-size">gst.event_new_buffer_size</link></methodname>
 <methodparam><parameter role="keyword">format</parameter></methodparam>
@@ -157,86 +152,6 @@
     </para>
 </refsect1>
 
-<!-- *************************** -->
-<!-- BEGIN OF GSTEVENT CONSTANTS -->
-<!-- *************************** -->
-
-<refsect1>
-    <title>Constants</title>
-    
-    <blockquote role="properties">
-        <informaltable pgwide="1" frame="none">
-            <tgroup cols="2">
-                <colspec column="1" colwidth="1in"/>
-                <colspec column="1" colwidth="1in"/>
-                <tbody>
-                    <row valign="top">
-                        <entry>gst.EVENT_UNKNOWN</entry>
-                        <entry>Unknown event.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.EVENT_FLUSH_START</entry>
-                        <entry>Start a flush operation.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.EVENT_FLUSH_STOP</entry>
-                        <entry>Stop a flush operation.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.EVENT_EOS</entry>
-                        <entry>End-Of-Stream. No more data is to be expected to follow without a NEWSEGMENT event.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.EVENT_NEWSEGMENT</entry>
-                        <entry>A new media segment follows in the dataflow.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.EVENT_TAG</entry>
-                        <entry>A new set of metadata tags has been found in the stream.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.EVENT_BUFFERSIZE</entry>
-                        <entry>Notification of buffering requirements.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.EVENT_QOS</entry>
-                        <entry>A quality message. Used to indicate to upstream elements that the downstream elements are 
-                            being starved of or flooded with data.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.EVENT_SEEK</entry>
-                        <entry>A request for a new playback position and rate.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.EVENT_NAVIGATION</entry>
-                        <entry>Navigation events are usually used for communicating user requests, 
-                            such as mouse or keyboard movements, to upstream elements.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.EVENT_CUSTOM_UPSTREAM</entry>
-                        <entry>Upstream custom event.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.EVENT_CUSTOM_DOWNSTREAM</entry>
-                        <entry>Downstream custom event that travels in the data flow.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.EVENT_CUSTOM_DOWNSTREAM_OOB</entry>
-                        <entry>Custom out-of-band downstream event.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.EVENT_CUSTOM_BOTH</entry>
-                        <entry>Custom upstream or downstream event. In-band when travelling downstream.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.EVENT_CUSTOM_BOTH_OOB</entry>
-                        <entry>Custom upstream or downstream out-of-band event.</entry>
-                    </row>
-                </tbody>
-            </tgroup>
-        </informaltable>
-    </blockquote>
-</refsect1>
 
 <!-- ************************* -->
 <!-- BEGIN OF GSTEVENT METHODS -->

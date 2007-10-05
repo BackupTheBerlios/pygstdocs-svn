@@ -153,7 +153,7 @@
     <title>Description</title>
 
     <para>
-        Caps (capabilities) are lighweight refcounted objects describing media types. They are composed of a list of GstStructure.
+        Caps (capabilities) are lighweight refcounted objects describing media types. They are composed of a list of gst.Structure.
     </para>
     <para>
         Caps are exposed on <link linkend="class-gstpadtemplate"><classname>gst.PadTemplate()</classname></link> to describe all 
@@ -481,7 +481,7 @@
         <para>
             The <methodname>is_fixed</methodname>() method checks is a caps is a fixed caps,
             Fixed caps describe exactly one format, that is, they have exactly one structure, and each field in the structure describes a fixed type. 
-            Examples of non-fixed types are GST_TYPE_INT_RANGE and GST_TYPE_LIST.
+            Examples of non-fixed types are gst.TYPE_INT_RANGE and gst.TYPE_LIST.
         </para>
     </refsect2>
     
@@ -499,7 +499,7 @@
             </varlistentry>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> <literal>True</literal>if subset is a subset of superset.</simpara></listitem>
+                <listitem><simpara> <literal>True</literal> if subset is a subset of superset.</simpara></listitem>
             </varlistentry>
         </variablelist>
         

@@ -331,7 +331,7 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis>+-- gobject.GObject
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
     +-- <link linkend="class-gstobject">gst.Object</link>
         +-- <link linkend="class-gstelement">gst.Element</link>
 </synopsis>
@@ -389,12 +389,12 @@
     <title>Description</title>
 
     <para>
-        GstElement is the base class needed to construct an element that can be used in a GStreamer pipeline. 
+        A gst.Element is the base class needed to construct an element that can be used in a GStreamer pipeline. 
         As such, it is not a functional entity, and cannot do anything when placed in a pipeline.
     </para>
 
     <para>
-        The name of a GstElement can be get with <link linkend="method-gstobject--get-name"><methodname>get_name</methodname></link> 
+        The name of a gst.Element can be get with <link linkend="method-gstobject--get-name"><methodname>get_name</methodname></link> 
         and set with <link linkend="method-gstobject--set-name"><methodname>set_name</methodname></link>. 
     </para>
   
@@ -529,7 +529,7 @@
         
         <para>
             The <methodname>create_all_pads</methodname>() method creates a pad for each pad template that is always available. 
-            This function is only useful during object intialization of subclasses of GstElement.
+            This function is only useful during object intialization of subclasses of gst.Element.
         </para>
     </refsect2>
     
@@ -913,7 +913,7 @@
             The <methodname>is_locked_state</methodname>() method checks if the state of an element is locked. 
             If the state of an element is locked, state changes of the parent don't affect the element. 
             This way you can leave currently unused elements inside bins. 
-            Just lock their state before changing the state from GST_STATE_NULL.
+            Just lock their state before changing the state from gst.STATE_NULL.
         </para>
     </refsect2>
     
@@ -1591,8 +1591,8 @@
             </varlistentry>
             <varlistentry>
                 <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> Result of the state change between GST_STATE_CHANGE_FAILURE, GST_STATE_CHANGE_SUCCESS, 
-                        GST_STATE_CHANGE_ASYNC, GST_STATE_CHANGE_NO_PREROLL.</simpara></listitem>
+                <listitem><simpara> Result of the state change between gst.STATE_CHANGE_FAILURE, gst.STATE_CHANGE_SUCCESS, 
+                        gst.STATE_CHANGE_ASYNC, gst.STATE_CHANGE_NO_PREROLL.</simpara></listitem>
             </varlistentry>
         </variablelist>
         
@@ -1602,9 +1602,9 @@
             states and calling the class's state change function for each.
         </para>
         <para>
-            This function can return GST_STATE_CHANGE_ASYNC, in which case the element will perform the 
+            This function can return gst.STATE_CHANGE_ASYNC, in which case the element will perform the 
             remainder of the state change asynchronously in another thread. 
-            An application can use gst_element_get_state() to wait for the completion of the state change 
+            An application can use gst.element_state_get_name() to wait for the completion of the state change 
             or it can wait for a state change message on the bus.
         </para>
     </refsect2>

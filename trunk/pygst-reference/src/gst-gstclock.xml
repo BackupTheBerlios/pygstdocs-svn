@@ -278,7 +278,7 @@
 	  </varlistentry>
       <varlistentry>
 	      <term><emphasis>Returns</emphasis>&nbsp;:</term>
-	      <listitem><simpara> <literal>TRUE</literal> if the clock was updated. 
+	      <listitem><simpara> <literal>True</literal> if the clock was updated. 
           It is possible that the clock was not updated by this call because only the first discontinuitity 
           in the pipeline is honoured.</simpara></listitem>
 	    </varlistentry>
@@ -371,7 +371,7 @@
     <variablelist>
 	  <varlistentry>
   	    <term><parameter role="keyword">active</parameter>&nbsp;:</term>
-    	  <listitem><simpara> flag indicating if the clock should be activated <literal>(TRUE)</literal> or deactivated</simpara></listitem>
+    	  <listitem><simpara> flag indicating if the clock should be activated <literal>(True)</literal> or deactivated</simpara></listitem>
 	  </varlistentry>
     </variablelist>
 

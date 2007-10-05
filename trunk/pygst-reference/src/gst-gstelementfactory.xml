@@ -17,6 +17,10 @@
     <classsynopsis language="python">
         <ooclass><classname>gst.ElementFactory</classname></ooclass>
         <ooclass><classname><link linkend="class-gstpluginfeature">gst.PluginFeature</link></classname></ooclass>
+     
+     <constructorsynopsis language="python">
+        <methodname><link linkend="constructor-gstelementfactory">gst.ElementFactory</link></methodname>
+    </constructorsynopsis>
     
      <methodsynopsis language="python">
         <methodname><link linkend="method-gstelementfactory--can-sink-caps">can_sink_caps</link></methodname>
@@ -39,7 +43,7 @@
     </methodsynopsis>
     
     <methodsynopsis language="python">
-        <methodname><link linkend="method-gstelementfactory--get-element-type">get-element_type</link></methodname>
+        <methodname><link linkend="method-gstelementfactory--get-element-type">get_element_type</link></methodname>
         <methodparam></methodparam>
     </methodsynopsis>
   
@@ -88,6 +92,7 @@
 </programlisting>
 </refsect1>
 
+
 <!-- **************************** -->
 <!-- BEGIN OF GSTELEMENT ANCESTRY -->
 <!-- **************************** -->
@@ -95,12 +100,13 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis>+-- gobject.GObject
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
     +-- <link linkend="class-gstobject">gst.Object</link>
         +-- <link linkend="class-gstpluginfeature">gst.PluginFeature</link>
             +-- <link linkend="class-gstelementfactory">gst.ElementFactory</link>
 </synopsis>
 </refsect1>
+
 
 <!-- ******************************* -->
 <!-- BEGIN OF GSTELEMENTFACTORY DESCRIPTION -->
@@ -123,6 +129,23 @@
     </para>
 </refsect1>
  
+ 
+<!-- ******************************** -->
+<!-- BEGIN OF MyClass' CONSTRUCTOR -->
+<!-- ******************************** -->
+
+<refsect1 id="constructor-gstelementfactory">
+    <title>Constructor</title>
+    
+    <programlisting><constructorsynopsis language="python">
+            <methodname>gst.ElementFactory</methodname>
+        </constructorsynopsis></programlisting>
+    
+    <para>
+        Creates a new gst.ElementFactory.
+    </para>
+</refsect1>
+
 
 <!-- *************************** -->
 <!-- BEGIN OF GSTELEMENTFACTORY METHODS -->
@@ -320,7 +343,7 @@
         </variablelist>
         <para>
             The <methodname>get_uri_type</methodname>() method gets the type of URIs the element 
-            supports or gst.GST_URI_UNKNOWN if none.
+            supports or gst.URI_UNKNOWN if None.
         </para>
     </refsect2>
 
@@ -384,7 +407,7 @@
         
         <para>
             The <methodname>element_factory_make</methodname>() function creates a new element of the type defined by the given elementfactory. 
-            It will be given the name supplied, since all elements require a name as their first argument. This function raises gst.NoPluginError
+            It will be given the name supplied, since all elements require a name as their first argument. This function raises NoPluginError
             if an element could not be created.
         </para>
     </refsect2>
