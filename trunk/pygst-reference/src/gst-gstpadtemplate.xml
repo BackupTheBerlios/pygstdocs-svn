@@ -51,6 +51,42 @@
 </synopsis>
 </refsect1>
 
+<refsect1>
+    <title>Attributes</title>
+    
+    <blockquote role="properties">
+        <informaltable pgwide="1" frame="none">
+            <tgroup cols="3">
+                <colspec column="1" colwidth="1in"/>
+                <colspec column="2" colwidth="1in"/>
+                <colspec column="3" colwidth="4in"/>
+                <tbody>
+                    <row valign="top">
+                        <entry>"caps"</entry>
+                        <entry>Read</entry>
+                        <entry>the gst.Caps of the template</entry>
+                   </row>
+                   <row valign="top">
+                        <entry>"direction"</entry>
+                        <entry>Read</entry>
+                        <entry>the <link linkend="gst-pad-direction-constants">Pad Direction</link> of the template</entry>
+                   </row>
+                   <row valign="top">
+                        <entry>"name_template"</entry>
+                        <entry>Read</entry>
+                        <entry>the name of the template</entry>
+                   </row>
+                   <row valign="top">
+                        <entry>"presence"</entry>
+                        <entry>Read</entry>
+                        <entry>the <link linkend="gst-pad-presence-constants">Pad Presence</link> of the template</entry>
+                   </row>
+               </tbody>
+            </tgroup>
+        </informaltable>
+    </blockquote>
+</refsect1>
+
 <!-- ***************************************** -->
 <!-- BEGIN OF GSTPADTEMPLATE SIGNAL PROTOTYPES -->
 <!-- ***************************************** -->
@@ -100,9 +136,9 @@
     <programlisting><constructorsynopsis language="python">
         <methodname>gst.PadTemplate</methodname>
         <methodparam><parameter role="keyword">name</parameter></methodparam>
-        <methodparam><parameter role="keyword">direction</parameter><initializer>None</initializer></methodparam>
-        <methodparam><parameter role="keyword">presence</parameter><initializer>None</initializer></methodparam>
-        <methodparam><parameter role="keyword">caps</parameter><initializer>None</initializer></methodparam>
+        <methodparam><parameter role="keyword">direction</parameter></methodparam>
+        <methodparam><parameter role="keyword">presence</parameter></methodparam>
+        <methodparam><parameter role="keyword">caps</parameter></methodparam>
     </constructorsynopsis></programlisting>
     
     <variablelist>
@@ -115,7 +151,7 @@
             <listitem><simpara> the <link linkend="gst-pad-direction-constants">Pad Direction</link> of the template.</simpara></listitem>
         </varlistentry>
         <varlistentry>
-            <term><parameter role="keyword">direction</parameter>&nbsp;:</term>
+            <term><parameter role="keyword">presence</parameter>&nbsp;:</term>
             <listitem><simpara> the <link linkend="gst-pad-presence-constants">Pad Presence</link> of the pad.</simpara></listitem>
         </varlistentry>
         <varlistentry>

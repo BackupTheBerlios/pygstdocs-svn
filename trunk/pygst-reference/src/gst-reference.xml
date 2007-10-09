@@ -3,10 +3,10 @@
 
 <book id="gst-reference" xmlns:xi="http://www.w3.org/2001/XInclude">
     <bookinfo>
-        <pubdate>September 30, 2007</pubdate>
+        <pubdate>October 9, 2007</pubdate>
         <title>Python GStreamer Reference Manual</title>
         <edition>Python GStreamer Reference Manual for PyGST 0.10.8</edition>
-        <releaseinfo>Version 0.10.3</releaseinfo>
+        <releaseinfo>Version 0.10.4</releaseinfo>
         <authorgroup>
             <author>
                 <firstname>Gian Mario</firstname>

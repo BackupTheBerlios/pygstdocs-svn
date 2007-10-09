@@ -279,7 +279,7 @@
             </varlistentry>
             <varlistentry>
                  <term><emphasis>Returns</emphasis>&nbsp;:</term>
-                <listitem><simpara> the entry associated with the value or NULL if the value was not found.</simpara></listitem>
+                <listitem><simpara> the entry associated with the value or None if the value was not found.</simpara></listitem>
             </varlistentry>
         </variablelist>
 

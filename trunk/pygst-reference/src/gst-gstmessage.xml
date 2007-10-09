@@ -83,7 +83,7 @@
 </classsynopsis>
 
 <programlisting>
-    <emphasis role="bold">Functions</emphasis>
+<emphasis role="bold">Functions</emphasis>
     
 <methodsynopsis language="python"><methodname><link linkend="function-gstmessage--message-new-application">gst.message_new_application</link></methodname>
     <methodparam><parameter role="keyword">src</parameter></methodparam>
@@ -196,7 +196,7 @@
         </variablelist>
       
         <para>
-            The <methodname>parse_clock_lost</methodname>() method extracts the lost clock from the GstMessage. 
+            The <methodname>parse_clock_lost</methodname>() method extracts the lost clock from the gst.Message. 
             The clock object returned remains valid until the message is freed.
         </para>
     </refsect2>
@@ -221,7 +221,7 @@
         </variablelist>
         
         <para>
-            The <methodname>parse_clock_provide</methodname>() method extracts the clock and ready flag from the GstMessage. 
+            The <methodname>parse_clock_provide</methodname>() method extracts the clock and ready flag from the gst.Message. 
             The clock object returned remains valid until the message is freed.
         </para>
     </refsect2>
@@ -293,7 +293,7 @@
         </variablelist>
         
         <para>
-            The <methodname>parse_new_clock</methodname>() method extracts the new clock from the GstMessage. 
+            The <methodname>parse_new_clock</methodname>() method extracts the new clock from the gst.Message. 
             The clock object returned remains valid until the message is freed.
         </para>
     </refsect2>

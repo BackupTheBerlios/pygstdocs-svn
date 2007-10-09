@@ -1068,7 +1068,8 @@
         
         <para>
             The <methodname>lost_state</methodname>() method brings the element to the lost state. 
-            The current state of the element is copied to the pending state so that any call to #gst_element_get_state() will return ASYNC.            
+            The current state of the element is copied to the pending state so that any call to 
+            get_state() will return ASYNC.            
             This is mostly used for elements that lost their preroll buffer in the PAUSED state after a flush, 
             they become PAUSED again if a new preroll buffer is queued. 
             This function can only be called when the element is currently not in error or an async state change.
@@ -1084,9 +1085,11 @@
             </methodsynopsis></programlisting>
         
         <para>
-            Use The <methodname>no_more_pads</methodname>() method to signal that the element does not expect any more pads to show up in the current pipeline.
+            Use The <methodname>no_more_pads</methodname>() method to signal that the element does not expect 
+            any more pads to show up in the current pipeline.
             This function should be called whenever pads have been added by the element itself. 
-            Elements with GST_PAD_SOMETIMES pad templates use this in combination with autopluggers to figure out that the element is done initializing its pads.
+            Elements with gst.PAD_SOMETIMES pad templates use this in combination with autopluggers to 
+            figure out that the element is done initializing its pads.
         </para>
     </refsect2>
     
@@ -1196,7 +1199,7 @@
         
         <para>
             The <methodname>query</methodname>() method performs a query on the given element. 
-            If the format is set to GST_FORMAT_DEFAULT and this function returns <literal>True</literal>, the format pointer will hold the default format. 
+            If the format is set to gst.FORMAT_DEFAULT and this function returns <literal>True</literal>, the format pointer will hold the default format. 
             For element that don't implement a query handler, this function forwards the query to a random usable sinkpad of this element.
         </para>
     </refsect2>

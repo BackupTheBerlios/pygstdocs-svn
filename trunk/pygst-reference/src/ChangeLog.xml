@@ -1,4 +1,9 @@
 <literallayout>
+<emphasis role="bold">2007-10-09  Jens Persson</emphasis>
+
+    * Added Iterator and Format
+    * Tons of minor fixes
+
 <emphasis role="bold">2007-09-30  Jens Persson</emphasis>
     
     * Added ElementFactory, Task, Plugin, PluginFeature, Index and Structure

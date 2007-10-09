@@ -125,7 +125,7 @@
     <title>Ancestry</title>
 
 <synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
-  +-- <link linkend="class-gstobject">gst.Object</link>
+    +-- <link linkend="class-gstobject">gst.Object</link>
 </synopsis>
 </refsect1>
 
@@ -146,7 +146,7 @@
                     
                     <row valign="top">
                         <entry>"name"</entry>
-                        <entry>Read-Write</entry>
+                        <entry>Read/Write</entry>
                         <entry>The name of the object.</entry>
                     </row>
 
@@ -222,7 +222,7 @@
   <title>Description</title>
 
   <para>
-    <link linkend="class-gstobject"><classname>gst.Object</classname></link> provides a root for the object hierarchy tree 
+    A gst.Object provides a root for the object hierarchy tree 
     filed in by the GST library. It is currently a thin wrapper on top of GObject. 
     It is an abstract class that is not very usable on its own.
   </para>
@@ -389,10 +389,16 @@
 	    </methodsynopsis></programlisting>
       
     <variablelist>
-	    <varlistentry>
+      <varlistentry>
         <term><parameter role="keyword">ancestor</parameter>&nbsp;:</term>
         <listitem><simpara> a <link linkend="class-gstobject"><classname>gst.Object</classname></link> to check as ancestor.</simpara></listitem>
-	    </varlistentry>
+      </varlistentry>
+      <varlistentry>
+        <term><emphasis>Returns</emphasis>&nbsp;:</term>
+        <listitem><simpara><literal>True</literal> if <literal>ancestor</literal> 
+      is an <literal>ancestor</literal> of <literal>object</literal>.</simpara></listitem>
+      </varlistentry>
+
     </variablelist>
 
     <para>
@@ -530,9 +536,6 @@
   	    <methodparam></methodparam>
 	    </methodsynopsis></programlisting>
       
-    <variablelist>
-    </variablelist>
-
     <para>
       The <methodname>unparent</methodname>() method clear the parent of object, removing the associated reference.
 	  </para>
@@ -553,7 +556,7 @@
     </variablelist>
 
     <para>
-      The <methodname>unset_flag</methodname>() method unset the given <literal>flag</literal> from <literal>object</literal>.
+      The <methodname>unset_flag</methodname>() method unsets the given <literal>flag</literal> from <literal>object</literal>.
 	  </para>
   </refsect2>
   

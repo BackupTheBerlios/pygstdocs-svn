@@ -83,7 +83,7 @@
     <title>Description</title>
 
     <para>
-        In almost all cases, you'll want to use a GstPipeline when creating a filter graph. 
+        In almost all cases, you'll want to use a gst.Pipeline when creating a filter graph. 
         The <link linkend="class-gstpipeline"><classname>gst.Pipeline</classname></link> will manage the selection and 
         distribution of a global clock as well as provide a <link linkend="class-gstbus"><classname>gst.Bus</classname></link> to the application.
     </para>
@@ -93,7 +93,7 @@
     </para>
   
     <para>
-        When sending a seek event to a GstPipeline, it will make sure that the pipeline is properly PAUSED and 
+        When sending a seek event to a gst.Pipeline, it will make sure that the pipeline is properly PAUSED and 
         resumed as well as update the new stream time after the seek.
     </para>
 </refsect1>
@@ -149,32 +149,6 @@
     </para>
 </refsect1>
 
-<!-- ****************************** -->
-<!-- BEGIN OF GSTPIPELINE CONSTANTS -->
-<!-- ****************************** -->
-
-<refsect1 id="constants-gstpipeline">
-    <title>Constants</title>
-    
-    <blockquote role="properties">
-        <informaltable pgwide="1" frame="none">
-            <tgroup cols="2">
-                <colspec column="1" colwidth="1in"/>
-                <colspec column="1" colwidth="1in"/>
-                <tbody>
-                    <row valign="top">
-                        <entry>gst.PIPELINE_FLAG_FIXED_CLOCK</entry>
-                        <entry>This pipeline works with a fixed clock.</entry>
-                    </row>
-                    <row valign="top">
-                        <entry>gst.PIPELINE_FLAG_LAST</entry>
-                        <entry>Offset to define more flags</entry>
-                    </row>
-                </tbody>
-            </tgroup>
-        </informaltable>
-    </blockquote>
-</refsect1>
 
 <!-- **************************** -->
 <!-- BEGIN OF GSTPIPELINE METHODS -->

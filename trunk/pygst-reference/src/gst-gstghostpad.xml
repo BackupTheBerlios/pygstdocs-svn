@@ -37,7 +37,7 @@
 
 <programlisting>
 <emphasis role="bold">Functions</emphasis>
-    
+
 <methodsynopsis language="python"><methodname><link linkend="function-gstghostpad--ghost-pad-new-notarget">gst.ghost_pad_new_notarget</link></methodname>
 <methodparam><parameter role="keyword">direction</parameter></methodparam></methodsynopsis>
 </programlisting>
@@ -50,7 +50,7 @@
 <refsect1>
     <title>Ancestry</title>
 
-<synopsis>+-- gobject.GObject
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
     +-- <link linkend="class-gstobject">gst.Object</link>
         +-- <link linkend="class-gstpad">gst.Pad</link>
             +-- <link linkend="class-gstghostpad">gst.GhostPad</link>
@@ -67,7 +67,7 @@
     <para>
         GhostPads are useful when organizing pipelines with <link linkend="class-gstbin"><classname>gst.Bin</classname></link> like elements. 
         The idea here is to create hierarchical element graphs. The bin element contains a sub-graph. Now one would like to treat the bin-element 
-        like other GstElements. This is where GhostPads come into play. A GhostPad acts as a proxy for another pad. 
+        like other gst.Elements. This is where GhostPads come into play. A GhostPad acts as a proxy for another pad. 
         Thus the bin can have sink and source ghost-pads that are accociated with sink and source pads of the child elements.
     </para>
 </refsect1>
