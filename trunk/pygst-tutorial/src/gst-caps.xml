@@ -1,0 +1,132 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refsect1>
+  <para>
+  Capabilities,
+  <ulink url="../pygst-reference/class-gstcaps.html">gst.Caps</ulink>,
+   is a container where you may store information that you may pass on to a
+  <ulink url="../pygst-reference/class-gstpadtemplate.html">gst.PadTemplate</ulink>. 
+   There are many different ways to make a caps object and how to use it. I will here show
+   how you make a caps object from a string and then make use of it in a pipeline where
+   you can use it somewhat automagically from a capsfilter element. Just make sure that the object
+   in the place before the capsfilter have the capabilities needed to get the job done.
+   </para>
+   
+   <para><emphasis role="bold">Note:</emphasis> The examples here in this tutorial have grown a bit lately and it's not easy to show
+   working gstreamer stuff in not so many lines but I'll try as hard as I can to do just that. Maybe 
+   we have to have the code in separate files that you may take a look at if you find anything 
+   interesting. The examples share much code too and when the numbers of chapters beefs up so does the 
+   readers knowledge and they can make sense out of just a few lines of code instead of runable code
+   examples. Well, time will tell how far we gets. 
+   </para>
+   
+   <para>In this example we will use the playbin from example 2.2 and switch its video-sink out for our own
+   homemade bin, stuffed with some goodies. Now, let's say that you run a tv-station and you want to have
+   your logo in the top right corner of the screen. For that you can use a textoverlay but for the fonts
+   to be the exact same size on th screen no matter what kind of resolution the source has you have to
+   specify a width so everything is scaled according to that.</para>
+   
+  <emphasis role="bold">Example 6.1</emphasis>
+  <synopsis>#!/usr/bin/env python
+
+import sys, os
+import pygtk, gtk, gobject
+import pygst
+pygst.require("0.10")
+import gst
+
+class GTK_Main:
+	
+	def __init__(self):
+		window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+		window.set_title("Video-Player")
+		window.set_default_size(500, 400)
+		window.connect("destroy", gtk.main_quit, "WM destroy")
+		vbox = gtk.VBox()
+		window.add(vbox)
+		hbox = gtk.HBox()
+		vbox.pack_start(hbox, False)
+		self.entry = gtk.Entry()
+		hbox.add(self.entry)
+		self.button = gtk.Button("Start")
+		hbox.pack_start(self.button, False)
+		self.button.connect("clicked", self.start_stop)
+		self.movie_window = gtk.DrawingArea()
+		vbox.add(self.movie_window)
+		window.show_all()
+		
+		self.player = gst.element_factory_make("playbin", "player")
+		bus = self.player.get_bus()
+		bus.add_signal_watch()
+		bus.enable_sync_message_emission()
+		bus.connect('message', self.on_message)
+		bus.connect('sync-message::element', self.on_sync_message)
+		
+		self.bin = gst.Bin('my-bin')
+		videoscale = gst.element_factory_make('videoscale')
+		self.bin.add(videoscale)
+		pad = videoscale.get_pad("sink")
+		ghostpad = gst.GhostPad("sink", pad)
+		self.bin.add_pad(ghostpad)
+		videoscale.set_property("method", 1)
+		
+		caps = gst.Caps("video/x-raw-yuv, width=720")
+		filter = gst.element_factory_make("capsfilter", "filter")
+		self.bin.add(filter)
+		filter.set_property("caps", caps)
+		
+		textoverlay = gst.element_factory_make('textoverlay')
+		textoverlay.set_property("text", "GNUTV")
+		textoverlay.set_property("font-desc", "normal 14")
+		textoverlay.set_property("halign", "right")
+		textoverlay.set_property("valign", "top")
+		self.bin.add(textoverlay)
+		conv = gst.element_factory_make ("ffmpegcolorspace", "conv");
+		self.bin.add(conv)
+		videosink = gst.element_factory_make('autovideosink')
+		self.bin.add(videosink)
+		gst.element_link_many(videoscale, filter, textoverlay, conv, videosink)
+		self.player.set_property("video-sink", self.bin)
+		
+	def start_stop(self, w):
+		if self.button.get_label() == "Start":
+			filepath = self.entry.get_text()
+			if os.path.exists(filepath):
+				self.button.set_label("Stop")
+				self.player.set_property('uri', "file://" + filepath)
+				self.player.set_state(gst.STATE_PLAYING)
+		else:
+			self.player.set_state(gst.STATE_NULL)
+			self.button.set_label("Start")
+						
+	def on_message(self, bus, message):
+		t = message.type
+		if t == gst.MESSAGE_EOS:
+			self.player.set_state(gst.STATE_NULL)
+			self.button.set_label("Start")
+		elif t == gst.MESSAGE_ERROR:
+			self.player.set_state(gst.STATE_NULL)
+			self.button.set_label("Start")
+			err, debug = message.parse_error()
+			print "Error: %s" % err, debug
+	
+	def on_sync_message(self, bus, message):
+		if message.structure is None:
+			return
+		message_name = message.structure.get_name()
+		if message_name == 'prepare-xwindow-id':
+			imagesink = message.src
+			imagesink.set_property('force-aspect-ratio', True)
+			imagesink.set_xwindow_id(self.movie_window.window.xid)
+			
+GTK_Main()
+gtk.gdk.threads_init()
+gtk.main()
+   </synopsis>
+   
+   
+   
+</refsect1>
+
+

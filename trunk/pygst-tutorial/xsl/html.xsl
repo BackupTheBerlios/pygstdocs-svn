@@ -19,6 +19,8 @@
 <xsl:param name="use.id.as.filename" select="1"/>
 <xsl:param name="chunk.fast" select="1"/>
 <xsl:param name="chunker.output.encoding" select="'utf-8'"/>
+<xsl:param name="chunker.output.doctype-public" select="'-//W3C//DTD HTML 4.01 Transitional//EN'"/>
+<xsl:param name="chunker.output.doctype-system" select="'http://www.w3.org/TR/html4/loose.dtd'"/>
 
 <!--
 <xsl:attribute-set name="shade.verbatim.style">
