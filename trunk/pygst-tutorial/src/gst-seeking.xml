@@ -32,7 +32,7 @@
 </para>
   <synopsis>#!/usr/bin/env python
 
-import sys, os, os.path, thread, time
+import sys, os, thread, time
 import pygtk, gtk, gobject
 import pygst
 pygst.require("0.10")

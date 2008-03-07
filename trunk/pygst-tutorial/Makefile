@@ -15,8 +15,9 @@ src/gst-playbin.xml \
 src/gst-pipeline.xml \
 src/gst-src-sink-pad.xml \
 src/gst-seeking.xml \
-src/gst-caps.xml
- 
+src/gst-caps.xml \
+src/gst-videomixer.xml
+
 ref-html: gst-tutorial ${TUTORIALLINKS} ${XSLFILES} ${TUTORIALXMLFILES}
 	xsltproc --nonet --xinclude -o pygst-tutorial/ \
                  --stringparam gstdoc.bookname gst-tutorial \
@@ -51,4 +52,3 @@ src/ChangeLog.xml: src/ChangeLog
 clean:
 	-rm -rf pygst-tutorial
 	-rm -rf pygst-tutorial.tgz pygst-tutorial.docbook.tgz
-

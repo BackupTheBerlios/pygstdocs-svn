@@ -5,7 +5,7 @@
   <para>
   This tutorial is meant to be a quick way to get to know
   more about Gstreamer but it'll take some time to write it though because we don't know it ourselves ... yet. 
-  We're usually using GNU/Linux and GTK in the examples but we try to keep the GUI code ta an absolute 
+  We're usually using GNU/Linux and GTK in the examples but we try to keep the GUI code to an absolute 
   minimum so it should not get in the way. We take for granted that you are at least a fairly descent 
   Python coder. For problems related to the Python language we redirect you over to 
   <ulink url="http://python.org/doc">here</ulink>. :D

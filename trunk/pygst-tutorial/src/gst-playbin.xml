@@ -15,7 +15,7 @@
 <emphasis role="bold">Example 2.1</emphasis>
   <synopsis>#!/usr/bin/env python
 
-import sys, os, os.path
+import sys, os
 import pygtk, gtk, gobject
 import pygst
 pygst.require("0.10")
@@ -82,7 +82,7 @@ self.player.set_property("video-sink", fakesink)
 <emphasis role="bold">Example 2.2</emphasis>
 <synopsis>#!/usr/bin/env python
 
-import sys, os, os.path
+import sys, os
 import pygtk, gtk, gobject
 import pygst
 pygst.require("0.10")

@@ -62,7 +62,7 @@ function which is called whenever a pad is created in the demuxer using the "pad
 <emphasis role="bold">Example 4.1</emphasis>
 <synopsis>#!/usr/bin/env python
 
-import sys, os, os.path
+import sys, os
 import pygtk, gtk, gobject
 import pygst
 pygst.require("0.10")

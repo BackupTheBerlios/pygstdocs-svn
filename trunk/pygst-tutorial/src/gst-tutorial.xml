@@ -3,10 +3,10 @@
 
 <book id="gst-tutorial" xmlns:xi="http://www.w3.org/2001/XInclude">
     <bookinfo>
-        <pubdate>December 15, 2006</pubdate>
+        <pubdate>March 10, 2008</pubdate>
         <title>Python GStreamer Tutorial</title>
         <edition>Python GStreamer Tutorial version 0.10.1 for PyGST 0.10.6</edition>
-        <releaseinfo>Version 0.10.1</releaseinfo>
+        <releaseinfo>Version 0.10.2</releaseinfo>
         <authorgroup>
             <author>
                 <firstname>Jens</firstname>
@@ -23,36 +23,41 @@
   
     <chapter id="introduction">
         <title>1. Introduction</title>
-        <xi:include href="gst-introduction.xml"/>
+        <xi:include href="gst-introduction.xml" />
     </chapter>
     
     <chapter id="playbin">
         <title>2. Playbin</title>
-        <xi:include href="gst-playbin.xml"/>
+        <xi:include href="gst-playbin.xml" />
     </chapter>
     
    <chapter id="pipeline">
         <title>3. Pipeline</title>
-        <xi:include href="gst-pipeline.xml"/>
+        <xi:include href="gst-pipeline.xml" />
     </chapter>
     
     <chapter id="src-sink-pad">
         <title>4. Src, sink, pad ... oh my!</title>
-        <xi:include href="gst-src-sink-pad.xml"/>
+        <xi:include href="gst-src-sink-pad.xml" />
     </chapter>
     
     <chapter id="seeking">
         <title>5. Seeking</title>
-        <xi:include href="gst-seeking.xml"/>
+        <xi:include href="gst-seeking.xml" />
     </chapter>
     
     <chapter id="capabilities">
         <title>6. Capabilities</title>
-        <xi:include href="gst-caps.xml"/>
+        <xi:include href="gst-caps.xml" />
+    </chapter>
+    
+    <chapter id="videomixer">
+        <title>7. Videomixer</title>
+        <xi:include href="gst-videomixer.xml" />
     </chapter>
 
     <appendix id="pygst-tut-changelog">
         <title>ChangeLog</title>
-        <xi:include href="ChangeLog.xml"/>
+        <xi:include href="ChangeLog.xml" />
     </appendix>
 </book>
