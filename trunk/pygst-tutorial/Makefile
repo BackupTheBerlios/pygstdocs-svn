@@ -16,7 +16,8 @@ src/gst-pipeline.xml \
 src/gst-src-sink-pad.xml \
 src/gst-seeking.xml \
 src/gst-caps.xml \
-src/gst-videomixer.xml
+src/gst-videomixer.xml \
+src/gst-third-party-tutorials.xml
 
 ref-html: gst-tutorial ${TUTORIALLINKS} ${XSLFILES} ${TUTORIALXMLFILES}
 	xsltproc --nonet --xinclude -o pygst-tutorial/ \

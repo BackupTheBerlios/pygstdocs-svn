@@ -4,15 +4,18 @@
 <refsect1>
   <para>The videomixer element makes it possible to mix different videostreams together. Here is a CLI example:
   </para>
-  <synopsis>gst-launch-0.10 filesrc location=test.png ! pngdec ! ffmpegcolorspace ! videobox border-alpha=0 alpha=0.5 top=-20 left=-200 ! videomixer name=mix ! ffmpegcolorspace ! xvimagesink videotestsrc ! video/x-raw-yuv, width=320, height=240 ! mix.</synopsis>
+  <synopsis>gst-launch-0.10 filesrc location=test.png ! pngdec ! alphacolor ! ffmpegcolorspace ! videobox border-alpha=0 alpha=0.5 top=-20 left=-200 ! \
+	videomixer name=mix ! ffmpegcolorspace ! xvimagesink videotestsrc ! video/x-raw-yuv, width=320, height=240 ! mix.</synopsis>
  <para>
  You have to make a PNG image (100x100 px) to be able to run it. With the videobox element you can move the image
  around and adding more alpha channels.
  </para>
  <para>NEW COMPETITION! I can't figure out how to make a transparent alpha channel for the PNG in the pipeline above so if anyone
  makes it work the prize from example 3.2 will be given to this winner instead as the other one passed. TIA
- </para>
-<para>In the next example we take the now working Mpeg2-Player from 3.2 and pump it with the stuff
+</para>
+<para>UPDATE! An anonymous dude solved the problem with an alphacolor element, many thanks man.
+</para> 
+<para>In the next example we take the now working Mpeg2-Player from example 3.2 and pump it with the stuff
 shown above.
 </para>
  <para>
@@ -81,10 +84,12 @@ class GTK_Main:
 		self.player.add(ffmpeg3)
 		videobox = gst.element_factory_make("videobox", "videobox")
 		self.player.add(videobox)
+		alphacolor = gst.element_factory_make("alphacolor", "alphacolor")
+		self.player.add(alphacolor)
 		
 		gst.element_link_many(source, demuxer)
 		gst.element_link_many(self.queuev, self.video_decoder, ffmpeg1, mixer, ffmpeg2, videosink)
-		gst.element_link_many(png_source, png_decoder, ffmpeg3, videobox, mixer)
+		gst.element_link_many(png_source, png_decoder, alphacolor, ffmpeg3, videobox, mixer)
 		gst.element_link_many(self.queuea, self.audio_decoder, audioconv, audiosink)
 		
 		bus = self.player.get_bus()

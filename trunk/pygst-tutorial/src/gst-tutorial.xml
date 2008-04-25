@@ -56,8 +56,13 @@
         <xi:include href="gst-videomixer.xml" />
     </chapter>
 
-    <appendix id="pygst-tut-changelog">
+    <appendix id="changelog">
         <title>ChangeLog</title>
         <xi:include href="ChangeLog.xml" />
+    </appendix>
+    
+    <appendix id="third-party-tutorials">
+        <title>Third Party Tutorials</title>
+        <xi:include href="gst-third-party-tutorials.xml" />
     </appendix>
 </book>
