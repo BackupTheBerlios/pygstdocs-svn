@@ -15,9 +15,9 @@
   <para>
   In this first example I have taken the Audio-Player from the Playbin chapter and
 switched the playbin out for my own mp3 decoding capable pipeline. You can also testdrive pipelines
-with a program called gst-launch-0.10 directly in a shell. IE the next example below would look
+with a program called gst-launch directly in a shell. IE the next example below would look
 like this:</para>
-<synopsis>gst-launch-0.10 filesrc location=file.mp3 ! mad ! audioconvert ! alsasink</synopsis>
+<synopsis>$ gst-launch-0.10 filesrc location=file.mp3 ! mad ! audioconvert ! alsasink</synopsis>
 <para>or ASCII style:</para>
 <synopsis>
 
@@ -67,17 +67,19 @@ class GTK_Main:
 		self.player.add(conv)
 		sink = gst.element_factory_make("alsasink", "alsa-output")
 		self.player.add(sink)
+
 		gst.element_link_many(source, decoder, conv, sink)
+
 		bus = self.player.get_bus()
 		bus.add_signal_watch()
-		bus.connect('message', self.on_message)
+		bus.connect("message", self.on_message)
 		
 	def start_stop(self, w):
 		if self.button.get_label() == "Start":
 			filepath = self.entry.get_text()
 			if os.path.exists(filepath):
 				self.button.set_label("Stop")
-				self.player.get_by_name("file-source").set_property('location', filepath)
+				self.player.get_by_name("file-source").set_property("location", filepath)
 				self.player.set_state(gst.STATE_PLAYING)
 		else:
 			self.player.set_state(gst.STATE_NULL)
@@ -94,13 +96,12 @@ class GTK_Main:
 			err, debug = message.parse_error()
 			print "Error: %s" % err, debug
 			
-
-gtk.gdk.threads_init()
 GTK_Main()
+gtk.gdk.threads_init()
 gtk.main()
 </synopsis>
 
-  <para>The next example is playing mpeg2 videos. Some demuxers, such as mpegdemux, uses
+  <para>The next example is playing Mpeg2 videos. Some demuxers, such as mpegdemux, uses
     dynamic pads which are created at runtime and therefor you can't link between the demuxer
     and the next element in the pipeline before the pad has been created at runtime. Watch out
     for the demuxer_callback() method below.
@@ -163,21 +164,23 @@ class GTK_Main:
 		self.queuev = gst.element_factory_make("queue", "queuev")
 		self.player.add(self.queuea)
 		self.player.add(self.queuev)
+
 		gst.element_link_many(source, demuxer)
 		gst.element_link_many(self.queuev, self.video_decoder, videosink)
 		gst.element_link_many(self.queuea, self.audio_decoder, audioconv, audiosink)
+
 		bus = self.player.get_bus()
 		bus.add_signal_watch()
 		bus.enable_sync_message_emission()
-		bus.connect('message', self.on_message)
-		bus.connect('sync-message::element', self.on_sync_message)
+		bus.connect("message", self.on_message)
+		bus.connect("sync-message::element", self.on_sync_message)
 		
 	def start_stop(self, w):
 		if self.button.get_label() == "Start":
 			filepath = self.entry.get_text()
 			if os.path.exists(filepath):
 				self.button.set_label("Stop")
-				self.player.get_by_name("file-source").set_property('location', filepath)
+				self.player.get_by_name("file-source").set_property("location", filepath)
 				self.player.set_state(gst.STATE_PLAYING)
 		else:
 			self.player.set_state(gst.STATE_NULL)
@@ -198,25 +201,22 @@ class GTK_Main:
 		if message.structure is None:
 			return
 		message_name = message.structure.get_name()
-		if message_name == 'prepare-xwindow-id':
+		if message_name == "prepare-xwindow-id":
 			imagesink = message.src
-			imagesink.set_property('force-aspect-ratio', True)
+			imagesink.set_property("force-aspect-ratio", True)
 			imagesink.set_xwindow_id(self.movie_window.window.xid)
 	
 	def demuxer_callback(self, demuxer, pad):
 		if pad.get_property("template").name_template == "video_%02d":
-			dec_pad = self.queuev.get_pad("sink")
-			pad.link(dec_pad)
+			qv_pad = self.queuev.get_pad("sink")
+			pad.link(qv_pad)
 		elif pad.get_property("template").name_template == "audio_%02d":
-			dec_pad = self.queuea.get_pad("sink")
-			pad.link(dec_pad)
+			qa_pad = self.queuea.get_pad("sink")
+			pad.link(qa_pad)
 		
 GTK_Main()
 gtk.gdk.threads_init()
 gtk.main()
 </synopsis>
 
-
 </refsect1>
-
-

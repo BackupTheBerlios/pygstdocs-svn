@@ -21,8 +21,8 @@
          |________________________________________________________________|
 
 </synopsis>
-<para>And as always if you want to know more about highlevel elements gst-inspect-0.10 is your friend:</para>
-<synopsis>gst-inspect-0.10 mad</synopsis>
+<para>And as always if you want to know more about highlevel elements gst-inspect is your friend:</para>
+<synopsis>$ gst-inspect-0.10 mad</synopsis>
 <para>
 There are many different ways to link elements together. In example 3.1 we used the element_link_many() function.
 You can also make a complete ready to go pipeline with the parse_launch() function. The pipeline from example 3.1
@@ -96,18 +96,20 @@ class GTK_Main:
 		self.player.add(audioconv)
 		audiosink = gst.element_factory_make("autoaudiosink", "audio-output")
 		self.player.add(audiosink)
+
 		gst.element_link_many(source, demuxer)
 		gst.element_link_many(self.audio_decoder, audioconv, audiosink)
+
 		bus = self.player.get_bus()
 		bus.add_signal_watch()
-		bus.connect('message', self.on_message)
+		bus.connect("message", self.on_message)
 		
 	def start_stop(self, w):
 		if self.button.get_label() == "Start":
 			filepath = self.entry.get_text()
 			if os.path.exists(filepath):
 				self.button.set_label("Stop")
-				self.player.get_by_name("file-source").set_property('location', filepath)
+				self.player.get_by_name("file-source").set_property("location", filepath)
 				self.player.set_state(gst.STATE_PLAYING)
 		else:
 			self.player.set_state(gst.STATE_NULL)
@@ -125,8 +127,8 @@ class GTK_Main:
 			self.button.set_label("Start")
 	
 	def demuxer_callback(self, demuxer, pad):
-		dec_pad = self.audio_decoder.get_pad("sink")
-		pad.link(dec_pad)
+		adec_pad = self.audio_decoder.get_pad("sink")
+		pad.link(adec_pad)
 		
 GTK_Main()
 gtk.gdk.threads_init()

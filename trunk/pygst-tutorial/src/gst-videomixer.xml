@@ -4,7 +4,7 @@
 <refsect1>
   <para>The videomixer element makes it possible to mix different videostreams together. Here is a CLI example:
   </para>
-  <synopsis>gst-launch-0.10 filesrc location=test.png ! pngdec ! alphacolor ! ffmpegcolorspace ! videobox border-alpha=0 alpha=0.5 top=-20 left=-200 ! \
+  <synopsis>$ gst-launch-0.10 filesrc location=test.png ! pngdec ! alphacolor ! ffmpegcolorspace ! videobox border-alpha=0 alpha=0.5 top=-20 left=-200 ! \
 	videomixer name=mix ! ffmpegcolorspace ! xvimagesink videotestsrc ! video/x-raw-yuv, width=320, height=240 ! mix.</synopsis>
  <para>
  You have to make a PNG image (100x100 px) to be able to run it. With the videobox element you can move the image
