@@ -16,11 +16,11 @@
   default so you have to adjust to that.
   </para>
   <para>In this next example we take the Vorbis-Player from example 4.1 and update it with some more stuff
-  so it's able to seek and show duration and position. 
+  so it's able to seek and show duration and position. </para>
   
-  </para>
- <para>
-<emphasis role="bold">Example 5.1</emphasis><mediaobject>
+<refsect2 id="example-5.1">
+<emphasis role="bold">Example 5.1</emphasis>
+<mediaobject>
   <imageobject>
     <imagedata fileref="vorbis.png" format="PNG"/>
   </imageobject>
@@ -28,8 +28,8 @@
     <phrase>Vorbis-Player</phrase>
   </textobject>
 </mediaobject>
-</para>
-  <synopsis>#!/usr/bin/env python
+
+  <synopsis language="python">#!/usr/bin/env python
 
 import sys, os, thread, time
 import pygtk, gtk, gobject
@@ -42,7 +42,7 @@ class GTK_Main:
 	def __init__(self):
 		window = gtk.Window(gtk.WINDOW_TOPLEVEL)
 		window.set_title("Vorbis-Player")
-		window.set_default_size(400, -1)
+		window.set_default_size(500, -1)
 		window.connect("destroy", gtk.main_quit, "WM destroy")
 		vbox = gtk.VBox()
 		window.add(vbox)
@@ -68,17 +68,13 @@ class GTK_Main:
 		
 		self.player = gst.Pipeline("player")
 		source = gst.element_factory_make("filesrc", "file-source")
-		self.player.add(source)
 		demuxer = gst.element_factory_make("oggdemux", "demuxer")
-		self.player.add(demuxer)
 		demuxer.connect("pad-added", self.demuxer_callback)
 		self.audio_decoder = gst.element_factory_make("vorbisdec", "vorbis-decoder")
-		self.player.add(self.audio_decoder)
 		audioconv = gst.element_factory_make("audioconvert", "converter")
-		self.player.add(audioconv)
 		audiosink = gst.element_factory_make("autoaudiosink", "audio-output")
-		self.player.add(audiosink)
-
+		
+		self.player.add(source, demuxer, self.audio_decoder, audioconv, audiosink)
 		gst.element_link_many(source, demuxer)
 		gst.element_link_many(self.audio_decoder, audioconv, audiosink)
 
@@ -91,7 +87,7 @@ class GTK_Main:
 	def start_stop(self, w):
 		if self.button.get_label() == "Start":
 			filepath = self.entry.get_text()
-			if os.path.exists(filepath):
+			if os.path.isfile(filepath):
 				self.button.set_label("Stop")
 				self.player.get_by_name("file-source").set_property("location", filepath)
 				self.player.set_state(gst.STATE_PLAYING)
@@ -185,7 +181,7 @@ class GTK_Main:
 		
 GTK_Main()
 gtk.gdk.threads_init()
-gtk.main()</synopsis>
- 
-
+gtk.main()
+</synopsis> 
+</refsect2>
 </refsect1>

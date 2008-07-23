@@ -8,6 +8,7 @@
  
 <xsl:param name="section.autolabel" select="1"/>
 <xsl:param name="section.label.includes.component.label" select="1"/>
+<xsl:param name="highlight.source" select="1"/>
 
  <xsl:template match="book|article">
     <xsl:apply-imports/>

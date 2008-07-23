@@ -6,6 +6,10 @@ h1, h2 {
   color: #527bbd;
 }
 
+img {
+  margin: 10px;
+}
+
 .literal {
   font-style: italic;
 }
@@ -74,5 +78,23 @@ table.simple td {
   padding: 1mm;
 }
 
+span.k {
+ color: #127015;
+}
 
+span.nf {
+ color: #121585;
+}
+
+span.nc {
+ color: #685625;
+}
+
+span.c {
+ color: #622323;
+}
+
+span.s {
+ color: #793436;
+}
 

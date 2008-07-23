@@ -1,0 +1,139 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+This script processes html files looking for <pre class="$lang"> tags.
+
+Usage:
+  $ pygmentize-post file1.html file2.html
+"""
+
+###################
+# Globals
+###################
+
+_encoding = "utf8"
+_python = "python"
+_langs = [_python]
+_tags = ["pre"]
+_left = "<"
+_right = ">"
+_end = "/"
+_class = "class"
+_equal = "="
+_sq = "'"
+_dq = '"'
+
+###################
+# Imports
+###################
+
+import sys
+from pygments import highlight
+from pygments.formatters import HtmlFormatter
+
+#######################
+# Functions
+#######################
+
+def get_lexer():
+  if _lang == _python:
+    from pygments.lexers import PythonLexer as _lexer
+
+  return _lexer
+
+def check_tag_begin():
+  _tag = _input[_currl + 1:_currr]
+  _tagname = _tag.split()[0]
+  if not _tagname in _tags:
+    return False, False
+  
+  _count = _tag.find(_class)
+  if _count == -1:
+    return False, False
+  _count = _tag.find(_equal, _count)
+  if _count == -1:
+    return False, False
+  _qleft = _tag.find(_sq, _count)
+  if _qleft == -1:
+    _qleft = _tag.find(_dq, _count)
+    if _qleft == -1:
+      return False, False
+    _qright = _tag.find(_dq, _qleft + 1)
+  else:
+    _qright = _tag.find(_sq, _qleft + 1)
+  if _qright == -1:
+     return False, False
+  
+  _list = _tag[_qleft + 1:_qright].split()
+  for _lang in _langs:
+    for i in _list:
+      if i == _lang:
+        return _tagname, _lang
+
+  return False, False
+
+def check_tag_end():
+  _tag = _input[_currl + 1:_currr]
+  _tagnamee = _tag.split()[0]
+  if not _tagnamee.startswith(_end):
+    return False
+  _tagnamee = _tagnamee.strip(_end + _right)
+  if _tagnamee == _tagname:
+    return True
+
+def find_tag():
+  _currl =_input.find(_left, _curr)
+  if _currl == -1:
+    return None, None
+  _currr = _input.find(_right, _currl)
+  if _currr == -1:
+    return None, None
+
+  return _currl, _currr + 1
+
+##################################
+# No functions below here.
+##################################
+
+_htmlf = HtmlFormatter()
+_langl = None
+
+for _filepath in sys.argv[1:]:
+  _file = open(_filepath, "r")
+  _input = _file.read().decode(_encoding)
+  _file.close()
+  _curr = 0
+  _max = len(_input)
+  _output = ""
+  
+  while _curr < _max:
+    _currl, _currr = find_tag()
+    if _currl == None:
+      _output = _output + _input[_curr:_max]
+      break
+    _output = _output + _input[_curr:_currr]
+    _curr = _currr
+    _renderl = _currr
+  
+    _tagname, _lang = check_tag_begin()
+    if not _tagname:
+      continue
+    else:
+      while _curr < _max:
+        _currl, _currr = find_tag()
+        if not _currl:
+          break
+        _curr = _currr
+        if not check_tag_end():
+          continue
+        else:
+          if _langl != _lang:
+            _langl = _lang
+            _lexer = get_lexer()()
+          _output = _output + highlight(_input[_renderl:_currl], _lexer, _htmlf)[28:-13] + _input[_currl:_currr]
+          break
+
+  _file = open(_filepath, "w")
+  _file.write(_output.encode(_encoding))
+  _file.close()

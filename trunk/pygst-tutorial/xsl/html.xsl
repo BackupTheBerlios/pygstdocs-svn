@@ -93,7 +93,8 @@
 </xsl:template>
 
   <!-- support for Python language for synopsises -->
-  <xsl:template match="classsynopsis
+  <xsl:template match="synopsis
+                     |classsynopsis
                      |fieldsynopsis
                      |methodsynopsis
                      |constructorsynopsis
@@ -117,7 +118,13 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-
+  
+  <xsl:template match="synopsis" mode="python">
+     <pre class="{name(.)} python">
+      <xsl:apply-templates mode="python"/>
+     </pre>
+  </xsl:template>
+  
   <xsl:template match="classsynopsis" mode="python">
     <table width="100%">
       <tr><td>

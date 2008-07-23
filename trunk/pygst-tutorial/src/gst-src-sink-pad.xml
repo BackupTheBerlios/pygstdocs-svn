@@ -59,8 +59,9 @@ And the ghostpad above should be created as type "sink"!!!
 called "dynamical pads". The next example will show how to use dynamically created pads with
 an oggdemux. The link between the demuxer and the decoder is created with the demuxer_callback()
 function which is called whenever a pad is created in the demuxer using the "pad-added" signal.</para>
+<refsect2 id="example-4.1">
 <emphasis role="bold">Example 4.1</emphasis>
-<synopsis>#!/usr/bin/env python
+<synopsis language="python">#!/usr/bin/env python
 
 import sys, os
 import pygtk, gtk, gobject
@@ -73,7 +74,7 @@ class GTK_Main:
 	def __init__(self):
 		window = gtk.Window(gtk.WINDOW_TOPLEVEL)
 		window.set_title("Vorbis-Player")
-		window.set_default_size(400, 300)
+		window.set_default_size(500, 200)
 		window.connect("destroy", gtk.main_quit, "WM destroy")
 		vbox = gtk.VBox()
 		window.add(vbox)
@@ -86,17 +87,13 @@ class GTK_Main:
 		
 		self.player = gst.Pipeline("player")
 		source = gst.element_factory_make("filesrc", "file-source")
-		self.player.add(source)
 		demuxer = gst.element_factory_make("oggdemux", "demuxer")
-		self.player.add(demuxer)
 		demuxer.connect("pad-added", self.demuxer_callback)
 		self.audio_decoder = gst.element_factory_make("vorbisdec", "vorbis-decoder")
-		self.player.add(self.audio_decoder)
 		audioconv = gst.element_factory_make("audioconvert", "converter")
-		self.player.add(audioconv)
 		audiosink = gst.element_factory_make("autoaudiosink", "audio-output")
-		self.player.add(audiosink)
-
+		
+		self.player.add(source, demuxer, self.audio_decoder, audioconv, audiosink)
 		gst.element_link_many(source, demuxer)
 		gst.element_link_many(self.audio_decoder, audioconv, audiosink)
 
@@ -107,14 +104,14 @@ class GTK_Main:
 	def start_stop(self, w):
 		if self.button.get_label() == "Start":
 			filepath = self.entry.get_text()
-			if os.path.exists(filepath):
+			if os.path.isfile(filepath):
 				self.button.set_label("Stop")
 				self.player.get_by_name("file-source").set_property("location", filepath)
 				self.player.set_state(gst.STATE_PLAYING)
 		else:
 			self.player.set_state(gst.STATE_NULL)
 			self.button.set_label("Start")
-						
+	
 	def on_message(self, bus, message):
 		t = message.type
 		if t == gst.MESSAGE_EOS:
@@ -134,8 +131,7 @@ GTK_Main()
 gtk.gdk.threads_init()
 gtk.main()
 </synopsis>
+</refsect2>
 <para>Now after reading through these four chapters you could need a break. Happy hacking and stay tuned for
 more interesting chapters to come.</para>
 </refsect1>
-
-

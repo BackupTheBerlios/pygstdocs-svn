@@ -4,16 +4,17 @@
 <refsect1>
   <para>
   A playbin is a highlevel, automatic, audio and video player. You create a playbin object with:
-  <synopsis>my_playbin = gst.element_factory_make("playbin", "my-playbin")</synopsis>
+  <synopsis language="python">my_playbin = gst.element_factory_make("playbin", "my-playbin")</synopsis>
   To get information about a playbin run:
   <synopsis>$ gst-inspect-0.10 playbin</synopsis>
   Ok, time for a few examples.
   </para>
   
   <para>
-  This first example is just a simple audio player. Insert a file with absolute path and it'll play. </para>
-<emphasis role="bold">Example 2.1</emphasis>
-  <synopsis>#!/usr/bin/env python
+  This first example is just a simple audio player, insert a file with absolute path and it'll play. </para>
+  <refsect2 id="example-2.1">
+<para><emphasis role="bold">Example 2.1</emphasis></para>
+  <synopsis language="python">#!/usr/bin/env python
 
 import sys, os
 import pygtk, gtk, gobject
@@ -26,7 +27,7 @@ class GTK_Main:
 	def __init__(self):
 		window = gtk.Window(gtk.WINDOW_TOPLEVEL)
 		window.set_title("Audio-Player")
-		window.set_default_size(400, 300)
+		window.set_default_size(300, -1)
 		window.connect("destroy", gtk.main_quit, "WM destroy")
 		vbox = gtk.VBox()
 		window.add(vbox)
@@ -70,9 +71,9 @@ GTK_Main()
 gtk.gdk.threads_init()
 gtk.main()
 </synopsis>
-
+</refsect2>
    <para>If you want to enable video playback just comment out the following lines:
-  <synopsis>fakesink = gst.element_factory_make('fakesink', "my-fakesink")
+  <synopsis language="python">fakesink = gst.element_factory_make('fakesink', "my-fakesink")
 self.player.set_property("video-sink", fakesink)
 </synopsis>
   </para>
@@ -81,8 +82,9 @@ self.player.set_property("video-sink", fakesink)
    enable_sync_message_emission() method on the bus. Here is an example with the 
    video window embedded in the program.
   </para>
+  <refsect2 id="example-2.2">
 <emphasis role="bold">Example 2.2</emphasis>
-<synopsis>#!/usr/bin/env python
+<synopsis language="python">#!/usr/bin/env python
 
 import sys, os
 import pygtk, gtk, gobject
@@ -152,13 +154,13 @@ GTK_Main()
 gtk.gdk.threads_init()
 gtk.main()
 </synopsis>
-
+ </refsect2>
 <para>And just to make things a little more complicated you can switch the playbins videosink to a
 <ulink url="../pygst-reference/class-gstbin.html">gst.Bin</ulink>
 with a <ulink url="../pygst-reference/class-gstghostpad.html">gst.GhostPad</ulink> on it. 
 Here's an example with a timeoverlay.
 </para>
-<synopsis>bin = gst.Bin("my-bin")
+<synopsis language="python">bin = gst.Bin("my-bin")
 timeoverlay = gst.element_factory_make("timeoverlay")
 bin.add(timeoverlay)
 pad = timeoverlay.get_pad("video_sink")
@@ -175,8 +177,9 @@ ghostpads later.
 <para>On peoples requests we add a CLI example which plays music, just run it with:
 </para>
 <synopsis>$ python cliplayer.py /path/to/file1.mp3 /path/to/file2.ogg</synopsis>
+ <refsect2 id="example-2.3">
 <emphasis role="bold">Example 2.3</emphasis>
-<synopsis>#!/usr/bin/env python
+<synopsis language="python">#!/usr/bin/env python
 
 import sys, os, time, thread
 import gobject
@@ -223,4 +226,8 @@ gobject.threads_init()
 loop = gobject.MainLoop()
 loop.run()
 </synopsis>
+ </refsect2>
+ <para>A playbin implements the <ulink url="../pygst-reference/class-gstpipeline.html">gst.Pipeline</ulink>
+ element and that's what the next chapter is going to tell you more about.
+</para>
 </refsect1>

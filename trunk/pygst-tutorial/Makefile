@@ -17,6 +17,7 @@ src/gst-src-sink-pad.xml \
 src/gst-seeking.xml \
 src/gst-caps.xml \
 src/gst-videomixer.xml \
+src/gst-webcam-viewer.xml \
 src/gst-third-party-tutorials.xml
 
 ref-html: gst-tutorial ${TUTORIALLINKS} ${XSLFILES} ${TUTORIALXMLFILES}
@@ -25,6 +26,7 @@ ref-html: gst-tutorial ${TUTORIALLINKS} ${XSLFILES} ${TUTORIALXMLFILES}
                  --stringparam gstdoc.version 0.10 \
 		xsl/ref-html-style.xsl src/gst-tutorial.xml
 	cp var/* pygst-tutorial
+	find pygst-tutorial -type f -wholename '*html' -print | xargs python pygmentize-post
 
 ref-srcdist:
 	tar cjf gst-tutorial.docbook.tar.bz2 ${TUTORIALXMLFILES} ${XSLFILES} \

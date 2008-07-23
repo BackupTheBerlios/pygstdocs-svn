@@ -8,7 +8,8 @@
   bin-like object, this is what you're looking for. You create a pipeline object with:
   <synopsis>my_pipeline = gst.Pipeline("my-pipeline")</synopsis>
   A pipeline is just a "container" where you can put other objects and when everything is
-  in place and the file to play is specified you just set the pipelines state to gst.STATE_PLAYING
+  in place and the file to play is specified you just set the pipelines state to 
+  <ulink url="../pygst-reference/gst-constants.html#gst-state-constants">gst.STATE_PLAYING</ulink>
   and there should be multimedia coming out of it.
   </para>
   
@@ -33,8 +34,9 @@ like this:</para>
 
 </synopsis>
 <para>and the source:</para>
+<refsect2 id="example-3.1">
 <emphasis role="bold">Example 3.1</emphasis>
-  <synopsis>#!/usr/bin/env python
+  <synopsis language="python">#!/usr/bin/env python
 
 import sys, os
 import pygtk, gtk, gobject
@@ -47,7 +49,7 @@ class GTK_Main:
 	def __init__(self):
 		window = gtk.Window(gtk.WINDOW_TOPLEVEL)
 		window.set_title("MP3-Player")
-		window.set_default_size(400, 300)
+		window.set_default_size(400, 200)
 		window.connect("destroy", gtk.main_quit, "WM destroy")
 		vbox = gtk.VBox()
 		window.add(vbox)
@@ -60,14 +62,11 @@ class GTK_Main:
 		
 		self.player = gst.Pipeline("player")
 		source = gst.element_factory_make("filesrc", "file-source")
-		self.player.add(source)
 		decoder = gst.element_factory_make("mad", "mp3-decoder")
-		self.player.add(decoder)
 		conv = gst.element_factory_make("audioconvert", "converter")
-		self.player.add(conv)
 		sink = gst.element_factory_make("alsasink", "alsa-output")
-		self.player.add(sink)
-
+		
+		self.player.add(source, decoder, conv, sink)
 		gst.element_link_many(source, decoder, conv, sink)
 
 		bus = self.player.get_bus()
@@ -77,7 +76,7 @@ class GTK_Main:
 	def start_stop(self, w):
 		if self.button.get_label() == "Start":
 			filepath = self.entry.get_text()
-			if os.path.exists(filepath):
+			if os.path.isfile(filepath):
 				self.button.set_label("Stop")
 				self.player.get_by_name("file-source").set_property("location", filepath)
 				self.player.set_state(gst.STATE_PLAYING)
@@ -100,7 +99,7 @@ GTK_Main()
 gtk.gdk.threads_init()
 gtk.main()
 </synopsis>
-
+</refsect2>
   <para>The next example is playing Mpeg2 videos. Some demuxers, such as mpegdemux, uses
     dynamic pads which are created at runtime and therefor you can't link between the demuxer
     and the next element in the pipeline before the pad has been created at runtime. Watch out
@@ -115,8 +114,9 @@ gtk.main()
     UPDATE! The competition is over. Mike Auty fixed it with a few queues. He passed on the grand prize though
     saying he's too busy coding so no time for dating. :D
   </para>  
+<refsect2 id="example-3.2">
 <emphasis role="bold">Example 3.2</emphasis>
-<synopsis>#!/usr/bin/env python
+<synopsis language="python">#!/usr/bin/env python
 
 import sys, os
 import pygtk, gtk, gobject
@@ -146,25 +146,18 @@ class GTK_Main:
 		
 		self.player = gst.Pipeline("player")
 		source = gst.element_factory_make("filesrc", "file-source")
-		self.player.add(source)
 		demuxer = gst.element_factory_make("mpegdemux", "demuxer")
-		self.player.add(demuxer)
 		demuxer.connect("pad-added", self.demuxer_callback)
 		self.video_decoder = gst.element_factory_make("mpeg2dec", "video-decoder")
-		self.player.add(self.video_decoder)
 		self.audio_decoder = gst.element_factory_make("mad", "audio-decoder")
-		self.player.add(self.audio_decoder)
 		audioconv = gst.element_factory_make("audioconvert", "converter")
-		self.player.add(audioconv)
 		audiosink = gst.element_factory_make("autoaudiosink", "audio-output")
-		self.player.add(audiosink)
 		videosink = gst.element_factory_make("autovideosink", "video-output")
-		self.player.add(videosink)
 		self.queuea = gst.element_factory_make("queue", "queuea")
 		self.queuev = gst.element_factory_make("queue", "queuev")
-		self.player.add(self.queuea)
-		self.player.add(self.queuev)
-
+		
+		self.player.add(source, demuxer, self.video_decoder, self.audio_decoder, audioconv,
+			audiosink, videosink, self.queuea, self.queuev)
 		gst.element_link_many(source, demuxer)
 		gst.element_link_many(self.queuev, self.video_decoder, videosink)
 		gst.element_link_many(self.queuea, self.audio_decoder, audioconv, audiosink)
@@ -178,7 +171,7 @@ class GTK_Main:
 	def start_stop(self, w):
 		if self.button.get_label() == "Start":
 			filepath = self.entry.get_text()
-			if os.path.exists(filepath):
+			if os.path.isfile(filepath):
 				self.button.set_label("Stop")
 				self.player.get_by_name("file-source").set_property("location", filepath)
 				self.player.set_state(gst.STATE_PLAYING)
@@ -218,5 +211,7 @@ GTK_Main()
 gtk.gdk.threads_init()
 gtk.main()
 </synopsis>
-
+</refsect2>
+<para>The elements in a pipeline connects to each other with pads and that's what the next chapter
+will tell you more about.</para>
 </refsect1>

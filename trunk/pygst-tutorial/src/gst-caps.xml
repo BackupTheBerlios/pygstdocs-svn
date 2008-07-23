@@ -6,14 +6,120 @@
   Capabilities,
   <ulink url="../pygst-reference/class-gstcaps.html">gst.Caps</ulink>,
    is a container where you may store information that you may pass on to a
-  <ulink url="../pygst-reference/class-gstpadtemplate.html">gst.PadTemplate</ulink>. 
-   There are many different ways to make a caps object and how to use it. I will here show
-   how you make a caps object from a string and then make use of it in a pipeline where
-   you can use it somewhat automagically from a capsfilter element. Just make sure that the object
-   in the place before the capsfilter have the capabilities needed to get the job done.
+  <ulink url="../pygst-reference/class-gstpadtemplate.html">gst.PadTemplate</ulink>. When you set the pipeline state
+  to either playing or paused the elements pads negotiates what caps to use for the stream. Now the following pipeline 
+  works perfectly:
    </para>
-   
-   <para><emphasis role="bold">Note:</emphasis> The examples here in this tutorial have grown a bit lately and it's not easy to show
+<synopsis>$ gst-launch-0.10  videotestsrc ! video/x-raw-yuv, width=320, height=240 ! xvimagesink</synopsis>
+   <para> But if you try to switch out the xvimagesink for a ximagesink you will notice that it wouldn't work. That's
+because ximagesink can't handle video/x-raw-yuv so you must put in an element BEFORE in the pipeline that does.
+ </para>
+<synopsis>$ gst-launch-0.10  videotestsrc ! video/x-raw-yuv, width=320, height=240 ! ffmpegcolorspace ! ximagesink</synopsis>
+And as ximagesink does not support hardware scaling you have to throw in a videoscale element too if you want
+software scaling.
+<synopsis>$ gst-launch-0.10  videotestsrc ! video/x-raw-yuv, width=320, height=240 ! videoscale ! ffmpegcolorspace ! ximagesink</synopsis>
+  <para>To put the above examples in code you have to put the caps in a capsfilter element.
+  </para>
+  <refsect2 id="example-6.1">
+  <emphasis role="bold">Example 6.1</emphasis>
+<synopsis language="python">#!/usr/bin/env python
+
+import sys, os
+import pygtk, gtk, gobject
+import pygst
+pygst.require("0.10")
+import gst
+
+class GTK_Main:
+
+	def __init__(self):
+		window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+		window.set_title("Videotestsrc-Player")
+		window.set_default_size(300, -1)
+		window.connect("destroy", gtk.main_quit, "WM destroy")
+		vbox = gtk.VBox()
+		window.add(vbox)
+		self.button = gtk.Button("Start")
+		self.button.connect("clicked", self.start_stop)
+		vbox.add(self.button)
+		window.show_all()
+
+		self.player = gst.Pipeline("player")
+		source = gst.element_factory_make("videotestsrc", "video-source")
+		sink = gst.element_factory_make("xvimagesink", "video-output")
+		caps = gst.Caps("video/x-raw-yuv, width=320, height=230")
+		filter = gst.element_factory_make("capsfilter", "filter")
+		filter.set_property("caps", caps)
+
+		self.player.add(source, filter, sink)
+		gst.element_link_many(source, filter, sink)
+
+	def start_stop(self, w):
+		if self.button.get_label() == "Start":
+			self.button.set_label("Stop")
+			self.player.set_state(gst.STATE_PLAYING)
+		else:
+			self.player.set_state(gst.STATE_NULL)
+			self.button.set_label("Start")
+
+GTK_Main()
+gtk.gdk.threads_init()
+gtk.main()
+</synopsis>
+</refsect2>
+<para>A frequently asked question is how to find out what resolution a file has and one way to do it is
+to check the caps on a decodebin element in paused state.
+</para>
+<refsect2 id="example-6.2">
+  <emphasis role="bold">Example 6.2</emphasis>
+<synopsis language="python">#!/usr/bin/env python
+
+import sys, os, time
+import pygtk, gtk, gobject
+import pygst
+pygst.require("0.10")
+import gst
+
+class GTK_Main:
+	
+	def __init__(self):
+		window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+		window.set_title("Capschecker")
+		window.set_default_size(300, -1)
+		window.connect("destroy", gtk.main_quit, "WM destroy")
+		vbox = gtk.VBox()
+		window.add(vbox)
+		self.entry = gtk.Entry()
+		vbox.pack_start(self.entry, False, True)
+		self.button = gtk.Button("Check")
+		self.button.connect("clicked", self.start_stop)
+		vbox.add(self.button)
+		window.show_all()
+		
+		self.player = gst.Pipeline("player")
+		source = gst.element_factory_make("filesrc", "file-source")
+		decoder = gst.element_factory_make("decodebin", "decoder")
+		
+		self.player.add(source, decoder)
+		gst.element_link_many(source, decoder)
+		
+	def start_stop(self, w):
+		filepath = self.entry.get_text()
+		if os.path.isfile(filepath):
+				self.player.get_by_name("file-source").set_property("location", filepath)
+				self.player.set_state(gst.STATE_PAUSED)
+				time.sleep(1)
+				for i in self.player.get_by_name("decoder").src_pads():
+					print i.get_caps()
+		self.player.set_state(gst.STATE_NULL)
+
+GTK_Main()
+gtk.gdk.threads_init()
+gtk.main()
+</synopsis>
+</refsect2>
+ <para><emphasis role="bold">Note:</emphasis> The examples here in this tutorial have grown a bit lately 
+   and it's not easy to show
    working gstreamer stuff in not so many lines but I'll try as hard as I can to do just that. Maybe 
    we have to have the code in separate files that you may take a look at if you find anything 
    interesting. The examples share much code too and when the numbers of chapters beefs up so does the 
@@ -24,11 +130,11 @@
    <para>In this example we will use the playbin from example 2.2 and switch its video-sink out for our own
    homemade bin, stuffed with some goodies. Now, let's say that you run a tv-station and you want to have
    your logo in the top right corner of the screen. For that you can use a textoverlay but for the fonts
-   to be the exact same size on th screen no matter what kind of resolution the source has you have to
+   to be the exact same size on the screen no matter what kind of resolution the source has you have to
    specify a width so everything is scaled according to that.</para>
-   
-  <emphasis role="bold">Example 6.1</emphasis>
-  <synopsis>#!/usr/bin/env python
+   <refsect2 id="example-6.3">
+  <emphasis role="bold">Example 6.3</emphasis>
+  <synopsis language="python">#!/usr/bin/env python
 
 import sys, os
 import pygtk, gtk, gobject
@@ -123,10 +229,7 @@ class GTK_Main:
 GTK_Main()
 gtk.gdk.threads_init()
 gtk.main()
-   </synopsis>
-   
-   
-   
+</synopsis>
+</refsect2>
 </refsect1>
-
 

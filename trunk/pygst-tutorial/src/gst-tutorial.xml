@@ -56,6 +56,11 @@
         <xi:include href="gst-videomixer.xml" />
     </chapter>
 
+    <chapter id="webcam-viewer">
+        <title>8. Webcam Viewer</title>
+        <xi:include href="gst-webcam-viewer.xml" />
+    </chapter>
+    
     <appendix id="changelog">
         <title>ChangeLog</title>
         <xi:include href="ChangeLog.xml" />
