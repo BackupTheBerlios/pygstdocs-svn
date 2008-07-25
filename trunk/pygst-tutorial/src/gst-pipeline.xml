@@ -6,7 +6,7 @@
   A <ulink url="../pygst-reference/class-gstpipeline.html">gst.Pipeline</ulink>
   is a toplevel bin with its own bus and clock. If your program only contains one
   bin-like object, this is what you're looking for. You create a pipeline object with:
-  <synopsis>my_pipeline = gst.Pipeline("my-pipeline")</synopsis>
+  <synopsis language="python">my_pipeline = gst.Pipeline("my-pipeline")</synopsis>
   A pipeline is just a "container" where you can put other objects and when everything is
   in place and the file to play is specified you just set the pipelines state to 
   <ulink url="../pygst-reference/gst-constants.html#gst-state-constants">gst.STATE_PLAYING</ulink>
@@ -22,7 +22,7 @@ like this:</para>
 <para>or ASCII style:</para>
 <synopsis>
 
-                                            Pipeline 
+                                          gst.Pipeline 
               _____________________________________________________________________
              |                                                                     |
              |    _________       _______       ______________       __________    |

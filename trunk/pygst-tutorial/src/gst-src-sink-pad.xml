@@ -27,7 +27,7 @@
 There are many different ways to link elements together. In example 3.1 we used the element_link_many() function.
 You can also make a complete ready to go pipeline with the parse_launch() function. The pipeline from example 3.1
 would be done like this:
-<synopsis>
+<synopsis language="python">
 mp3_pipeline = gst.parse_launch("filesrc name=source ! mad name=decoder ! audioconvert name=conv ! alsasink name=sink")
 </synopsis>
 You can of course also link pads manually with the link() method. Just make sure that you try to link a src-pad
@@ -52,13 +52,14 @@ In ASCII style example 2.2 should look something like this:
          |
          |_______________________________________________________________________________/\
                                                                                            \/
+
 </synopsis>
 And the ghostpad above should be created as type "sink"!!!
 </para>
 <para>Some pads are not always available and are only created when they are in use. Such pads are
 called "dynamical pads". The next example will show how to use dynamically created pads with
 an oggdemux. The link between the demuxer and the decoder is created with the demuxer_callback()
-function which is called whenever a pad is created in the demuxer using the "pad-added" signal.</para>
+method, which is called whenever a pad is created in the demuxer using the "pad-added" signal.</para>
 <refsect2 id="example-4.1">
 <emphasis role="bold">Example 4.1</emphasis>
 <synopsis language="python">#!/usr/bin/env python

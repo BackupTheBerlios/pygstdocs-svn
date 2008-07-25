@@ -39,7 +39,7 @@ class GTK_Main:
 		window.show_all()
 		
 		self.player = gst.element_factory_make("playbin", "player")
-		fakesink = gst.element_factory_make("fakesink", "my-fakesink")
+		fakesink = gst.element_factory_make("fakesink", "fakesink")
 		self.player.set_property("video-sink", fakesink)
 		bus = self.player.get_bus()
 		bus.add_signal_watch()
@@ -50,7 +50,7 @@ class GTK_Main:
 			filepath = self.entry.get_text()
 			if os.path.isfile(filepath):
 				self.button.set_label("Stop")
-				self.player.set_property('uri', "file://" + filepath)
+				self.player.set_property("uri", "file://" + filepath)
 				self.player.set_state(gst.STATE_PLAYING)
 		else:
 			self.player.set_state(gst.STATE_NULL)
@@ -72,8 +72,10 @@ gtk.gdk.threads_init()
 gtk.main()
 </synopsis>
 </refsect2>
-   <para>If you want to enable video playback just comment out the following lines:
-  <synopsis language="python">fakesink = gst.element_factory_make('fakesink', "my-fakesink")
+   <para>A playbin plugs both audio and video streams automagically so I've switched the videosink out to a fakesink
+   element which is Gstreamer's answer to /dev/null. If you want to enable video playback just comment out the 
+   following lines:
+  <synopsis language="python">fakesink = gst.element_factory_make("fakesink", "my-fakesink")
 self.player.set_property("video-sink", fakesink)
 </synopsis>
   </para>
@@ -124,7 +126,7 @@ class GTK_Main:
 			filepath = self.entry.get_text()
 			if os.path.isfile(filepath):
 				self.button.set_label("Stop")
-				self.player.set_property('uri', "file://" + filepath)
+				self.player.set_property("uri", "file://" + filepath)
 				self.player.set_state(gst.STATE_PLAYING)
 		else:
 			self.player.set_state(gst.STATE_NULL)
@@ -191,7 +193,7 @@ class CLI_Main:
 	
 	def __init__(self):
 		self.player = gst.element_factory_make("playbin", "player")
-		fakesink = gst.element_factory_make("fakesink", "my-fakesink")
+		fakesink = gst.element_factory_make("fakesink", "fakesink")
 		self.player.set_property("video-sink", fakesink)
 		bus = self.player.get_bus()
 		bus.add_signal_watch()
@@ -212,7 +214,7 @@ class CLI_Main:
 		for filepath in sys.argv[1:]:
 			if os.path.isfile(filepath):
 				self.playmode = True
-				self.player.set_property('uri', "file://" + filepath)
+				self.player.set_property("uri", "file://" + filepath)
 				self.player.set_state(gst.STATE_PLAYING)
 				while self.playmode:
 					time.sleep(1)
@@ -227,7 +229,7 @@ loop = gobject.MainLoop()
 loop.run()
 </synopsis>
  </refsect2>
- <para>A playbin implements the <ulink url="../pygst-reference/class-gstpipeline.html">gst.Pipeline</ulink>
+ <para>A playbin implements a <ulink url="../pygst-reference/class-gstpipeline.html">gst.Pipeline</ulink>
  element and that's what the next chapter is going to tell you more about.
 </para>
 </refsect1>

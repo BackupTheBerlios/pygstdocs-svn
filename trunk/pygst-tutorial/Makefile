@@ -26,7 +26,7 @@ ref-html: gst-tutorial ${TUTORIALLINKS} ${XSLFILES} ${TUTORIALXMLFILES}
                  --stringparam gstdoc.version 0.10 \
 		xsl/ref-html-style.xsl src/gst-tutorial.xml
 	cp var/* pygst-tutorial
-	#find pygst-tutorial -type f -wholename '*html' -print | xargs python pygmentize-post
+	[ -f /usr/bin/pygmentize ] && find pygst-tutorial -type f -wholename '*html' -print | xargs python pygmentize-post
 
 ref-srcdist:
 	tar cjf gst-tutorial.docbook.tar.bz2 ${TUTORIALXMLFILES} ${XSLFILES} \
