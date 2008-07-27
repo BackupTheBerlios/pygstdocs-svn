@@ -114,8 +114,28 @@ gtk.main()
     UPDATE! The competition is over. Mike Auty fixed it with a few queues. He passed on the grand prize though
     saying he's too busy coding so no time for dating. :D
   </para>  
+
 <refsect2 id="example-3.2">
 <emphasis role="bold">Example 3.2</emphasis>
+<synopsis>
+
+                                                             gst.Pipeline 
+              ___________________________________________________________________________________________________________
+             |                                                                                                           |
+             |                                      _______     _______     ________________     _______________         |
+             |                                     |       |   |       |   |                |   |               |        |
+             |                                 -->-| queue |->-|  mad  |->-|  audioconvert  |->-| autoaudiosink |-->-->--|->- Audio Output
+             |    _________     ___________    |   |_______|   |_______|   |________________|   |_______________|        |
+             |   |         |   |           |->--                                                                         |
+ file.mpg ->-|->-| filesrc |->-| mpegdemux |                                                                             |
+             |   |_________|   |___________|->--    _______     __________     __________________     _______________    |
+             |                                 |   |       |   |          |   |                  |   |               |   |
+             |                                 -->-| queue |->-| mpeg2dec |->-| ffmpegcolorspace |->-| autovideosink |->-|->- Video Output
+             |                                     |_______|   |__________|   |__________________|   |_______________|   |
+             |                                                                                                           |
+             |___________________________________________________________________________________________________________|
+
+</synopsis>
 <synopsis language="python">#!/usr/bin/env python
 
 import sys, os
@@ -155,11 +175,12 @@ class GTK_Main:
 		videosink = gst.element_factory_make("autovideosink", "video-output")
 		self.queuea = gst.element_factory_make("queue", "queuea")
 		self.queuev = gst.element_factory_make("queue", "queuev")
+		colorspace = gst.element_factory_make("ffmpegcolorspace", "colorspace")
 		
 		self.player.add(source, demuxer, self.video_decoder, self.audio_decoder, audioconv,
-			audiosink, videosink, self.queuea, self.queuev)
+			audiosink, videosink, self.queuea, self.queuev, colorspace)
 		gst.element_link_many(source, demuxer)
-		gst.element_link_many(self.queuev, self.video_decoder, videosink)
+		gst.element_link_many(self.queuev, self.video_decoder, colorspace, videosink)
 		gst.element_link_many(self.queuea, self.audio_decoder, audioconv, audiosink)
 
 		bus = self.player.get_bus()

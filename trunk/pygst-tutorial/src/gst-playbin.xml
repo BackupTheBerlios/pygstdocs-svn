@@ -13,7 +13,7 @@
   <para>
   This first example is just a simple audio player, insert a file with absolute path and it'll play. </para>
   <refsect2 id="example-2.1">
-<para><emphasis role="bold">Example 2.1</emphasis></para>
+<emphasis role="bold">Example 2.1</emphasis>
   <synopsis language="python">#!/usr/bin/env python
 
 import sys, os

@@ -117,10 +117,16 @@ def find_tag():
 
   return _currl, _currr + 1
 
+def ugly_fixes(_str):
+  _str = _str.replace("&lt;", _left)
+  _str = _str.replace("&gt;", _right)
+  return _str
+
 ##################################
 # No functions below here.
 ##################################
 
+_htmlfl = HtmlFormatter(linenos="table")
 _htmlf = HtmlFormatter()
 _langl = None
 
@@ -161,8 +167,10 @@ for _filepath in sys.argv[1:]:
             _lexer = get_lexer()
             if _lexer != None:
               _lexer = _lexer()
-          if _lexer != None:
-            _output = _output + highlight(_input[_renderl:_currl], _lexer, _htmlf)[28:-13] + _input[_currl:_currr]
+          if _lexer != None and _input[_renderl:_currl].startswith("#!/usr/bin"):
+            _output = _output[0:-29] + highlight(ugly_fixes(_input[_renderl:_currl]), _lexer, _htmlfl)
+          elif _lexer != None:
+	          _output = _output + highlight(ugly_fixes(_input[_renderl:_currl]), _lexer, _htmlf)[28:-13] + _input[_currl:_currr]
           else:
             _output = _output + _input[_renderl:_currl] + _input[_currl:_currr]
           break

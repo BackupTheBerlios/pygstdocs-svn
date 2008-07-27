@@ -51,12 +51,6 @@ img {
   border: solid 1px #aaaaff;
 }
 
-pre.synopsis {
-  background-color: #eeeeff;
-  padding: 1mm;
-  border: solid 1px #aaaaff;
-}
-
 a:link {background:none; color:#104E8B;}
 a:visited {background:none; color:#104E8B;}
 a:hover {background:#104E8B; color: white; text-decoration:none;}
@@ -76,6 +70,37 @@ table.simple th {
 table.simple td {
   border: 1px solid #000;
   padding: 1mm;
+}
+
+pre.synopsis {
+  background-color: #eeeeff;
+  margin: 2mm 0;
+  padding: 1mm;
+  border: solid 1px #aaaaff;
+}
+
+.highlighttable {
+  margin: 2mm 0 0 0;
+  background-color: #eeeeff;
+  padding: 1mm;
+  border: solid 1px #aaaaff;
+  width: 100%
+}
+
+pre {
+  margin: 0;
+  padding: 0;
+}
+
+.highlighttable td {
+  margin: 0;
+  padding: 0 2mm 0 0;
+}
+
+.linenos {
+  color: #888899;
+  width: 8mm;
+  text-align: right;
 }
 
 span.k {
