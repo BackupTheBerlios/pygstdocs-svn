@@ -1,0 +1,75 @@
+.list-of-tables {
+  display: none;
+}
+
+h1, h2 {
+  color: #527bbd;
+}
+
+.literal {
+  font-style: italic;
+}
+
+.parameter {
+  font-weight: bold;
+  color: black;
+}
+
+.programlisting {
+  font: monospace;
+  background-color: #eeeeff;
+  border: solid 1px #aaaaff;
+  padding: 1mm;
+}
+
+.classsynopsis {
+  font: monospace;
+  background-color: #eeeeff;
+  border: solid 1px #aaaaff;
+  padding: 1mm;
+}
+
+.variablelist {
+  font: monospace;
+  background-color: #ffeeee;
+  border: solid 1px #ffaaaa;
+  padding: 1mm;
+}
+
+.variablelist p {
+  margin: 0;
+  padding: 0;
+}
+
+.blockquote {
+  background-color: #eeeeff;
+  padding: 1mm;
+  border: solid 1px #aaaaff;
+}
+
+pre.synopsis {
+  background-color: #eeeeff;
+  padding: 1mm;
+  border: solid 1px #aaaaff;
+}
+
+a:link {background:none; color:#104E8B;}
+a:visited {background:none; color:#104E8B;}
+a:hover {background:#104E8B; color: white; text-decoration:none;}
+
+table.simple {
+  border: 1px solid #000;
+  margin: 3mm;
+  border-collapse: collapse;
+}
+
+table.simple th {
+  background-color: #ddd;
+  border: 1px solid #000;
+  padding: 1mm;
+}
+
+table.simple td {
+  border: 1px solid #000;
+  padding: 1mm;
+}

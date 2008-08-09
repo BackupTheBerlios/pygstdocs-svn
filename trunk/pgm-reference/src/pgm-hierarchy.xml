@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE synopsis PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<synopsis><ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
+    <ulink url="../pygst-reference/class-gstobject.html">gst.Object</ulink>
+        <ulink url="../pygst-reference/class-gstelement.html">gst.Element</ulink>
+            gst.BaseSink
+                gst.VideoSink
+                    <link linkend="class-pgmimagesink">pgm.ImageSink</link>
+        <link linkend="class-pgmdrawable">pgm.Drawable</link>
+            <link linkend="class-pgmimage">pgm.Image</link>
+            <link linkend="class-pgmtext">pgm.Text</link>
+        <link linkend="class-pgmcanvas">pgm.Canvas</link>
+        <link linkend="class-pgmviewport">pgm.Viewport</link>
+        <link linkend="class-pgmviewportfactory">pgm.ViewportFactory</link>
+    GInitiallyUnknowned
+        <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
+            <ulink url="http://www.pygtk.org/pygtk2reference/class-gtkwidget.html">gtk.Widget</ulink>
+                <ulink url="http://www.pygtk.org/pygtk2reference/class-gtkcontainer.html">gtk.Container</ulink>
+                     <ulink url="http://www.pygtk.org/pygtk2reference/class-gtksocket.html">gtk.Socket</ulink>
+                         <link linkend="class-pgmgtk">pgm.gtk.PgmGtk</link></synopsis>

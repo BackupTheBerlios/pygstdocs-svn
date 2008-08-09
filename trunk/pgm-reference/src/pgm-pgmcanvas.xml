@@ -1,0 +1,734 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="class-pgmcanvas">
+    <refnamediv>
+        <refname>pgm.Canvas</refname>
+        <refpurpose>A virtual positioning class for drawables.</refpurpose>
+    </refnamediv>
+
+<!-- ************************ -->
+<!-- BEGIN OF PGMCANVAS SYNOPSIS -->
+<!-- ************************ -->
+
+<refsect1>
+    <title>Synopsis</title>
+    <classsynopsis language="python">
+        <ooclass><classname>pgm.Canvas</classname></ooclass>
+        <ooclass><classname><ulink url="../pygst-reference/class-gstobject.html">gst.Object</ulink></classname></ooclass>
+    
+    <constructorsynopsis language="python">
+        <methodname><link linkend="constructor-pgmcanvas">pgm.Canvas</link></methodname>
+        <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
+    </constructorsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-pgmcanvas--add">add</link></methodname>
+        <methodparam><parameter role="keyword">layer</parameter></methodparam>
+        <methodparam><parameter role="keyword">drawable</parameter></methodparam>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-pgmcanvas--add_many">add_many</link></methodname>
+        <methodparam><parameter role="keyword">layer</parameter></methodparam>
+        <methodparam><parameter role="keyword">drawable_1</parameter></methodparam>
+        <methodparam><parameter role="keyword">...</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-pgmcanvas--get_layer_count">get_layer_count</link></methodname>
+        <methodparam><parameter role="keyword">layer</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-pgmcanvas--get_order">get_order</link></methodname>
+        <methodparam><parameter role="keyword">drawable</parameter></methodparam>
+        <methodparam><parameter role="keyword">layer</parameter></methodparam> 
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-pgmcanvas--get_pixel_formats">get_pixel_formats</link></methodname>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-pgmcanvas--get_size">get_size</link></methodname>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+         <methodname><link linkend="method-pgmcanvas--regenerate">regenerate</link></methodname>
+    </methodsynopsis>
+  
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-pgmcanvas--remove">remove</link></methodname>
+        <methodparam><parameter role="keyword">drawable</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-pgmcanvas--remove-many">remove_many</link></methodname>
+        <methodparam><parameter role="keyword">drawable_1</parameter></methodparam>
+        <methodparam><parameter role="keyword">...</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-pgmcanvas--set_order">set_order</link></methodname>
+        <methodparam><parameter role="keyword">drawable</parameter></methodparam>
+        <methodparam><parameter role="keyword">order</parameter></methodparam>
+    </methodsynopsis>
+    
+    <methodsynopsis language="python">
+        <methodname><link linkend="method-pgmcanvas--set_size">set_size</link></methodname>
+        <methodparam><parameter role="keyword">width</parameter></methodparam>
+        <methodparam><parameter role="keyword">height</parameter></methodparam>
+    </methodsynopsis>
+</classsynopsis>
+</refsect1>
+
+<!-- ************************ -->
+<!-- BEGIN OF PGMCANVAS ANCESTRY -->
+<!-- ************************ -->
+
+<refsect1>
+    <title>Ancestry</title>
+<synopsis>+-- <ulink url="http://www.pygtk.org/pygtk2reference/class-gobject.html">gobject.GObject</ulink>
+    +-- <ulink url="../pygst-reference/class-gstobject.html">gst.Object</ulink>
+        +-- <link linkend="class-pgmcanvas">pgm.Canvas</link>
+</synopsis>
+</refsect1>
+
+<!-- ********************************* -->
+<!-- BEGIN OF PGMCANVAS SIGNAL PROTOTYPES -->
+<!-- ********************************* -->
+
+<refsect1>
+    <title>Signal Prototypes</title>
+    <variablelist>
+        <varlistentry>
+            <term><link linkend="signal-pgmcanvas--drawable-added">"drawable-added"</link></term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>canvas</parameter></methodparam>
+                    <methodparam><parameter>drawable</parameter></methodparam>
+                    <methodparam><parameter>layer</parameter></methodparam>
+                    <methodparam><parameter>order</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+        
+        <varlistentry>
+            <term><link linkend="signal-pgmcanvas--drawable-removed">"drawable-removed"</link></term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>canvas</parameter></methodparam>
+                    <methodparam><parameter>drawable</parameter></methodparam>
+                    <methodparam><parameter>layer</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+        
+        <varlistentry>
+            <term><link linkend="signal-pgmcanvas--drawable-reordered">"drawable-reordered"</link></term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                     <methodparam><parameter>canvas</parameter></methodparam>
+                    <methodparam><parameter>drawable</parameter></methodparam>
+                    <methodparam><parameter>layer</parameter></methodparam>
+                    <methodparam><parameter>order</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+        
+        <varlistentry>
+            <term><link linkend="signal-pgmcanvas--regenerated">"regenerated"</link></term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>canvas</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+        
+        <varlistentry>
+            <term><link linkend="signal-pgmcanvas--size-changed">"size-changed"</link></term>
+            <listitem>
+                <methodsynopsis language="python"><methodname>callback</methodname>
+                    <methodparam><parameter>canvas</parameter></methodparam>
+                    <methodparam><parameter>user_data</parameter></methodparam>
+                </methodsynopsis>
+            </listitem>
+        </varlistentry>
+    </variablelist>
+</refsect1>
+
+<!-- *************************** -->
+<!-- BEGIN OF PGMCANVAS DESCRIPTION -->
+<!-- *************************** -->
+
+<refsect1 id="description-pgmcanvas">
+    <title>Description</title>
+<para>
+A <link linkend="class-pgmcanvas">pgm.Canvas</link> object is used as a virtual positioning system for the 
+pgm.Drawable. It provides Pigment users 
+(application developers using the library) a very simple and flexible way to build their user interface 
+without having to worry about visual rendering problems such as non square pixels, aspect ratio of images 
+or videos, keeping proportional alignment or spacing between objects when resizing, etc.
+</para>
+<emphasis role="bold">Canvas coordinates</emphasis>
+<para>
+The origin of the canvas coordinate system corresponds to the upper-left corner. A canvas can only understand 
+canvas coordinates, and those coordinates have nothing to do with pixels. This is why the methods you can 
+call on a canvas always use coordinates with floating numbers. Let's say you want to draw a user interface 
+with an aspect ratio of 16:9 (which is nice to do on most wide screen TV of the market). In that case you 
+would for example set the canvas size to width 16.0 and height 9.0. Every coordinate and size of the drawables 
+you are going to put on the canvas will use the same coordinate system. So, if you wanted to put an image in 
+the middle of the user interface you would compute its position so that its center is at (8.0, 4.5) on the canvas.
+ You would also define the size of that image using values of the same scale. For example, the width of the image 
+ could be 1.0 and its height 1.0 thus making appear as a square.
+ </para>
+<emphasis role="bold">Link between canvas and viewport</emphasis>
+<para>
+A canvas is never drawn directly which is why you can use abstract coordinates to place objects on it.
+ Also, since it is using floating numbers there is no limit in precision. At some point we still need 
+ to have a visual representation of what is on the canvas, this is what pgm.Viewport does. A canvas can be
+  projected on 0 to n viewport.
+</para>
+<emphasis role="bold">Scalable user interface</emphasis>
+<para>
+It is entirely the application's responsibility to decide how many drawables are going to be drawn on the
+ canvas and their size. Using the viewport information the application can decide which aspect ratio to 
+ use and how many drawables can fit on the canvas while still being easily readable. If for example the 
+ end user (user interface user) steps away from the monitor and cannot read the text the application can 
+ just make the drawables bigger on the canvas which will automatically get reprojected onto the viewport.
+ </para>
+<emphasis role="bold">Rendering layers</emphasis>
+<para>
+When adding a drawable to a canvas you have to choose a PgmDrawableLayer in which that drawable will be 
+stored. The three layers are used to handle a first control on the drawing order. The first layer drawn is 
+the pgm.DRAWABLE_FAR one, all the drawables inside this layer will appear behind the two others. The second 
+layer drawn is the pgm.DRAWABLE_MIDDLE one, the drawables inside this layer will be drawn over the 
+pgm.DRAWABLE_FAR layer and behind the pgm.DRAWABLE_NEAR layer. The third layer drawn is the pgm.DRAWABLE_NEAR one, 
+all the drawables inside this layer will be drawn over the two others. This is useful to make sure that dialog 
+is shown on top of all the other objects for example or to make sure that no object is going to go behind
+ the background. Drawables inside a layer are automatically ordered by Pigment depending on their z coordinate 
+ set through pgm.drawable_set_position(). Pigment also provides a way to reorder drawables inside a layer that
+  have the same z coordinate thanks to the pgm.canvas_set_order() function.
+</para>
+<emphasis role="bold">Drawable reference counting</emphasis>
+<para>
+When a drawable is created it has a floating reference, when you add it to the canvas, the canvas takes a 
+reference to that drawable and sink the object reference. That means that the canvas now owns the drawable 
+reference and you do not need to unref the drawable when cleaning up your objects. Just unrefing the canvas 
+is going to cleanup all the drawables that were added to it.
+</para>
+<emphasis role="bold">Signal connections</emphasis>
+<para>
+The drawable-added signal is fired whenever a new drawable is added to the canvas. Likewise the drawable-removed 
+signal is fired whenever an drawable is removed from the canvas. The drawable-reordered signal is fired
+ whenever a drawable is reordered inside the canvas. 
+</para>
+</refsect1>
+
+<!-- *************************** -->
+<!-- BEGIN OF PGMCANVAS CONSTRUCTOR -->
+<!-- *************************** -->
+
+<refsect1 id="constructor-pgmcanvas">
+    <title>Constructor</title>
+    
+    <programlisting><constructorsynopsis language="python">
+            <methodname>pgm.Canvas</methodname>
+            <methodparam><parameter role="keyword">name</parameter><initializer>None</initializer></methodparam>
+        </constructorsynopsis></programlisting>
+    
+    <variablelist>
+        <varlistentry>
+            <term><parameter role="keyword">name</parameter>&nbsp;:</term>
+            <listitem><simpara> The name for the canvas.</simpara></listitem>
+        </varlistentry>
+    </variablelist>
+    
+    <para>
+        Creates a new canvas with the given name.
+    </para>
+</refsect1>
+
+<!-- *********************** -->
+<!-- BEGIN OF PGMCANVAS METHODS -->
+<!-- *********************** -->
+
+<refsect1>
+    <title>Methods</title>
+
+    <refsect2 id="method-pgmcanvas--add">
+        <title>pgm.Canvas.add</title>
+        <programlisting><methodsynopsis language="python">
+            <methodname>add</methodname>
+            <methodparam><parameter role="keyword">layer</parameter></methodparam>
+            <methodparam><parameter role="keyword">drawable</parameter></methodparam>
+    	  </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">layer</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-pgmdrawablelayer"><classname>pgm.DrawableLayer</classname></link> to add.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">drawable</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-pgmdrawable"><classname>pgm.Drawable</classname></link> to add.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="pgm-error-constants">pgm error</link> constant indicating
+                 success/failure.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+             Adds drawable to canvas in layer. Both canvas and drawable reference counts will be increased by one as they 
+             are linking to each other. drawable reference will be sink as well so if the object reference was floating 
+             it now belongs to canvas and you don't have to unref drawable when cleaning up your objects. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-pgmcanvas--add-many">
+        <title>pgm.Canvas.add_many</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>add_many</methodname>
+                <methodparam><parameter role="keyword">layer</parameter></methodparam>
+                <methodparam><parameter role="keyword">drawable_1</parameter></methodparam>
+                <methodparam><parameter role="keyword">...</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">layer</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-pgmdrawablelayer"><classname>pgm.DrawableLayer</classname></link> to add.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">drawable_1</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-pgmdrawable"><classname>pgm.Drawable</classname></link> to add.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">...</parameter>&nbsp;:</term>
+                <listitem><simpara> Additional drawables to add.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="pgm-error-constants">pgm error</link> constant indicating
+                 success/failure.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+
+        <para>
+            The <methodname>add_many</methodname>() method adds a list of drawables to canvas. This method is equivalent to calling 
+            <methodname><link linkend="method-pgmcanvas--add">pgm.Canvas.add()</link></methodname> for each member of the list.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-pgmcanvas--get_layer_count">
+        <title>pgm.Canvas.get_layer_count</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>elements</methodname>
+                <methodparam><parameter role="keyword">layer</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">layer</parameter>&nbsp;:</term>
+                <listitem><simpara> the <link linkend="class-pgmdrawablelayer"><classname>pgm.DrawableLayer</classname></link> to count.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> the number of drawables in layer.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_layer_count</methodname>() method retrieves the number of drawables in layer. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-pgmcanvas--get_order">
+        <title>pgm.Canvas.get_order</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_order</methodname>
+                <methodparam><parameter role="keyword">drawable</parameter></methodparam>
+                <methodparam><parameter role="keyword">layer</parameter></methodparam>
+                <methodparam><parameter role="keyword">order</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">drawable</parameter>&nbsp;:</term>
+                <listitem><simpara> a <link linkend="class-pgmdrawable"><classname>pgm.Drawable</classname></link>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">layer</parameter>&nbsp;:</term>
+                <listitem><simpara> a <link linkend="class-pgmdrawablelayer"><classname>pgm.DrawableLayer</classname></link>.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> </simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_order</methodname>() method retrieves the layering of drawable. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-pgmcanvas--get_pixel_formats">
+        <title>pgm.Canvas.get_pixel_formats</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_pixel_formats</methodname>
+                <methodparam><parameter role="keyword">name</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> list of  <link linkend="pgm-image-pixel-constants"><classname>image pixel format constants</classname></link>
+                .</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_pixel_formats</methodname>() method gets the list of the supported pixel formats by canvas. This is the
+            intersection of the pixel formats supported by the viewports to which canvas is bound.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-pgmcanvas--get_size">
+        <title>pgm.Canvas.get_size</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>get_size</methodname>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A tuple with width and height of canvas.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>get_size</methodname>() method retrieves width and height size of canvas. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-pgmcanvas--regenerate">
+        <title>pgm.Canvas.regenerate</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>regenerate</methodname>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="pgm-error-constants">pgm error</link> constant indicating
+                 success/failure.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>regenerate</methodname>() method affects all the drawables of the canvas which need to be displayed at a 
+            fixed size. It regenerates those rasterized pixmaps which have been affected by the canvas projection. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-pgmcanvas--remove">
+        <title>pgm.Canvas.remove</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>remove</methodname>
+                <methodparam><parameter role="keyword">drawable</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">drawable</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-pgmdrawable"><classname>pgm.Drawable</classname></link> to remove.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="pgm-error-constants">pgm error</link> constant indicating
+                 success/failure.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>remove</methodname>() method removes drawable from canvas. Both canvas and drawable reference 
+            counts will be decreased by one as they were referencing each other. In most cases that means that drawable is 
+            going to be destroyed because canvas owned the only reference to it. If you want to reuse drawable in another 
+            canvas or in another layer you need to take a reference to it before removing it from canvas. 
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-pgmcanvas--remove_many">
+        <title>pgm.Canvas.remove_many</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>remove_many</methodname>
+                <methodparam><parameter role="keyword">drawable_1</parameter></methodparam>
+                <methodparam><parameter role="keyword">...</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">drawable_1</parameter>&nbsp;:</term>
+                <listitem><simpara> The <link linkend="class-pgmdrawable"><classname>pgm.Drawable</classname></link> to remove.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">...</parameter>&nbsp;:</term>
+                <listitem><simpara> Additional drawables to remove.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="pgm-error-constants">pgm error</link> constant indicating
+                 success/failure.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>remove_many</methodname>() method removes a list of drawables from canvas. This method is equivalent 
+            to calling
+            <methodname><link linkend="method-pgmcanvas--remove">pgm.Canvas.remove()</link></methodname> for each member of the list.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-pgmcanvas--set_order">
+        <title>pgm.Canvas.set_order</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_order</methodname>
+                <methodparam><parameter role="keyword">drawable</parameter></methodparam>
+                <methodparam><parameter role="keyword">order</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">drawable</parameter>&nbsp;:</term>
+                <listitem><simpara> the <link linkend="class-pgmdrawable"><classname>pgm.Drawable</classname></link> to reorder.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">order</parameter>&nbsp;:</term>
+                <listitem><simpara> the new position of drawable. </simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="pgm-error-constants">pgm error</link> constant indicating
+                 success/failure.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            The <methodname>set_order</methodname>() method defines the ordering of drawable in its layer at position order. 
+            Since drawables are ordered function of their z coordinate, set through pgm_drawable_set_position(), this
+            method is only useful if you want to reorder drawables at the same z coordinate. If you try to reorder a drawable 
+            inside a layer at an order where the current drawable doesn't have the same z coordinate, the function will do
+             nothing and return an error.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="method-pgmcanvas--set_size">
+        <title>pgm.Canvas.set_size</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>set_size</methodname>
+                <methodparam><parameter role="keyword">width</parameter></methodparam>
+                <methodparam><parameter role="keyword">height</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+            <varlistentry>
+                <term><parameter role="keyword">width</parameter>&nbsp;:</term>
+                <listitem><simpara>the canvas width. </simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter role="keyword">height</parameter>&nbsp;:</term>
+                <listitem><simpara>the canvas height.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><emphasis>Returns</emphasis>&nbsp;:</term>
+                <listitem><simpara> A <link linkend="pgm-error-constants">pgm error</link> constant indicating
+                 success/failure.</simpara></listitem>
+            </varlistentry>
+        </variablelist>
+        
+        <para>
+            Sets the width and height size of canvas. These values are not supposed to be pixels. You are strongly 
+            encouraged to use abstract coordinates such as 16.0x9.0 for a 16:9 interface or 4.0x3.0 for a 4:3 one, etc.
+        </para>
+        
+    </refsect2>
+
+</refsect1>
+
+<!-- *********************** -->
+<!-- BEGIN OF PGMCANVAS SIGNALS -->
+<!-- *********************** --> 
+
+<refsect1>
+    <title>Signals</title>
+
+    <refsect2 id="signal-pgmcanvas--drawable-added">
+        <title>The "drawable-added" pgm.Canvas Signal</title>
+        <programlisting><methodsynopsis language="python">
+        <methodname>callback</methodname>
+            <methodparam><parameter>canvas</parameter></methodparam>
+            <methodparam><parameter>drawable</parameter></methodparam>
+            <methodparam><parameter>layer</parameter></methodparam>
+            <methodparam><parameter>order</parameter></methodparam>
+            <methodparam><parameter>user_data</parameter></methodparam>
+            
+	      </methodsynopsis></programlisting>
+
+        <variablelist>
+    	      <varlistentry>
+        	      <term><parameter>canvas</parameter>&nbsp;:</term>
+        	      <listitem><simpara>the pgm.Canvas that received the signal.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>drawable</parameter>&nbsp;:</term>
+                <listitem><simpara>the pgm.Drawable that was added to the canvas.</simpara></listitem>
+            </varlistentry>
+    	      <varlistentry>
+        	      <term><parameter>layer</parameter>&nbsp;:</term>
+                <listitem><simpara>the pgm.DrawableLayer in which drawable was added.</simpara></listitem>
+	          </varlistentry>
+    	      <varlistentry>
+        	      <term><parameter>order</parameter>&nbsp;:</term>
+        	      <listitem><simpara>the order in layer in which drawable was added.</simpara></listitem>
+    	      </varlistentry>
+          <varlistentry>
+        	      <term><parameter>user_data</parameter>&nbsp;:</term>
+        	      <listitem><simpara>user data set when the signal handler was connected.</simpara></listitem>
+    	      </varlistentry>
+        </variablelist>
+
+        <para>
+            Will be emitted after drawable was added to canvas.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="signal-pgmcanvas--drawable-removed">
+        <title>The "drawable-removed" pgm.Canvas Signal</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>callback</methodname>
+                <methodparam><parameter>canvas</parameter></methodparam>
+                <methodparam><parameter>drawable</parameter></methodparam>
+                <methodparam><parameter>layer</parameter></methodparam>
+                <methodparam><parameter>order</parameter></methodparam>
+                <methodparam><parameter>user_data</parameter></methodparam>
+            </methodsynopsis></programlisting>
+        
+        <variablelist>
+    	      <varlistentry>
+        	      <term><parameter>canvas</parameter>&nbsp;:</term>
+        	      <listitem><simpara>the pgm.Canvas that received the signal.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>drawable</parameter>&nbsp;:</term>
+                <listitem><simpara>the pgm.Drawable that was added to the canvas.</simpara></listitem>
+            </varlistentry>
+    	      <varlistentry>
+        	      <term><parameter>layer</parameter>&nbsp;:</term>
+                <listitem><simpara>the pgm.DrawableLayer in which drawable was added.</simpara></listitem>
+	          </varlistentry>
+          <varlistentry>
+        	      <term><parameter>user_data</parameter>&nbsp;:</term>
+        	      <listitem><simpara>user data set when the signal handler was connected.</simpara></listitem>
+    	      </varlistentry>
+        </variablelist>
+        
+        <para>
+            Will be emitted after drawable was removed from canvas.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="signal-pgmcanvas--drawable-reordered">
+        <title>The "drawable-reordered" pgm.Canvas Signal</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>callback</methodname>
+               <methodparam><parameter>canvas</parameter></methodparam>
+               <methodparam><parameter>drawable</parameter></methodparam>
+               <methodparam><parameter>layer</parameter></methodparam>
+               <methodparam><parameter>order</parameter></methodparam>
+               <methodparam><parameter>user_data</parameter></methodparam>
+            </methodsynopsis></programlisting>
+
+         <variablelist>
+    	      <varlistentry>
+        	      <term><parameter>canvas</parameter>&nbsp;:</term>
+        	      <listitem><simpara>the pgm.Canvas that received the signal.</simpara></listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><parameter>drawable</parameter>&nbsp;:</term>
+                <listitem><simpara>the pgm.Drawable that was added to the canvas.</simpara></listitem>
+            </varlistentry>
+    	      <varlistentry>
+        	      <term><parameter>layer</parameter>&nbsp;:</term>
+                <listitem><simpara>the pgm.DrawableLayer in which drawable was added.</simpara></listitem>
+	          </varlistentry>
+    	      <varlistentry>
+        	      <term><parameter>order</parameter>&nbsp;:</term>
+        	      <listitem><simpara>the order in layer in which drawable was added.</simpara></listitem>
+    	      </varlistentry>
+          <varlistentry>
+        	      <term><parameter>user_data</parameter>&nbsp;:</term>
+        	      <listitem><simpara>user data set when the signal handler was connected.</simpara></listitem>
+    	      </varlistentry>
+        </variablelist>
+        
+        <para>
+            Will be emitted after drawable was reordered in canvas.
+        </para>
+    </refsect2>
+    
+    <refsect2 id="signal-pgmcanvas--regenerated">
+        <title>The "regenerated" pgm.Canvas Signal</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>callback</methodname>
+                <methodparam><parameter>canvas</parameter></methodparam>
+                <methodparam><parameter>user_data</parameter></methodparam>
+            </methodsynopsis></programlisting>
+            
+        <variablelist>
+    	      <varlistentry>
+        	      <term><parameter>canvas</parameter>&nbsp;:</term>
+        	      <listitem><simpara>the pgm.Canvas that received the signal.</simpara></listitem>
+          </varlistentry>  
+          <varlistentry>
+        	      <term><parameter>user_data</parameter>&nbsp;:</term>
+        	      <listitem><simpara>user data set when the signal handler was connected.</simpara></listitem>
+    	     </varlistentry>
+        </variablelist>
+        
+        <para>
+            Will be emitted after canvas received a regeneration request.
+       </para>
+    </refsect2>
+    
+    <refsect2 id="signal-pgmcanvas--size-changed">
+        <title>The "size-changed" pgm.Canvas Signal</title>
+        <programlisting><methodsynopsis language="python">
+                <methodname>callback</methodname>
+                <methodparam><parameter>canvas</parameter></methodparam>
+                <methodparam><parameter>user_data</parameter></methodparam>
+            </methodsynopsis></programlisting>
+       <variablelist>
+    	      <varlistentry>
+        	      <term><parameter>canvas</parameter>&nbsp;:</term>
+        	      <listitem><simpara>the pgm.Canvas that received the signal.</simpara></listitem>
+          </varlistentry>  
+          <varlistentry>
+        	      <term><parameter>user_data</parameter>&nbsp;:</term>
+        	      <listitem><simpara>user data set when the signal handler was connected.</simpara></listitem>
+    	     </varlistentry>
+        </variablelist>
+        
+        <para>
+           Will be emitted after canvas size was changed.
+       </para>
+    </refsect2>
+
+</refsect1>
+</refentry>

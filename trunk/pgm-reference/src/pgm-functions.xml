@@ -1,0 +1,427 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="pgm-functions">
+    <refnamediv>
+        <refname>pgm Functions</refname>
+        <refpurpose>The built-in functions of the pgm module.</refpurpose>
+    </refnamediv>
+
+<!-- ************************ -->
+<!-- BEGIN OF PGM Functions SYNOPSIS -->
+<!-- ************************ -->
+
+<refsect1>
+<title>Synopsis</title>
+
+  <refsect2>
+        <title><link linkend="class-pgmviewportfactory">pgm.ViewportFactory </link> Functions</title>
+        <programlisting><methodsynopsis language="python">
+           <methodname><link linkend="function-pgmviewportfactory--viewport_factory_make">pgm.viewport_factory_make</link></methodname>
+  	        <methodparam><parameter role="keyword">name</parameter></methodparam>
+    	  </methodsynopsis></programlisting>
+  </refsect2>
+ 
+ 
+  <refsect2>
+    <title>Miscellaneous Functions</title>
+      <programlisting><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--gtk">pgm.gtk</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--intersection_line_plane">pgm.intersection_line_plane</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--keysyms">pgm.keysyms</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--keyval_to_unicode">pgm.keyval_to_unicode</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--main">pgm.main</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--main_iteration">pgm.main_iteration</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--main_iteration_do">pgm.main_iteration_do</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--main_quit">pgm.main_quit</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+          <methodname><link linkend="function-standalone--mat3x3_new_identity">pgm.mat3x3_new_identity</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--mat4x4_new_identity">pgm.mat4x4_new_identity</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--mat4x4_new_predefined">pgm.mat4x4_new_predefined</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--mat4x4_new_rotate_axis">pgm.mat4x4_new_rotate_axis</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--mat4x4_new_rotate_x">pgm.mat4x4_new_rotate_x</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--mat4x4_new_rotate_y">pgm.mat4x4_new_rotate_y</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--mat4x4_new_rotate_z">pgm.mat4x4_new_rotate_z</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--mat4x4_new_scale">pgm.mat4x4_new_scale</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--mat4x4_new_translate">pgm.mat4x4_new_translate</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--pgm_events_pending">pgm.pgm_events_pending</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--point_belongs_rectangle">pgm.point_belongs_rectangle</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--sys">pgm.sys</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--version">pgm.version</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis><methodsynopsis language="python">
+         <methodname><link linkend="function-standalone--version_string">pgm.version_string</link></methodname>
+  	        <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+  </refsect2>
+
+</refsect1> 
+
+
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Fuctions Description -->
+    <!-- ************************ -->
+    
+<refsect1 id="description-pgm-functions">
+  <title>Description</title>
+    <para>All Pigment functions for the pgm module are listed above categorized by class. Those functions 
+    associated with a class have their descriptions included with the class reference. Those functions 
+    that are not associated with a specific class are described below.</para>
+</refsect1>
+    
+    <!-- ************************ -->
+    <!-- BEGIN OF GST Fuctions -->
+    <!-- ************************ -->
+    
+<refsect1 id="pgm-functions-standalone">
+  <title>Functions</title>
+  
+    <refsect2 id="function-standalone--gtk">
+      <title>pgm.gtk</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.gtk</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--intersection_line_plane">
+      <title>pgm.intersection_line_plane</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.intersection_line_plane</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--keysyms">
+      <title>pgm.keysyms</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.keysyms</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--keyval_to_unicode">
+      <title>pgm.keyval_to_unicode</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.keyval_to_unicode</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--main">
+      <title>pgm.main</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.main</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--main_iteration">
+      <title>pgm.main_iteration</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.main_iteration</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+     <refsect2 id="function-standalone--main_iteration_do">
+      <title>pgm.main_iteration_do</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.main_iteration_do</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--main_quit">
+      <title>pgm.main_quit</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.main_quit</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+    
+    <refsect2 id="function-standalone--mat3x3_new_identity">
+      <title>pgm.mat3x3_new_identity</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.mat3x3_new_identity</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--mat4x4_new_identity">
+      <title>pgm.mat4x4_new_identity</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.mat4x4_new_identity</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--mat4x4_new_predefined">
+      <title>pgm.mat4x4_new_predefined</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.mat4x4_new_predefined</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--mat4x4_new_rotate_axis">
+      <title>pgm.mat4x4_new_rotate_axis</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.mat4x4_new_rotate_axis</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--mat4x4_new_rotate_x">
+      <title>pgm.mat4x4_new_rotate_x</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.mat4x4_new_rotate_x</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--mat4x4_new_rotate_y">
+      <title>pgm.mat4x4_new_rotate_y</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.mat4x4_new_rotate_y</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--mat4x4_new_rotate_z">
+      <title>pgm.mat4x4_new_rotate_z</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.mat4x4_new_rotate_z</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--mat4x4_new_scale">
+      <title>pgm.mat4x4_new_scale</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.mat4x4_new_scale</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--mat4x4_new_translate">
+      <title>pgm.mat4x4_new_translate</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.mat4x4_new_translate</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--pgm_events_pending">
+      <title>pgm.pgm_events_pending</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.pgm_events_pending</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--point_belongs_rectangle">
+      <title>pgm.point_belongs_rectangle</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.point_belongs_rectangle</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--sys">
+      <title>pgm.sys</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.sys</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--version">
+      <title>pgm.version</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.version</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="function-standalone--version_string">
+      <title>pgm.version_string</title>
+      <programlisting><methodsynopsis language="python">
+        <methodname>pgm.version_string</methodname>
+         <methodparam><parameter role="keyword"></parameter></methodparam></methodsynopsis></programlisting>
+        <variablelist>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+</refsect1>
+</refentry>

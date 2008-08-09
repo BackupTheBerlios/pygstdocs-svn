@@ -1,0 +1,908 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="pgm-constants">
+    <refnamediv>
+        <refname>pgm Constants</refname>
+        <refpurpose>The built-in constants of the pgm module.</refpurpose>
+    </refnamediv>
+
+<!-- ************************ -->
+<!-- BEGIN OF PGM Constants SYNOPSIS -->
+<!-- ************************ -->
+
+<refsect1>
+    <title>Synopsis</title>
+<synopsis><link linkend="pgm-button-constants">PGM Button Type Constants</link>
+<link linkend="pgm-drag-constants">PGM Drag Type Constants</link>
+<link linkend="pgm-drawable-constants">PGM Drawable Constants</link>
+<link linkend="pgm-drawable-flag-constants">PGM Drawable Flag Constants</link>
+<link linkend="pgm-error-constants">PGM Error Type Constants</link>
+<link linkend="pgm-image-constants">PGM Image Constants</link>
+<link linkend="pgm-image-border-constants">PGM Image Border Constants</link>
+<link linkend="pgm-image-bottom-constants">PGM Image Bottom Constants</link>
+<link linkend="pgm-image-data-constants">PGM Image Data Constants</link>
+<link linkend="pgm-image-pixel-constants">PGM Image Pixel Format Constants</link>
+<link linkend="pgm-image-sink-constants">PGM Image Sink Constants</link>
+<link linkend="pgm-image-top-constants">PGM Image Top Constants</link>
+<link linkend="pgm-key-constants">PGM Key Type Constants</link>
+<link linkend="pgm-mat4x4-constants">PGM Mat4x4 Type Constants</link>
+<link linkend="pgm-scroll-constants">PGM Scroll Type Constants</link>
+<link linkend="pgm-text-constants">PGM Text Constants</link>
+<link linkend="pgm-text-align-constants">PGM Text Align Constants</link>
+<link linkend="pgm-text-ellipsize-constants">PGM Text Ellipsize Constants</link>
+<link linkend="pgm-text-gravity-constants">PGM Text Gravity Constants</link>
+<link linkend="pgm-text-outline-constants">PGM Text Outline Constants</link>
+<link linkend="pgm-text-stretch-constants">PGM Text Stretch Constants</link>
+<link linkend="pgm-text-style-constants">PGM Text Style Constants</link>
+<link linkend="pgm-text-variant-constants">PGM Text Variant Variant Constants</link>
+<link linkend="pgm-text-weight-constants">PGM Text Weight Constants</link>
+<link linkend="pgm-text-wrap-constants">PGM Text Wrap Constants</link>
+<link linkend="pgm-viewport-constants">PGM Viewport Constants</link>
+<link linkend="pgm-viewport-reflection-constants">PGM Viewport Reflection Constants</link>
+<link linkend="pgm-viewport-rotation-constants">PGM Viewport Rotation Constants</link>
+<link linkend="pgm-unknown-constants">PGM Unknown Constants</link></synopsis>
+</refsect1>
+
+<refsect1>
+
+  <title>Description</title>
+
+    <refsect2 id="pgm-button-constants">
+      <title>PGM Button Type Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.BUTTON_LEFT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.BUTTON_MIDDLE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.BUTTON_PRESS</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.BUTTON_PRESSURE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.BUTTON_RELEASE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.BUTTON_RIGHT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2> 
+
+    <refsect2 id="pgm-drag-constants">
+      <title>PGM Drag Type Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.DRAG_DROP</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.DRAG_LEAVE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.DRAG_MOTION</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2> 
+
+    <refsect2 id="pgm-drawable-constants">
+      <title>PGM Drawable Type Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.DRAWABLE_BG_COLOR</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.DRAWABLE_FAR</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.DRAWABLE_FG_COLOR</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.DRAWABLE_MIDDLE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.DRAWABLE_NEAR</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.DRAWABLE_OPACITY</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.DRAWABLE_POSITION</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.DRAWABLE_REGENERATE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.DRAWABLE_SIZE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.DRAWABLE_TRANSFORMATION_MATRIX</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.DRAWABLE_UNBOUND</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.DRAWABLE_VISIBILITY</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+    
+    <refsect2 id="pgm-drawable-flag-constants">
+      <title>PGM Drawable Flag Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.DRAWABLE_FLAG_LAST</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.DRAWABLE_FLAG_UNPARENTING</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.DRAWABLE_FLAG_VISIBLE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-error-constants">
+      <title>PGM Error Type Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.ERROR_OK</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.ERROR_X</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-image-constants">
+      <title>PGM Image Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_ALIGNMENT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_ASPECT_RATIO</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_BGR</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_BGRA</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_BILINEAR</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_BUFFER</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_CENTER</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_CENTERED</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_EMPTY</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_FILLED</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_GST_BUFFER</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_I420</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_IMAGE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_INTERP</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_LAYOUT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_LEFT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_MAPPING_MATRIX</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_NEAREST</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_PIXBUF</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_RGB</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_RGBA</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_RIGHT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_SCALED</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_SYSTEM_BUFFER</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_SYSTEM_BUFFER_CONTENT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_TILED</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_UYVY</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_YUYV</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_YV12</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_ZOOMED</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-image-border-constants">
+      <title>PGM Image Border Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_BORDER_INNER_COLOR</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_BORDER_OUTER_COLOR</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_BORDER_WIDTH</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+    
+    <refsect2 id="pgm-image-bottom-constants">
+      <title>PGM Image Bottom Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_BOTTOM</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_BOTTOM_CENTER</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_BOTTOM_LEFT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_BOTTOM_RIGHT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+    
+    <refsect2 id="pgm-image-data-constants">
+      <title>PGM Image Data Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_DATA_BUFFER</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_DATA_EMPTY</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_DATA_GST_BUFFER</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_DATA_IMAGE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_DATA_PIXBUF</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_DATA_SYSTEM_BUFFER</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+    
+    <refsect2 id="pgm-image-pixel-constants">
+      <title>PGM Image Pixel Format Constants</title>
+        <para>The different image pixel formats.</para>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_BGR</methodname></term>
+            <listitem><simpara>24 bits BGR (3 bytes, blue 8 @ 16, green 8 @ 8, red 8 @ 0). </simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_BGRA</methodname></term>
+            <listitem><simpara>32 bits BGRA (4 bytes, blue 8 @ 24, green 8 @ 16, red 8 @ 8, alpha 8 @ 0). </simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_I420</methodname></term>
+            <listitem><simpara>12 bits YUV (8 bits Y plane followed by 8 bits quarter size U/V planes). </simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_RGB</methodname></term>
+            <listitem><simpara>24 bits RGB (3 bytes, red 8 @ 16, green 8 @ 8, blue 8 @ 0). </simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_RGBA</methodname></term>
+            <listitem><simpara>32 bits RGBA (4 bytes, red 8 @ 24, green 8 @ 16, blue 8 @ 8, alpha 8 @ 0). </simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_UYVY</methodname></term>
+            <listitem><simpara>16 bits YUV (4 bytes / 2 pixels, macropixel contains YCbYCr [31:0]). </simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_YUYV</methodname></term>
+            <listitem><simpara>16 bits YUV (4 bytes / 2 pixels, macropixel contains CbYCrY [31:0], duplicate of YUY2). </simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_YV12</methodname></term>
+            <listitem><simpara>12 bits YUV (8 bits Y plane followed by 8 bits quarter size V/U planes). </simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+    
+    <refsect2 id="pgm-image-sink-constants">
+      <title>PGM Image Sink Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_SINK_MOTION</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_SINK_PRESSED</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_SINK_RELEASED</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+    
+    <refsect2 id="pgm-image-top-constants">
+      <title>PGM Image Top Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_TOP</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_TOP_CENTER</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.IMAGE_TOP_LEFT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.IMAGE_TOP_RIGHT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+    
+   
+    <refsect2 id="pgm-key-constants">
+      <title>PGM Key Type Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.KEY_PRESS</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.KEY_RELEASE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-mat4x4-constants">
+      <title>PGM Mat4x4 Type Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.MAT4X4_FLIP_HORIZONTAL</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.MAT4X4_FLIP_VERTICAL</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.MAT4X4_ROTATE_CLOCKWISE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.MAT4X4_ROTATE_COUNTER_CLOCKWISE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-scroll-constants">
+      <title>PGM Scroll Type Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.SCROLL</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.SCROLL_DOWN</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.SCROLL_UP</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-text-constants">
+      <title>PGM Text Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_FONT_FAMILY</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_HEIGHT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_JUSTIFY</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_LABEL</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_LINE_SPACING</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_MARKUP</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+    
+    <refsect2 id="pgm-text-align-constants">
+      <title>PGM Text Align Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.TEXT_ALIGNMENT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.TEXT_ALIGN_CENTER</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_ALIGN_LEFT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_ALIGN_RIGHT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+    
+    <refsect2 id="pgm-text-ellipsize-constants">
+      <title>PGM Text Ellipsize Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.TEXT_ELLIPSIZE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_ELLIPSIZE_END</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_ELLIPSIZE_MIDDLE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_ELLIPSIZE_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_ELLIPSIZE_START</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-text-gravity-constants">
+      <title>PGM Text Gravity Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.TEXT_GRAVITY</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_GRAVITY_AUTO</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_GRAVITY_EAST</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_GRAVITY_NORTH</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_GRAVITY_SOUTH</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_GRAVITY_WEST</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-text-outline-constants">
+      <title>PGM Text Outline Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.TEXT_OUTLINE_COLOR</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_OUTLINE_WIDTH</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-text-stretch-constants">
+      <title>PGM Text Stretch Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.TEXT_STRETCH</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_STRETCH_CONDENSED</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.TEXT_STRETCH_EXPANDED</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_STRETCH_NORMAL</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-text-style-constants">
+      <title>PGM Text Style Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.TEXT_STYLE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_STYLE_ITALIC</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.TEXT_STYLE_NORMAL</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_STYLE_OBLIQUE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+ 
+    <refsect2 id="pgm-text-variant-constants">
+      <title>PGM Text Variant Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.TEXT_VARIANT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_VARIANT_NORMAL</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_VARIANT_SMALL_CAPS</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-text-weight-constants">
+      <title>PGM Text Weight Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.TEXT_WEIGHT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_WEIGHT_BOLD</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.TEXT_WEIGHT_LIGHT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_WEIGHT_NORMAL</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-text-wrap-constants">
+      <title>PGM Text Wrap Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.TEXT_WRAP</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_WRAP_CHAR</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.TEXT_WRAP_WORD</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TEXT_WRAP_WORD_CHAR</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-viewport-constants">
+      <title>PGM Viewport Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.VIEWPORT_APPLICATION_EMBEDDING</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.VIEWPORT_HARDWARE_ACCELERATION</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.VIEWPORT_INHERIT</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.VIEWPORT_LEFT_ARROW</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.VIEWPORT_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.VIEWPORT_OPACITY</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.VIEWPORT_TOUCHPAD</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.VIEWPORT_X11_SYSTEM_BUFFER</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-viewport-reflection-constants">
+      <title>PGM Viewport Reflection Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.VIEWPORT_REFLECTION_HORIZONTAL_FLIP</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.VIEWPORT_REFLECTION_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.VIEWPORT_REFLECTION_VERTICAL_FLIP</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-viewport-rotation-constants">
+      <title>PGM Viewport Rotation Constants</title>
+        <para></para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.VIEWPORT_ROTATION_180</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.VIEWPORT_ROTATION_270</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.VIEWPORT_ROTATION_90</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+             <term><methodname>pgm.VIEWPORT_ROTATION_NONE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+    <refsect2 id="pgm-unknown-constants">
+      <title>PGM Unknown Constants</title>
+        <para>A bunch of constants that does not belong in any special category.</para>
+        <variablelist>
+          <varlistentry>
+             <term><methodname>pgm.ALT_MASK</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.CAPSLOCK_MASK</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.CONFIGURE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.CONTROL_MASK</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.DELETE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.DOUBLE_BUTTON_PRESS</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.EXPOSE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.MOTION_NOTIFY</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.NOTHING</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.NUMLOCK_MASK</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.SHIFT_MASK</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.TRIPLE_BUTTON_PRESS</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term><methodname>pgm.WIN32_MESSAGE</methodname></term>
+            <listitem><simpara></simpara></listitem>
+          </varlistentry>
+        </variablelist>
+    </refsect2>
+
+</refsect1>
+</refentry>
