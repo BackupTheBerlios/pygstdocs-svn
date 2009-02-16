@@ -7,9 +7,31 @@
   <synopsis language="python">my_playbin = gst.element_factory_make("playbin", "my-playbin")</synopsis>
   To get information about a playbin run:
   <synopsis>$ gst-inspect-0.10 playbin</synopsis>
-  Ok, time for a few examples.
+  <para>This figure shows how playbin is built internally. The "optional stuff" are things that could be platform specific
+  or things that you may set with properties.
   </para>
+  <synopsis>
   
+                                          playbin
+          _________________________________________________________________________
+         |                                 ________________     _______________    |
+         |                                |                |   |               |   |
+         |                            -->-| optional stuff |->-| autoaudiosink |->-|->- Audio Output
+         |    ______     ___________  |   |________________|   |_______________|   |
+         |   |      |   |           |--                                            |
+  uri ->-|->-| *src |->-| decodebin |                                              |
+         |   |______|   |___________|--    ________________     _______________    |
+         |                            |   |                |   |               |   |
+         |                            -->-| optional stuff |->-| autovideosink |->-|->- Video Output
+         |                                |________________|   |_______________|   |
+         |_________________________________________________________________________|
+  </synopsis>
+  The "uri" property should take any possible protocol supported by your Gstreamer plugins, using the 
+  element_make_from_uri() function. One nice feature is that you may switch
+  the sinks out for your own bins as shown below. Playbin always tries to set up the best possible pipeline for
+  your specific environment so if you don't need any special features that are not implemented in playbin,
+  it should in most cases just work "out of the box". Ok, time for a few examples.
+  </para>
   <para>
   This first example is just a simple audio player, insert a file with absolute path and it'll play. </para>
   <refsect2 id="example-2.1">

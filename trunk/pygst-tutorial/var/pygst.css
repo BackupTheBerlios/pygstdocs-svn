@@ -107,19 +107,22 @@ span.k {
  color: #127015;
 }
 
+span.kn {
+ color: #6d2020;
+}
+
 span.nf {
  color: #121585;
 }
 
-span.nc {
- color: #685625;
+span.c {
+ color: #756545;
 }
 
-span.c {
- color: #622323;
+span.nc {
+ color: #55550a;
 }
 
 span.s {
  color: #793436;
 }
-

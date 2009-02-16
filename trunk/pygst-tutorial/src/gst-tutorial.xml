@@ -3,10 +3,10 @@
 
 <book id="gst-tutorial" xmlns:xi="http://www.w3.org/2001/XInclude">
     <bookinfo>
-        <pubdate>March 10, 2008</pubdate>
+        <pubdate>February 13, 2009</pubdate>
         <title>Python GStreamer Tutorial</title>
-        <edition>Python GStreamer Tutorial version 0.10.1 for PyGST 0.10.6</edition>
-        <releaseinfo>Version 0.10.2</releaseinfo>
+        <edition>Python GStreamer Tutorial version 0.10.3 for PyGST 0.10.14</edition>
+        <releaseinfo>Version 0.10.3</releaseinfo>
         <authorgroup>
             <author>
                 <firstname>Jens</firstname>

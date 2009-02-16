@@ -1,3 +1,9 @@
+2009-02-13 Jens Persson
+
+    * Added Webcam-Viewer chapter
+    * Added syntax highlighting with Pygments
+    * Some more examples and other fixes
+    
 2008-03-10 Jens Persson
 
     * Make it validate as HTML-4.01

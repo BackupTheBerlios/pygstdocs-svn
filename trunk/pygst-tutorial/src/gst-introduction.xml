@@ -24,7 +24,7 @@
   
   <para>
   There are also some example coding distributed with the PyGST source which you may browse
-  <ulink url="http://webcvs.freedesktop.org/gstreamer/gst-python/examples/">here</ulink>.
+  <ulink url="http://cgit.freedesktop.org/gstreamer/gst-python/tree/examples">here</ulink>.
   </para>
   
   <para>

@@ -4,11 +4,11 @@
 <refsect1>
   <para>The videomixer element makes it possible to mix different videostreams together. Here is a CLI example:
   </para>
-  <synopsis>$ gst-launch-0.10 filesrc location=test.png ! pngdec ! alphacolor ! ffmpegcolorspace ! videobox border-alpha=0 alpha=0.5 top=-20 left=-200 ! \
-	videomixer name=mix ! ffmpegcolorspace ! xvimagesink videotestsrc ! video/x-raw-yuv, width=320, height=240 ! mix.</synopsis>
+  <synopsis>$ gst-launch-0.10 filesrc location=tvlogo.png ! pngdec ! alphacolor ! ffmpegcolorspace ! videobox border-alpha=0 alpha=0.5 top=-20 left=-200 ! \
+	videomixer name=mix ! ffmpegcolorspace ! autovideosink videotestsrc ! video/x-raw-yuv, width=320, height=240 ! mix.</synopsis>
  <para>
- You have to make a PNG image (100x100 px) to be able to run it. With the videobox element you can move the image
- around and add more alpha channels.
+ You have to make a PNG <ulink url="tvlogo.png">image</ulink> (100x100 px) to be able to run it. With the 
+ videobox element you can move the image around and add more alpha channels.
  </para>
  <para>NEW COMPETITION! I can't figure out how to make a transparent alpha channel for the PNG in the pipeline above so if anyone
  makes it work the prize from example 3.2 will be given to this winner instead as the other one passed. TIA
@@ -56,7 +56,7 @@ class GTK_Main:
 		self.video_decoder = gst.element_factory_make("mpeg2dec", "video-decoder")
 		png_decoder = gst.element_factory_make("pngdec", "png-decoder")
 		png_source = gst.element_factory_make("filesrc", "png-source")
-		png_source.set_property("location", "test.png")
+		png_source.set_property("location", "tvlogo.png")
 		mixer = gst.element_factory_make("videomixer", "mixer")
 		self.audio_decoder = gst.element_factory_make("mad", "audio-decoder")
 		audioconv = gst.element_factory_make("audioconvert", "converter")
@@ -135,5 +135,3 @@ gtk.main()
 </refsect2>
 
 </refsect1>
-
-

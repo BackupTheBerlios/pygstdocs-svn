@@ -1,4 +1,10 @@
 <literallayout>
+<emphasis role="bold">2009-02-13 Jens Persson</emphasis>
+
+    * Added Webcam-Viewer chapter
+    * Added syntax highlighting with Pygments
+    * Some more examples and other fixes
+    
 <emphasis role="bold">2008-03-10 Jens Persson</emphasis>
 
     * Make it validate as HTML-4.01
